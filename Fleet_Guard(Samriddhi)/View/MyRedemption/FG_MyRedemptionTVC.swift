@@ -21,6 +21,8 @@ class FG_MyRedemptionTVC: UITableViewCell {
     @IBOutlet weak var ptsRedemeedLbl: UILabel!
     @IBOutlet weak var ptsLbl: UILabel!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none

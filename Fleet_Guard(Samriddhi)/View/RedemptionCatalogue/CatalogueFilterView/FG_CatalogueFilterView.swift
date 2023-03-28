@@ -158,9 +158,9 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
         print(tableViewData,"slkdls")
         if tableViewData == "Points Range"{
             if indexPath.row == 0{
-                cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
-                cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+                cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 0.2952131057)
+                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 1)
+                cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 1)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -171,9 +171,9 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
             
         }else if tableViewData == "Category"{
             if indexPath.row == 1{
-                cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
-                cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+                cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 0.2952131057)
+                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 1)
+                cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 1)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -193,6 +193,7 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
         collectionViewData = ""
         self.redemptionCategoryList()
         self.categoryListCollectionView.reloadData()
+        self.categoryTypeTableView.reloadData()
     }
     
     

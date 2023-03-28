@@ -46,6 +46,8 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     
     @IBOutlet weak var filterOPBTN: UIButton!
     
+    @IBOutlet weak var noDataLbl: UILabel!
+    
     
     var itsFrom = ""
     var status = "-1"
@@ -54,7 +56,7 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
-    
+    let pointBalance = UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "0"
     var VM = MyRedemptionListingVM()
     
 
@@ -91,6 +93,7 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
                 "SelectedStatus": "\(self.status)"
             ]
             ]as [String: Any]
+        print(parameter)
         self.VM.myRedemptionLists(parameters: parameter)
         }
     
@@ -192,15 +195,13 @@ extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_MyRedemptionTVC", for: indexPath) as! FG_MyRedemptionTVC
         cell.selectionStyle = .none
         cell.categoryTitleLbl.text = VM.myRedemptionList[indexPath.row].productName ?? ""
-        //cell.refNoTitleLbl.text = "Ref.No"
         cell.refNoLbl.text = VM.myRedemptionList[indexPath.row].redemptionRefno
         cell.qtyLbl.text = "\(VM.myRedemptionList[indexPath.row].quantity ?? 0)"
         let date = (VM.myRedemptionList[indexPath.row].jRedemptionDate ?? "").split(separator: " ")
         cell.dateTitleLbl.text = "\(date[0])"
         cell.ptsLbl.text = "\(VM.myRedemptionList[indexPath.row].redeemedPoints ?? 0)"
         
-        var statusDtata = VM.myRedemptionList[indexPath.row].status ?? 0
-        //cell.statusLbl.setTitle("\(VM.myRedemptionList[indexPath.row].status ?? 0)", for: .normal)
+        let statusDtata = VM.myRedemptionList[indexPath.row].status ?? 0
         if statusDtata == 0{
             cell.statusLbl.setTitle("Pending",for: .normal)
             cell.statusLbl.backgroundColor = .systemOrange

@@ -14,27 +14,33 @@ protocol SendDataDelegate: AnyObject{
 }
 
 class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpDelegate,sendProductDelegate {
+    
+    func addToDreamGift(_ cell: FG_RedemptionCatalogueTVC) {
+        guard let tappedIndexPath = self.catalogueListTableView.indexPath(for: cell) else {return}
+        self.addtoDreamGift(catalogueId: self.VM.redemptionCatalougeListArray[tappedIndexPath.row].catalogueId ?? 0)
+    }
+    
     func prodiuctDetails(_ vc: FG_CatalogueFilterView) {
         if vc.tableViewData == "Points Range"{
-            //self.VM.redemptionCatalougeListArray.removeAll()
+            self.VM.redemptionCatalougeListArray.removeAll()
             self.miniValue = vc.minimumValueTF.text ?? ""
             self.maximiumValue = vc.maximumValueTF.text ?? ""
             let a = "-"
             let minMax = "\(miniValue)"+"\(a)"+"\(maximiumValue)"
             print(minMax,"ksjdksnd")
             self.categoryIDs = "\(vc.categoryID)"
+            self.pointsRangeDatas = "\(vc.collectionViewData)"
             
             if self.miniValue != "" && self.maximiumValue != "" {
                 if maximiumValue <= miniValue{
                     self.view.makeToast("Maximum feild should be higher then Minimum field", duration: 3.0, position: .bottom)
                 
                 }else{
-                    if minMax != "-"{
+                   // if minMax != "-"{
                         self.pointsRangeDatas = "\(minMax)"
-                    }else{
-                        self.pointsRangeDatas = "\(vc.collectionViewData)"
-                    }
-                    self.redemptionCatalogueListApi(startIndex: startindex)
+//                    }else{
+//                        self.pointsRangeDatas = "\(vc.collectionViewData)"
+//                    }
                 }
             }
             self.redemptionCatalogueListApi(startIndex: startindex)
@@ -78,6 +84,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     
     var miniValue = ""
     var maximiumValue = ""
+    var plannerListingData = ""
     
     
     override func viewDidLoad() {
@@ -96,6 +103,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         self.totalPts.text = "\(UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "")"
         self.passBookNumber.text = self.loyaltyId
         self.myCartListApi()
+        self.plannerListing()
     }
 
     @IBAction func filterBtn(_ sender: Any) {
@@ -163,6 +171,18 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         ] as [String: Any]
         print(parameter)
         self.VM.redemptionCatalogueAddToCartApi(parameter: parameter)
+    }
+    
+    func addtoDreamGift (catalogueId: Int) {
+        let parameter = [
+            "ActionType":0,
+            "ActorId":"\(self.userId)",
+            "ObjCatalogueDetails":[
+                "CatalogueId":catalogueId
+            ]
+        ] as [String: Any]
+        print(parameter)
+        self.VM.addToDremGiftAPI(parameter: parameter)
     }
     
 @IBAction func searchByEditingTFAct(_ sender: Any) {
@@ -249,6 +269,44 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         
     }
     
+    func plannerListing(){
+        let parameters = [
+            "ActionType": "6",
+            "ActorId": "\(userId)"
+        ] as [String : Any]
+        print(parameters)
+        self.VM.plannerListingApi(parameters: parameters) { response in
+            self.VM.myPlannerListArray = response?.objCatalogueList ?? []
+            print(self.VM.myPlannerListArray.count, "Planner List Cout")
+            DispatchQueue.main.async {
+                
+//
+//                if self.VM.myPlannerListArray.count != 0 {
+//                    self.ad
+//                }else{
+//                    self.VM?.countLbl.isHidden = true
+//
+//                }
+
+                
+                //if self.VM.myPlannerListArray.count != 0 {
+                    
+//                    UserDefaults.standard.set(self.VM.myPlannerListArray[0].is_Redeemable ?? 0, forKey: "PlannerIsRedeemable")
+//                    UserDefaults.standard.synchronize()
+//                    print(UserDefaults.standard.integer(forKey: "PlannerIsRedeemable"))
+//                    self.myDreamGiftTV.isHidden = false
+//                    self.noDataFoundLbl.isHidden = true
+//                    self.myDreamGiftTV.reloadData()
+                //}else{
+//                    self.myDreamGiftTV.isHidden = true
+//                    self.noDataFoundLbl.isHidden = false
+//                }
+//                self.stopLoading()
+            }
+        }
+        
+    }
+    
 }
 extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
     
@@ -265,15 +323,40 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
         cell.pointsLbl.text = "\(self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0)"
         let filterArray = self.myCartIds.filter{$0 == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId ?? 0}
         let image = VM.redemptionCatalougeListArray[indexPath.row].productImage ?? ""
-    
+        let productPoints = self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0
+        let filterDreamGiftArray = self.VM.myPlannerListArray.filter{$0.catalogueId == self.VM.redemptionCatalogueMyCartListArray[indexPath.row].catalogueId}
         
         
-        if filterArray.count > 0 {
-            cell.addedToCartView.isHidden = false
-            cell.addToCartView.isHidden = true
+//        if filterArray.count > 0 {
+//            cell.addedToCartView.isHidden = false
+//            cell.addToCartView.isHidden = true
+//        }else{
+//            cell.addedToCartView.isHidden = true
+//            cell.addToCartView.isHidden = false
+//        }
+        
+        if Int(self.totalPoints) ?? 0 >= productPoints{
+            if filterArray.count > 0 {
+                cell.addedToCartView.isHidden = false
+                cell.addToCartView.isHidden = true
+            }else{
+                cell.addedToCartView.isHidden = true
+                cell.addToCartView.isHidden = false
+            }
+            cell.addtoDreamGiftView.isHidden = true
+            cell.addedToDreamGiftView.isHidden = true
         }else{
-            cell.addedToCartView.isHidden = true
-            cell.addToCartView.isHidden = false
+            if filterDreamGiftArray.count > 0 {
+                cell.addedToCartView.isHidden = true
+                cell.addToCartView.isHidden = true
+                cell.addedToDreamGiftView.isHidden = false
+                cell.addtoDreamGiftView.isHidden = true
+            }else{
+                cell.addedToCartView.isHidden = true
+                cell.addToCartView.isHidden = true
+                cell.addedToDreamGiftView.isHidden = true
+                cell.addtoDreamGiftView.isHidden = false
+            }
         }
      
         return cell

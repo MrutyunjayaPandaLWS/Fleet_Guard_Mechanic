@@ -840,4 +840,67 @@ class RestAPI_Requests {
                 }
             }
         }
+    
+    
+    // PLANNER LISTING
+    
+    func plannerListApi(parameters: JSON, completion: @escaping (PlannerListModels?, Error?) -> ()) -> URLSessionDataTask? {
+            return client.load(path: plannerList_URLMethod, method: .post, params: parameters) { data, error in
+                do{
+                    if data != nil{
+                        let result1 =  try JSONDecoder().decode(PlannerListModels?.self, from: data as! Data)
+                        completion(result1, nil)
+                    }
+                }catch{
+                    completion(nil, error)
+                }
+            }
+        }
+    
+    
+    
+    //MyLedgerModels
+    func MyLedgerRestAPI(parameters: JSON, completion: @escaping (MyLedgerModels?, Error?) -> ()) -> URLSessionDataTask? {
+        print(clientEarn)
+            return clientEarn.load(path: dashboardTotalPts_URLMethod, method: .post, params: parameters) { data, error in
+                do{
+                    if data != nil{
+                        let result1 =  try JSONDecoder().decode(MyLedgerModels?.self, from: data as! Data)
+                        completion(result1, nil)
+                    }
+                }catch{
+                    completion(nil, error)
+                }
+            }
+        }
+    //MyLedgerModelsClickModels
+    func MyLedgerClickViewRestAPI(parameters: JSON, completion: @escaping (MyLedgerViewClickModels?, Error?) -> ()) -> URLSessionDataTask? {
+        print(clientEarn)
+            return clientEarn.load(path: dashboardTotalPts_URLMethod, method: .post, params: parameters) { data, error in
+                do{
+                    if data != nil{
+                        let result1 =  try JSONDecoder().decode(MyLedgerViewClickModels?.self, from: data as! Data)
+                        completion(result1, nil)
+                    }
+                    print(data,"dlskjhd")
+                }catch{
+                    completion(nil, error)
+                }
+            }
+        }
+    
+    //AddToDremGift Data
+    func addToDreamGiftAPI(parameters: JSON, completion: @escaping (DreamGiftModels?, Error?) -> ()) -> URLSessionDataTask? {
+        return client.load(path: myRedemptionList_URLMethod, method: .post, params: parameters) { data, error in
+            do{
+                if data != nil{
+                    let result1 =  try JSONDecoder().decode(DreamGiftModels?.self, from: data as! Data)
+                    completion(result1, nil)
+                }
+            }catch{
+                completion(nil, error)
+            }
+        }
+    }
+    
 }

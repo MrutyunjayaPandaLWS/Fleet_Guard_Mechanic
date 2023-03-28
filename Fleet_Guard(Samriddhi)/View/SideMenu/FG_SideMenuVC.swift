@@ -19,7 +19,7 @@ class FG_SideMenuVC: BaseViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var sideMenuTableView: UITableView!
     var requestApis = RestAPI_Requests()
-    var sideMenuArray = [ "Profile", "My Earnings", "My Redemption History", "Redemption Catalogue", "My Milestone Redemption", "My Promotions", "RPL Statement", "My Orders", "My Billings", "Lodge Query", "About", "FAQs", "T&C", "Logout"]
+    var sideMenuArray = ["Profile", "My Ledger", "My Redemption History", "Redemption Catalogue", "Product Catalogue", "Dream Gift", "My Promotions", "Lodge Query", "About", "FAQs", "T&C", "Logout"]
     var sideMenuTitleArray = [String]()
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
@@ -149,14 +149,15 @@ extension FG_SideMenuVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //"Profile", "My Ledger", "My Redemption History", "Redemption Catalogue", "Product Catalogue", "Dream Gift", "My Promotions", "Lodge Query", "About", "FAQs", "T&C", "Logout"
         if indexPath.row == 0{
             self.closeLeft()
             let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyProfileVC") as! FG_MyProfileVC
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 1{
             self.closeLeft()
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyEarningVC") as! FG_MyEarningVC
-            vc.itsFrom = "SideMenu"
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_StatementVC") as! FG_StatementVC
+            //vc.itsFrom = "SideMenu"
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 2{
             self.closeLeft()
@@ -169,41 +170,33 @@ extension FG_SideMenuVC: UITableViewDelegate, UITableViewDataSource{
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 4{
             self.closeLeft()
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyMilestoneRedemptionVC") as! FG_MyMilestoneRedemptionVC
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueListVC") as! FG_ProductCatalogueListVC
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 5{
             self.closeLeft()
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyPromotionsVC") as! FG_MyPromotionsVC
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DreamGiftVC") as! FG_DreamGiftVC
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 6{
             self.closeLeft()
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "RPLStatementVC") as! RPLStatementVC
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyPromotionsVC") as! FG_MyPromotionsVC
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 7{
             self.closeLeft()
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyOrdersVC") as! FG_MyOrdersVC
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_LodgeQueryVC") as! FG_LodgeQueryVC
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 8{
             self.closeLeft()
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyBillingsVC") as! FG_MyBillingsVC
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_AboutVC") as! FG_AboutVC
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 9{
             self.closeLeft()
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_LodgeQueryVC") as! FG_LodgeQueryVC
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_FAQsVC") as! FG_FAQsVC
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 10{
             self.closeLeft()
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_AboutVC") as! FG_AboutVC
-            self.navigationController?.pushViewController(vc, animated: true)
-        }else if indexPath.row == 11{
-            self.closeLeft()
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_FAQsVC") as! FG_FAQsVC
-            self.navigationController?.pushViewController(vc, animated: true)
-        }else if indexPath.row == 12{
-            self.closeLeft()
             let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_TermsandconditionsVC") as! FG_TermsandconditionsVC
             self.navigationController?.pushViewController(vc, animated: true)
-        }else if indexPath.row == 13{
+        }else if indexPath.row == 11{
             self.closeLeft()
             
             UserDefaults.standard.set(false, forKey: "IsloggedIn?")

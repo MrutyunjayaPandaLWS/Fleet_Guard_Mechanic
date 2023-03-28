@@ -18,6 +18,34 @@ class FG_RedemptionCatalogueVM: popUpDelegate{
     var redemptionCatalougeListArray1 = [ObjCatalogueList]()
     var redemptionCatalogueMyCartListArray = [CatalogueSaveCartDetailListResponse]()
     var productArray = [ObjCatalogueList]()
+    var myPlannerListArray = [ObjCatalogueList2]()
+    
+    
+    func plannerListingApi(parameters: JSON, completion: @escaping (PlannerListModels?) -> ()){
+        self.VC?.startLoading()
+        self.requestApis.plannerListApi(parameters: parameters) { (result, error) in
+            if error == nil{
+                if result != nil {
+                    DispatchQueue.main.async {
+                        completion(result)
+                        
+                    }
+                } else {
+                    print("No Response")
+                    DispatchQueue.main.async {
+                        self.VC?.stopLoading()
+                    }
+                }
+            }else{
+                print("ERROR_Login \(error)")
+                DispatchQueue.main.async {
+                    self.VC?.stopLoading()
+                }
+
+        }
+    }
+    
+    }
     
     
 func redemptionCatalogueMyCartListApi(parameter: JSON){
@@ -36,9 +64,7 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
                             self.VC?.cartTotalPts = Int(self.redemptionCatalogueMyCartListArray[0].sumOfTotalPointsRequired ?? 0.0)
                             self.VC?.countLbl.text = "\(self.redemptionCatalogueMyCartListArray.count)"
                             for data in self.redemptionCatalogueMyCartListArray{
-                                
                                 self.VC?.myCartIds.append(data.catalogueId ?? 0)
-                                
                             }
                         }else{
                             self.VC?.countLbl.isHidden = true
@@ -148,7 +174,42 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
         }
     }
     
-    //redemptionCatalogueAddToCartApi
+    //AddToDreamGift
+    func addToDremGiftAPI(parameter: JSON){
+        DispatchQueue.main.async {
+            self.VC?.startLoading()
+        }
+        self.requestApis.addToDreamGiftAPI(parameters: parameter) { (result, error) in
+            if error == nil{
+                if result != nil{
+                    DispatchQueue.main.async {
+                        self.VC?.stopLoading()
+                        print(result?.returnValue ?? 0)
+                        if result?.returnValue ?? 0 != 0{
+                            DispatchQueue.main.async{
+                                self.VC?.view.makeToast("Product added into dream gift  successfully.", duration: 3.0, position: .bottom)
+                            }
+                        }else{
+                            DispatchQueue.main.async{
+                                self.VC?.view.makeToast("Product faild to add into dream gift", duration: 3.0, position: .bottom)
+                            }
+                        }
+                    }
+                    
+                }else{
+                    DispatchQueue.main.async {
+                        self.VC?.stopLoading()
+                        print("\(error)")
+                    }
+                }
+            }else{
+                DispatchQueue.main.async {
+                    self.VC?.stopLoading()
+                    print("\(error)")
+                }
+            }
+        }
+    }
     
    
 }

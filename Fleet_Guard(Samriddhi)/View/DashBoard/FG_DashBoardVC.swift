@@ -14,25 +14,46 @@ class FG_DashBoardVC: BaseViewController {
 //    @IBOutlet weak var offersandPromLbl: UILabel!
 //    @IBOutlet weak var redemptionCatalogueLbl: UILabel!
 //    @IBOutlet weak var newRangeAdditionLbl: UILabel!
-    @IBOutlet weak var retailerCodeLbl: UILabel!
-    @IBOutlet weak var retailerLblTitle: UILabel!
-    @IBOutlet weak var rplValueLbl: UILabel!
-    @IBOutlet weak var rplNoLbl: UILabel!
-    @IBOutlet weak var totalValue: UILabel!
+//    @IBOutlet weak var retailerCodeLbl: UILabel!
+//    @IBOutlet weak var retailerLblTitle: UILabel!
+//    @IBOutlet weak var rplValueLbl: UILabel!
+//    @IBOutlet weak var rplNoLbl: UILabel!
+//    @IBOutlet weak var totalValue: UILabel!
+    
     @IBOutlet weak var totalPtsBalance: UILabel!
     @IBOutlet weak var welcomeTitle: UILabel!
     @IBOutlet weak var welcomeLbl: UILabel!
+    @IBOutlet var welcomeNameLbl: UILabel!
     @IBOutlet weak var secondLevelView: UIView!
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var bannerImage: ImageSlideshow!
-    @IBOutlet weak var exploreForMoreLbl: UILabel!
+    //@IBOutlet weak var exploreForMoreLbl: UILabel!
     
+    @IBOutlet var progressViewDreamGift: UIProgressView!
+    @IBOutlet var offersAndPromotionSlideShow: ImageSlideshow!
+    @IBOutlet var passbookLbl: UILabel!
     @IBOutlet var emptyImageView: UIImageView!
-    @IBOutlet weak var filtrationLbl: UILabel!
+    //@IBOutlet weak var filtrationLbl: UILabel!
+    @IBOutlet var promotionEmptyImage: UIImageView!
     
-    @IBOutlet weak var orderNowBtn: UIButton!
+    //@IBOutlet weak var orderNowBtn: UIButton!
     
+    //@IBOutlet var addYourDreamGiftView: UIView!
+    
+    @IBOutlet var dreamGiftProductView: UIView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
+    
+    @IBOutlet var dreamGiftDetailsOutBtn: UIButton!
+    @IBOutlet var productViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet var dreamGiftImageView: UIImageView!
+    
+    @IBOutlet var addYourDreamLbl: UILabel!
+    //@IBOutlet var dreamGiftDetailsView: NSLayoutConstraint!
+    
+    
+    @IBOutlet var heightOfTheView: NSLayoutConstraint!
+    
     
     var categoryItemArray = ["Filters", "Coolant & Chemicals", "Center Bearing", "Break Liner"]
     var categoryImageArray = ["OUTLINE", "OUTLINE", "OUTLINE","OUTLINE"]
@@ -44,6 +65,8 @@ class FG_DashBoardVC: BaseViewController {
     var deviceID =  UserDefaults.standard.string(forKey: "deviceID") ?? ""
     var bannerImagesArray = [ObjImageGalleryList]()
     var sourceArray = [AlamofireSource]()
+    var offersandPromotionsArray = [LstPromotionJsonList1]()
+    var sourceArray1 = [AlamofireSource]()
     
     var VM = FG_DashboardVM()
     
@@ -55,6 +78,11 @@ class FG_DashBoardVC: BaseViewController {
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 20
         subView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+       // self.dreamGiftDetailsView.constant = 100
+        //self.dreamGiftProductView.isHidden = true
+        //self.addYourDreamGiftView.isHidden = false
+        self.productViewHeight.constant = 100
+        self.heightOfTheView.constant = 550
         
         secondLevelView.clipsToBounds = true
         secondLevelView.layer.cornerRadius = 16
@@ -63,7 +91,7 @@ class FG_DashBoardVC: BaseViewController {
         self.categoryCollectionView.dataSource = self
         
         let collectionViewFLowLayout = UICollectionViewFlowLayout()
-        collectionViewFLowLayout.itemSize = CGSize(width: (self.view.bounds.width - 150 - (self.categoryCollectionView.contentInset.left + self.categoryCollectionView.contentInset.right)) / 2,  height: 105)
+        collectionViewFLowLayout.itemSize = CGSize(width: (self.view.bounds.width - 100 - (self.categoryCollectionView.contentInset.left + self.categoryCollectionView.contentInset.right)) / 2,  height: 60)
         collectionViewFLowLayout.minimumLineSpacing = 2.5
         collectionViewFLowLayout.scrollDirection = .horizontal
         collectionViewFLowLayout.minimumInteritemSpacing = 2.5
@@ -76,14 +104,15 @@ class FG_DashBoardVC: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         slideMenuController()?.changeLeftViewWidth(self.view.frame.size.width * 0.8)
         SlideMenuOptions.contentViewScale = 1
+        //self.productViewHeight.constant = 200
         self.tokendata()
         self.pointsAPI()
         
     }
     
     override func viewDidLayoutSubviews() {
-        self.orderNowBtn.layer.cornerRadius = 14
-        self.orderNowBtn.clipsToBounds = true
+//        self.orderNowBtn.layer.cornerRadius = 14
+//        self.orderNowBtn.clipsToBounds = true
         
     }
     
@@ -145,11 +174,35 @@ class FG_DashBoardVC: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func dreamGiftProductDetailsBTN(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DreamGiftVC") as! FG_DreamGiftVC
+        self.navigationController?.pushViewController(vc, animated: true)
+  
+    }
+    
+    @IBAction func dreamGiftDetailsViewActBTN(_ sender: Any) {
+        self.dreamGiftDetailsOutBtn.isHidden = true
+        self.dreamGiftImageView.isHidden = true
+        self.addYourDreamLbl.isHidden = true
+        self.productViewHeight.constant = 170
+        self.heightOfTheView.constant = 627
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionCatalogueVC") as! FG_RedemptionCatalogueVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    //Product Catalogue ActBTN Down
     @IBAction func redemptionCatalogueBtn(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueListVC") as! FG_ProductCatalogueListVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    @IBAction func redemptionCatActBtn(_ sender: Any) {
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionCatalogueVC") as! FG_RedemptionCatalogueVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func promotionViewBTN(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyPromotionsVC") as! FG_MyPromotionsVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     func dashboardApi(){
         let parameter = [
             "ActorId":"\(self.userId)"
@@ -159,6 +212,7 @@ class FG_DashBoardVC: BaseViewController {
     }
     
     func dashboardPointsApi(){
+        
         let parameter = [
             "ActionType":"1",
             "ActorId":"\(self.userId)",
@@ -239,7 +293,7 @@ class FG_DashBoardVC: BaseViewController {
                 }
                
                 
-                // self.offersandPromotionsApi()
+                
             }else{
             print("No Resdflksjadfljkasdjflasldjf")
             }
@@ -266,6 +320,60 @@ class FG_DashBoardVC: BaseViewController {
         }
     }
     
+    func ImageSetups1(){
+        sourceArray1.removeAll()
+        if self.offersandPromotionsArray.count > 0 {
+            for image in self.offersandPromotionsArray {
+                
+                let filterImage = (image.proImage ?? "").dropFirst(3)
+                let images = ("\(PROMO_IMG1)\(filterImage)").replacingOccurrences(of: " ", with: "%20")
+                
+                sourceArray1.append(AlamofireSource(urlString: images, placeholder: UIImage(named: "Artboard 91"))!)
+            }
+            offersAndPromotionSlideShow.setImageInputs(sourceArray1)
+            offersAndPromotionSlideShow.slideshowInterval = 3.0
+            offersAndPromotionSlideShow.zoomEnabled = false
+        } else {
+            //self.bannerEmptyImg.isHidden = false
+        }
+    }
+    func offersandPromotionsApi(){
+        DispatchQueue.main.async {
+        }
+        self.offersandPromotionsArray.removeAll()
+        let parameters = [
+            "ActionType": "99",
+            "ActorId": "\(self.userId)"
+        ] as [String: Any]
+        print(parameters)
+        self.VM.offersandPromotions(parameters: parameters) { response in
+            self.offersandPromotionsArray = response?.lstPromotionJsonList ?? []
+            DispatchQueue.main.async {
+                if self.offersandPromotionsArray.count > 0{
+                    //self.promotionEmptyImage.isHidden = true
+                    self.ImageSetups1()
+                    self.stopLoading()
+                }else{
+                    //self.promotionEmptyImage.isHidden = false
+                    self.stopLoading()
+                }
+                
+                if self.offersandPromotionsArray.count == 0{
+                        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap1))
+                        self.offersAndPromotionSlideShow.addGestureRecognizer(gestureRecognizer)
+                }else{
+                        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap1))
+                        self.offersAndPromotionSlideShow.addGestureRecognizer(gestureRecognizer)
+                }
+            }
+        }
+    }
+    @objc func didTap1() {
+        if self.offersandPromotionsArray.count > 0 {
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyPromotionsVC") as! FG_MyPromotionsVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
     func tokendata(){
             if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
@@ -325,7 +433,7 @@ extension FG_DashBoardVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueListVC") as! FG_ProductCatalogueListVC
-        vc.categoryId = Int(self.VM.categoryListArray[indexPath.row].attributeValue ?? "") ?? 0
+        vc.categoryId3 = Int(self.VM.categoryListArray[indexPath.row].attributeValue ?? "") ?? 0
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

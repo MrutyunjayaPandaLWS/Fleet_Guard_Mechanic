@@ -10,6 +10,7 @@ import UIKit
 protocol DidTapActionDelegate: AnyObject{
     func addToCartDidTap(_ cell: FG_RedemptionCatalogueTVC)
     func detailsDidTap(_ cell: FG_RedemptionCatalogueTVC)
+    func addToDreamGift(_ cell: FG_RedemptionCatalogueTVC)
 }
 
 class FG_RedemptionCatalogueTVC: UITableViewCell {
@@ -21,6 +22,9 @@ class FG_RedemptionCatalogueTVC: UITableViewCell {
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var pointView: UIView!
+    
+    @IBOutlet var addedToDreamGiftView: UIView!
+    @IBOutlet var addtoDreamGiftView: UIView!
     
     @IBOutlet weak var pointsLbl: UILabel!
     
@@ -52,6 +56,7 @@ class FG_RedemptionCatalogueTVC: UITableViewCell {
     @IBAction func addedToCartButton(_ sender: Any) {
     }
     @IBAction func addToDreamGiftButton(_ sender: Any) {
+        self.delegate.addToDreamGift(self)
     }
     @IBAction func addedToDreamGiftButton(_ sender: Any) {
     }

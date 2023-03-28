@@ -126,9 +126,9 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
         
         if self.catagoryId == 1{
             if indexPath.row == 0{
-                cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
-                cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+                cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 0.2952131057)
+                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 1)
+                cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0, green: 0.4824070334, blue: 1, alpha: 1)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -138,9 +138,9 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
             }
         }else if self.catagoryId1 == 2{
             if indexPath.row == 1{
-                cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
-                cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+                cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 0.2952131057)
+                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 1)
+                cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 1)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -150,9 +150,9 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
             }
         }else if self.catagoryId2 == 3{
             if indexPath.row == 2{
-                cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
-                cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+                cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 0.2952131057)
+                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 1)
+                cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 1)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -162,9 +162,9 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
             }
         }else if self.catagoryId3 == 4{
             if indexPath.row == 3{
-                cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
-                cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+                cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 0.2952131057)
+                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 1)
+                cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 1)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -173,9 +173,9 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
                 cell.categoryTitleLbl.borderWidth = 1
             }
         }else {
-            cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-            cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
-            cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+            cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 0.2952131057)
+            cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 1)
+            cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.1803921569, green: 0.4745098039, blue: 1, alpha: 1)
             cell.categoryTitleLbl.borderWidth = 1
         }
         

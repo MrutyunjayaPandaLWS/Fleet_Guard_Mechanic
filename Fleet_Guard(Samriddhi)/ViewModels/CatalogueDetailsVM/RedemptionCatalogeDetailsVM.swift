@@ -12,15 +12,12 @@ class RedemptionCatalogeDetailsVM: popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
 
     weak var VC: FG_RedemptionCatalogueDetailsVC?
-    //weak var VC1: FG_CatalogueFilterView?
     
     
     
     var requestApis = RestAPI_Requests()
     var redemptionCatalougeListArray = [ObjCatalogueList]()
     var redemptionCatalogueMyCartListArray = [CatalogueSaveCartDetailListResponse]()
-   // var redemptionCatalogueMyCartListArray = [CatalogueSaveCartDetailListResponse]()
-
     func redemptionCatalogueListApi(parameter: JSON){
         DispatchQueue.main.async {
             self.VC?.startLoading()
@@ -109,89 +106,42 @@ class RedemptionCatalogeDetailsVM: popUpDelegate {
         }
     }
     
-//    func redemptionCatalogueMyCartListApi(parameters: JSON, completion: @escaping(CatalogueSaveCartDetailListResponse?) -> ()){
-//        DispatchQueue.main.async {
-//                    self.VC?.startLoading()
-//                }
-//        self.requestApis.redemptionCatalogueMycartListApi(parameters: parameters) { (result, error) in
-//            if error == nil{
-//                if result != nil {
-//                    DispatchQueue.main.async {
-//                        completion(result)
-//
-//                        self.VC?.stopLoading()
-//                    }
-//                } else {
-//                    print("No Response")
-//                    DispatchQueue.main.async {
-//
-//                        self.VC?.stopLoading()
-//                    }
-//                }
-//            }else{
-//                print("ERROR_Login \(error)")
-//                DispatchQueue.main.async {
-//
-//                    self.VC?.stopLoading()
-//                }
-//
-//        }
-//    }
-//
-//    }
-    
-//    func redemptionCatalogueMyCartListApi(parameter: JSON){
-//            DispatchQueue.main.async {
-//                self.VC?.startLoading()
-//                //self.VC?.myCartIds.removeAll()
-//            }
-//            self.requestApis.redemptionCatalogueMycartListApi(parameters: parameter) { (result, error) in
-//                if error == nil{
-//                    if result != nil{
-//                        DispatchQueue.main.async {
-//                            self.VC?.stopLoading()
-//                            self.redemptionCatalogueMyCartListArray = result?.catalogueSaveCartDetailListResponse ?? []
-//
-//                            if self.redemptionCatalogueMyCartListArray.count != 0 {
-//                                self.VC?.countLbl.isHidden = false
-//                                self.VC?.countLbl.text = "\(self.redemptionCatalogueMyCartListArray.count)"
-//                            }else{
-//                                self.VC?.countLbl.isHidden = true
-//
-//                            }
-//                            let filterArray = self.redemptionCatalogueMyCartListArray.filter{$0.catalogueId == self.VC?.catalogueId}
-//
-//                            print(filterArray.count,"skhask")
-//
-//                            if filterArray.count > 0 {
-//                                self.VC?.addedToCartView.isHidden = false
-//                                self.VC?.addToCartView.isHidden = true
-//                            }else{
-//
-//                                self.VC?.addedToCartView.isHidden = true
-//                                self.VC?.addToCartView.isHidden = false
-//                            }
-//
-//
-//
-//                        }
-//
-//                    }else{
-//                        DispatchQueue.main.async {
-//                            self.VC?.stopLoading()
-//                            print("\(error)")
-//                        }
-//                    }
-//                }else{
-//                    DispatchQueue.main.async {
-//                        self.VC?.stopLoading()
-//                        print("\(error)")
-//                    }
-//                }
-//            }
-//        }
-    
-    
+    //AddToDreamGift
+    func addToDremGiftAPI(parameter: JSON){
+        DispatchQueue.main.async {
+            self.VC?.startLoading()
+        }
+        self.requestApis.addToDreamGiftAPI(parameters: parameter) { (result, error) in
+            if error == nil{
+                if result != nil{
+                    DispatchQueue.main.async {
+                        self.VC?.stopLoading()
+                        print(result?.returnValue ?? 0)
+                        if result?.returnValue ?? 0 != 0{
+                            DispatchQueue.main.async{
+                                self.VC?.view.makeToast("Product added into dream gift  successfully.", duration: 3.0, position: .bottom)
+                            }
+                        }else{
+                            DispatchQueue.main.async{
+                                self.VC?.view.makeToast("Product faild to add into dream gift", duration: 3.0, position: .bottom)
+                            }
+                        }
+                    }
+                    
+                }else{
+                    DispatchQueue.main.async {
+                        self.VC?.stopLoading()
+                        print("\(error)")
+                    }
+                }
+            }else{
+                DispatchQueue.main.async {
+                    self.VC?.stopLoading()
+                    print("\(error)")
+                }
+            }
+        }
+    }
     
 }
 

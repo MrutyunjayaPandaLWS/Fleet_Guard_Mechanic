@@ -9,13 +9,19 @@ import UIKit
 
 class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,sendProductFilterDelegate {
     func sendProductFilter(_ vc: FG_ProductCatalogueFilterVC) {
+        self.VM.productsArray.removeAll()
+        self.VM.productListArray.removeAll()
+        self.categoryId = 0
+        self.categoryId1 = 0
+        self.categoryId2 = 0
+        self.categoryId3 = 0
         if vc.catagoryId == 1{
             self.categoryId = vc.selectedArrayDataID
         }else if vc.catagoryId1 == 2{
             self.categoryId1 = vc.selectedArrayDataID
-        }else if vc.catagoryId2 == 2{
+        }else if vc.catagoryId2 == 3{
             self.categoryId2 = vc.selectedArrayDataID
-        }else if vc.catagoryId3 == 2{
+        }else if vc.catagoryId3 == 4{
             self.categoryId3 = vc.selectedArrayDataID
         }
         self.productListApi(StartIndex: startindex, searchText: self.searchTF.text ?? "")
@@ -71,8 +77,8 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     }
     
     @IBAction func cartBtn(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueMyCartVC") as! FG_ProductCatalogueMyCartVC
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueMyCartVC") as! FG_ProductCatalogueMyCartVC
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func productListApi(StartIndex: Int, searchText: String){
@@ -186,12 +192,12 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
         cell.delegate = self
         cell.productName.text = self.VM.productListArray[indexPath.row].productName ?? ""
         cell.partNoLbl.text = self.VM.productListArray[indexPath.row].productCode ?? ""
-        cell.dapValue.text = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"
+        //cell.dapValue.text = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"
         cell.mrpValue.text = "\(self.VM.productListArray[indexPath.row].mrp ?? "")"
         
 //        vc.dap = "\(self.VM.productListArray[tappedIndexPath.row].salePrice ?? 0)"
 //        vc.mrp = "\(self.VM.productListArray[tappedIndexPath.row].mrp ?? "")"
-        cell.nextButton.tag = indexPath.row
+       // cell.nextButton.tag = indexPath.row
         
 //        @IBOutlet weak var productImage: UIImageView!
         return cell
@@ -199,6 +205,19 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueDetailsVC") as! FG_ProductCatalogueDetailsVC
+        vc.productImageURL = self.VM.productListArray[indexPath.row].productImg ?? ""
+        vc.productName = self.VM.productListArray[indexPath.row].productName ?? ""
+        vc.partNo = self.VM.productListArray[indexPath.row].productCode ?? ""
+        vc.shortDesc = self.VM.productListArray[indexPath.row].productShortDesc ?? ""
+        vc.dap = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"
+        vc.mrp = "\(self.VM.productListArray[indexPath.row].mrp ?? "")"
+        vc.productId = "\(self.VM.productListArray[indexPath.row].productId ?? 0)"
+        vc.productDesc = "\(self.VM.productListArray[indexPath.row].productDesc ?? "")"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

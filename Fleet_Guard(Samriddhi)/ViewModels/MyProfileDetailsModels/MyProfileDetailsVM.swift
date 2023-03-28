@@ -45,6 +45,7 @@ class MyProfileDetailsVM: popUpDelegate{
                         let customerImage = "\(profileDetails[0].profilePicture ?? "")".dropFirst()
                         print(customerImage)
                         self.VC?.profileImage.kf.setImage(with: URL(string: "\(Promo_ImageData)\(customerImage)"), placeholder: UIImage(named: "ic_default_img"));
+                        self.VC?.preferredLanguageLbl.text = "\(result?.lstCustomerJson?[0].languageName ?? "")"
                     }
                 } else {
                     print("No Response")

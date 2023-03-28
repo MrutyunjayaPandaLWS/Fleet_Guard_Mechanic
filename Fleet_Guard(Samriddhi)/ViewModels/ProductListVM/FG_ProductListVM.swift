@@ -18,17 +18,25 @@ class FG_ProductListVM: popUpDelegate{
     func productListApi(parameter: JSON){
         DispatchQueue.main.async {
             self.VC?.startLoading()
-            self.productsArray.removeAll()
-            self.productListArray.removeAll()
+//            self.productsArray.removeAll()
+//            self.productListArray.removeAll()
         }
         self.requestApis.productListingApi(parameters: parameter) { (result, error) in
             if error == nil{
                 if result != nil{
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
+                        
+                        
                         self.productsArray = result?.lsrProductDetails ?? []
                         self.VC?.noofelements = self.productsArray.count
                         self.productListArray = self.productListArray + self.productsArray
+                        
+//                        self.filteredArrayList = response?.customerBasicInfoList ?? []
+//                        self.VC?.noofelements = self.filteredArrayList.count
+//
+//                        self.myPlumberArrayList = self.myPlumberArrayList + self.filteredArrayList
+                        
                         print(self.productListArray.count,"skuhdsdj")
                         print(self.productsArray.count,"kdjdj")
                         if self.productListArray.count != 0{

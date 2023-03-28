@@ -17,6 +17,7 @@ class FG_DashboardVM: popUpDelegate{
     var pushID = UserDefaults.standard.string(forKey: "TOKEN") ?? ""
     var categoryListArray = [LstAttributesDetails]()
     var pointBalence = [ObjCustomerDashboardList11]()
+    
     var deviceID =  UserDefaults.standard.string(forKey: "deviceID") ?? ""
     
     func dashboardApi(parameter: JSON){
@@ -71,10 +72,11 @@ class FG_DashboardVM: popUpDelegate{
                                         self.VC?.present(vc!, animated: true, completion: nil)
                                     }
                                 }else{
-                                    self.VC?.welcomeTitle.text = result?.lstCustomerFeedBackJsonApi?[0].firstName ?? ""
-                                    self.VC?.rplValueLbl.text = result?.lstCustomerFeedBackJsonApi?[0].passBookNumber ?? ""
-                                    self.VC?.retailerCodeLbl.text = result?.lstCustomerFeedBackJsonApi?[0].loyaltyId ?? ""
+                                    self.VC?.welcomeNameLbl.text = result?.lstCustomerFeedBackJsonApi?[0].firstName ?? ""
+                                    //self.VC?.rplValueLbl.text = result?.lstCustomerFeedBackJsonApi?[0].passBookNumber ?? ""
+                                    //self.VC?.retailerCodeLbl.text = result?.lstCustomerFeedBackJsonApi?[0].loyaltyId ?? ""
                                     //  self.VC?.totalValue.text = result?.lstCustomerFeedBackJsonApi?[0].loyaltyId ?? ""
+                                    self.VC?.passbookLbl.text = "\(result?.lstCustomerFeedBackJsonApi?[0].passBookNumber ?? "")"
                                     UserDefaults.standard.setValue(result?.lstCustomerFeedBackJsonApi?[0].passBookNumber, forKey: "passBookNumber")
                                     UserDefaults.standard.setValue(result?.lstCustomerFeedBackJsonApi?[0].firstName, forKey: "FirstName")
                                     
@@ -129,7 +131,7 @@ class FG_DashboardVM: popUpDelegate{
                     if dashboardDetails.count != 0 {
                         print("\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0), Total Earned Points")
                     UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0, forKey: "TotalPoints")
-                        self.VC?.totalValue.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
+                        //self.VC?.totalValue.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
                                 UserDefaults.standard.synchronize()
                     }
                     self.VC?.stopLoading()
@@ -193,10 +195,9 @@ class FG_DashboardVM: popUpDelegate{
                     if result?.objCustomerDashboardList?.count != 0 {
                         self.pointBalence = result?.objCustomerDashboardList ?? []
                         
-                        self.VC?.totalValue.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
                         UserDefaults.standard.set(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
                         UserDefaults.standard.set(result?.objCustomerDashboardList?[0].redeemablePointsBalance, forKey: "redeemablePointsBalance")
-                        
+                        self.VC?.totalPtsBalance.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
                         
                         UserDefaults.standard.set(true, forKey: "AfterLog")
                         UserDefaults.standard.synchronize()
@@ -249,5 +250,31 @@ class FG_DashboardVM: popUpDelegate{
         }
     }
     
+    func offersandPromotions(parameters: JSON, completion: @escaping (PromotionListingModels?) -> ()){
+        DispatchQueue.main.async {
+            self.VC?.startLoading()
+        }
+        self.requestApis.promotionsListingAPI(parameters: parameters) { (result, error) in
+            if error == nil{
+                if result != nil {
+                    DispatchQueue.main.async {
+                        completion(result)
+                    }
+                } else {
+                    print("No Response")
+                    DispatchQueue.main.async {
+                        self.VC?.stopLoading()
+                    }
+                }
+            }else{
+                print("ERROR_Login \(error)")
+                DispatchQueue.main.async {
+                    self.VC?.stopLoading()
+                }
+
+        }
+    }
+    
+    }
     
 }

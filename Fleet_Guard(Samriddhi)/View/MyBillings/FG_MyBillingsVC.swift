@@ -58,8 +58,6 @@ class FG_MyBillingsVC: BaseViewController,myBillingsDelegate {
             self.VM.billingsListingAPI(parameters: parametets)
         }
     
-    
-    
 
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)

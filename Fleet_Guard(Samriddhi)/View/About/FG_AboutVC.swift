@@ -18,7 +18,7 @@ class FG_AboutVC: BaseViewController {
         
         DispatchQueue.main.async {
             self.stopLoading()
-            self.aboutWebview.loadRequest(NSURLRequest(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "about", ofType: "html")!) as URL) as URLRequest)
+            self.aboutWebview.loadRequest(NSURLRequest(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "about-english", ofType: "html")!) as URL) as URLRequest)
         }
         
     }

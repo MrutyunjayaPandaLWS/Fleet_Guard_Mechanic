@@ -36,6 +36,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     @IBOutlet var productImag: UIImageView!
     @IBOutlet weak var addToCartBtn: UILabel!
     
+    @IBOutlet var productBackgroundView: UIView!
     var productImages = ""
     var prodRefNo = ""
     var productCategory = ""
@@ -71,22 +72,26 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
         productImage.layer.shadowOpacity = 0.4
         productImage.layer.shadowRadius = 0.4
         productImage.layer.shadowColor = UIColor.darkGray.cgColor
-        //self.categoryLbl.text = productCategory
+        
+        
+        self.productBackgroundView.layer.cornerRadius = 36
+        self.productBackgroundView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        
+       
         self.productNameLbl.text = productName
         self.productPoints.text = "Points: \(productPoint)"
         self.descriptionLbl.text = productDetails
         self.termsAndConLbl.text = termsandContions
         let receivedImage = "\(String(describing: productImage))"
         print(receivedImage)
-        self.productImag.kf.setImage(with: URL(string: "\(PROMO_IMG1)\(receivedImage)"), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"));
+        self.productImag.kf.setImage(with: URL(string: "\(PROMO_IMG1)\(receivedImage)"), placeholder: UIImage(named: "Humsafar Logo PNG"));
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         myCartListApi()
     }
-    
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -98,6 +103,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     
     
     @IBAction func addToDreamGiftBtn(_ sender: Any) {
+        addtoDreamGift()
     }
     
     @IBAction func addToCartBTN(_ sender: Any) {
@@ -116,12 +122,22 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
             
         }else{
             
-            print(productPoint,"skjds")
-            print(pointBalance,"slkjds")
+            print(productPoint,"dskjkjd")
+            print(pointBalance,"sndksjnd")
+            self.myCartListApi()
+            let filterArray = self.VM.redemptionCatalogueMyCartListArray.filter{$0.catalogueId == self.catalogueId}
+            let datain = self.VM.redemptionCatalogueMyCartListArray.filter{$0.catalogueId == self.catalogueId}
             
             if Int(productPoint) ?? 0 <= Int(pointBalance) ?? 0 {
-                self.myCartListApi()
-                self.addToCartApi()
+                if filterArray.count > 0 {
+                    self.addedToCartView.isHidden = false
+                    self.addToCartView.isHidden = true
+                    
+                }else{
+                    self.addToCartApi()
+                    self.myCartListApi()
+                }
+                
             }else{
                 DispatchQueue.main.async{
                     let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
@@ -136,6 +152,17 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
         }  
     }
     
+    func addtoDreamGift () {
+        let parameter = [
+            "ActionType":0,
+            "ActorId":"\(self.userID)",
+            "ObjCatalogueDetails":[
+                "CatalogueId": "\(catalogueId)"
+            ]
+        ] as [String: Any]
+        print(parameter)
+        self.VM.addToDremGiftAPI(parameter: parameter)
+    }
     
     func addToCartApi(){
         
@@ -158,6 +185,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     
     
     func myCartListApi(){
+        self.VM.redemptionCatalogueMyCartListArray.removeAll()
         let parameter = [
             "ActionType": "2",
             "LoyaltyID": "\(self.loyaltyId)"
@@ -181,16 +209,41 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
                         
                         print(filterArray.count,"skhask")
                         
-                        if filterArray.count > 0 {
-                            self.addedToCartView.isHidden = false
-                            self.addToCartView.isHidden = true
+                        
+//                        if Int(self.totalPoints) ?? 0 >= productPoints{
+//                            if filterArray.count > 0 {
+//                                cell.addedToCartView.isHidden = false
+//                                cell.addToCartView.isHidden = true
+//                            }else{
+//                                cell.addedToCartView.isHidden = true
+//                                cell.addToCartView.isHidden = false
+//                            }
+//                            cell.addtoDreamGiftView.isHidden = true
+//                            cell.addedToDreamGiftView.isHidden = true
+//                        }else{
+//                            cell.addedToCartView.isHidden = true
+//                            cell.addToCartView.isHidden = true
+//                            cell.addedToDreamGiftView.isHidden = true
+//                            cell.addtoDreamGiftView.isHidden = false
+//                        }
+                        if Int(self.pointBalance) ?? 0 >= Int(self.productPoint) ?? 0 {
+                       
+                            if filterArray.count > 0 {
+                                self.addedToCartView.isHidden = false
+                                self.addToCartView.isHidden = true
+                            }else{
+                                self.addedToCartView.isHidden = true
+                                self.addToCartView.isHidden = false
+                            }
+                            self.addedToDreamGiftView.isHidden = true
+                            self.addToDreamGiftView.isHidden = true
+                            
                         }else{
-
                             self.addedToCartView.isHidden = true
-                            self.addToCartView.isHidden = false
+                            self.addToCartView.isHidden = true
+                            self.addedToDreamGiftView.isHidden = true
+                            self.addToDreamGiftView.isHidden = false
                         }
-                        
-                        
                        
                     }
 

@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		250FFCAC29B7128B003FB8A0 /* LstTransactionApprovalDetails1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250FFCAA29B7128B003FB8A0 /* LstTransactionApprovalDetails1.swift */; };
 		250FFCAD29B7128B003FB8A0 /* BillingDetialsDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250FFCAB29B7128B003FB8A0 /* BillingDetialsDataModels.swift */; };
+		25116BDE29CC0B3600E78DD7 /* MyLedgerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25116BDC29CC0B3600E78DD7 /* MyLedgerModels.swift */; };
+		25116BDF29CC0B3600E78DD7 /* ObjCustomerDashboardList3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25116BDD29CC0B3600E78DD7 /* ObjCustomerDashboardList3.swift */; };
+		25116BE129CC1A7200E78DD7 /* FG_MyLedgerClickViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25116BE029CC1A7200E78DD7 /* FG_MyLedgerClickViewVC.swift */; };
+		25116BE429CC1ADF00E78DD7 /* MyLedgerClickViewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25116BE329CC1ADF00E78DD7 /* MyLedgerClickViewTVC.swift */; };
+		25116BE829CC1CC100E78DD7 /* ObjCustomerDashboardList12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25116BE629CC1CC100E78DD7 /* ObjCustomerDashboardList12.swift */; };
+		25116BE929CC1CC100E78DD7 /* MyLedgerViewClickModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25116BE729CC1CC100E78DD7 /* MyLedgerViewClickModels.swift */; };
+		25116BEC29CC1DBA00E78DD7 /* MyLedgerClickVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25116BEB29CC1DBA00E78DD7 /* MyLedgerClickVM.swift */; };
 		2519D7B529A87CE1002BE97F /* QueryListingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2519D7B329A87CE0002BE97F /* QueryListingModels.swift */; };
 		2519D7B629A87CE1002BE97F /* ObjCustomerAllQueryJsonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2519D7B429A87CE1002BE97F /* ObjCustomerAllQueryJsonList.swift */; };
 		2519D7BE29A89FF6002BE97F /* PointBalenceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2519D7BC29A89FF6002BE97F /* PointBalenceModels.swift */; };
@@ -42,6 +49,7 @@
 		2565C96829B0B83D0020D93A /* LstPromotionListJsonApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2565C96229B0B83B0020D93A /* LstPromotionListJsonApi.swift */; };
 		2565C96929B0B83D0020D93A /* LstLoyaltyProgramReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2565C96329B0B83C0020D93A /* LstLoyaltyProgramReport.swift */; };
 		2565C96A29B0B83D0020D93A /* ObjCustomerDashboardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2565C96429B0B83D0020D93A /* ObjCustomerDashboardList.swift */; };
+		256F1B7729CC5D1B00F648BA /* DreamGiftModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256F1B7629CC5D1B00F648BA /* DreamGiftModels.swift */; };
 		2580EFF129A6414D0097A50D /* ObjHelpTopicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580EFEF29A6414D0097A50D /* ObjHelpTopicList.swift */; };
 		2580EFF229A6414D0097A50D /* HelpTopicModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580EFF029A6414D0097A50D /* HelpTopicModels.swift */; };
 		2580EFF529A6437B0097A50D /* FG_SubmitNewQueryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580EFF429A6437B0097A50D /* FG_SubmitNewQueryVM.swift */; };
@@ -54,10 +62,13 @@
 		2585AE1529AE380000E745C7 /* LstCustomerCartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2585AE1229AE37FE00E745C7 /* LstCustomerCartApi.swift */; };
 		2585AE1629AE380000E745C7 /* MyOrderDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2585AE1329AE37FF00E745C7 /* MyOrderDetailsModels.swift */; };
 		2585AE1729AE380000E745C7 /* LstOrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2585AE1429AE380000E745C7 /* LstOrderDetails.swift */; };
+		2586CA3929C856480067CD17 /* DreamGiftListingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2586CA3829C856480067CD17 /* DreamGiftListingVM.swift */; };
+		2586CA3B29C856C60067CD17 /* FG_DreamGiftTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2586CA3A29C856C60067CD17 /* FG_DreamGiftTVC.swift */; };
 		2588CEE629B5EFEB00330CE8 /* FG_MyBillingDetailsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588CEE529B5EFEB00330CE8 /* FG_MyBillingDetailsTVC.swift */; };
 		2588CEEB29B5F62600330CE8 /* PointsTrendModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588CEE929B5F62600330CE8 /* PointsTrendModels.swift */; };
 		2588CEEC29B5F62600330CE8 /* LstRetailerBonding3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588CEEA29B5F62600330CE8 /* LstRetailerBonding3.swift */; };
 		2588CEEF29B5F7E100330CE8 /* PointsTrendsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588CEEE29B5F7E100330CE8 /* PointsTrendsVM.swift */; };
+		25913E6729C8413100C60D55 /* FG_DreamGiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25913E6629C8413100C60D55 /* FG_DreamGiftVC.swift */; };
 		2592E70629B9995F005689CF /* CounterGapVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2592E70529B9995F005689CF /* CounterGapVM.swift */; };
 		2592E70A29B99C62005689CF /* CounterGapModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2592E70829B99C62005689CF /* CounterGapModels.swift */; };
 		2592E70B29B99C62005689CF /* LsrProductDetails11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2592E70929B99C62005689CF /* LsrProductDetails11.swift */; };
@@ -139,6 +150,8 @@
 		25E8F66729B5D1A20033F405 /* BillingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E8F66529B5D1A20033F405 /* BillingModels.swift */; };
 		25F1302529AF49CF00D2C751 /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F1302329AF49CF00D2C751 /* SideMenuModel.swift */; };
 		25F1302629AF49CF00D2C751 /* SideMenuModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F1302429AF49CF00D2C751 /* SideMenuModelClass.swift */; };
+		25FB407A29C9916300211D59 /* ObjCatalogueList2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FB407829C9916300211D59 /* ObjCatalogueList2.swift */; };
+		25FB407B29C9916300211D59 /* PlannerListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FB407929C9916300211D59 /* PlannerListModels.swift */; };
 		5B101C665BBC310F6DEDB8CA /* libPods-Fleet_Guard(Samriddhi).a in Frameworks */ = {isa = PBXBuildFile; fileRef = F94DE145C091886E7B80A18B /* libPods-Fleet_Guard(Samriddhi).a */; };
 		84068D8E2976646100D4360F /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84068D8C2976646100D4360F /* ContainerViewController.swift */; };
 		84068D8F2976646100D4360F /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84068D8D2976646100D4360F /* EmptySegue.swift */; };
@@ -323,6 +336,13 @@
 /* Begin PBXFileReference section */
 		250FFCAA29B7128B003FB8A0 /* LstTransactionApprovalDetails1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstTransactionApprovalDetails1.swift; sourceTree = "<group>"; };
 		250FFCAB29B7128B003FB8A0 /* BillingDetialsDataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingDetialsDataModels.swift; sourceTree = "<group>"; };
+		25116BDC29CC0B3600E78DD7 /* MyLedgerModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLedgerModels.swift; sourceTree = "<group>"; };
+		25116BDD29CC0B3600E78DD7 /* ObjCustomerDashboardList3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCustomerDashboardList3.swift; sourceTree = "<group>"; };
+		25116BE029CC1A7200E78DD7 /* FG_MyLedgerClickViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FG_MyLedgerClickViewVC.swift; path = "Fleet_Guard(Samriddhi)/View/MyLedgerClcikViewVC/FG_MyLedgerClickViewVC.swift"; sourceTree = SOURCE_ROOT; };
+		25116BE329CC1ADF00E78DD7 /* MyLedgerClickViewTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLedgerClickViewTVC.swift; sourceTree = "<group>"; };
+		25116BE629CC1CC100E78DD7 /* ObjCustomerDashboardList12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCustomerDashboardList12.swift; sourceTree = "<group>"; };
+		25116BE729CC1CC100E78DD7 /* MyLedgerViewClickModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLedgerViewClickModels.swift; sourceTree = "<group>"; };
+		25116BEB29CC1DBA00E78DD7 /* MyLedgerClickVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLedgerClickVM.swift; sourceTree = "<group>"; };
 		2519D7B329A87CE0002BE97F /* QueryListingModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryListingModels.swift; sourceTree = "<group>"; };
 		2519D7B429A87CE1002BE97F /* ObjCustomerAllQueryJsonList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCustomerAllQueryJsonList.swift; sourceTree = "<group>"; };
 		2519D7BC29A89FF6002BE97F /* PointBalenceModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointBalenceModels.swift; sourceTree = "<group>"; };
@@ -356,6 +376,7 @@
 		2565C96229B0B83B0020D93A /* LstPromotionListJsonApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstPromotionListJsonApi.swift; sourceTree = "<group>"; };
 		2565C96329B0B83C0020D93A /* LstLoyaltyProgramReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstLoyaltyProgramReport.swift; sourceTree = "<group>"; };
 		2565C96429B0B83D0020D93A /* ObjCustomerDashboardList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCustomerDashboardList.swift; sourceTree = "<group>"; };
+		256F1B7629CC5D1B00F648BA /* DreamGiftModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DreamGiftModels.swift; sourceTree = "<group>"; };
 		2580EFEF29A6414D0097A50D /* ObjHelpTopicList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjHelpTopicList.swift; sourceTree = "<group>"; };
 		2580EFF029A6414D0097A50D /* HelpTopicModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpTopicModels.swift; sourceTree = "<group>"; };
 		2580EFF429A6437B0097A50D /* FG_SubmitNewQueryVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_SubmitNewQueryVM.swift; sourceTree = "<group>"; };
@@ -368,10 +389,13 @@
 		2585AE1229AE37FE00E745C7 /* LstCustomerCartApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstCustomerCartApi.swift; sourceTree = "<group>"; };
 		2585AE1329AE37FF00E745C7 /* MyOrderDetailsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderDetailsModels.swift; sourceTree = "<group>"; };
 		2585AE1429AE380000E745C7 /* LstOrderDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstOrderDetails.swift; sourceTree = "<group>"; };
+		2586CA3829C856480067CD17 /* DreamGiftListingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamGiftListingVM.swift; sourceTree = "<group>"; };
+		2586CA3A29C856C60067CD17 /* FG_DreamGiftTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_DreamGiftTVC.swift; sourceTree = "<group>"; };
 		2588CEE529B5EFEB00330CE8 /* FG_MyBillingDetailsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyBillingDetailsTVC.swift; sourceTree = "<group>"; };
 		2588CEE929B5F62600330CE8 /* PointsTrendModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsTrendModels.swift; sourceTree = "<group>"; };
 		2588CEEA29B5F62600330CE8 /* LstRetailerBonding3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstRetailerBonding3.swift; sourceTree = "<group>"; };
 		2588CEEE29B5F7E100330CE8 /* PointsTrendsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsTrendsVM.swift; sourceTree = "<group>"; };
+		25913E6629C8413100C60D55 /* FG_DreamGiftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_DreamGiftVC.swift; sourceTree = "<group>"; };
 		2592E70529B9995F005689CF /* CounterGapVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterGapVM.swift; sourceTree = "<group>"; };
 		2592E70829B99C62005689CF /* CounterGapModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterGapModels.swift; sourceTree = "<group>"; };
 		2592E70929B99C62005689CF /* LsrProductDetails11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LsrProductDetails11.swift; sourceTree = "<group>"; };
@@ -458,6 +482,8 @@
 		25E8F66529B5D1A20033F405 /* BillingModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingModels.swift; sourceTree = "<group>"; };
 		25F1302329AF49CF00D2C751 /* SideMenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
 		25F1302429AF49CF00D2C751 /* SideMenuModelClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuModelClass.swift; sourceTree = "<group>"; };
+		25FB407829C9916300211D59 /* ObjCatalogueList2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCatalogueList2.swift; sourceTree = "<group>"; };
+		25FB407929C9916300211D59 /* PlannerListModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerListModels.swift; sourceTree = "<group>"; };
 		84068D8C2976646100D4360F /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		84068D8D2976646100D4360F /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
 		84068D902976646F00D4360F /* PersistanceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
@@ -662,6 +688,41 @@
 				250FFCAA29B7128B003FB8A0 /* LstTransactionApprovalDetails1.swift */,
 			);
 			path = BillingDetailsModels;
+			sourceTree = "<group>";
+		};
+		25116BDB29CC0B1B00E78DD7 /* MyLedgerModels */ = {
+			isa = PBXGroup;
+			children = (
+				25116BDC29CC0B3600E78DD7 /* MyLedgerModels.swift */,
+				25116BDD29CC0B3600E78DD7 /* ObjCustomerDashboardList3.swift */,
+			);
+			path = MyLedgerModels;
+			sourceTree = "<group>";
+		};
+		25116BE229CC1A8C00E78DD7 /* MyLedgerClcikViewVC */ = {
+			isa = PBXGroup;
+			children = (
+				25116BE029CC1A7200E78DD7 /* FG_MyLedgerClickViewVC.swift */,
+				25116BE329CC1ADF00E78DD7 /* MyLedgerClickViewTVC.swift */,
+			);
+			path = MyLedgerClcikViewVC;
+			sourceTree = "<group>";
+		};
+		25116BE529CC1C8F00E78DD7 /* MyLedgerClickViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				25116BE729CC1CC100E78DD7 /* MyLedgerViewClickModels.swift */,
+				25116BE629CC1CC100E78DD7 /* ObjCustomerDashboardList12.swift */,
+			);
+			path = MyLedgerClickViewModels;
+			sourceTree = "<group>";
+		};
+		25116BEA29CC1D8400E78DD7 /* MyLedgerClickViewVM */ = {
+			isa = PBXGroup;
+			children = (
+				25116BEB29CC1DBA00E78DD7 /* MyLedgerClickVM.swift */,
+			);
+			path = MyLedgerClickViewVM;
 			sourceTree = "<group>";
 		};
 		2519D7B729A88EED002BE97F /* PointBalenceModels */ = {
@@ -875,6 +936,14 @@
 			path = FilterProductCatVM;
 			sourceTree = "<group>";
 		};
+		256F1B7529CC5D0300F648BA /* DreamGiftModels */ = {
+			isa = PBXGroup;
+			children = (
+				256F1B7629CC5D1B00F648BA /* DreamGiftModels.swift */,
+			);
+			path = DreamGiftModels;
+			sourceTree = "<group>";
+		};
 		2580EFEE29A6414D0097A50D /* HelpTopic */ = {
 			isa = PBXGroup;
 			children = (
@@ -942,6 +1011,14 @@
 			path = BannerImageModels;
 			sourceTree = "<group>";
 		};
+		2586CA3629C856230067CD17 /* DreamGiftVM */ = {
+			isa = PBXGroup;
+			children = (
+				2586CA3829C856480067CD17 /* DreamGiftListingVM.swift */,
+			);
+			path = DreamGiftVM;
+			sourceTree = "<group>";
+		};
 		2588CEE729B5F36900330CE8 /* MyBillingDetialsVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -967,11 +1044,13 @@
 			path = PointsTrendsVM;
 			sourceTree = "<group>";
 		};
-		25911ED729A32CCA00A259F0 /* ViewOrderListing */ = {
+		25913E6529C840E300C60D55 /* DreamGift */ = {
 			isa = PBXGroup;
 			children = (
+				25913E6629C8413100C60D55 /* FG_DreamGiftVC.swift */,
+				2586CA3A29C856C60067CD17 /* FG_DreamGiftTVC.swift */,
 			);
-			path = ViewOrderListing;
+			path = DreamGift;
 			sourceTree = "<group>";
 		};
 		2592E70429B99910005689CF /* CounterGrpVM */ = {
@@ -1309,6 +1388,15 @@
 			path = ProfileImageModels;
 			sourceTree = "<group>";
 		};
+		25FB407729C9916300211D59 /* PlannerLists */ = {
+			isa = PBXGroup;
+			children = (
+				25FB407829C9916300211D59 /* ObjCatalogueList2.swift */,
+				25FB407929C9916300211D59 /* PlannerListModels.swift */,
+			);
+			path = PlannerLists;
+			sourceTree = "<group>";
+		};
 		84068D8229765D9800D4360F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1361,6 +1449,10 @@
 		84068D8729765DF600D4360F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				256F1B7529CC5D0300F648BA /* DreamGiftModels */,
+				25116BE529CC1C8F00E78DD7 /* MyLedgerClickViewModels */,
+				25116BDB29CC0B1B00E78DD7 /* MyLedgerModels */,
+				25FB407729C9916300211D59 /* PlannerLists */,
 				2592E70C29B99CB3005689CF /* MarketGapModels */,
 				2592E70729B99C48005689CF /* CountergapModels */,
 				2551C3DA29B75E5D00EED0FB /* BonusTrendsModels */,
@@ -1423,6 +1515,7 @@
 		84068D8829765E0200D4360F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				25913E6529C840E300C60D55 /* DreamGift */,
 				842F0A5229BC96860014602F /* TermsandCondition */,
 				25D58BB729ADCC4E00DB135D /* MilestoneRedemption */,
 				25C865CB29A7237F00C1801E /* Chat */,
@@ -1444,9 +1537,9 @@
 				84597BAC297909F600F3A7BC /* Profile */,
 				84597BAE29790A5700F3A7BC /* MyMilestoneRedemption */,
 				84597BB029790A8200F3A7BC /* RPLStatement */,
+				25116BE229CC1A8C00E78DD7 /* MyLedgerClcikViewVC */,
 				84597BB129790A9400F3A7BC /* MyOrders */,
 				2565BBC329A4CC710015AFD4 /* MyOrdersDetails */,
-				25911ED729A32CCA00A259F0 /* ViewOrderListing */,
 				84597BB229790A9F00F3A7BC /* MyBillings */,
 				25C865FA29A72C4300C1801E /* BillingDetails */,
 				84597BB329790AA700F3A7BC /* LodgeQuery */,
@@ -1461,6 +1554,7 @@
 		84068D8929765E0A00D4360F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2586CA3629C856230067CD17 /* DreamGiftVM */,
 				2592E71129B99E0C005689CF /* MarketGapVM */,
 				2592E70429B99910005689CF /* CounterGrpVM */,
 				2551C3DF29B75F0900EED0FB /* BonusTrendsVM */,
@@ -1471,6 +1565,7 @@
 				25D58BBA29ADCD6500DB135D /* MilestoneRedemptionVM */,
 				2547607929AA1A5000B5186E /* CatalogueDetailsVM */,
 				25D88FCB29A9E481002815A7 /* FilterArrayModels */,
+				25116BEA29CC1D8400E78DD7 /* MyLedgerClickViewVM */,
 				25C465DC29A8E5B200CCA30C /* RPLStatmentViewModels */,
 				25C465D929A8D72000CCA30C /* RLPStatemnetModels */,
 				2593084029A77C79009A2FBA /* MyRedemptionListModels */,
@@ -2561,6 +2656,7 @@
 				2585AE1129AE1C8700E745C7 /* DashboardBannerImageModels.swift in Sources */,
 				84AF145629BC7D440033D268 /* UiViewControllerExtenssion.swift in Sources */,
 				84E0D3892977B04A00BD278B /* FG_RegistrationVC.swift in Sources */,
+				25116BE129CC1A7200E78DD7 /* FG_MyLedgerClickViewVC.swift in Sources */,
 				254D8AF6299FB36100CBBBDE /* MyOrderModels.swift in Sources */,
 				84597BC429790BF400F3A7BC /* FG_MyBillingsVC.swift in Sources */,
 				84140DE3298D31B20090DD44 /* RedemptionCatalogueListModel.swift in Sources */,
@@ -2588,6 +2684,7 @@
 				25C465E229A8EA6200CCA30C /* LstRetailerBonding2.swift in Sources */,
 				25D88FCD29A9E4B1002815A7 /* FilterRedemptionCatVM.swift in Sources */,
 				25C865F229A7256100C1801E /* ChatDetailsModels.swift in Sources */,
+				25116BDE29CC0B3600E78DD7 /* MyLedgerModels.swift in Sources */,
 				25C865E429A7237F00C1801E /* otherInfoTableViewCell.swift in Sources */,
 				2565BBC729A4CCD60015AFD4 /* FG_MyOrdersDeatilsTVC.swift in Sources */,
 				84140DDD298D22770090DD44 /* LstAttributesDetails.swift in Sources */,
@@ -2621,6 +2718,7 @@
 				8488E40D298A25BF0032A2D7 /* URLRequest.swift in Sources */,
 				84D10F71298E787B00DE283E /* StateListModel.swift in Sources */,
 				25A760BE29ACE60400FF5C0E /* LstCustomerJson1.swift in Sources */,
+				25116BEC29CC1DBA00E78DD7 /* MyLedgerClickVM.swift in Sources */,
 				2565C96A29B0B83D0020D93A /* ObjCustomerDashboardList.swift in Sources */,
 				84A9A320297EB7900063A4FC /* FG_CatalogueFilterView.swift in Sources */,
 				2588CEEB29B5F62600330CE8 /* PointsTrendModels.swift in Sources */,
@@ -2646,6 +2744,7 @@
 				84D10F70298E787B00DE283E /* StateList.swift in Sources */,
 				2585AE1029AE1C8700E745C7 /* ObjImageGalleryList.swift in Sources */,
 				25C865F329A7256100C1801E /* ObjQueryResponseJsonList.swift in Sources */,
+				2586CA3929C856480067CD17 /* DreamGiftListingVM.swift in Sources */,
 				84597BCC29790CD900F3A7BC /* FG_TermsandconditionsVC.swift in Sources */,
 				848B2BD42977D52900A58C73 /* FG_MyEarningTVC.swift in Sources */,
 				849D34EF298A65B0005A41FC /* FG_LoginOTPVM.swift in Sources */,
@@ -2676,6 +2775,7 @@
 				84C1E3FE29758A6D00D188C5 /* SceneDelegate.swift in Sources */,
 				25E8F66029B5C3B90033F405 /* FG_RangeTrendGraphVC.swift in Sources */,
 				2585AE1529AE380000E745C7 /* LstCustomerCartApi.swift in Sources */,
+				25913E6729C8413100C60D55 /* FG_DreamGiftVC.swift in Sources */,
 				25E8F66729B5D1A20033F405 /* BillingModels.swift in Sources */,
 				84D10F75298E78E600DE283E /* CityListModel.swift in Sources */,
 				25D88FDA29A9EE69002815A7 /* GetCatalogueCategoryDetailsResult.swift in Sources */,
@@ -2693,6 +2793,7 @@
 				84FF28E02978224300A86B41 /* FG_SideMenuVC.swift in Sources */,
 				84597BC029790BC900F3A7BC /* RPLStatementVC.swift in Sources */,
 				84E5DAA5298E193C00B20B16 /* CatalogueSaveCartDetailListResponse.swift in Sources */,
+				25116BDF29CC0B3600E78DD7 /* ObjCustomerDashboardList3.swift in Sources */,
 				84068DAA2976656600D4360F /* Reach.swift in Sources */,
 				25C865E929A7237F00C1801E /* otherInfoImageTableViewCell.swift in Sources */,
 				849D3513298A93E2005A41FC /* FG_ProductListVM.swift in Sources */,
@@ -2702,7 +2803,9 @@
 				25C465D729A8D6C900CCA30C /* RlpStatementModels.swift in Sources */,
 				2519D7BF29A89FF6002BE97F /* ObjCustomerDashboardList11.swift in Sources */,
 				84BDEF8929890D4B007EED1E /* FG_CreatenewqueryVC.swift in Sources */,
+				25FB407B29C9916300211D59 /* PlannerListModels.swift in Sources */,
 				842326CF2980083B00DF7325 /* FG_ProductCataloguePopUp.swift in Sources */,
+				25116BE829CC1CC100E78DD7 /* ObjCustomerDashboardList12.swift in Sources */,
 				25C465BA29A8AE7300CCA30C /* MyEarningModels.swift in Sources */,
 				848B4B7B298E698500315D77 /* FG_DOBVC.swift in Sources */,
 				8488E40F298A25BF0032A2D7 /* URLExtension.swift in Sources */,
@@ -2720,6 +2823,7 @@
 				25C865FC29A72C8300C1801E /* FG_MyBillingDetailsVC.swift in Sources */,
 				84662005298145CA00D28026 /* FG_MyOrderTVC.swift in Sources */,
 				84597BC229790BDF00F3A7BC /* FG_MyOrdersVC.swift in Sources */,
+				25116BE429CC1ADF00E78DD7 /* MyLedgerClickViewTVC.swift in Sources */,
 				84FBC3EB2979644D0061ABAE /* FG_MyMilestoneRedemptionTVC.swift in Sources */,
 				254D8AF1299FA33C00CBBBDE /* MyBillingVM.swift in Sources */,
 				84068DA02976649D00D4360F /* GrandientExtension.swift in Sources */,
@@ -2750,6 +2854,7 @@
 				25C865F929A725BC00C1801E /* NewChatSubmission.swift in Sources */,
 				250FFCAD29B7128B003FB8A0 /* BillingDetialsDataModels.swift in Sources */,
 				2565BBD929A4F7B90015AFD4 /* LsrProductDetails1.swift in Sources */,
+				2586CA3B29C856C60067CD17 /* FG_DreamGiftTVC.swift in Sources */,
 				84FBC3F029796DF30061ABAE /* FG_CounterGapTVC.swift in Sources */,
 				25D88FD729A9ECE7002815A7 /* RedemptionCategoryModels.swift in Sources */,
 				84D10F69298E73E200DE283E /* FG_DropDownTVC.swift in Sources */,
@@ -2766,6 +2871,7 @@
 				254D8AE6299F7E7400CBBBDE /* MileStoneRedemptionVM.swift in Sources */,
 				254D8AE9299F9A1C00CBBBDE /* MyEarningsVM.swift in Sources */,
 				84068DA62976653D00D4360F /* MyCommonFunctionalUtilities.swift in Sources */,
+				25FB407A29C9916300211D59 /* ObjCatalogueList2.swift in Sources */,
 				2592E71329B99E58005689CF /* MarketGapVM.swift in Sources */,
 				84597BBE29790BB500F3A7BC /* FG_MyPromotionsVC.swift in Sources */,
 				25D58BC429ADD59D00DB135D /* MileStonesRedemptionListModels.swift in Sources */,
@@ -2795,10 +2901,12 @@
 				2585AE0929ADFEB700E745C7 /* RegistrationModels.swift in Sources */,
 				84C98798298B7349007F00B2 /* AddToCartModel.swift in Sources */,
 				849E07592979790C00F033CD /* FG_MyPromotionsTVC.swift in Sources */,
+				25116BE929CC1CC100E78DD7 /* MyLedgerViewClickModels.swift in Sources */,
 				84FD0A85297ECA0800E01B00 /* FG_RedemptionCatalogueDetailsVC.swift in Sources */,
 				84BE3175298E384A0067C2C4 /* RedemptionCatalogueCartUpdateModel.swift in Sources */,
 				842326C22980076F00DF7325 /* FG_ProductCatalogueFilterVC.swift in Sources */,
 				84068D8F2976646100D4360F /* EmptySegue.swift in Sources */,
+				256F1B7729CC5D1B00F648BA /* DreamGiftModels.swift in Sources */,
 				25C465C629A8C6E700CCA30C /* UserStatusModels.swift in Sources */,
 				84C987AC298B95E5007F00B2 /* FG_ProductMyCartVM.swift in Sources */,
 			);
@@ -2993,11 +3101,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fleet_Guard(Samriddhi)/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "FleetGuard Need to Access the camera to upload profile Image and Customer support";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "FleetGuard Need to Access the Photo Library to upload profile Image  and Customer support";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -3009,9 +3121,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Humsufer";
 				PRODUCT_NAME = FleetGuard_Humsafar;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = fleet_GuardHumsufer_Adhoc;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3025,11 +3138,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fleet_Guard(Samriddhi)/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "FleetGuard Need to Access the camera to upload profile Image and Customer support";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "FleetGuard Need to Access the Photo Library to upload profile Image  and Customer support";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -3041,9 +3158,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Humsufer";
 				PRODUCT_NAME = FleetGuard_Humsafar;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = fleet_GuardHumsufer_Adhoc;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

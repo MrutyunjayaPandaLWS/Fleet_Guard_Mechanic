@@ -59,7 +59,7 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
         self.productNameLbl.text = self.productName
         self.partNoLbl.text = self.partNo
         self.shortDescLbl.text = "\(self.productDesc)"
-        self.dapValue.text = self.dap
+        //self.dapValue.text = self.dap
         self.mrpValue.text = self.mrp
         self.productQuantityView.isHidden = true
         self.addToCartView.isHidden = false

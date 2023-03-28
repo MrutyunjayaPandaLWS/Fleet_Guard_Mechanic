@@ -31,10 +31,12 @@ class MyRedemptionListingVM {
                             self.VC?.myRedemptionTableView.isHidden = false
                             self.VC?.myRedemptionTableView.reloadData()
                             self.VC?.filterOPBTN.isHidden = false
+                            self.VC?.noDataLbl.isHidden = true
                             
                         }else{
                             self.VC?.myRedemptionTableView.isHidden = true
                             self.VC?.filterOPBTN.isHidden = true
+                            self.VC?.noDataLbl.isHidden = false
                         }
                     }
                 } else {
