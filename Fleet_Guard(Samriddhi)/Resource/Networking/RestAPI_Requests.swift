@@ -902,5 +902,17 @@ class RestAPI_Requests {
             }
         }
     }
-    
+    // REMOVE PRODUCT IN PLANNER LIST
+    func removePlannedProduct(parameters: JSON, completion: @escaping (RemovePlannedProduct?, Error?) -> ()) -> URLSessionDataTask? {
+        return client.load(path: removePlannerURL, method: .post, params: parameters) { data, error in
+            do{
+                if data != nil{
+                    let result1 =  try JSONDecoder().decode(RemovePlannedProduct?.self, from: data as! Data)
+                    completion(result1, nil)
+                }
+            }catch{
+                completion(nil, error)
+            }
+        }
+    }
 }

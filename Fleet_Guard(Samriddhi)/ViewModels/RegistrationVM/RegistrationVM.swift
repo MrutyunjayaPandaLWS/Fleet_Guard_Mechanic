@@ -77,8 +77,8 @@ class RegistrationVM: popUpDelegate {
     
     func verifyUserExistency(parameters: JSON!){
         self.VC?.startLoading()
-        self.VC?.loaderView.isHidden = false
-        self.VC?.lottieAnimation(animationView: self.VC!.loaderAnimation)
+       // self.VC?.loaderView.isHidden = false
+        //self.VC?.lottieAnimation(animationView: self.VC!.loaderAnimation)
        
         let url = URL(string: checkUserExistencyURL)!
         let session = URLSession.shared
@@ -108,26 +108,27 @@ class RegistrationVM: popUpDelegate {
                 if str ?? "" != "1"{
                         DispatchQueue.main.async{
                             self.VC?.stopLoading()
-                            self.VC!.loaderView.isHidden = true
+                            //self.VC!.loaderView.isHidden = true
                         }
                     }else{
                         DispatchQueue.main.async{
                             self.VC?.stopLoading()
-                            self.VC!.loaderView.isHidden = true
-                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                            vc!.delegate = self
-                            vc!.titleInfo = ""
-                            vc!.descriptionInfo = "Mobile number already registered !"
-                            vc!.modalPresentationStyle = .overCurrentContext
-                            vc!.modalTransitionStyle = .crossDissolve
-                            self.VC?.present(vc!, animated: true, completion: nil)
+                            //self.VC!.loaderView.isHidden = true
+//                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                            vc!.delegate = self
+//                            vc!.titleInfo = ""
+//                            vc!.descriptionInfo = "Mobile number already registered !"
+//                            vc!.modalPresentationStyle = .overCurrentContext
+//                            vc!.modalTransitionStyle = .crossDissolve
+//                            self.VC?.present(vc!, animated: true, completion: nil)
+                            self.VC?.view.makeToast("Mobile number already registered !", duration: 3.0, position: .bottom)
                             self.VC?.mobileTF.text = ""
                         }
                     }
                      }catch{
                          DispatchQueue.main.async {
                              self.VC?.stopLoading()
-                             self.VC!.loaderView.isHidden = true
+                             //self.VC!.loaderView.isHidden = true
                          }
                          print("parsing Error")
                 }

@@ -37,11 +37,11 @@ class HR_TermsandCondtionVC: BaseViewController{
           let request = NSURLRequest(url: filePath)
             webview1.load(request as URLRequest)
         }
-        self.loaderView.isHidden = false
-        self.lottieAnimation(animationView: self.loaderAnimatedView)
+//        self.loaderView.isHidden = false
+//        self.lottieAnimation(animationView: self.loaderAnimatedView)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.loaderView.isHidden = true
+          //  self.loaderView.isHidden = true
         }
       
       }

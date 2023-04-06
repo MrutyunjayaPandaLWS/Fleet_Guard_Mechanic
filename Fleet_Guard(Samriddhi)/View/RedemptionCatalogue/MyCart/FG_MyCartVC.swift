@@ -52,12 +52,14 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Insufficient point balance"
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Insufficient point balance"
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                
+                self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
             }
             
         }
@@ -137,12 +139,14 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
                 self.productQuantityUpdate(customerCartId: self.customerCartId, quantity: "\(self.value)")
             }else{
                 DispatchQueue.main.async{
-                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                    vc!.delegate = self
-                    vc!.descriptionInfo = "Insufficient point balance"
-                    vc!.modalPresentationStyle = .overFullScreen
-                    vc!.modalTransitionStyle = .crossDissolve
-                    self.present(vc!, animated: true, completion: nil)
+//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                    vc!.delegate = self
+//                    vc!.descriptionInfo = "Insufficient point balance"
+//                    vc!.modalPresentationStyle = .overFullScreen
+//                    vc!.modalTransitionStyle = .crossDissolve
+//                    self.present(vc!, animated: true, completion: nil)
+                    self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
+
                 }
             }
         }else{
@@ -155,12 +159,13 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
                 self.productQuantityUpdate(customerCartId: self.customerCartId, quantity: "\(self.value)")
             }else{
                 DispatchQueue.main.async{
-                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                    vc!.delegate = self
-                    vc!.descriptionInfo = "Insufficient point balance"
-                    vc!.modalPresentationStyle = .overFullScreen
-                    vc!.modalTransitionStyle = .crossDissolve
-                    self.present(vc!, animated: true, completion: nil)
+//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                    vc!.delegate = self
+//                    vc!.descriptionInfo = "Insufficient point balance"
+//                    vc!.modalPresentationStyle = .overFullScreen
+//                    vc!.modalTransitionStyle = .crossDissolve
+//                    self.present(vc!, animated: true, completion: nil)
+                    self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
                 }
             }
         }

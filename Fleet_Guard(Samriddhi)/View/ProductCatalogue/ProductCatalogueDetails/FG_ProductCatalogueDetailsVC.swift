@@ -101,12 +101,15 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
                 self.VM.addToCartApi(parameter: parameter)
             }else{
                 DispatchQueue.main.async{
-                   let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                    vc!.delegate = self
-                    vc!.descriptionInfo = "Insufficient point balance"
-                    vc!.modalPresentationStyle = .overFullScreen
-                    vc!.modalTransitionStyle = .crossDissolve
-                    self.present(vc!, animated: true, completion: nil)
+//                   let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                    vc!.delegate = self
+//                    vc!.descriptionInfo = "Insufficient point balance"
+//                    vc!.modalPresentationStyle = .overFullScreen
+//                    vc!.modalTransitionStyle = .crossDissolve
+//                    self.present(vc!, animated: true, completion: nil)
+                    
+                    
+                    self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
                 }
             }
         }

@@ -35,24 +35,24 @@ class FG_DashBoardVC: BaseViewController {
     @IBOutlet var emptyImageView: UIImageView!
     //@IBOutlet weak var filtrationLbl: UILabel!
     @IBOutlet var promotionEmptyImage: UIImageView!
-    
-    //@IBOutlet weak var orderNowBtn: UIButton!
-    
-    //@IBOutlet var addYourDreamGiftView: UIView!
-    
     @IBOutlet var dreamGiftProductView: UIView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
-    
     @IBOutlet var dreamGiftDetailsOutBtn: UIButton!
     @IBOutlet var productViewHeight: NSLayoutConstraint!
-    
     @IBOutlet var dreamGiftImageView: UIImageView!
-    
     @IBOutlet var addYourDreamLbl: UILabel!
-    //@IBOutlet var dreamGiftDetailsView: NSLayoutConstraint!
-    
-    
     @IBOutlet var heightOfTheView: NSLayoutConstraint!
+    
+    
+    
+    @IBOutlet var plannerImageView: UIImageView!
+    @IBOutlet var plannerCategoryLbl: UILabel!
+    @IBOutlet var plannerProductLbl: UILabel!
+    @IBOutlet var plannerDetailsBTN: GradientButton!
+    @IBOutlet var plannerPointsAvailableHeadingLbl: UILabel!
+    @IBOutlet var plannerPointsLbl: UILabel!
+    @IBOutlet var plannerPointsRequiredLbl: UILabel!
+    @IBOutlet var plannerPointsReqPointsLbl: UILabel!
     
     
     var categoryItemArray = ["Filters", "Coolant & Chemicals", "Center Bearing", "Break Liner"]
@@ -67,7 +67,6 @@ class FG_DashBoardVC: BaseViewController {
     var sourceArray = [AlamofireSource]()
     var offersandPromotionsArray = [LstPromotionJsonList1]()
     var sourceArray1 = [AlamofireSource]()
-    
     var VM = FG_DashboardVM()
     
     override func viewDidLoad() {
@@ -107,7 +106,7 @@ class FG_DashBoardVC: BaseViewController {
         //self.productViewHeight.constant = 200
         self.tokendata()
         self.pointsAPI()
-        
+        self.plannerListing()
     }
     
     override func viewDidLayoutSubviews() {
@@ -169,10 +168,10 @@ class FG_DashBoardVC: BaseViewController {
     }
 
     
-    @IBAction func orderNowBtn(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueListVC") as! FG_ProductCatalogueListVC
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+//    @IBAction func orderNowBtn(_ sender: Any) {
+//        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueListVC") as! FG_ProductCatalogueListVC
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
     
     @IBAction func dreamGiftProductDetailsBTN(_ sender: Any) {
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DreamGiftVC") as! FG_DreamGiftVC
@@ -181,13 +180,18 @@ class FG_DashBoardVC: BaseViewController {
     }
     
     @IBAction func dreamGiftDetailsViewActBTN(_ sender: Any) {
-        self.dreamGiftDetailsOutBtn.isHidden = true
-        self.dreamGiftImageView.isHidden = true
-        self.addYourDreamLbl.isHidden = true
-        self.productViewHeight.constant = 170
-        self.heightOfTheView.constant = 627
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionCatalogueVC") as! FG_RedemptionCatalogueVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if VM.myPlannerListArray.count > 0 {
+            self.dreamGiftDetailsOutBtn.isHidden = true
+            self.dreamGiftImageView.isHidden = true
+            self.addYourDreamLbl.isHidden = true
+            self.productViewHeight.constant = 170
+            self.heightOfTheView.constant = 627
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DreamGiftVC") as! FG_DreamGiftVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DreamGiftVC") as! FG_DreamGiftVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     //Product Catalogue ActBTN Down
     @IBAction func redemptionCatalogueBtn(_ sender: Any) {
@@ -242,6 +246,17 @@ class FG_DashBoardVC: BaseViewController {
         self.VM.pointBalenceAPI(parameter: parameters)
         
     }
+    
+    func plannerListing(){
+        let parameters = [
+            "ActionType": "6",
+            "Points": "\(VM.totalPointBalence)",
+            "ActorId": "\(userId)"
+        ] as [String : Any]
+        print(parameters)
+        self.VM.dreamGiftAPI(parameter: parameters)
+    }
+    
     @objc func didTap() {
 //        if bannerImagesArray.count > 0 {
 ////            bannerView.presentFullScreenController(from: self)

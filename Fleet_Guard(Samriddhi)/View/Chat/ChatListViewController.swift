@@ -53,7 +53,7 @@ class ChatListViewController: BaseViewController,UITextFieldDelegate,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
-        self.loaderView.isHidden = true
+        //self.loaderView.isHidden = true
         self.labelView.isHidden = true
         chatTableView.register(UINib(nibName: "senderInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "senderInfoTableViewCell")
         chatTableView.register(UINib(nibName: "otherInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "otherInfoTableViewCell")
@@ -72,8 +72,8 @@ class ChatListViewController: BaseViewController,UITextFieldDelegate,UITableView
         chatTableView?.dataSource = self
         print(CustomerTicketIDchatvc)
         
-        self.loaderView.isHidden = false
-        self.playAnimation()
+//        self.loaderView.isHidden = false
+//        self.playAnimation()
         DispatchQueue.main.asyncAfter(deadline: .now()+0.9, execute: {
             self.chatListingAPI()
         })
@@ -120,7 +120,7 @@ class ChatListViewController: BaseViewController,UITextFieldDelegate,UITableView
                     self.chatTableView?.reloadData()
                     self.scrollToBottom()
                 }
-                self.loaderView.isHidden = true
+               // self.loaderView.isHidden = true
                 self.stopLoading()
             }
           
@@ -128,7 +128,7 @@ class ChatListViewController: BaseViewController,UITextFieldDelegate,UITableView
         }
     }
     @objc func methodOfReceivedNotification1012(notification: Notification) {
-        self.loaderView.isHidden = true
+        //self.loaderView.isHidden = true
         stopLoading()
     }
     
@@ -308,18 +308,19 @@ class ChatListViewController: BaseViewController,UITextFieldDelegate,UITableView
     @IBAction func sendbutton(_ sender: Any) {
         if commenttextfield.text == ""{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.titleInfo = ""
-                vc!.descriptionInfo = "Please enter something..."
-                vc!.modalPresentationStyle = .overCurrentContext
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.titleInfo = ""
+//                vc!.descriptionInfo = "Please enter something..."
+//                vc!.modalPresentationStyle = .overCurrentContext
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Please enter something...", duration: 3.0, position: .bottom)
             }
         }else{
             DispatchQueue.main.async {
               self.startLoading()
-                    self.loaderView.isHidden = false
+                   // self.loaderView.isHidden = false
                     self.playAnimation()
             }
             
@@ -350,7 +351,7 @@ class ChatListViewController: BaseViewController,UITextFieldDelegate,UITableView
         print(parameters)
         self.VM.newChatSubmission(parameters: parameters) { response in
             DispatchQueue.main.async {
-                self.loaderView.isHidden = true
+               // self.loaderView.isHidden = true
                 self.stopLoading()
                 print(response?.returnMessage,"returnMessage")
                 if response?.returnMessage ?? "" == "1~Message posted successfully"{
@@ -511,7 +512,7 @@ extension ChatListViewController{
             self.dismiss(animated: true, completion: nil)
             DispatchQueue.main.async {
               self.startLoading()
-                    self.loaderView.isHidden = false
+                    //self.loaderView.isHidden = false
                     self.playAnimation()
             }
             let parameterJSON = [
@@ -528,7 +529,7 @@ extension ChatListViewController{
             print(parameterJSON)
             self.VM.newChatSubmission(parameters: parameterJSON) { response in
                 DispatchQueue.main.async {
-                    self.loaderView.isHidden = true
+                    //self.loaderView.isHidden = true
                     self.stopLoading()
                     if response?.returnMessage ?? "" == "1~Message posted successfully"{
                         //self.navigationController?.popViewController(animated: true)

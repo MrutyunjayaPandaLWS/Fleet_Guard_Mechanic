@@ -11,20 +11,34 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     func sendProductFilter(_ vc: FG_ProductCatalogueFilterVC) {
         self.VM.productsArray.removeAll()
         self.VM.productListArray.removeAll()
-        self.categoryId = 0
-        self.categoryId1 = 0
-        self.categoryId2 = 0
-        self.categoryId3 = 0
-        if vc.catagoryId == 1{
-            self.categoryId = vc.selectedArrayDataID
-        }else if vc.catagoryId1 == 2{
-            self.categoryId1 = vc.selectedArrayDataID
-        }else if vc.catagoryId2 == 3{
-            self.categoryId2 = vc.selectedArrayDataID
-        }else if vc.catagoryId3 == 4{
-            self.categoryId3 = vc.selectedArrayDataID
-        }
+        
+        
+        self.categoryId = vc.selectedArrayDataID
+        self.categoryId1 = vc.selectedArrayDataID2
+        self.categoryId2 = vc.selectedArrayDataID3
+        self.categoryId3 = vc.selectedArrayDataID4
+        //if vc.selectedArrayDataID != 0{
+//            self.categoryId1 = 0
+//            self.categoryId2 = 0
+//            self.categoryId3 = 0
+//        }else if vc.selectedArrayDataID2 != 0{
+//            self.categoryId = 0
+//            self.categoryId2 = 0
+//            self.categoryId3 = 0
+            
+//        }else if vc.selectedArrayDataID3 != 0{
+//            self.categoryId = 0
+//            self.categoryId1 = 0
+//            self.categoryId3 = 0
+            
+//        }else if vc.selectedArrayDataID4 != 0{
+//            self.categoryId = 0
+//            self.categoryId1 = 0
+//            self.categoryId2 = 0
+           
+//        }
         self.productListApi(StartIndex: startindex, searchText: self.searchTF.text ?? "")
+       //self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
     }
   
     @IBOutlet weak var headerText: UILabel!

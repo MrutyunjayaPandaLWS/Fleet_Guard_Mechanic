@@ -23,8 +23,8 @@ class FG_LoginOTPVM: popUpDelegate {
     func loginOTPApi(parameter: JSON){
         DispatchQueue.main.async {
             self.VC?.startLoading()
-            self.VC!.loaderView.isHidden = false
-            self.VC!.lottieAnimation(animationView: self.VC!.loaderAnimation)
+            //self.VC!.loaderView.isHidden = false
+            //self.VC!.lottieAnimation(animationView: self.VC!.loaderAnimation)
         }
         self.requestAPIs.otp_Post_API(parameters: parameter) { (result, error) in
             if error == nil{
@@ -32,19 +32,19 @@ class FG_LoginOTPVM: popUpDelegate {
                     let response = result?.returnMessage ?? ""
                         print(response, "- OTP")
                     DispatchQueue.main.async {
-                        self.VC!.loaderView.isHidden = true
+                        //self.VC!.loaderView.isHidden = true
                         self.otpVerify = result?.returnMessage ?? ""
                         self.VC?.stopLoading()
                     }
                 }else{
                     DispatchQueue.main.async {
-                        self.VC!.loaderView.isHidden = true
+                       // self.VC!.loaderView.isHidden = true
                         self.VC?.stopLoading()
                     }
                 }
             }else{
                 DispatchQueue.main.async {
-                    self.VC!.loaderView.isHidden = true
+                   // self.VC!.loaderView.isHidden = true
                     self.VC?.stopLoading()
                 }
             }
@@ -54,7 +54,7 @@ class FG_LoginOTPVM: popUpDelegate {
     func loginSubmissionApi(parameter: JSON){
         DispatchQueue.main.async {
             self.VC?.startLoading()
-            self.VC!.loaderView.isHidden = false
+            //self.VC!.loaderView.isHidden = false
             self.VC!.lottieAnimation(animationView: self.VC!.loaderAnimation)
         }
         self.requestAPIs.loginApi(parameters: parameter) { (result, error) in
@@ -62,7 +62,7 @@ class FG_LoginOTPVM: popUpDelegate {
                 if result != nil{
                     let response = result
                     DispatchQueue.main.async{
-                        self.VC!.loaderView.isHidden = true
+                        //self.VC!.loaderView.isHidden = true
                         self.VC?.stopLoading()
                         print(response?.userList?[0].isDelete ?? 0)
                         print(response?.userList?[0].verifiedStatus ?? 0)
@@ -154,7 +154,7 @@ class FG_LoginOTPVM: popUpDelegate {
                 }else{
                     DispatchQueue.main.async {
                         print("ERROR_ \(error)")
-                        self.VC!.loaderView.isHidden = true
+                        //self.VC!.loaderView.isHidden = true
                         self.VC?.stopLoading()
                     }
                     
@@ -163,7 +163,7 @@ class FG_LoginOTPVM: popUpDelegate {
                 
                 DispatchQueue.main.async {
                     print("ERROR_ \(error)")
-                    self.VC!.loaderView.isHidden = true
+                   // self.VC!.loaderView.isHidden = true
                     self.VC?.stopLoading()
                 }
                 
@@ -173,7 +173,7 @@ class FG_LoginOTPVM: popUpDelegate {
 
     func otpTimer(){
         //self.VC?.submitBTN.isEnabled = true
-        self.VC?.loaderView.isHidden = true
+       // self.VC?.loaderView.isHidden = true
         self.count = 60
         self.VC?.enteredValue = ""
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)

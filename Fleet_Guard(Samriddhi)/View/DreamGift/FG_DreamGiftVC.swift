@@ -7,7 +7,13 @@
 
 import UIKit
 
-class FG_DreamGiftVC: BaseViewController {
+class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
+    func removeProductButton(_ vc: FG_DreamGiftTVC) {
+        guard let tappedIndex = myDreamGiftTV.indexPath(for: vc) else{return}
+        self.selectedPlannerID = "\(self.VM.myPlannerListArray[tappedIndex.row].redemptionPlannerId ?? 0)"
+        self.removeProductInPlanner()
+    }
+    
 
     @IBOutlet var myDreamGiftTV: UITableView!
     @IBOutlet var noDataFoundLbl: UILabel!
@@ -15,18 +21,25 @@ class FG_DreamGiftVC: BaseViewController {
     var VM = DreamGiftListingVM()    
     var userID = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyID = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
-    
+    var totalPoints = UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? ""
+    var selectedPlannerID = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.myDreamGiftTV.delegate = self
         self.myDreamGiftTV.dataSource = self
+        self.myDreamGiftTV.separatorStyle = .none
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.plannerListing()
+    }
     
     func plannerListing(){
         let parameters = [
             "ActionType": "6",
+            "Points": "\(self.totalPoints)",
             "ActorId": "\(userID)"
         ] as [String : Any]
         print(parameters)
@@ -52,12 +65,60 @@ class FG_DreamGiftVC: BaseViewController {
         }
         
     }
+    
+    func removeProductInPlanner(){
+        let parameters = [
+            "ActionType": 17,
+            "ActorId": "\(userID)",
+            "RedemptionPlannerId": "\(self.selectedPlannerID)"
+        ] as [String: Any]
+        print(parameters)
+        self.VM.removePlannedProduct(parameters: parameters) { response in
+            if response?.returnValue == 1{
+                self.plannerListing()
+                self.navigationController?.popViewController(animated: true)
+            }else{
+                DispatchQueue.main.async{
+                    
+                    self.view.makeToast("Something went wrong!", duration: 3.0, position: .bottom)
+                    self.stopLoading()
+                }
+            }
+            
+        }
+    }
     @IBAction func backBTN(_ sender: Any){
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+    @IBAction func connectToCatalogeActBtn(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionCatalogueVC") as! FG_RedemptionCatalogueVC
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    func detailsButton(_ vc: FG_DreamGiftTVC) {
+        
+        guard let tappedIndex = myDreamGiftTV.indexPath(for: vc) else{return}
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DreamGiftDetailsVC") as! FG_DreamGiftDetailsVC
+        vc.productImage = self.VM.myPlannerListArray[tappedIndex.row].productImage ?? ""
+        vc.productName = self.VM.myPlannerListArray[tappedIndex.row].productName ?? ""
+        vc.productPoints = self.VM.myPlannerListArray[tappedIndex.row].pointsRequired ?? 0
+        vc.selectedPlannerID = self.VM.myPlannerListArray[tappedIndex.row].redemptionPlannerId ?? 0
+        vc.selectedCatalogueID = self.VM.myPlannerListArray[tappedIndex.row].catalogueId ?? 0
+        vc.averageLesserDate = self.VM.myPlannerListArray[tappedIndex.row].avgLesserExpDate ?? ""
+        vc.redeemableAverageEarning = self.VM.myPlannerListArray[tappedIndex.row].redeemableAverageEarning ?? ""
+        vc.dateOfSubmission = self.VM.myPlannerListArray[tappedIndex.row].achievementDateMonthWize ?? ""
+        //vc.isRedeem = self.VM.myPlannerListArray[tappedIndex.row].is_Redeemable ?? 0
+        let calcValue =  ((self.VM.myPlannerListArray[tappedIndex.row].pointsRequired ?? 0) - (Int(totalPoints) ?? 0))
+        print(calcValue)
+        vc.requiredPoints = calcValue
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 extension FG_DreamGiftVC : UITableViewDelegate, UITableViewDataSource{
+
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -65,10 +126,33 @@ extension FG_DreamGiftVC : UITableViewDelegate, UITableViewDataSource{
         return self.VM.myPlannerListArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FG_DreamGiftTVC",for: indexPath) as! FG_DreamGiftTVC
-//        cell?.delegate = self
-//        cell?.selectionStyle = .none
-//
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FG_DreamGiftTVC",for: indexPath) as? FG_DreamGiftTVC
+        cell?.delegate = self
+        cell?.selectionStyle = .none
+        
+        cell?.productNameLbl.text = self.VM.myPlannerListArray[indexPath.row].productName ?? "-"
+        cell?.categoryLbl.text = "Category: \(self.VM.myPlannerListArray[indexPath.row].catogoryName ?? "-")"
+        cell?.pointsAvailableLbl.text = "\(Int(VM.myPlannerListArray[indexPath.row].pointBalance ?? 0.0) )"
+        cell?.pointsRequiredLbl.text = "Points : \(VM.myPlannerListArray[indexPath.row].pointsRequired ?? 0)"
+        
+        let balance = Double(self.VM.myPlannerListArray[indexPath.row].pointBalance ?? 0)
+        let pointRequired = Double(self.VM.myPlannerListArray[indexPath.row].pointsRequired ?? 0)
+        
+        
+        
+        if pointRequired < balance{
+            let percentage = CGFloat(balance/pointRequired)
+//            cell?..text = "100%"
+//            cell?.progressView.progress = Float(percentage)
+        }else{
+          
+            let percentage = CGFloat(balance/pointRequired)
+            let final = CGFloat(percentage) * 100
+//            cell?.percentageValue.text = "\(Int(final))%"
+//            cell?.progressView.progress = Float(percentage)
+        }
+        
+
 //        cell?.giftName.text = self.VM.myDreamGiftListArray[indexPath.row].dreamGiftName ?? ""
 //        cell?.tdsvalue.text = "\(self.VM.myDreamGiftListArray[indexPath.row].tdsPoints ?? 0)"
 //
@@ -120,7 +204,7 @@ extension FG_DreamGiftVC : UITableViewDelegate, UITableViewDataSource{
 //        }
        
         
-        return cell
+        return cell!
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -128,25 +212,6 @@ extension FG_DreamGiftVC : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DreamGiftDetailsViewController") as! DreamGiftDetailsViewController
-//        vc.giftName = self.VM.myDreamGiftListArray[indexPath.row].dreamGiftName ?? ""
-//        vc.tdsvalue = Double(self.VM.myDreamGiftListArray[indexPath.row].tdsPoints ?? 0)
-//        vc.giftType = self.VM.myDreamGiftListArray[indexPath.row].giftType ?? ""
-//        let createdDate = (self.VM.myDreamGiftListArray[indexPath.row].jCreatedDate ?? "").split(separator: " ")
-//        let convertedFormat = convertDateFormater(String(createdDate[0]), fromDate: "MM/dd/yyyy", toDate: "dd/MM/yyyy")
-//        vc.addedDate = convertedFormat
-//
-//        let desiredDate = (self.VM.myDreamGiftListArray[indexPath.row].jDesiredDate ?? "").split(separator: " ")
-//        let desiredDateFormat = convertDateFormater(String(desiredDate[0]), fromDate: "MM/dd/yyyy", toDate: "dd/MM/yyyy")
-//        vc.expiredDate = desiredDateFormat
-//        vc.pointsRequires = "\(self.VM.myDreamGiftListArray[indexPath.row].pointsRequired ?? 0)"
-//        vc.avgEarningPoints = "\(self.VM.myDreamGiftListArray[indexPath.row].avgEarningPoints ?? 0)"
-//        vc.pointsBalance = self.VM.myDreamGiftListArray[indexPath.row].pointsBalance ?? 0
-//        vc.selectedDreamGiftId = "\(self.VM.myDreamGiftListArray[indexPath.row].dreamGiftId ?? 0)"
-//        vc.selectedGiftStatusID = self.VM.myDreamGiftListArray[indexPath.row].giftStatusId ?? 0
-//        vc.contractorName = self.VM.myDreamGiftListArray[indexPath.row].contractorName ?? ""
-//        vc.isRedeemable = self.VM.myDreamGiftListArray[indexPath.row].is_Redeemable ?? 0
-//        self.navigationController?.pushViewController(vc, animated: true)
         
     }
 }

@@ -17,7 +17,8 @@ class FG_DashboardVM: popUpDelegate{
     var pushID = UserDefaults.standard.string(forKey: "TOKEN") ?? ""
     var categoryListArray = [LstAttributesDetails]()
     var pointBalence = [ObjCustomerDashboardList11]()
-    
+    var myPlannerListArray = [ObjCatalogueList2]()
+    var totalPointBalence = 0
     var deviceID =  UserDefaults.standard.string(forKey: "deviceID") ?? ""
     
     func dashboardApi(parameter: JSON){
@@ -194,7 +195,7 @@ class FG_DashboardVM: popUpDelegate{
                   
                     if result?.objCustomerDashboardList?.count != 0 {
                         self.pointBalence = result?.objCustomerDashboardList ?? []
-                        
+                        self.totalPointBalence = result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0
                         UserDefaults.standard.set(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
                         UserDefaults.standard.set(result?.objCustomerDashboardList?[0].redeemablePointsBalance, forKey: "redeemablePointsBalance")
                         self.VC?.totalPtsBalance.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
@@ -217,6 +218,42 @@ class FG_DashboardVM: popUpDelegate{
         }
         
     }
+    func dreamGiftAPI(parameter: JSON){
+        DispatchQueue.main.async {
+            self.VC?.startLoading()
+        }
+    self.requestApis.plannerListApi(parameters: parameter) { (result, error) in
+        self.myPlannerListArray = result?.objCatalogueList ?? []
+        print(self.myPlannerListArray.count, "Planner List Cout")
+        DispatchQueue.main.async {
+            self.VC?.stopLoading()
+            
+            if self.myPlannerListArray.count > 0 {
+                self.VC?.dreamGiftDetailsOutBtn.isHidden = true
+                self.VC?.dreamGiftImageView.isHidden = true
+                self.VC?.addYourDreamLbl.isHidden = true
+                self.VC?.productViewHeight.constant = 170
+                self.VC?.heightOfTheView.constant = 627
+    
+                self.VC?.plannerPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointBalance ?? 0))"
+                self.VC?.plannerCategoryLbl.text = "Category: \(result?.objCatalogueList?[0].catogoryName ?? "-")"
+                self.VC?.plannerProductLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
+               // self.VC?.plannerPointsRequiredLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
+                self.VC?.plannerPointsReqPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointsRequired ?? 0))"
+
+            }else{
+                self.VC?.dreamGiftDetailsOutBtn.isHidden = false
+                self.VC?.dreamGiftImageView.isHidden = false
+                self.VC?.addYourDreamLbl.isHidden = false
+                self.VC?.productViewHeight.constant = 100
+                self.VC?.heightOfTheView.constant = 550
+                
+            }
+            
+        }
+    }
+    
+}
     
 
     func dashboardImagesAPICall(parameters: JSON, completion: @escaping (DashboardBannerImageModels?) -> ()) {

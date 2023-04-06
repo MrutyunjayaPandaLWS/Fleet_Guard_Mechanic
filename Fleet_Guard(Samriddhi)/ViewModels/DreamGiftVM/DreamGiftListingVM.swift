@@ -40,4 +40,33 @@ class DreamGiftListingVM {
     }
     
     }
+    
+    
+    func removePlannedProduct(parameters: JSON, completion: @escaping (RemovePlannedProduct?) -> ()){
+        DispatchQueue.main.async {
+              self.VC?.startLoading()
+         }
+        self.requestAPIs.removePlannedProduct(parameters: parameters) { (result, error) in
+            if error == nil{
+                if result != nil {
+                    DispatchQueue.main.async {
+                        completion(result)
+                        self.VC?.stopLoading()
+                    }
+                } else {
+                    print("No Response")
+                    DispatchQueue.main.async {
+                        self.VC?.stopLoading()
+                    }
+                }
+            }else{
+                print("ERROR_Login \(error)")
+                DispatchQueue.main.async {
+                    self.VC?.stopLoading()
+                }
+
+        }
+    }
+    
+    }
 }

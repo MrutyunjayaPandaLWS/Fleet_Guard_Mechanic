@@ -36,8 +36,8 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate,CheckBo
         self.mobileTF.delegate = self
         self.checkBoxBtn.setImage(UIImage(named: "square"), for: .normal)
         self.boolResult = false
-        self.loaderView.isHidden = false
-        lottieAnimation(animationView: loaderAnimation)
+//        self.loaderView.isHidden = false
+//        lottieAnimation(animationView: loaderAnimation)
        
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -61,14 +61,15 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate,CheckBo
 
     @IBAction func sendOTPBtn(_ sender: Any) {
         if self.mobileTF.text!.count == 0 {
-            DispatchQueue.main.async{
-               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Enter mobile number"
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
-            }
+//            DispatchQueue.main.async{
+//               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Enter mobile number"
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+//            }
+            self.view.makeToast("Please enter mobile number", duration: 3.0, position: .bottom)
         }
 //        else if self.mobileTF.text!.count != 10 {
 //            DispatchQueue.main.async{

@@ -11,6 +11,7 @@ protocol DidTapActionDelegate: AnyObject{
     func addToCartDidTap(_ cell: FG_RedemptionCatalogueTVC)
     func detailsDidTap(_ cell: FG_RedemptionCatalogueTVC)
     func addToDreamGift(_ cell: FG_RedemptionCatalogueTVC)
+    func addAndRemovePlannerList(_ cell: FG_RedemptionCatalogueTVC)
 }
 
 class FG_RedemptionCatalogueTVC: UITableViewCell {
@@ -26,6 +27,7 @@ class FG_RedemptionCatalogueTVC: UITableViewCell {
     @IBOutlet var addedToDreamGiftView: UIView!
     @IBOutlet var addtoDreamGiftView: UIView!
     
+    @IBOutlet var addToPlannerOutletBTN: UIButton!
     @IBOutlet weak var pointsLbl: UILabel!
     
     var delegate: DidTapActionDelegate!
@@ -64,4 +66,6 @@ class FG_RedemptionCatalogueTVC: UITableViewCell {
         self.delegate.detailsDidTap(self)
     }
     
+    @IBAction func addPlannerDreamGiftBtn(_ sender: Any) {
+    }
 }

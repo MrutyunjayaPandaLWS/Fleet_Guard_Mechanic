@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		250FFCAC29B7128B003FB8A0 /* LstTransactionApprovalDetails1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250FFCAA29B7128B003FB8A0 /* LstTransactionApprovalDetails1.swift */; };
 		250FFCAD29B7128B003FB8A0 /* BillingDetialsDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250FFCAB29B7128B003FB8A0 /* BillingDetialsDataModels.swift */; };
+		2511404029DAE9E00085D78E /* PlannerListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511403E29DAE9DF0085D78E /* PlannerListModels.swift */; };
+		2511404129DAE9E00085D78E /* ObjCatalogueList2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511403F29DAE9E00085D78E /* ObjCatalogueList2.swift */; };
 		25116BDE29CC0B3600E78DD7 /* MyLedgerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25116BDC29CC0B3600E78DD7 /* MyLedgerModels.swift */; };
 		25116BDF29CC0B3600E78DD7 /* ObjCustomerDashboardList3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25116BDD29CC0B3600E78DD7 /* ObjCustomerDashboardList3.swift */; };
 		25116BE129CC1A7200E78DD7 /* FG_MyLedgerClickViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25116BE029CC1A7200E78DD7 /* FG_MyLedgerClickViewVC.swift */; };
@@ -69,6 +71,9 @@
 		2588CEEC29B5F62600330CE8 /* LstRetailerBonding3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588CEEA29B5F62600330CE8 /* LstRetailerBonding3.swift */; };
 		2588CEEF29B5F7E100330CE8 /* PointsTrendsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588CEEE29B5F7E100330CE8 /* PointsTrendsVM.swift */; };
 		25913E6729C8413100C60D55 /* FG_DreamGiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25913E6629C8413100C60D55 /* FG_DreamGiftVC.swift */; };
+		259152CF29DAFEE50082F4CD /* FG_DreamGiftDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259152CE29DAFEE50082F4CD /* FG_DreamGiftDetailsVC.swift */; };
+		259152D229DB02790082F4CD /* RedemptionPlannerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259152D129DB02790082F4CD /* RedemptionPlannerDetailsViewModel.swift */; };
+		259152D529DB02DF0082F4CD /* RemovePlannedProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259152D429DB02DF0082F4CD /* RemovePlannedProduct.swift */; };
 		2592E70629B9995F005689CF /* CounterGapVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2592E70529B9995F005689CF /* CounterGapVM.swift */; };
 		2592E70A29B99C62005689CF /* CounterGapModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2592E70829B99C62005689CF /* CounterGapModels.swift */; };
 		2592E70B29B99C62005689CF /* LsrProductDetails11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2592E70929B99C62005689CF /* LsrProductDetails11.swift */; };
@@ -150,8 +155,6 @@
 		25E8F66729B5D1A20033F405 /* BillingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E8F66529B5D1A20033F405 /* BillingModels.swift */; };
 		25F1302529AF49CF00D2C751 /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F1302329AF49CF00D2C751 /* SideMenuModel.swift */; };
 		25F1302629AF49CF00D2C751 /* SideMenuModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F1302429AF49CF00D2C751 /* SideMenuModelClass.swift */; };
-		25FB407A29C9916300211D59 /* ObjCatalogueList2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FB407829C9916300211D59 /* ObjCatalogueList2.swift */; };
-		25FB407B29C9916300211D59 /* PlannerListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FB407929C9916300211D59 /* PlannerListModels.swift */; };
 		5B101C665BBC310F6DEDB8CA /* libPods-Fleet_Guard(Samriddhi).a in Frameworks */ = {isa = PBXBuildFile; fileRef = F94DE145C091886E7B80A18B /* libPods-Fleet_Guard(Samriddhi).a */; };
 		84068D8E2976646100D4360F /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84068D8C2976646100D4360F /* ContainerViewController.swift */; };
 		84068D8F2976646100D4360F /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84068D8D2976646100D4360F /* EmptySegue.swift */; };
@@ -336,6 +339,8 @@
 /* Begin PBXFileReference section */
 		250FFCAA29B7128B003FB8A0 /* LstTransactionApprovalDetails1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstTransactionApprovalDetails1.swift; sourceTree = "<group>"; };
 		250FFCAB29B7128B003FB8A0 /* BillingDetialsDataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingDetialsDataModels.swift; sourceTree = "<group>"; };
+		2511403E29DAE9DF0085D78E /* PlannerListModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerListModels.swift; sourceTree = "<group>"; };
+		2511403F29DAE9E00085D78E /* ObjCatalogueList2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCatalogueList2.swift; sourceTree = "<group>"; };
 		25116BDC29CC0B3600E78DD7 /* MyLedgerModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLedgerModels.swift; sourceTree = "<group>"; };
 		25116BDD29CC0B3600E78DD7 /* ObjCustomerDashboardList3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCustomerDashboardList3.swift; sourceTree = "<group>"; };
 		25116BE029CC1A7200E78DD7 /* FG_MyLedgerClickViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FG_MyLedgerClickViewVC.swift; path = "Fleet_Guard(Samriddhi)/View/MyLedgerClcikViewVC/FG_MyLedgerClickViewVC.swift"; sourceTree = SOURCE_ROOT; };
@@ -396,6 +401,9 @@
 		2588CEEA29B5F62600330CE8 /* LstRetailerBonding3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstRetailerBonding3.swift; sourceTree = "<group>"; };
 		2588CEEE29B5F7E100330CE8 /* PointsTrendsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsTrendsVM.swift; sourceTree = "<group>"; };
 		25913E6629C8413100C60D55 /* FG_DreamGiftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_DreamGiftVC.swift; sourceTree = "<group>"; };
+		259152CE29DAFEE50082F4CD /* FG_DreamGiftDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_DreamGiftDetailsVC.swift; sourceTree = "<group>"; };
+		259152D129DB02790082F4CD /* RedemptionPlannerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionPlannerDetailsViewModel.swift; sourceTree = "<group>"; };
+		259152D429DB02DF0082F4CD /* RemovePlannedProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemovePlannedProduct.swift; sourceTree = "<group>"; };
 		2592E70529B9995F005689CF /* CounterGapVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterGapVM.swift; sourceTree = "<group>"; };
 		2592E70829B99C62005689CF /* CounterGapModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterGapModels.swift; sourceTree = "<group>"; };
 		2592E70929B99C62005689CF /* LsrProductDetails11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LsrProductDetails11.swift; sourceTree = "<group>"; };
@@ -482,8 +490,6 @@
 		25E8F66529B5D1A20033F405 /* BillingModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingModels.swift; sourceTree = "<group>"; };
 		25F1302329AF49CF00D2C751 /* SideMenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
 		25F1302429AF49CF00D2C751 /* SideMenuModelClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuModelClass.swift; sourceTree = "<group>"; };
-		25FB407829C9916300211D59 /* ObjCatalogueList2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCatalogueList2.swift; sourceTree = "<group>"; };
-		25FB407929C9916300211D59 /* PlannerListModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannerListModels.swift; sourceTree = "<group>"; };
 		84068D8C2976646100D4360F /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		84068D8D2976646100D4360F /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
 		84068D902976646F00D4360F /* PersistanceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
@@ -1053,6 +1059,30 @@
 			path = DreamGift;
 			sourceTree = "<group>";
 		};
+		259152CD29DAFEAA0082F4CD /* DreamGiftDetails */ = {
+			isa = PBXGroup;
+			children = (
+				259152CE29DAFEE50082F4CD /* FG_DreamGiftDetailsVC.swift */,
+			);
+			path = DreamGiftDetails;
+			sourceTree = "<group>";
+		};
+		259152D029DB025E0082F4CD /* DreamGiftDetailsVM */ = {
+			isa = PBXGroup;
+			children = (
+				259152D129DB02790082F4CD /* RedemptionPlannerDetailsViewModel.swift */,
+			);
+			path = DreamGiftDetailsVM;
+			sourceTree = "<group>";
+		};
+		259152D329DB02DF0082F4CD /* RemovePlanner */ = {
+			isa = PBXGroup;
+			children = (
+				259152D429DB02DF0082F4CD /* RemovePlannedProduct.swift */,
+			);
+			path = RemovePlanner;
+			sourceTree = "<group>";
+		};
 		2592E70429B99910005689CF /* CounterGrpVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -1391,8 +1421,8 @@
 		25FB407729C9916300211D59 /* PlannerLists */ = {
 			isa = PBXGroup;
 			children = (
-				25FB407829C9916300211D59 /* ObjCatalogueList2.swift */,
-				25FB407929C9916300211D59 /* PlannerListModels.swift */,
+				2511403E29DAE9DF0085D78E /* PlannerListModels.swift */,
+				2511403F29DAE9E00085D78E /* ObjCatalogueList2.swift */,
 			);
 			path = PlannerLists;
 			sourceTree = "<group>";
@@ -1449,6 +1479,7 @@
 		84068D8729765DF600D4360F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				259152D329DB02DF0082F4CD /* RemovePlanner */,
 				256F1B7529CC5D0300F648BA /* DreamGiftModels */,
 				25116BE529CC1C8F00E78DD7 /* MyLedgerClickViewModels */,
 				25116BDB29CC0B1B00E78DD7 /* MyLedgerModels */,
@@ -1515,6 +1546,7 @@
 		84068D8829765E0200D4360F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				259152CD29DAFEAA0082F4CD /* DreamGiftDetails */,
 				25913E6529C840E300C60D55 /* DreamGift */,
 				842F0A5229BC96860014602F /* TermsandCondition */,
 				25D58BB729ADCC4E00DB135D /* MilestoneRedemption */,
@@ -1554,6 +1586,7 @@
 		84068D8929765E0A00D4360F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				259152D029DB025E0082F4CD /* DreamGiftDetailsVM */,
 				2586CA3629C856230067CD17 /* DreamGiftVM */,
 				2592E71129B99E0C005689CF /* MarketGapVM */,
 				2592E70429B99910005689CF /* CounterGrpVM */,
@@ -2682,6 +2715,7 @@
 				2580EFFB29A651F60097A50D /* DD_QueryListVM.swift in Sources */,
 				849D350B298A8C93005A41FC /* DashboardTotalPointsModel.swift in Sources */,
 				25C465E229A8EA6200CCA30C /* LstRetailerBonding2.swift in Sources */,
+				259152CF29DAFEE50082F4CD /* FG_DreamGiftDetailsVC.swift in Sources */,
 				25D88FCD29A9E4B1002815A7 /* FilterRedemptionCatVM.swift in Sources */,
 				25C865F229A7256100C1801E /* ChatDetailsModels.swift in Sources */,
 				25116BDE29CC0B3600E78DD7 /* MyLedgerModels.swift in Sources */,
@@ -2695,6 +2729,7 @@
 				2580EFF829A646BC0097A50D /* SubmitNewQueryModels.swift in Sources */,
 				84068D8E2976646100D4360F /* ContainerViewController.swift in Sources */,
 				25C465C029A8C61600CCA30C /* RedemptionOTPModels.swift in Sources */,
+				259152D229DB02790082F4CD /* RedemptionPlannerDetailsViewModel.swift in Sources */,
 				84FD0A82297EC01600E01B00 /* FG_CategoryListCVC.swift in Sources */,
 				2551C3DD29B75EB900EED0FB /* LstRetailerBonding5.swift in Sources */,
 				84068DAB2976656600D4360F /* Reachability.swift in Sources */,
@@ -2725,6 +2760,7 @@
 				84EEBE13297FE21000ECF2DC /* FG_MyCartTVC.swift in Sources */,
 				25C465C329A8C68800CCA30C /* SendSMSModel.swift in Sources */,
 				845FD71F29782A2F00CE487E /* FG_SideMenuTVC.swift in Sources */,
+				2511404129DAE9E00085D78E /* ObjCatalogueList2.swift in Sources */,
 				2580EFF529A6437B0097A50D /* FG_SubmitNewQueryVM.swift in Sources */,
 				2593084229A77CDC009A2FBA /* MyRedemptionListingVM.swift in Sources */,
 				25D88FD829A9ECE7002815A7 /* ObjCatalogueCategoryListJson.swift in Sources */,
@@ -2761,6 +2797,7 @@
 				84597BCA29790CC100F3A7BC /* FG_FAQsVC.swift in Sources */,
 				8488E410298A25BF0032A2D7 /* URLMethods.swift in Sources */,
 				25D58BC729ADDE1400DB135D /* MileStonesRedeemBTNModels.swift in Sources */,
+				259152D529DB02DF0082F4CD /* RemovePlannedProduct.swift in Sources */,
 				2565C96829B0B83D0020D93A /* LstPromotionListJsonApi.swift in Sources */,
 				84C9879B298B73FC007F00B2 /* FG_ProductDetailsVM.swift in Sources */,
 				842F0A5529BC97090014602F /* HR_TermsandCondtionVC.swift in Sources */,
@@ -2803,7 +2840,6 @@
 				25C465D729A8D6C900CCA30C /* RlpStatementModels.swift in Sources */,
 				2519D7BF29A89FF6002BE97F /* ObjCustomerDashboardList11.swift in Sources */,
 				84BDEF8929890D4B007EED1E /* FG_CreatenewqueryVC.swift in Sources */,
-				25FB407B29C9916300211D59 /* PlannerListModels.swift in Sources */,
 				842326CF2980083B00DF7325 /* FG_ProductCataloguePopUp.swift in Sources */,
 				25116BE829CC1CC100E78DD7 /* ObjCustomerDashboardList12.swift in Sources */,
 				25C465BA29A8AE7300CCA30C /* MyEarningModels.swift in Sources */,
@@ -2838,6 +2874,7 @@
 				25C865E029A7237F00C1801E /* ChatListViewController.swift in Sources */,
 				84FBC3F529796E350061ABAE /* FG_MarketGapVC.swift in Sources */,
 				845425A7297817DA002A86D1 /* FG_MyRedemptionTVC.swift in Sources */,
+				2511404029DAE9E00085D78E /* PlannerListModels.swift in Sources */,
 				849D34F8298A77BE005A41FC /* UserList.swift in Sources */,
 				25C465E329A8EA6200CCA30C /* RPLStatementViewModels.swift in Sources */,
 				25D88FCA29A9C59E002815A7 /* PromotionListingModels.swift in Sources */,
@@ -2871,7 +2908,6 @@
 				254D8AE6299F7E7400CBBBDE /* MileStoneRedemptionVM.swift in Sources */,
 				254D8AE9299F9A1C00CBBBDE /* MyEarningsVM.swift in Sources */,
 				84068DA62976653D00D4360F /* MyCommonFunctionalUtilities.swift in Sources */,
-				25FB407A29C9916300211D59 /* ObjCatalogueList2.swift in Sources */,
 				2592E71329B99E58005689CF /* MarketGapVM.swift in Sources */,
 				84597BBE29790BB500F3A7BC /* FG_MyPromotionsVC.swift in Sources */,
 				25D58BC429ADD59D00DB135D /* MileStonesRedemptionListModels.swift in Sources */,

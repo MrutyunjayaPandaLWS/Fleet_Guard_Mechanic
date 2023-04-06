@@ -14,6 +14,10 @@ protocol SendDataDelegate: AnyObject{
 }
 
 class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpDelegate,sendProductDelegate {
+    func addAndRemovePlannerList(_ cell: FG_RedemptionCatalogueTVC) {
+        guard let tappedIndexPath = self.catalogueListTableView.indexPath(for: cell) else {return}
+    }
+    
     
     func addToDreamGift(_ cell: FG_RedemptionCatalogueTVC) {
         guard let tappedIndexPath = self.catalogueListTableView.indexPath(for: cell) else {return}
@@ -140,7 +144,8 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
                 "SearchText": "\(searchTF.text ?? "")",
                 "Domain": "FLEETGUARD",
                 "StartIndex": startIndex,
-                "Sort": ""
+                "Sort": "",
+                "VendorProductCode":"MLP"
         ] as [String: Any]
         print(parameter)
         self.VM.redemptionCatalogueListApi(parameter: parameter)
@@ -238,12 +243,14 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
             self.addToCartApi(catalogueId: self.VM.redemptionCatalougeListArray[tappedIndexPath.row].catalogueId ?? 0)
         }else{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Insufficient point balance"
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Insufficient point balance"
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                
+                self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
             }
         }
         
@@ -321,18 +328,60 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
         cell.productNameLbl.text = self.VM.redemptionCatalougeListArray[indexPath.row].productName ?? ""
         cell.categoryLbl.text = "Catogory / \(self.VM.redemptionCatalougeListArray[indexPath.row].catogoryName ?? "")"
         cell.pointsLbl.text = "\(self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0)"
-        let filterArray = self.myCartIds.filter{$0 == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId ?? 0}
         let image = VM.redemptionCatalougeListArray[indexPath.row].productImage ?? ""
+        let filterArray = self.myCartIds.filter{$0 == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId ?? 0}
         let productPoints = self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0
         let filterDreamGiftArray = self.VM.myPlannerListArray.filter{$0.catalogueId == self.VM.redemptionCatalogueMyCartListArray[indexPath.row].catalogueId}
         
-        
-//        if filterArray.count > 0 {
-//            cell.addedToCartView.isHidden = false
-//            cell.addToCartView.isHidden = true
-//        }else{
+//        let filterCategory = self.myCartIds.filter { $0 == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId ?? 0 }
+//        let filterPlannerList = self.VM.myPlannerListArray.filter { $0.catalogueId == self.VM.redemptionCatalogueMyCartListArray[indexPath.row].catalogueId ?? 0 }
+//        let productPoints = self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0
+//        if Int(self.totalPoints) ?? 0 >= productPoints{
+//
 //            cell.addedToCartView.isHidden = true
 //            cell.addToCartView.isHidden = false
+//            cell.addedToDreamGiftView.isHidden = true
+//            cell.addtoDreamGiftView.isHidden = true
+//        }else{
+//            if self.VM.redemptionCatalogueMyCartListArray[indexPath.row].isPlanner! == true{
+//                cell.addedToCartView.isHidden = true
+//                cell.addToCartView.isHidden = true
+//                cell.addedToDreamGiftView.isHidden = false
+//                cell.addtoDreamGiftView.isHidden = true
+//
+//            }else{
+//
+//                cell.addedToCartView.isHidden = true
+//                cell.addToCartView.isHidden = true
+//                cell.addedToDreamGiftView.isHidden = true
+//                cell.addtoDreamGiftView.isHidden = true
+//
+//
+//            }
+//        }
+////        if filterCategory.count > 0 {
+////            cell.addedToCart.isHidden = false
+////            cell.addToPlanner.isHidden = true
+////            cell.addToCartButton.isHidden = true
+////            cell.addedToPlanner.isHidden = true
+////        }
+//        if filterPlannerList.count > 0 {
+//            if Int(totalPoints) ?? 0 > Int(productPoints) {
+//
+//                cell.addedToCartView.isHidden = true
+//                cell.addToCartView.isHidden = false
+//                cell.addedToDreamGiftView.isHidden = true
+//                cell.addtoDreamGiftView.isHidden = true
+//
+//            }else{
+//
+//                cell.addedToCartView.isHidden = true
+//                cell.addToCartView.isHidden = true
+//                cell.addedToDreamGiftView.isHidden = false
+//                cell.addtoDreamGiftView.isHidden = true
+//
+//            }
+//
 //        }
         
         if Int(self.totalPoints) ?? 0 >= productPoints{

@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol dreamGiftPlannerDelegate: AnyObject {
+    func detailsButton(_ vc: FG_DreamGiftTVC)
+    func removeProductButton(_ vc: FG_DreamGiftTVC)
+}
+
 class FG_DreamGiftTVC: UITableViewCell {
     
     
@@ -17,12 +22,18 @@ class FG_DreamGiftTVC: UITableViewCell {
     @IBOutlet var pointsRequiredLbl: UILabel!
     @IBOutlet var productImageView: UIImageView!
     
+    weak var delegate:dreamGiftPlannerDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
     @IBAction func detailsActBTN(_ sender: Any) {
+        self.delegate?.detailsButton(self)
+    }
+    @IBAction func removeProductBRN(_ sender: Any) {
+        self.delegate?.removeProductButton(self)
     }
     
 }

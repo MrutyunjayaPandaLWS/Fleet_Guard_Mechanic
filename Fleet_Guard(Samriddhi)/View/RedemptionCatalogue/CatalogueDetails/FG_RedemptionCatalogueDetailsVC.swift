@@ -110,13 +110,15 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
 
         if self.verifiedStatus != 1{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.titleInfo = ""
-                vc!.descriptionInfo = "You are not allowled to redeem .Please contact your administrator"
-                vc!.modalPresentationStyle = .overCurrentContext
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.titleInfo = ""
+//                vc!.descriptionInfo = "You are not allowled to redeem .Please contact your administrator"
+//                vc!.modalPresentationStyle = .overCurrentContext
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                
+                self.view.makeToast("You are not allowled to redeem .Please contact your administrator", duration: 3.0, position: .bottom)
             }
                
             
@@ -140,13 +142,15 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
                 
             }else{
                 DispatchQueue.main.async{
-                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                    vc!.delegate = self
-                    vc!.titleInfo = ""
-                    vc!.descriptionInfo = "Insufficent Point Balance"
-                    vc!.modalPresentationStyle = .overCurrentContext
-                    vc!.modalTransitionStyle = .crossDissolve
-                    self.present(vc!, animated: true, completion: nil)
+//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                    vc!.delegate = self
+//                    vc!.titleInfo = ""
+//                    vc!.descriptionInfo = "Insufficent Point Balance"
+//                    vc!.modalPresentationStyle = .overCurrentContext
+//                    vc!.modalTransitionStyle = .crossDissolve
+//                    self.present(vc!, animated: true, completion: nil)
+                    
+                    self.view.makeToast("Insufficent Point Balance", duration: 3.0, position: .bottom)
                 }
             }
         }  

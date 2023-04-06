@@ -7,7 +7,7 @@
 
 import Foundation
 
-//DEMO
+//DEMO -- http://fleetgrdser.loyltwo3ks.com/Mobile/GetRedemptionPlannerDetails
 let tokenURL = "http://fleetgrdser.loyltwo3ks.com/token"
 let secondToken = "https://lwssrvtest.samriddhi.in/token"
 let baseURl = "http://fleetgrdser.loyltwo3ks.com/Mobile/"

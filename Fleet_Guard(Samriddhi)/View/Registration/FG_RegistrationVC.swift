@@ -124,25 +124,29 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
     
     @IBAction func mobileNumberDidEnd(_ sender: Any) {
         if self.mobileTF.text!.count == 0{
-            DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.titleInfo = ""
-                vc!.descriptionInfo = "Enter mobile number"
-                vc!.modalPresentationStyle = .overCurrentContext
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
-            }
+//            DispatchQueue.main.async{
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.titleInfo = ""
+//                vc!.descriptionInfo = "Enter mobile number"
+//                vc!.modalPresentationStyle = .overCurrentContext
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+//            }
+            self.view.makeToast("Enter mobile number", duration: 3.0, position: .bottom)
+            
         }else if self.mobileTF.text!.count != 10{
-            DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.titleInfo = ""
-                vc!.descriptionInfo = "Enter valid mobile number"
-                vc!.modalPresentationStyle = .overCurrentContext
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
-            }
+//            DispatchQueue.main.async{
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.titleInfo = ""
+//                vc!.descriptionInfo = "Enter valid mobile number"
+//                vc!.modalPresentationStyle = .overCurrentContext
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+//            }
+            
+            self.view.makeToast("Enter valid mobile number", duration: 3.0, position: .bottom)
         }else{
             let parameterJSON = [
                     "ActionType":"57",
@@ -161,14 +165,15 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
     
     @IBAction func selectStateBtn(_ sender: Any) {
             if MyCommonFunctionalUtilities.isInternetCallTheApi() == false {
-                DispatchQueue.main.async{
-                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                    vc!.delegate = self
-                        vc!.descriptionInfo = "No Internet"
-                    vc!.modalPresentationStyle = .overCurrentContext
-                    vc!.modalTransitionStyle = .crossDissolve
-                    self.present(vc!, animated: true, completion: nil)
-                }
+//                DispatchQueue.main.async{
+//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                    vc!.delegate = self
+//                        vc!.descriptionInfo = "No Internet"
+//                    vc!.modalPresentationStyle = .overCurrentContext
+//                    vc!.modalTransitionStyle = .crossDissolve
+//                    self.present(vc!, animated: true, completion: nil)
+//                }
+                self.view.makeToast("No Internet", duration: 3.0, position: .bottom)
             }else{
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DropDownVC") as? FG_DropDownVC
                 vc!.delegate = self
@@ -183,15 +188,16 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
     @IBAction func selectCityBtn(_ sender: Any) {
         print(self.selectedStateID,"ID")
             if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
-                DispatchQueue.main.async{
-                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                    vc!.delegate = self
-                        vc!.descriptionInfo = "No Internet"
-                    
-                    vc!.modalPresentationStyle = .overCurrentContext
-                    vc!.modalTransitionStyle = .crossDissolve
-                    self.present(vc!, animated: true, completion: nil)
-                }
+//                DispatchQueue.main.async{
+//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                    vc!.delegate = self
+//                        vc!.descriptionInfo = "No Internet"
+//
+//                    vc!.modalPresentationStyle = .overCurrentContext
+//                    vc!.modalTransitionStyle = .crossDissolve
+//                    self.present(vc!, animated: true, completion: nil)
+//                }
+                self.view.makeToast("No Internet", duration: 3.0, position: .bottom)
             }else{
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DropDownVC") as? FG_DropDownVC
                 vc!.delegate = self
@@ -206,41 +212,45 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
     @IBAction func submitButton(_ sender: Any) {
         
         if nameTF.text == "" {
-            DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                    vc!.descriptionInfo = "Please enter name"
-                
-                vc!.modalPresentationStyle = .overCurrentContext
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
-            }
+//            DispatchQueue.main.async{
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                    vc!.descriptionInfo = "Please enter name"
+//
+//                vc!.modalPresentationStyle = .overCurrentContext
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+//            }
+            self.view.makeToast("Please enter name", duration: 3.0, position: .bottom)
         }else if mobileTF.text?.count == 0 {
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Please enter mobile number"
-                vc!.modalPresentationStyle = .overCurrentContext
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Please enter mobile number"
+//                vc!.modalPresentationStyle = .overCurrentContext
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Please enter mobile number", duration: 3.0, position: .bottom)
             }
         }else if selectStateLbl.text == "Select State" {
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Please select state"
-                vc!.modalPresentationStyle = .overCurrentContext
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Please select state"
+//                vc!.modalPresentationStyle = .overCurrentContext
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Please select state", duration: 3.0, position: .bottom)
             }
         }else if selectCityLbl.text == "Select City" {
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Please select city"
-                vc!.modalPresentationStyle = .overCurrentContext
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Please select city"
+//                vc!.modalPresentationStyle = .overCurrentContext
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Please select city", duration: 3.0, position: .bottom)
             }
         }else {
             self.registerationAPI()
