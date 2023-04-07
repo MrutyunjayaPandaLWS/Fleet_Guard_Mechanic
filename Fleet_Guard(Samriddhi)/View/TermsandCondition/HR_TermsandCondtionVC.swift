@@ -18,6 +18,7 @@ class HR_TermsandCondtionVC: BaseViewController{
     
 
 
+    
     @IBOutlet weak var webview1: WKWebView!
     @IBOutlet weak var termsandCondtions: UILabel!
     @IBOutlet weak var decline: UIButton!
@@ -51,11 +52,13 @@ class HR_TermsandCondtionVC: BaseViewController{
        
         self.boolResult = false
         self.delegate.decline(self)
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     @IBAction func acceptBTN(_ sender: Any) {
         self.boolResult = true
         self.delegate.accept(self)
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }

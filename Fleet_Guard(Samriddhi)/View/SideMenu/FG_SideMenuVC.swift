@@ -19,7 +19,7 @@ class FG_SideMenuVC: BaseViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var sideMenuTableView: UITableView!
     var requestApis = RestAPI_Requests()
-    var sideMenuArray = ["Profile", "My Ledger", "My Redemption History", "Redemption Catalogue", "Product Catalogue", "Dream Gift", "My Promotions", "Lodge Query", "About", "FAQs", "T&C", "Logout"]
+    var sideMenuArray = ["Profile", "My Ledger", "My Redemption History", "Redemption Catalogue", "Product Catalogue", "Dream Gift", "My Promotions", "Lodge Query", "About", "FAQs", "T&C", "Logout","Delete"]
     var sideMenuTitleArray = [String]()
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
@@ -45,7 +45,7 @@ class FG_SideMenuVC: BaseViewController {
         super.viewWillAppear(animated)
         self.menuTitleArray()
         print(CGFloat(sideMenuArray.count * 50))
-        self.sideMenuTableHeight.constant = 700
+        self.sideMenuTableHeight.constant = 650
         self.sinceLbl.text = "Since \(userSince)"
         dashboardApi()
     }
@@ -234,6 +234,8 @@ extension FG_SideMenuVC: UITableViewDelegate, UITableViewDataSource{
                   //  self.clearTable2()
                 }
             }
+        }else if indexPath.row == 12{
+            print("Your accout is deleted")
         }
         
     }

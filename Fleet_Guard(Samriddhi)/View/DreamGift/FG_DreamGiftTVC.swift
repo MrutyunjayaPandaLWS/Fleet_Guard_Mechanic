@@ -15,6 +15,10 @@ protocol dreamGiftPlannerDelegate: AnyObject {
 class FG_DreamGiftTVC: UITableViewCell {
     
     
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var progressBarCircleViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var progressBarValueLbl: UILabel!
+    @IBOutlet weak var progressBarCorcleView: UIView!
     @IBOutlet var categoryLbl: UILabel!
     @IBOutlet var productNameLbl: UILabel!
     @IBOutlet var detailsOutBtn: GradientButton!

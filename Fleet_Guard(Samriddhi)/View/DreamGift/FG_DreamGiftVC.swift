@@ -138,7 +138,19 @@ extension FG_DreamGiftVC : UITableViewDelegate, UITableViewDataSource{
         let balance = Double(self.VM.myPlannerListArray[indexPath.row].pointBalance ?? 0)
         let pointRequired = Double(self.VM.myPlannerListArray[indexPath.row].pointsRequired ?? 0)
         
-        
+        let image =  PROMO_IMG1 + (self.VM.myPlannerListArray[indexPath.row].productImage ?? "")
+            cell?.productImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "profileDefault"))
+        var pointBal = CGFloat(self.VM.myPlannerListArray[indexPath.row].pointBalance ?? 0)
+        var requiredBal = CGFloat(self.VM.myPlannerListArray[indexPath.row].pointsRequired ?? 0)
+        var progressPercent = CGFloat(pointBal/requiredBal) * 100.0
+        cell?.progressBar.progress = Float((progressPercent / 100.0) )
+        if progressPercent < 100.0{
+            cell?.progressBarValueLbl.text = "\(Int(progressPercent)) %"
+            cell?.progressBarCircleViewLeading.constant = ((cell?.progressBar.frame.width ?? 0) * CGFloat(progressPercent/100))
+        }else{
+            cell?.progressBarValueLbl.text = "100 %"
+            cell?.progressBarCircleViewLeading.constant = ((cell?.progressBar.frame.width ?? 0) * CGFloat(100/100) - 16)
+        }
         
         if pointRequired < balance{
             let percentage = CGFloat(balance/pointRequired)

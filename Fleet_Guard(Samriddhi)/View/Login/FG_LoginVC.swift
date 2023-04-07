@@ -104,11 +104,12 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate,CheckBo
     }
 
     @IBAction func checkBoxButton(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HR_TermsandCondtionVC") as! HR_TermsandCondtionVC
-        vc.delegate = self
-        vc.modalTransitionStyle = .coverVertical
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HR_TermsandCondtionVC") as? HR_TermsandCondtionVC
+        vc?.delegate = self
+//        vc?.modalTransitionStyle = .coverVertical
+//        vc?.modalPresentationStyle = .overFullScreen
+//        self.present(vc!, animated: true)
+        navigationController?.pushViewController(vc!, animated: true)
         
     }
     func decline(_ vc: HR_TermsandCondtionVC) {

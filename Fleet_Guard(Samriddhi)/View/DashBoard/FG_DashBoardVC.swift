@@ -11,7 +11,9 @@ import SlideMenuControllerSwift
 import Kingfisher
 class FG_DashBoardVC: BaseViewController {
 
-//    @IBOutlet weak var offersandPromLbl: UILabel!
+    @IBOutlet weak var progressCircleView: UIView!
+    @IBOutlet weak var progressBarLbl: UILabel!
+    //    @IBOutlet weak var offersandPromLbl: UILabel!
 //    @IBOutlet weak var redemptionCatalogueLbl: UILabel!
 //    @IBOutlet weak var newRangeAdditionLbl: UILabel!
 //    @IBOutlet weak var retailerCodeLbl: UILabel!
@@ -20,6 +22,7 @@ class FG_DashBoardVC: BaseViewController {
 //    @IBOutlet weak var rplNoLbl: UILabel!
 //    @IBOutlet weak var totalValue: UILabel!
     
+    @IBOutlet weak var progressCircleViewLeading: NSLayoutConstraint!
     @IBOutlet weak var totalPtsBalance: UILabel!
     @IBOutlet weak var welcomeTitle: UILabel!
     @IBOutlet weak var welcomeLbl: UILabel!
@@ -75,8 +78,8 @@ class FG_DashBoardVC: BaseViewController {
         print(deviceID,"kjslk")
         self.emptyImageView.isHidden = true
         subView.clipsToBounds = true
-        subView.layer.cornerRadius = 20
-        subView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+//        subView.layer.cornerRadius = 20
+//        subView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
        // self.dreamGiftDetailsView.constant = 100
         //self.dreamGiftProductView.isHidden = true
         //self.addYourDreamGiftView.isHidden = false
@@ -98,6 +101,7 @@ class FG_DashBoardVC: BaseViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(logedInByOtherMobile), name: Notification.Name.logedInByOtherMobile, object: nil)
         self.bannerImagesAPI()
+        self.plannerListing()
         
     }
     override func viewWillAppear(_ animated: Bool) {

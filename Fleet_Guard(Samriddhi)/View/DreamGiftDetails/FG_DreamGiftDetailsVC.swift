@@ -9,6 +9,11 @@ import Kingfisher
 class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
     
+    @IBOutlet weak var expectRedeemDate: UILabel!
+    @IBOutlet weak var expectRedeemProductName: UILabel!
+    @IBOutlet weak var progressBarCircleViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var progressBarValueLbl: UILabel!
+    @IBOutlet weak var pointsRequiredLbl: UILabel!
     @IBOutlet var redemptionPlannerTitleLabel: UILabel!
     @IBOutlet var productImageView: UIImageView!
     @IBOutlet var productNameLabel: UILabel!

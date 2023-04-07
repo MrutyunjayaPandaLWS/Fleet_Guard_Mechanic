@@ -239,7 +239,21 @@ class FG_DashboardVM: popUpDelegate{
                 self.VC?.plannerCategoryLbl.text = "Category: \(result?.objCatalogueList?[0].catogoryName ?? "-")"
                 self.VC?.plannerProductLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
                // self.VC?.plannerPointsRequiredLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
+                let image =  PROMO_IMG1 + (result?.objCatalogueList?[0].productImage ?? "")
+                self.VC?.dreamGiftImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "profileDefault"))
                 self.VC?.plannerPointsReqPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointsRequired ?? 0))"
+                var pointBal = CGFloat(result?.objCatalogueList?[0].pointBalance ?? 0)
+                var requiredBal = CGFloat(result?.objCatalogueList?[0].pointsRequired ?? 0)
+                var progressPercent = CGFloat(pointBal/requiredBal) * 100.0
+                self.VC?.progressViewDreamGift.progress = Float((progressPercent / 100.0) )
+                if progressPercent < 100.0{
+                    self.VC?.progressBarLbl.text = "\(Int(progressPercent)) %"
+                    self.VC?.progressCircleViewLeading.constant = ((self.VC?.progressViewDreamGift.frame.width ?? 0) * CGFloat(progressPercent/100) - 16)
+                }else{
+                    self.VC?.progressBarLbl.text = "100 %"
+                    self.VC?.progressCircleViewLeading.constant = ((self.VC?.progressViewDreamGift.frame.width ?? 0) * CGFloat(100/100) - 16)
+                }
+              
 
             }else{
                 self.VC?.dreamGiftDetailsOutBtn.isHidden = false
