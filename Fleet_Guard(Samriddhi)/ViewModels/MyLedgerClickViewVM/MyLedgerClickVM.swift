@@ -28,7 +28,7 @@ class MyLedgerClickVM {
                                 self.VC?.MyLedgerTableView.isHidden = false
                                 self.VC?.MyLedgerTableView.reloadData()
                                 self.VC?.nodataFoundLbl.isHidden = true
-                                self.VC?.pointsLbl.text = "\(self.rlpStatemnetArray[0].overAllPoints ?? 0)"
+//                                self.VC?.pointsLbl.text = "\(self.rlpStatemnetArray[0].overAllPoints ?? 0)"
                                 
                             }else{
                                 self.VC?.MyLedgerTableView.isHidden = true

@@ -104,11 +104,13 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
                         if self.redemptionCatalougeListArray.count != 0 {
                             self.VC?.catalogueListTableView.isHidden = false
                             self.VC?.noDataFoundLbl.isHidden = true
+                            self.VC?.plannerListing()
                             self.VC?.catalogueListTableView.reloadData()
                         }else{
                             self.VC?.catalogueListTableView.isHidden = true
                             self.VC?.noDataFoundLbl.isHidden = false
                         }
+                        self.VC?.plannerListing()
                     }
 
                 }else{
@@ -188,6 +190,7 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
                         if result?.returnValue ?? 0 != 0{
                             DispatchQueue.main.async{
                                 self.VC?.view.makeToast("Product added into dream gift  successfully.", duration: 3.0, position: .bottom)
+                                self.VC?.plannerListing()
                             }
                         }else{
                             DispatchQueue.main.async{

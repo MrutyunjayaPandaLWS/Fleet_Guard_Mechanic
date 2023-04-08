@@ -56,7 +56,7 @@ class FG_DashboardVM: popUpDelegate{
                                 
                                 
                                 
-                                //                                UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].redeemablePointsBalance ?? "", forKey: "TotalPoints")
+                        UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].redeemablePointsBalance ?? "", forKey: "TotalPoints")
                                 UserDefaults.standard.synchronize()
                                 
                                 
@@ -239,8 +239,8 @@ class FG_DashboardVM: popUpDelegate{
                 self.VC?.plannerCategoryLbl.text = "Category: \(result?.objCatalogueList?[0].catogoryName ?? "-")"
                 self.VC?.plannerProductLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
                // self.VC?.plannerPointsRequiredLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
-                let image =  PROMO_IMG1 + (result?.objCatalogueList?[0].productImage ?? "")
-                self.VC?.dreamGiftImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "profileDefault"))
+                let image =  productCatalogueImgURL + (result?.objCatalogueList?[0].productImage ?? "")
+                self.VC?.dreamGiftImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
                 self.VC?.plannerPointsReqPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointsRequired ?? 0))"
                 var pointBal = CGFloat(result?.objCatalogueList?[0].pointBalance ?? 0)
                 var requiredBal = CGFloat(result?.objCatalogueList?[0].pointsRequired ?? 0)

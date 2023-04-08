@@ -76,7 +76,7 @@ class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
         self.VM.removePlannedProduct(parameters: parameters) { response in
             if response?.returnValue == 1{
                 self.plannerListing()
-                self.navigationController?.popViewController(animated: true)
+//                self.navigationController?.popViewController(animated: true)
             }else{
                 DispatchQueue.main.async{
                     

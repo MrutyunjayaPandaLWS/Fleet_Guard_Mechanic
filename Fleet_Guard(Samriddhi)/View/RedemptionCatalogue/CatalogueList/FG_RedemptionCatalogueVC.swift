@@ -22,6 +22,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     func addToDreamGift(_ cell: FG_RedemptionCatalogueTVC) {
         guard let tappedIndexPath = self.catalogueListTableView.indexPath(for: cell) else {return}
         self.addtoDreamGift(catalogueId: self.VM.redemptionCatalougeListArray[tappedIndexPath.row].catalogueId ?? 0)
+        
     }
     
     func prodiuctDetails(_ vc: FG_CatalogueFilterView) {
@@ -89,11 +90,13 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     var miniValue = ""
     var maximiumValue = ""
     var plannerListingData = ""
+    var dreamGiftListArray = [Int]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        plannerListing()
         self.countLbl.isHidden = true
         self.catalogueListTableView.delegate = self
         self.catalogueListTableView.dataSource = self
@@ -279,6 +282,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     func plannerListing(){
         let parameters = [
             "ActionType": "6",
+            "Points": totalPoints,
             "ActorId": "\(userId)"
         ] as [String : Any]
         print(parameters)
@@ -286,8 +290,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
             self.VM.myPlannerListArray = response?.objCatalogueList ?? []
             print(self.VM.myPlannerListArray.count, "Planner List Cout")
             DispatchQueue.main.async {
-                
-//
+                self.catalogueListTableView.reloadData()
 //                if self.VM.myPlannerListArray.count != 0 {
 //                    self.ad
 //                }else{
@@ -329,10 +332,21 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
         cell.categoryLbl.text = "Catogory / \(self.VM.redemptionCatalougeListArray[indexPath.row].catogoryName ?? "")"
         cell.pointsLbl.text = "\(self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0)"
         let image = VM.redemptionCatalougeListArray[indexPath.row].productImage ?? ""
+        cell.productImage.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
         let filterArray = self.myCartIds.filter{$0 == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId ?? 0}
         let productPoints = self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0
-        let filterDreamGiftArray = self.VM.myPlannerListArray.filter{$0.catalogueId == self.VM.redemptionCatalogueMyCartListArray[indexPath.row].catalogueId}
-        
+        var filterDreamGiftArray = [ObjCatalogueList2]()
+        if (self.VM.myPlannerListArray.count != 0){
+            filterDreamGiftArray = self.VM.myPlannerListArray.filter{$0.catalogueId == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId}
+        }
+         
+//        let catalogoueID = self.VM.redemptionCatalogueMyCartListArray[indexPath.row].catalogueId ?? 0
+//        if dreamGiftListArray.contains(catalogoueID){
+//            cell.addedToCartView.isHidden = true
+//            cell.addToCartView.isHidden = true
+//            cell.addedToDreamGiftView.isHidden = false
+//            cell.addtoDreamGiftView.isHidden = true
+//        }
 //        let filterCategory = self.myCartIds.filter { $0 == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId ?? 0 }
 //        let filterPlannerList = self.VM.myPlannerListArray.filter { $0.catalogueId == self.VM.redemptionCatalogueMyCartListArray[indexPath.row].catalogueId ?? 0 }
 //        let productPoints = self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0
@@ -399,11 +413,13 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
                 cell.addedToCartView.isHidden = true
                 cell.addToCartView.isHidden = true
                 cell.addedToDreamGiftView.isHidden = false
+                cell.addToPlannerOutletBTN.setImage(UIImage(named: "favorite"), for: .normal)
                 cell.addtoDreamGiftView.isHidden = true
             }else{
                 cell.addedToCartView.isHidden = true
                 cell.addToCartView.isHidden = true
                 cell.addedToDreamGiftView.isHidden = true
+                cell.addToPlannerOutletBTN.setImage(UIImage(named: "favorite-filled 1"), for: .normal)
                 cell.addtoDreamGiftView.isHidden = false
             }
         }

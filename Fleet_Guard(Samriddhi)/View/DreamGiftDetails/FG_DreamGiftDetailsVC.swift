@@ -65,9 +65,13 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
         points.text = "\(Double(productPoints))"
         let totalImgURL = productCatalogueImgURL + productImage
         //productImageView.sd_setImage(with: URL(string: totalImgURL), placeholderImage: UIImage(named: "ic_default_img"))
-        self.todayPoints.text = "\(Int(pointBalance))"
+        self.todayPoints.text = "\(Int(pointBalance) ?? 0)"
         self.monthlyPointsLabel.text = "\(redeemableAverageEarning)"
+        self.expectRedeemProductName.text = productName
+        self.expectRedeemDate.text = dateOfSubmission
+        
         if productPoints  > Int(pointBalance) ?? 0 {
+            self.pointsRequiredLbl.text = "\((Int(productPoints) ) - (Int(pointBalance) ?? 0)) Points more to redeem"
             //redeemButton.isEnabled = false
             //congratulationsImageView.isHidden = true
            // infoDetailsLbl.isHidden = false
@@ -83,7 +87,22 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
             //            }
             
             //redeemButton.backgroundColor = .lightGray
+            let image =  PROMO_IMG1 + productImage
+                productImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "profileDefault"))
+            var pointBal = Float(pointBalance) ?? 0.0
+            var requiredBal = Float(productPoints)
+            var progressPercent = CGFloat(pointBal/requiredBal) * 100.0
+            progressiveView.progress = Float((progressPercent / 100.0) )
+            
+                progressBarValueLbl.text = "\(Int(progressPercent)) %"
+            progressBarCircleViewLeading.constant = ((progressiveView.frame.width ) * CGFloat(progressPercent/100))
+            
+               
+            
         }else{
+            pointsRequiredLbl.text = ""
+            progressBarValueLbl.text = "100 %"
+            progressBarCircleViewLeading.constant = ((progressiveView.frame.width ) * CGFloat(100/100) - 16)
            // congratulationsImageView.isHidden = true
 //            infoDetailsLbl.isHidden = false
 //            infoDetailsLbl.text = "Congratulations! You are eligible to redeem your Redemption planner product."

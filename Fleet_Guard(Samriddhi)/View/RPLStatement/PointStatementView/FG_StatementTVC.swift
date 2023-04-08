@@ -17,7 +17,7 @@ class FG_StatementTVC: UITableViewCell {
     @IBOutlet weak var pointEarnedLbl: UILabel!
     @IBOutlet weak var balanceLbl: UILabel!
     @IBOutlet weak var viewOutBtn: UIButton!
-    
+    var totalPoints = 0
     weak var delegate: StatementViewDelegate!
     
     override func awakeFromNib() {

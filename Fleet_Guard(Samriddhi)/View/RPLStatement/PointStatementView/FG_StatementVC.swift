@@ -13,16 +13,19 @@ class FG_StatementVC: BaseViewController,StatementViewDelegate{
         let vcc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyLedgerClickViewVC") as! FG_MyLedgerClickViewVC
         let date = (VM.rlpStatemnetArray[tappedIndexPath.row].accessedDate ?? "").split(separator: " ")
         vcc.accessData = "\(date[0])"
+        vcc.totalPoints = cell.totalPoints
         self.navigationController?.pushViewController(vcc, animated: true)
     }
     
 
+    @IBOutlet weak var backBt: UIButton!
     @IBOutlet weak var statementTableView: UITableView!
     @IBOutlet weak var viewLbl: UILabel!
     @IBOutlet weak var balanceLbl: UILabel!
     @IBOutlet weak var ptsEarnedLbl: UILabel!
     @IBOutlet weak var monthLbl: UILabel!
     @IBOutlet weak var headerText: UILabel!
+    var itsFrom: String = ""
     var VM = RPLStatmentViewVM()
     
     @IBOutlet var ledgerStackView: UIStackView!
@@ -41,6 +44,20 @@ class FG_StatementVC: BaseViewController,StatementViewDelegate{
         self.ledgerStackView.layer.cornerRadius = 15
         self.ledgerStackView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         self.rlpStatemnet()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if itsFrom == "SideMenu"{
+            backBt.isHidden = false
+        }else{
+            backBt.isHidden = true
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        itsFrom = ""
     }
 
     
@@ -73,7 +90,7 @@ extension FG_StatementVC: UITableViewDelegate, UITableViewDataSource{
         let date = (VM.rlpStatemnetArray[indexPath.row].accessedDate ?? "").split(separator: " ")
         cell.monthLbl.text = "\(date[0])"
         cell.pointEarnedLbl.text = "\(VM.rlpStatemnetArray[indexPath.row].overAllPoints ?? 0)"
-        
+        cell.totalPoints = VM.rlpStatemnetArray[indexPath.row].overAllPoints ?? 0
         
         
         if (indexPath.row) % 2 == 0{
@@ -89,6 +106,8 @@ extension FG_StatementVC: UITableViewDelegate, UITableViewDataSource{
         }
         return cell
     }
+    
+    
     
     
 }

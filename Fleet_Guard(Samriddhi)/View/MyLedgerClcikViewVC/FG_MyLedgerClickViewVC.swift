@@ -18,6 +18,7 @@ class FG_MyLedgerClickViewVC: BaseViewController {
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     var accessData: String = ""
+    var totalPoints = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,13 @@ class FG_MyLedgerClickViewVC: BaseViewController {
         self.MyLedgerTableView.dataSource = self
         self.myLegderAPI()
         self.dateLBL.text = accessData
+        pointsLbl.text = "\(totalPoints)"
+        
     }
     
+    @IBAction func selectBackBtn(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
     func myLegderAPI(){
         UserDefaults.standard.set(false, forKey: "AfterLog")
         UserDefaults.standard.synchronize()
@@ -55,7 +61,8 @@ extension FG_MyLedgerClickViewVC: UITableViewDelegate, UITableViewDataSource{
         
         cell.partNoLbl.text = "\(VM.rlpStatemnetArray[indexPath.row].part_No ?? "")"
         cell.productNameLbl.text = "\(VM.rlpStatemnetArray[indexPath.row].part_Desc ?? "")"
-        
+        cell.remarksTitleLbl.text = "Remark"
+        cell.selectionStyle = .none
         return cell
     }
     

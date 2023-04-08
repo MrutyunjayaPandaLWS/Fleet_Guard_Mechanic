@@ -157,7 +157,7 @@ extension FG_SideMenuVC: UITableViewDelegate, UITableViewDataSource{
         }else if indexPath.row == 1{
             self.closeLeft()
             let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_StatementVC") as! FG_StatementVC
-            //vc.itsFrom = "SideMenu"
+            vc.itsFrom = "SideMenu"
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 2{
             self.closeLeft()
