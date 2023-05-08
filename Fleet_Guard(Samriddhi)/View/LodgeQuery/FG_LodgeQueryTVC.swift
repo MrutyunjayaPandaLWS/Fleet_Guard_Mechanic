@@ -8,7 +8,7 @@
 import UIKit
 
 class FG_LodgeQueryTVC: UITableViewCell {
-
+    @IBOutlet weak var timeDetailsSV: UIStackView!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var queryInfoLbl: UILabel!

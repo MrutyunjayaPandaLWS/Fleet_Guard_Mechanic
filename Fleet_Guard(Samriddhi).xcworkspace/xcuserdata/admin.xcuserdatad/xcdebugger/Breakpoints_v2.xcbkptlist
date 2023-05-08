@@ -7,143 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CECE7F2D-0D14-4684-A13C-0A9B668B7BA0"
+            uuid = "C15D7E74-5F84-4C11-B962-587F744C37CC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/ProductCatalogue/ProductCatalogueDetails/FG_ProductCatalogueDetailsVC.swift"
+            filePath = "Fleet_Guard(Samriddhi)/View/Promotions/MyPromotions/MyPromotionDetails/FG_MyPromotionDetailsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "plusBtn(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "88160845-9B76-4202-8186-0691C98A9B61"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/ProductCatalogue/ProductCatalogueDetails/FG_ProductCatalogueDetailsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "plusBtn(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4EBFF809-2801-4FAB-9145-79DB853C823C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/ProductCatalogue/ProductCatalogueDetails/FG_ProductCatalogueDetailsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "plusBtn(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B85E8218-A47C-4872-9D9B-F37373CD891B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/Resource/Delegate/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "setInitialViewAsRootViewController()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2E3538BE-E0FE-4AF4-997D-B4E6FAD7AF15"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/ViewModels/RPLStatmentViewModels/RPLStatmentViewVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "rplStatemnetViewAPI(parameters:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C8AEE083-90C3-42E9-BBCC-1A74470CEC4B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/RPLStatement/PointStatementView/FG_StatementVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A4E05CC5-CAA5-4006-A2A9-908E3C6B663D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "406"
-            endingLineNumber = "406"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "A4E05CC5-CAA5-4006-A2A9-908E3C6B663D - a643d621c3f3f99a"
+                  uuid = "C15D7E74-5F84-4C11-B962-587F744C37CC - 12044de0da540acb"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FleetGuard_Humsafar.FG_RedemptionCatalogueVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  symbolName = "FleetGuard_Humsafar.FG_MyPromotionDetailsVC.viewDidLoad() -&gt; ()"
                   moduleName = "FleetGuard_Humsafar"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/Promotions/MyPromotions/MyPromotionDetails/FG_MyPromotionDetailsVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "405"
-                  endingLineNumber = "405"
-                  offsetFromSymbolStart = "13815">
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "2530">
                </Location>
                <Location
-                  uuid = "A4E05CC5-CAA5-4006-A2A9-908E3C6B663D - a643d621c3f3f9bb"
+                  uuid = "C15D7E74-5F84-4C11-B962-587F744C37CC - 12044de0da540b0d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FleetGuard_Humsafar.FG_RedemptionCatalogueVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  symbolName = "FleetGuard_Humsafar.FG_MyPromotionDetailsVC.viewDidLoad() -&gt; ()"
                   moduleName = "FleetGuard_Humsafar"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/Promotions/MyPromotions/MyPromotionDetails/FG_MyPromotionDetailsVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "406"
-                  endingLineNumber = "406"
-                  offsetFromSymbolStart = "14883">
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "2244">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -151,177 +55,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4C37F779-F741-42F9-8CE5-DF20EA9938F9"
+            uuid = "04D81368-BF5E-4B9C-B86A-BD735CF89F36"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
+            filePath = "Fleet_Guard(Samriddhi)/View/ProductCatalogue/ProductCatalgoueList/FG_ProductCatalogueListVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "403"
-            endingLineNumber = "403"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4C37F779-F741-42F9-8CE5-DF20EA9938F9 - a643d621c3f3f93f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FleetGuard_Humsafar.FG_RedemptionCatalogueVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "FleetGuard_Humsafar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "402"
-                  endingLineNumber = "402"
-                  offsetFromSymbolStart = "13413">
-               </Location>
-               <Location
-                  uuid = "4C37F779-F741-42F9-8CE5-DF20EA9938F9 - a643d621c3f3f958"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FleetGuard_Humsafar.FG_RedemptionCatalogueVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "FleetGuard_Humsafar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "403"
-                  endingLineNumber = "403"
-                  offsetFromSymbolStart = "14481">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BFB2F919-1C8A-43B3-96FA-67E62189BAA6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
-            landmarkName = "plannerListing()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BFB2F919-1C8A-43B3-96FA-67E62189BAA6 - c7d8305bbb0ea27b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;FleetGuard_Humsafar.PlannerListModels&gt;) -&gt; () in FleetGuard_Humsafar.FG_RedemptionCatalogueVC.plannerListing() -&gt; ()"
-                  moduleName = "FleetGuard_Humsafar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "290"
-                  endingLineNumber = "290"
-                  offsetFromSymbolStart = "463">
-               </Location>
-               <Location
-                  uuid = "BFB2F919-1C8A-43B3-96FA-67E62189BAA6 - c7d8305bbb0ea25c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;FleetGuard_Humsafar.PlannerListModels&gt;) -&gt; () in FleetGuard_Humsafar.FG_RedemptionCatalogueVC.plannerListing() -&gt; ()"
-                  moduleName = "FleetGuard_Humsafar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "291"
-                  endingLineNumber = "291"
-                  offsetFromSymbolStart = "463">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "33426400-D7E2-4891-9B64-D64D728C55EF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/ViewModels/RedemptionCatalogueVM/FG_RedemptionCatalogueVM.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "addToDremGiftAPI(parameter:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BFB12CB3-43A7-4199-A49C-011BD15A0AA0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/SideMenu/FG_SideMenuVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "dashboardApi()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1F5002D7-A6C6-4849-A8A7-75DA87246B9B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "336"
-            endingLineNumber = "336"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1F5002D7-A6C6-4849-A8A7-75DA87246B9B - a643d621c3f380bd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FleetGuard_Humsafar.FG_RedemptionCatalogueVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "FleetGuard_Humsafar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "336"
-                  endingLineNumber = "336"
-                  offsetFromSymbolStart = "11376">
-               </Location>
-               <Location
-                  uuid = "1F5002D7-A6C6-4849-A8A7-75DA87246B9B - 46fa0bd1354fca2d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.Bool in FleetGuard_Humsafar.FG_RedemptionCatalogueVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
-                  moduleName = "FleetGuard_Humsafar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "336"
-                  endingLineNumber = "336"
-                  offsetFromSymbolStart = "155">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

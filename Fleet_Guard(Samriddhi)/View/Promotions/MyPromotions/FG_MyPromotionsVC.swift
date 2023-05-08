@@ -21,6 +21,7 @@ class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
     }
     
 
+    @IBOutlet weak var headerLbl: UILabel!
     @IBOutlet weak var myPromotionsTableView: UITableView!
     @IBOutlet weak var noDataFound: UILabel!
     
@@ -69,19 +70,20 @@ extension FG_MyPromotionsVC: UITableViewDelegate, UITableViewDataSource{
         let imageURL = VM.promomotionListingArray[indexPath.row].proImage ?? ""
         print(imageURL)
         if imageURL != ""{
-            let filteredURLArray = imageURL.dropFirst(2)
+            let filteredURLArray = imageURL.dropFirst(3)
             let urltoUse = String(PROMO_IMG1 + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
             let urlt = URL(string: "\(urltoUse)")
             print(urlt)
-            cell.promotionImage.kf.setImage(with: URL(string: "\(String(describing: urlt))"), placeholder: UIImage(named: "Asset 2"));
-           // self.productImag.kf.setImage(with: URL(string: "\(PROMO_IMG1)\(receivedImage)"), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"));
+//            cell.promotionImage.kf.setImage(with: URL(string: String(describing: urlt)), placeholder: UIImage(named: "Asset 2"));
+            cell.promotionImage.kf.setImage(with: URL(string: "\(urlt!)"),placeholder: UIImage(named: "Asset 2"))
+//            self.productImag.kf.setImage(with: URL(string: "\(PROMO_IMG1)\(receivedImage)"), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"));
         }
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 180
+//    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }

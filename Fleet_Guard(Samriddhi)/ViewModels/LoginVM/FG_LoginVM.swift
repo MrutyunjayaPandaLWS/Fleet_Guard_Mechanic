@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_LoginVM: popUpDelegate{
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -51,19 +52,19 @@ class FG_LoginVM: popUpDelegate{
                         
                         self.VC?.stopLoading()
 //                        self.VC!.loaderView.isHidden = true
-                        if self.VC!.boolResult == false{
-//                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                             vc!.delegate = self
-//                             vc!.descriptionInfo = "Please accept terms and condition"
-//                             vc!.modalPresentationStyle = .overFullScreen
-//                             vc!.modalTransitionStyle = .crossDissolve
-//                             self.VC?.present(vc!, animated: true, completion: nil)
-                            self.VC?.view.makeToast("Please accept terms and condition", duration: 3.0, position: .bottom)
-                        }else{
+//                        if self.VC!.boolResult == false{
+////                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+////                             vc!.delegate = self
+////                             vc!.descriptionInfo = "Please accept terms and condition"
+////                             vc!.modalPresentationStyle = .overFullScreen
+////                             vc!.modalTransitionStyle = .crossDissolve
+////                             self.VC?.present(vc!, animated: true, completion: nil)
+//                            self.VC?.view.makeToast("Please accept terms and condition", duration: 3.0, position: .bottom)
+//                        }else{
                             let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_LoginOTPVC") as! FG_LoginOTPVC
                             vc.enterMobileNumber = self.VC?.mobileTF.text ?? ""
                             self.VC?.navigationController?.pushViewController(vc, animated: true)
-                        }
+//                        }
                     }
                 }else{
                     DispatchQueue.main.async{
@@ -77,7 +78,7 @@ class FG_LoginVM: popUpDelegate{
 //                        vc!.modalTransitionStyle = .crossDissolve
 //                        self.VC?.present(vc!, animated: true, completion: nil)
                         
-                        self.VC?.view.makeToast("The mobile number that you have entered is not present in the  system.", duration: 3.0, position: .bottom)
+                        self.VC?.view.makeToast("mobile_number_not_exist".localiz(), duration: 3.0, position: .bottom)
                         self.VC?.mobileTF.text = ""
                     }
                 }

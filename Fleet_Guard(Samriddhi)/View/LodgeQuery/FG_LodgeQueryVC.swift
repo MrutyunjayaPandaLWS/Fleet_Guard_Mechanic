@@ -22,6 +22,8 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
          self.dismiss(animated: true)
      }
     
+
+    @IBOutlet weak var filterShadowView: UIView!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var filterTitle: UILabel!
     @IBOutlet weak var subView: UIView!
@@ -61,6 +63,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     var startindex = 1
     
     
+    
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     
@@ -70,8 +73,8 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         lodgeQueryListTableView.delegate = self
         lodgeQueryListTableView.dataSource = self
         
-        self.subView.isHidden = true
-        self.filterView.isHidden = true
+        self.filterShadowView.isHidden = true
+//        self.filterView.isHidden = true
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 20
         subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -95,6 +98,14 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         super.viewWillAppear(true)
         self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        if touch?.view == filterShadowView{
+            filterShadowView.isHidden = true
+        }
+    }
+    
     
 //
 //    "ActionType": "1",
@@ -126,14 +137,10 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     @IBAction func notificationBtn(_ sender: Any) {
     }
     @IBAction func filterBtn(_ sender: Any) {
-        if self.filterView.isHidden == false{
-            self.filterView.isHidden = true
-        }else{
-            self.filterView.isHidden = false
-        }
+        filterShadowView.isHidden = false
 }
 @IBAction func closeBtn(_ sender: Any) {
-    self.filterView.isHidden = true
+    self.filterShadowView.isHidden = true
 }
 
 @IBAction func fromDateButton(_ sender: Any) {
@@ -223,7 +230,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     print(self.selectedFromDate,"slkdls")
     print(selectedToDate,"lskdjsldm")
     self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
-    self.filterView.isHidden = true
+    self.filterShadowView.isHidden = true
 }
 @IBAction func clearbtn(_ sender: Any) {
     
@@ -233,7 +240,12 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     self.approvedBtn.backgroundColor = .white
     self.pendingBtn.backgroundColor = .white
     self.cancelledBtn.backgroundColor = .white
-    self.filterView.isHidden = true
+    selectedQueryTopicId = -1
+    selectedStatusId = -1
+    selectedFromDate = ""
+    selectedToDate = ""
+    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+    self.filterShadowView.isHidden = true
 }
 }
 
@@ -245,17 +257,31 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "FG_LodgeQueryTVC", for: indexPath) as! FG_LodgeQueryTVC
     cell.selectionStyle = .none
-    
+    let ticketStatus = VM.queryListArray[indexPath.row].ticketStatus ?? "-"
     cell.queryId.text = VM.queryListArray[indexPath.row].customerTicketRefNo ?? ""
-    cell.statusLbl.text = VM.queryListArray[indexPath.row].ticketStatus ?? "-"
-    
+    cell.statusLbl.text = ticketStatus
+    if ticketStatus == "Pending"{
+        cell.statusLbl.backgroundColor = .systemOrange
+    }else if ticketStatus == "Re-Open"{
+        cell.statusLbl.backgroundColor = .systemOrange
+    }else if ticketStatus == "Resolved"{
+        cell.statusLbl.backgroundColor = .systemGreen
+    }else if ticketStatus == "Closed"{
+        cell.statusLbl.backgroundColor = .systemRed
+    }else if ticketStatus == "Resolved-Follow Up"{
+        cell.statusLbl.backgroundColor = .green
+    }
     let querydateAndTime = VM.queryListArray[indexPath.row].jCreatedDate ?? ""
     let querydateAndTimeArray = querydateAndTime.components(separatedBy: " ")
     cell.dateLbl.text = "\(querydateAndTimeArray[0])"
     
     cell.queryInfoLbl.text = VM.queryListArray[indexPath.row].helpTopic ?? "-"
-    cell.timeLbl.text = "\(querydateAndTimeArray[1])"
-
+    if querydateAndTimeArray.count >= 2{
+        cell.timeDetailsSV.isHidden = false
+        cell.timeLbl.text = "\(querydateAndTimeArray[1])"
+    }else{
+        cell.timeDetailsSV.isHidden = true
+    }
     return cell
 }
 
@@ -278,17 +304,17 @@ func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->
     
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-            if indexPath.row == VM.queryListArray.count - 2{
-                if noofelements == 20{
-                    startindex = startindex + 1
-                    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
-                }else if noofelements < 20{
-                    return
-                }else{
-                    print("n0 more elements")
-                    return
-                }
-            }
+//            if indexPath.row == VM.queryListArray.count - 2{
+//                if noofelements == 20{
+//                    startindex = startindex + 1
+//                    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+//                }else if noofelements < 20{
+//                    return
+//                }else{
+//                    print("n0 more elements")
+//                    return
+//                }
+//            }
         }
     
 }

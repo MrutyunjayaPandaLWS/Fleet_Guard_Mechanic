@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import LanguageManager_iOS
+
 protocol SendUpdatedAddressDelegate: NSObject {
     func updatedAddressDetails(_ vc: FG_EditAddressVC)
 }
@@ -129,11 +131,11 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
                 DispatchQueue.main.async{
 //                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                    vc!.delegate = self
-//                        vc!.descriptionInfo = "No Internet"
+//                        vc!.descriptionInfo = "No_Internet".localiz()
 //                    vc!.modalPresentationStyle = .overCurrentContext
-//                    vc!.modalTransitionStyle = .crossDissolve
+//                    vc!.modalTransitionStyle = .crossDissolveNo Internet
 //                    self.present(vc!, animated: true, completion: nil)
-                    self.view.makeToast("No Internet", duration: 3.0, position: .bottom)
+                    self.view.makeToast("No_Internet".localiz(), duration: 3.0, position: .bottom)
                 }
             }else{
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DropDownVC") as? FG_DropDownVC
@@ -158,20 +160,20 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("No Internet", duration: 3.0, position: .bottom)
+                self.view.makeToast("No_Internet".localiz(), duration: 3.0, position: .bottom)
             }
         }else{
             if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
                 DispatchQueue.main.async{
 //                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                    vc!.delegate = self
-//                        vc!.descriptionInfo = "No Internet"
+//                        vc!.descriptionInfo = "No_Internet".localiz()
 //
 //                    vc!.modalPresentationStyle = .overCurrentContext
 //                    vc!.modalTransitionStyle = .crossDissolve
 //                    self.present(vc!, animated: true, completion: nil)
                     
-                    self.view.makeToast("No Internet", duration: 3.0, position: .bottom)
+                    self.view.makeToast("No_Internet".localiz(), duration: 3.0, position: .bottom)
                 }
             }else{
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DropDownVC") as? FG_DropDownVC

@@ -12,6 +12,8 @@ import LanguageManager_iOS
 class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate,CheckBoxSelectDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
     
+    @IBOutlet weak var termsAndCondBtn: UIButton!
+    @IBOutlet weak var acceptLbl: UILabel!
     @IBOutlet weak var loaderAnimation: LottieAnimationView!
     @IBOutlet weak var loaderView: UIView!
     @IBOutlet weak var welcomeToLbl: UILabel!
@@ -30,6 +32,7 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate,CheckBo
     var boolResult:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
+        localization()
         self.VM.VC = self
         self.mobileTF.setLeftPaddingPoints(13)
         self.mobileTF.keyboardType = .asciiCapableNumberPad
@@ -44,18 +47,10 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate,CheckBo
         super.viewWillAppear(true)
         self.loaderView.isHidden = true
         self.tokendata()
+        localization()
     }
     
-    func localization() {
-        self.welcomeToLbl.text = "welcome".localiz()
-        self.alreadyAMemberLbl.text = "AlreadyaMember".localiz()
-        self.loginNowLbl.text = "LoginNow".localiz()
-        self.mobileNumberLbl.text = "Mobilenumber".localiz()
-        self.sendOtpBtn.setTitle("SendOTP".localiz(), for: .normal)
-        self.newToSamriddhiLbl.text = "NewtoSamriddhi".localiz()
-        self.contactUsBtn.setTitle("Contactusnow".localiz(), for: .normal)
-        self.mobileTF.placeholder = "Enteryourmobilenumber".localiz()
-    }
+
     
     
 
@@ -69,7 +64,7 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate,CheckBo
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
 //            }
-            self.view.makeToast("Please enter mobile number", duration: 3.0, position: .bottom)
+            self.view.makeToast("enter_mobile_number_error".localiz(), duration: 3.0, position: .bottom)
         }
 //        else if self.mobileTF.text!.count != 10 {
 //            DispatchQueue.main.async{
@@ -83,7 +78,7 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate,CheckBo
 //        }
         else{
             let parameter = [
-                    "ActionType": "57",
+                    "ActionType": "66",
                     "Location": [
                         "UserName": "\(self.mobileTF.text ?? "")"
                     ]
@@ -116,7 +111,7 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate,CheckBo
         self.checkBoxBtn.setImage(UIImage(named: "square"), for: .normal)
     }
     func accept(_ vc: HR_TermsandCondtionVC) {
-        print(vc.boolResult, "sdakflasklfsadkjlfdsaljkfdsaljkadsfdfljks")
+        print(vc.boolResult, "terms condition status")
         if vc.boolResult == true{
             self.boolResult = true
             self.checkBoxBtn.setImage(UIImage(named: "tick"), for: .normal)
@@ -176,7 +171,19 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate,CheckBo
         }
     
     
- 
+    func localization(){
+        welcomeToLbl.text = "welcome_to".localiz()
+        alreadyAMemberLbl.text = "already_a_Member".localiz()
+        loginNowLbl.text = "login_Now".localiz()
+        mobileNumberLbl.text = "mobile_number".localiz()
+        mobileTF.placeholder = "enter_mobile_number".localiz()
+        sendOtpBtn.setTitle("send_otp".localiz(), for: .normal)
+        acceptLbl.text = "Accept".localiz()
+        termsAndCondBtn.setTitle("Terms_and_condition".localiz(), for: .normal)
+        newToSamriddhiLbl.text = "new_to_humsafar".localiz()
+        contactUsBtn.setTitle("contact_us".localiz(), for: .normal)
+    }
+    
 }
 
 

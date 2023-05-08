@@ -199,17 +199,71 @@ extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource{
         cell.qtyLbl.text = "\(VM.myRedemptionList[indexPath.row].quantity ?? 0)"
         let date = (VM.myRedemptionList[indexPath.row].jRedemptionDate ?? "").split(separator: " ")
         cell.dateTitleLbl.text = "\(date[0])"
-        cell.ptsLbl.text = "\(VM.myRedemptionList[indexPath.row].redeemedPoints ?? 0)"
+        cell.ptsLbl.text = "\(Int(VM.myRedemptionList[indexPath.row].redeemedPoints ?? 0))"
         
         let statusDtata = VM.myRedemptionList[indexPath.row].status ?? 0
+//        if statusDtata == 0{
+//            cell.statusLbl.setTitle("Pending",for: .normal)
+//            cell.statusLbl.backgroundColor = .systemOrange
+//        }else if statusDtata == 1{
+//            cell.statusLbl.setTitle("Approved", for: .normal)
+//            cell.statusLbl.backgroundColor = .systemGreen
+//        }else{
+//            cell.statusLbl.setTitle("Rejected", for: .normal)
+//            cell.statusLbl.backgroundColor = .systemRed
+//        }
+        
+
         if statusDtata == 0{
             cell.statusLbl.setTitle("Pending",for: .normal)
-            cell.statusLbl.backgroundColor = .systemOrange
-        }else if statusDtata == 1{
-            cell.statusLbl.setTitle("Approved", for: .normal)
+            cell.statusLbl.backgroundColor = .systemYellow
+        }else if statusDtata == 12{
+            cell.statusLbl.setTitle("Processd", for: .normal)
+            cell.statusLbl.backgroundColor = .systemBlue
+        }else if statusDtata == 14{
+            cell.statusLbl.setTitle("Processd",for: .normal)
+            cell.statusLbl.backgroundColor = .systemBlue
+        }else if statusDtata == 2{
+            cell.statusLbl.setTitle("Processd", for: .normal)
+            cell.statusLbl.backgroundColor = .systemBlue
+        }else if statusDtata == 15{
+            cell.statusLbl.setTitle("Processd",for: .normal)
+            cell.statusLbl.backgroundColor = .systemBlue
+        }else if statusDtata == 10{
+            cell.statusLbl.setTitle("Dispatched", for: .normal)
+            cell.statusLbl.backgroundColor = UIColor.systemGreen
+        }else if statusDtata == 4{
+            cell.statusLbl.setTitle("Delivered",for: .normal)
+            cell.statusLbl.backgroundColor = .green
+        }else if statusDtata == 24{
+            cell.statusLbl.setTitle("In Transit", for: .normal)
+            cell.statusLbl.backgroundColor = .systemBlue
+        }else if statusDtata == 19{
+            cell.statusLbl.setTitle("Delivery Confirmed",for: .normal)
             cell.statusLbl.backgroundColor = .systemGreen
-        }else{
+        }else if statusDtata == 20{
+            cell.statusLbl.setTitle("Return Requested", for: .normal)
+            cell.statusLbl.backgroundColor = .systemYellow
+        }else if statusDtata == 21{
+            cell.statusLbl.setTitle("Return Pickup Schedule",for: .normal)
+            cell.statusLbl.backgroundColor = .systemYellow
+        }else if statusDtata == 22{
+            cell.statusLbl.setTitle("Picked Up", for: .normal)
+            cell.statusLbl.backgroundColor = .systemYellow
+        }else if statusDtata == 23{
+            cell.statusLbl.setTitle("Return Received", for: .normal)
+            cell.statusLbl.backgroundColor = .systemGreen
+        }else if statusDtata == 8{
+            cell.statusLbl.setTitle("Re dispatched", for: .normal)
+            cell.statusLbl.backgroundColor = .systemGreen
+        }else if statusDtata == 5{
             cell.statusLbl.setTitle("Rejected", for: .normal)
+            cell.statusLbl.backgroundColor = .systemRed
+        }else if statusDtata == 3{
+            cell.statusLbl.setTitle("Cancelled", for: .normal)
+            cell.statusLbl.backgroundColor = .systemRed
+        }else{
+            cell.statusLbl.setTitle("Cancelled", for: .normal)
             cell.statusLbl.backgroundColor = .systemRed
         }
         
@@ -219,5 +273,12 @@ extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyRedemptionDetailsVC") as? FG_MyRedemptionDetailsVC
+        vc?.redepmtionId = "\(self.VM.myRedemptionList[indexPath.row].redemptionId ?? 0)"
+        vc?.productRefno = "\(self.VM.myRedemptionList[indexPath.row].redemptionRefno ?? "")"
+        navigationController?.pushViewController(vc!, animated: true)
     }
 }

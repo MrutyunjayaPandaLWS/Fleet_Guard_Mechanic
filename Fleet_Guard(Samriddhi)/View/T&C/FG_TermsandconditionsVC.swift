@@ -16,7 +16,7 @@ class FG_TermsandconditionsVC: BaseViewController {
         self.startLoading()
         DispatchQueue.main.async {
             self.stopLoading()
-            self.webviewKit.loadRequest(NSURLRequest(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "fleetguard-retailer-t&c-eng", ofType: "html")!) as URL) as URLRequest)
+            self.webviewKit.loadRequest(NSURLRequest(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "fleetguard-mechanic-t&c", ofType: "html")!) as URL) as URLRequest)
         }
     }
     override func viewWillAppear(_ animated: Bool) {

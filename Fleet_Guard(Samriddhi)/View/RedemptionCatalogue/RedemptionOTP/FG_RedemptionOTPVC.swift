@@ -9,9 +9,11 @@ import UIKit
 import DPOTPView
 //import Firebase
 import Lottie
-class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate {
+class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate, RedemptionPopUpMessageDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
-    
+    func didTappedDasbordBtn() {
+        navigationController?.popToRootViewController(animated: true)
+    }
    
     @IBOutlet weak var submitBtnTopSpace: NSLayoutConstraint!
     //    @IBOutlet var otpTF: UITextField!
@@ -126,10 +128,11 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
       
         self.stopLoading()
         self.timer.invalidate()
-        self.dismiss(animated: true){
-//            dismissCurrentVC
-            NotificationCenter.default.post(name: .dismissCurrentVC, object: nil)
-        }
+//        self.dismiss(animated: true){
+////            dismissCurrentVC
+//            NotificationCenter.default.post(name: .dismissCurrentVC, object: nil)
+//        }
+        navigationController?.popViewController(animated: true)
     }
     @IBAction func resendOtpBtn(_ sender: Any) {
         getOTP()
@@ -202,6 +205,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
                         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionCataloguePopUp") as! FG_RedemptionCataloguePopUp
                         vc.modalPresentationStyle = .overCurrentContext
                         vc.modalTransitionStyle = .crossDissolve
+                        vc.delegate = self
                         self.present(vc, animated: true, completion: nil)
                         
                     }else{

@@ -332,7 +332,9 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
         cell.categoryLbl.text = "Catogory / \(self.VM.redemptionCatalougeListArray[indexPath.row].catogoryName ?? "")"
         cell.pointsLbl.text = "\(self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0)"
         let image = VM.redemptionCatalougeListArray[indexPath.row].productImage ?? ""
-        cell.productImage.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
+        let images = ("\(imageBaseURL)\(image)").replacingOccurrences(of: " ", with: "%20")
+        cell.productImage.kf.setImage(with: URL(string: "\(String(describing: images))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
+        print(images)
         let filterArray = self.myCartIds.filter{$0 == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId ?? 0}
         let productPoints = self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0
         var filterDreamGiftArray = [ObjCatalogueList2]()

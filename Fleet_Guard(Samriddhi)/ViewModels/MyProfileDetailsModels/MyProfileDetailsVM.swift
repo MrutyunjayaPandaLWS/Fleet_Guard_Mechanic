@@ -18,6 +18,7 @@ class MyProfileDetailsVM: popUpDelegate{
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     weak var VC: FG_MyProfileVC?
     var requestAPIs = RestAPI_Requests()
+    var profileDetailsData : ProfileDetailsModels?
     var myProfileDetailsarray = [LstCustomerOfficalInfoJson1]()
     
     
@@ -30,6 +31,7 @@ class MyProfileDetailsVM: popUpDelegate{
                 if result != nil{
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
+                        self.profileDetailsData = result
                         self.VC?.firstNameLbl.text = result?.lstCustomerJson?[0].firstName ?? "-"
                         self.VC?.lastNameLbl.text = result?.lstCustomerJson?[0].lastName ?? "-"
                         self.VC?.mobileNumberLbl.text = result?.lstCustomerJson?[0].mobile ?? "-"
@@ -45,7 +47,9 @@ class MyProfileDetailsVM: popUpDelegate{
                         let customerImage = "\(profileDetails[0].profilePicture ?? "")".dropFirst()
                         print(customerImage)
                         self.VC?.profileImage.kf.setImage(with: URL(string: "\(Promo_ImageData)\(customerImage)"), placeholder: UIImage(named: "ic_default_img"));
-                        self.VC?.preferredLanguageLbl.text = "\(result?.lstCustomerJson?[0].languageName ?? "")"
+                        self.VC?.preferredLanguageLbl.text = "\(result?.lstCustomerJson?[0].languageName ?? "-")"
+                        self.VC?.genderLbl.text = "\(result?.lstCustomerJson?[0].gender ?? "-")"
+                        self.VC?.languageID = result?.lstCustomerJson?[0].languageId ?? -1
                     }
                 } else {
                     print("No Response")

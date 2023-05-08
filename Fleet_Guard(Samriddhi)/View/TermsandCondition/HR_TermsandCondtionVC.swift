@@ -9,6 +9,9 @@ import UIKit
 import WebKit
 //import Firebase
 import Lottie
+import LanguageManager_iOS
+
+
 protocol CheckBoxSelectDelegate{
     func accept(_ vc: HR_TermsandCondtionVC)
     func decline(_ vc: HR_TermsandCondtionVC)
@@ -31,10 +34,10 @@ class HR_TermsandCondtionVC: BaseViewController{
     var itsFrom = ""
     var fromSideMenu = ""
 //    var tcListingArray = [LstTermsAndCondition]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let filePath = Bundle.main.url(forResource: "fleetguard-retailer-t&c-eng", withExtension: "html") {
+        if let filePath = Bundle.main.url(forResource: "fleetguard-mechanic-t&c", withExtension: "html") {
           let request = NSURLRequest(url: filePath)
             webview1.load(request as URLRequest)
         }
@@ -47,6 +50,10 @@ class HR_TermsandCondtionVC: BaseViewController{
       
       }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localization()
+    }
     
     @IBAction func declineBTN(_ sender: Any) {
        
@@ -61,4 +68,10 @@ class HR_TermsandCondtionVC: BaseViewController{
 //        self.dismiss(animated: true, completion: nil)
         navigationController?.popViewController(animated: true)
     }
+    
+    func localization(){
+        decline.setTitle("decline".localiz(), for: .normal)
+        accept.setTitle("accept".localiz(), for: .normal)
+    }
+    
 }

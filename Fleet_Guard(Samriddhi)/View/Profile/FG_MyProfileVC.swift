@@ -28,6 +28,8 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     
     @IBOutlet weak var headerTitleLbl: UILabel!
     
+    @IBOutlet weak var genderLbl: UILabel!
+    @IBOutlet weak var gederTitlleLbl: UILabel!
     @IBOutlet weak var personalInfoLbl: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var subView: UIView!
@@ -60,6 +62,7 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     let picker = UIImagePickerController()
     var strdata1 = ""
     var fileType = ""
+    var languageID = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,8 +112,11 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
         vc.state = self.stateLbl.text ?? ""
         vc.city = self.cityLbl.text ?? ""
         vc.pincode = self.pincodeLbl.text ?? ""
-        vc.dob = self.dobLbl.text ?? ""
-        vc.prefLanguage = self.preferredLanguageLbl.text ?? ""
+        vc.dob = self.dobLbl.text ?? "Select DOB"
+        vc.genderName = self.genderLbl.text ?? "Select Gender"
+        vc.prefLanguage = self.preferredLanguageLbl.text ?? "Select Preferred Language"
+        vc.selectedLanguageId = languageID
+        vc.profileDetails = self.VM.profileDetailsData
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -28,7 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         tokendata()
         tokendata1()
+        UserDefaults.standard.set("EN", forKey: "LanguageName")
+        LanguageManager.shared.setLanguage(language: .en)
         let tokenStatus: Bool = UserDefaults.standard.bool(forKey: "AfterLog")
+        UserDefaults.standard.synchronize()
         print(tokenStatus, "Status")
         
         let isUserLoggedIn: Bool = UserDefaults.standard.bool(forKey: "IsloggedIn?")

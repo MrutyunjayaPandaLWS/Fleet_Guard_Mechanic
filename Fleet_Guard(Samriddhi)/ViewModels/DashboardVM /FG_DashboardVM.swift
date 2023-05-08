@@ -248,10 +248,10 @@ class FG_DashboardVM: popUpDelegate{
                 self.VC?.progressViewDreamGift.progress = Float((progressPercent / 100.0) )
                 if progressPercent < 100.0{
                     self.VC?.progressBarLbl.text = "\(Int(progressPercent)) %"
-                    self.VC?.progressCircleViewLeading.constant = ((self.VC?.progressViewDreamGift.frame.width ?? 0) * CGFloat(progressPercent/100) - 16)
+                    self.VC?.progressCircleViewLeading.constant = ((self.VC?.progressViewDreamGift.frame.width ?? 0) * CGFloat(progressPercent/100))
                 }else{
                     self.VC?.progressBarLbl.text = "100 %"
-                    self.VC?.progressCircleViewLeading.constant = ((self.VC?.progressViewDreamGift.frame.width ?? 0) * CGFloat(100/100) - 16)
+                    self.VC?.progressCircleViewLeading.constant = self.VC?.progressViewDreamGift.frame.width ?? 0
                 }
               
 

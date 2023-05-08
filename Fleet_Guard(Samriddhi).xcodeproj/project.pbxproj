@@ -170,7 +170,6 @@
 		84068DA62976653D00D4360F /* MyCommonFunctionalUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84068DA52976653D00D4360F /* MyCommonFunctionalUtilities.swift */; };
 		84068DAA2976656600D4360F /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84068DA82976656600D4360F /* Reach.swift */; };
 		84068DAB2976656600D4360F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84068DA92976656600D4360F /* Reachability.swift */; };
-		84068DB1297667E700D4360F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84068DB3297667E700D4360F /* Localizable.strings */; };
 		84068DC42976777200D4360F /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84068DB72976777200D4360F /* Roboto-Medium.ttf */; };
 		84068DC52976777200D4360F /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84068DB82976777200D4360F /* Roboto-Light.ttf */; };
 		84068DC62976777200D4360F /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84068DB92976777200D4360F /* Roboto-Regular.ttf */; };
@@ -220,8 +219,11 @@
 		842F0A7529BC9AE50014602F /* fleetguard-retailer-t&c-kan.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A7029BC9AE40014602F /* fleetguard-retailer-t&c-kan.html */; };
 		842F0A7629BC9AE50014602F /* fleetguard-retailer-t&c-hin.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A7129BC9AE50014602F /* fleetguard-retailer-t&c-hin.html */; };
 		8439109E29812E29007D73B6 /* FG_StatementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439109D29812E29007D73B6 /* FG_StatementVC.swift */; };
-		845425A329780F0A002A86D1 /* FG_MyRedemptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845425A229780F0A002A86D1 /* FG_MyRedemptionVC.swift */; };
-		845425A7297817DA002A86D1 /* FG_MyRedemptionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845425A6297817DA002A86D1 /* FG_MyRedemptionTVC.swift */; };
+		845873892A065D94002A183A /* FG_MyRedemptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845873882A065D94002A183A /* FG_MyRedemptionVC.swift */; };
+		8458738B2A065DA4002A183A /* FG_MyRedemptionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458738A2A065DA4002A183A /* FG_MyRedemptionTVC.swift */; };
+		8458738D2A065DB6002A183A /* FG_RedemptionCollectionCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458738C2A065DB5002A183A /* FG_RedemptionCollectionCVC.swift */; };
+		845873912A0673B5002A183A /* languageManager.strings in Resources */ = {isa = PBXBuildFile; fileRef = 845873932A0673B5002A183A /* languageManager.strings */; };
+		845873962A067556002A183A /* String+Extenssion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845873952A067556002A183A /* String+Extenssion.swift */; };
 		84597BAB2979020800F3A7BC /* FG_CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597BAA2979020800F3A7BC /* FG_CategoryCVC.swift */; };
 		84597BB829790B6000F3A7BC /* FG_MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597BB729790B6000F3A7BC /* FG_MyProfileVC.swift */; };
 		84597BBA29790B8400F3A7BC /* FG_RedemptionCatalogueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597BB929790B8400F3A7BC /* FG_RedemptionCatalogueVC.swift */; };
@@ -239,6 +241,19 @@
 		84662005298145CA00D28026 /* FG_MyOrderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84662004298145CA00D28026 /* FG_MyOrderTVC.swift */; };
 		84662007298145E800D28026 /* FG_MyBillingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84662006298145E800D28026 /* FG_MyBillingTVC.swift */; };
 		84795F4F2979594F00DDA192 /* FG_PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84795F4E2979594F00DDA192 /* FG_PopUpVC.swift */; };
+		84834AEF2A04DF8700FCF73C /* fleetguard-mechanic-t&c.html in Resources */ = {isa = PBXBuildFile; fileRef = 84834AEE2A04DF8700FCF73C /* fleetguard-mechanic-t&c.html */; };
+		84834AF12A04EB6100FCF73C /* fg-Mechanic-about-eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 84834AF02A04EB6100FCF73C /* fg-Mechanic-about-eng.html */; };
+		84834AF32A04F91E00FCF73C /* fg-Mechanic-faq.html in Resources */ = {isa = PBXBuildFile; fileRef = 84834AF22A04F91E00FCF73C /* fg-Mechanic-faq.html */; };
+		84834AF62A05072600FCF73C /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84834AF52A05072600FCF73C /* LanguageModel.swift */; };
+		84834AF82A05073E00FCF73C /* LstAttributesDetails1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84834AF72A05073E00FCF73C /* LstAttributesDetails1.swift */; };
+		84834AFA2A0535EB00FCF73C /* FG_MyRedemptionDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84834AF92A0535EB00FCF73C /* FG_MyRedemptionDetailsVC.swift */; };
+		84834AFC2A05366500FCF73C /* FG_RedemptionDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84834AFB2A05366500FCF73C /* FG_RedemptionDetailsVM.swift */; };
+		84834AFE2A0536A400FCF73C /* FG_MyRedemptionDetailsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84834AFD2A0536A400FCF73C /* FG_MyRedemptionDetailsTVC.swift */; };
+		84834B012A05372E00FCF73C /* RedemptionCatalogueList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84834B002A05372E00FCF73C /* RedemptionCatalogueList.swift */; };
+		84834B032A05374200FCF73C /* RedemptionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84834B022A05374200FCF73C /* RedemptionDetails.swift */; };
+		84834B052A05375600FCF73C /* RedemptionDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84834B042A05375600FCF73C /* RedemptionDetailsModels.swift */; };
+		84834B082A05377B00FCF73C /* RedemptionDetailsOrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84834B072A05377B00FCF73C /* RedemptionDetailsOrderStatus.swift */; };
+		84834B0A2A05379200FCF73C /* RedemptionDetailsOrderStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84834B092A05379200FCF73C /* RedemptionDetailsOrderStatusModel.swift */; };
 		8488E40B298A25BF0032A2D7 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488E403298A25BD0032A2D7 /* ServiceError.swift */; };
 		8488E40C298A25BF0032A2D7 /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488E404298A25BD0032A2D7 /* WebClient.swift */; };
 		8488E40D298A25BF0032A2D7 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488E405298A25BE0032A2D7 /* URLRequest.swift */; };
@@ -417,9 +432,6 @@
 		2593084129A77CDC009A2FBA /* MyRedemptionListingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRedemptionListingVM.swift; sourceTree = "<group>"; };
 		25A760AB29ACD19000FF5C0E /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Main.strings; sourceTree = "<group>"; };
 		25A760AC29ACD19100FF5C0E /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		25A760AD29ACD6D500FF5C0E /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-IN"; path = "en-IN.lproj/Main.strings"; sourceTree = "<group>"; };
-		25A760AE29ACD6D600FF5C0E /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-IN"; path = "en-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		25A760AF29ACD6D700FF5C0E /* en-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-IN"; path = "en-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		25A760B629ACE0DE00FF5C0E /* LstCustomerCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstCustomerCart.swift; sourceTree = "<group>"; };
 		25A760B829ACE60200FF5C0E /* LstCustomerOfficalInfoJson1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstCustomerOfficalInfoJson1.swift; sourceTree = "<group>"; };
 		25A760B929ACE60200FF5C0E /* LstCustomerIdentityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstCustomerIdentityInfo.swift; sourceTree = "<group>"; };
@@ -504,7 +516,6 @@
 		84068DA52976653D00D4360F /* MyCommonFunctionalUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCommonFunctionalUtilities.swift; sourceTree = "<group>"; };
 		84068DA82976656600D4360F /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
 		84068DA92976656600D4360F /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		84068DB2297667E700D4360F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		84068DB72976777200D4360F /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		84068DB82976777200D4360F /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		84068DB92976777200D4360F /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -554,8 +565,12 @@
 		842F0A7029BC9AE40014602F /* fleetguard-retailer-t&c-kan.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-t&c-kan.html"; sourceTree = "<group>"; };
 		842F0A7129BC9AE50014602F /* fleetguard-retailer-t&c-hin.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-t&c-hin.html"; sourceTree = "<group>"; };
 		8439109D29812E29007D73B6 /* FG_StatementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_StatementVC.swift; sourceTree = "<group>"; };
-		845425A229780F0A002A86D1 /* FG_MyRedemptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyRedemptionVC.swift; sourceTree = "<group>"; };
-		845425A6297817DA002A86D1 /* FG_MyRedemptionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyRedemptionTVC.swift; sourceTree = "<group>"; };
+		845873882A065D94002A183A /* FG_MyRedemptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FG_MyRedemptionVC.swift; path = "../../../../FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/MyRedemption/FG_MyRedemptionVC.swift"; sourceTree = "<group>"; };
+		8458738A2A065DA4002A183A /* FG_MyRedemptionTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FG_MyRedemptionTVC.swift; path = "../../../../FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/MyRedemption/FG_MyRedemptionTVC.swift"; sourceTree = "<group>"; };
+		8458738C2A065DB5002A183A /* FG_RedemptionCollectionCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_RedemptionCollectionCVC.swift; sourceTree = "<group>"; };
+		845873922A0673B5002A183A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/languageManager.strings; sourceTree = "<group>"; };
+		845873942A0673BC002A183A /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/languageManager.strings; sourceTree = "<group>"; };
+		845873952A067556002A183A /* String+Extenssion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extenssion.swift"; sourceTree = "<group>"; };
 		84597BAA2979020800F3A7BC /* FG_CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_CategoryCVC.swift; sourceTree = "<group>"; };
 		84597BB729790B6000F3A7BC /* FG_MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyProfileVC.swift; sourceTree = "<group>"; };
 		84597BB929790B8400F3A7BC /* FG_RedemptionCatalogueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_RedemptionCatalogueVC.swift; sourceTree = "<group>"; };
@@ -573,6 +588,19 @@
 		84662004298145CA00D28026 /* FG_MyOrderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyOrderTVC.swift; sourceTree = "<group>"; };
 		84662006298145E800D28026 /* FG_MyBillingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyBillingTVC.swift; sourceTree = "<group>"; };
 		84795F4E2979594F00DDA192 /* FG_PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_PopUpVC.swift; sourceTree = "<group>"; };
+		84834AEE2A04DF8700FCF73C /* fleetguard-mechanic-t&c.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-mechanic-t&c.html"; sourceTree = "<group>"; };
+		84834AF02A04EB6100FCF73C /* fg-Mechanic-about-eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-eng.html"; sourceTree = "<group>"; };
+		84834AF22A04F91E00FCF73C /* fg-Mechanic-faq.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq.html"; sourceTree = "<group>"; };
+		84834AF52A05072600FCF73C /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
+		84834AF72A05073E00FCF73C /* LstAttributesDetails1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LstAttributesDetails1.swift; sourceTree = "<group>"; };
+		84834AF92A0535EB00FCF73C /* FG_MyRedemptionDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_MyRedemptionDetailsVC.swift; sourceTree = "<group>"; };
+		84834AFB2A05366500FCF73C /* FG_RedemptionDetailsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_RedemptionDetailsVM.swift; sourceTree = "<group>"; };
+		84834AFD2A0536A400FCF73C /* FG_MyRedemptionDetailsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_MyRedemptionDetailsTVC.swift; sourceTree = "<group>"; };
+		84834B002A05372E00FCF73C /* RedemptionCatalogueList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionCatalogueList.swift; sourceTree = "<group>"; };
+		84834B022A05374200FCF73C /* RedemptionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionDetails.swift; sourceTree = "<group>"; };
+		84834B042A05375600FCF73C /* RedemptionDetailsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionDetailsModels.swift; sourceTree = "<group>"; };
+		84834B072A05377B00FCF73C /* RedemptionDetailsOrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionDetailsOrderStatus.swift; sourceTree = "<group>"; };
+		84834B092A05379200FCF73C /* RedemptionDetailsOrderStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionDetailsOrderStatusModel.swift; sourceTree = "<group>"; };
 		8488E403298A25BD0032A2D7 /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		8488E404298A25BD0032A2D7 /* WebClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebClient.swift; sourceTree = "<group>"; };
 		8488E405298A25BE0032A2D7 /* URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
@@ -788,6 +816,7 @@
 		251F0B8B299F679100E2881A /* TC&Conditions */ = {
 			isa = PBXGroup;
 			children = (
+				84834AEE2A04DF8700FCF73C /* fleetguard-mechanic-t&c.html */,
 				842F0A6D29BC9AE20014602F /* fleetguard-retailer-t&c-ben.html */,
 				842F0A6F29BC9AE40014602F /* fleetguard-retailer-t&c-eng.html */,
 				842F0A7129BC9AE50014602F /* fleetguard-retailer-t&c-hin.html */,
@@ -1479,6 +1508,9 @@
 		84068D8729765DF600D4360F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84834B062A05376500FCF73C /* RedemptionDetailsOrderStatusModel */,
+				84834AFF2A05371D00FCF73C /* RedemptionDetailsModels */,
+				84834AF42A05070300FCF73C /* Language Models */,
 				259152D329DB02DF0082F4CD /* RemovePlanner */,
 				256F1B7529CC5D0300F648BA /* DreamGiftModels */,
 				25116BE529CC1C8F00E78DD7 /* MyLedgerClickViewModels */,
@@ -1586,6 +1618,7 @@
 		84068D8929765E0A00D4360F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				84834AFB2A05366500FCF73C /* FG_RedemptionDetailsVM.swift */,
 				259152D029DB025E0082F4CD /* DreamGiftDetailsVM */,
 				2586CA3629C856230067CD17 /* DreamGiftVM */,
 				2592E71129B99E0C005689CF /* MarketGapVM */,
@@ -1655,6 +1688,7 @@
 				84068D972976649D00D4360F /* NotificationExtension.swift */,
 				84068D952976649C00D4360F /* TextfieldExtension.swift */,
 				84068D982976649D00D4360F /* ViewExtension.swift */,
+				845873952A067556002A183A /* String+Extenssion.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1688,7 +1722,7 @@
 		84068DAE297667C200D4360F /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				84068DB3297667E700D4360F /* Localizable.strings */,
+				845873932A0673B5002A183A /* languageManager.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -1850,6 +1884,7 @@
 		842F0A5729BC9A9C0014602F /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
+				84834AF22A04F91E00FCF73C /* fg-Mechanic-faq.html */,
 				842F0A6429BC9AD30014602F /* fleetguard-retailer-faq-ben.html */,
 				842F0A6329BC9AD20014602F /* fleetguard-retailer-faq-eng.html */,
 				842F0A6529BC9AD30014602F /* fleetguard-retailer-faq-hin.html */,
@@ -1862,6 +1897,7 @@
 		842F0A5829BC9AA50014602F /* AboutUs */ = {
 			isa = PBXGroup;
 			children = (
+				84834AF02A04EB6100FCF73C /* fg-Mechanic-about-eng.html */,
 				842F0A5929BC9ABE0014602F /* about-bengali.html */,
 				842F0A5C29BC9AC00014602F /* about-english.html */,
 				842F0A5B29BC9ABF0014602F /* about-hindi.html */,
@@ -1995,6 +2031,34 @@
 			path = PopUp;
 			sourceTree = "<group>";
 		};
+		84834AF42A05070300FCF73C /* Language Models */ = {
+			isa = PBXGroup;
+			children = (
+				84834AF52A05072600FCF73C /* LanguageModel.swift */,
+				84834AF72A05073E00FCF73C /* LstAttributesDetails1.swift */,
+			);
+			path = "Language Models";
+			sourceTree = "<group>";
+		};
+		84834AFF2A05371D00FCF73C /* RedemptionDetailsModels */ = {
+			isa = PBXGroup;
+			children = (
+				84834B002A05372E00FCF73C /* RedemptionCatalogueList.swift */,
+				84834B022A05374200FCF73C /* RedemptionDetails.swift */,
+				84834B042A05375600FCF73C /* RedemptionDetailsModels.swift */,
+			);
+			path = RedemptionDetailsModels;
+			sourceTree = "<group>";
+		};
+		84834B062A05376500FCF73C /* RedemptionDetailsOrderStatusModel */ = {
+			isa = PBXGroup;
+			children = (
+				84834B072A05377B00FCF73C /* RedemptionDetailsOrderStatus.swift */,
+				84834B092A05379200FCF73C /* RedemptionDetailsOrderStatusModel.swift */,
+			);
+			path = RedemptionDetailsOrderStatusModel;
+			sourceTree = "<group>";
+		};
 		8488E402298A258C0032A2D7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -2063,8 +2127,11 @@
 		848B2BCB2977CB7700A58C73 /* MyRedemption */ = {
 			isa = PBXGroup;
 			children = (
-				845425A229780F0A002A86D1 /* FG_MyRedemptionVC.swift */,
-				845425A6297817DA002A86D1 /* FG_MyRedemptionTVC.swift */,
+				84834AF92A0535EB00FCF73C /* FG_MyRedemptionDetailsVC.swift */,
+				84834AFD2A0536A400FCF73C /* FG_MyRedemptionDetailsTVC.swift */,
+				845873882A065D94002A183A /* FG_MyRedemptionVC.swift */,
+				8458738A2A065DA4002A183A /* FG_MyRedemptionTVC.swift */,
+				8458738C2A065DB5002A183A /* FG_RedemptionCollectionCVC.swift */,
 			);
 			path = MyRedemption;
 			sourceTree = "<group>";
@@ -2554,7 +2621,6 @@
 				en,
 				Base,
 				hi,
-				"en-IN",
 			);
 			mainGroup = 84C1E3EF29758A6D00D188C5;
 			productRefGroup = 84C1E3F929758A6D00D188C5 /* Products */;
@@ -2583,11 +2649,14 @@
 				842F0A6929BC9AD50014602F /* fleetguard-retailer-faq-ben.html in Resources */,
 				842F0A7429BC9AE50014602F /* fleetguard-retailer-t&c-eng.html in Resources */,
 				842F0A7529BC9AE50014602F /* fleetguard-retailer-t&c-kan.html in Resources */,
+				845873912A0673B5002A183A /* languageManager.strings in Resources */,
 				25C865DD29A7237F00C1801E /* otherInfoTableViewCell.xib in Resources */,
 				84068DCF2976777200D4360F /* Roboto-Thin.ttf in Resources */,
+				84834AF32A04F91E00FCF73C /* fg-Mechanic-faq.html in Resources */,
 				84068DCA2976777200D4360F /* Roboto-LightItalic.ttf in Resources */,
-				84068DB1297667E700D4360F /* Localizable.strings in Resources */,
+				84834AF12A04EB6100FCF73C /* fg-Mechanic-about-eng.html in Resources */,
 				842F0A6829BC9AD50014602F /* fleetguard-retailer-faq-eng.html in Resources */,
+				84834AEF2A04DF8700FCF73C /* fleetguard-mechanic-t&c.html in Resources */,
 				84068DD02976777200D4360F /* Roboto-Black.ttf in Resources */,
 				842F0A6B29BC9AD50014602F /* fleetguard-retailer-faq-kan.html in Resources */,
 				84C1E40B29758A7000D188C5 /* LaunchScreen.storyboard in Resources */,
@@ -2688,6 +2757,7 @@
 				25C865E629A7237F00C1801E /* querylistingTableViewCell.swift in Sources */,
 				2585AE1129AE1C8700E745C7 /* DashboardBannerImageModels.swift in Sources */,
 				84AF145629BC7D440033D268 /* UiViewControllerExtenssion.swift in Sources */,
+				84834B032A05374200FCF73C /* RedemptionDetails.swift in Sources */,
 				84E0D3892977B04A00BD278B /* FG_RegistrationVC.swift in Sources */,
 				25116BE129CC1A7200E78DD7 /* FG_MyLedgerClickViewVC.swift in Sources */,
 				254D8AF6299FB36100CBBBDE /* MyOrderModels.swift in Sources */,
@@ -2698,6 +2768,7 @@
 				2551C3E129B75F2A00EED0FB /* BonusTrendsVM.swift in Sources */,
 				25C8660929A7452600C1801E /* MyProfileDetailsVM.swift in Sources */,
 				2588CEEC29B5F62600330CE8 /* LstRetailerBonding3.swift in Sources */,
+				84834AFC2A05366500FCF73C /* FG_RedemptionDetailsVM.swift in Sources */,
 				849E0756297978DF00F033CD /* FG_MyPromotionDetailsVC.swift in Sources */,
 				84BDEF862988E7F1007EED1E /* FG_LodgeQueryTVC.swift in Sources */,
 				8488E411298A25BF0032A2D7 /* RestAPI_Requests.swift in Sources */,
@@ -2709,10 +2780,13 @@
 				841FCE0A297FDCB40026CD44 /* FG_RedemptionOTPVC.swift in Sources */,
 				251F0B82299F4F2E00E2881A /* LstPromotionJsonList.swift in Sources */,
 				8488E415298A36F80032A2D7 /* TokenModels.swift in Sources */,
+				84834B0A2A05379200FCF73C /* RedemptionDetailsOrderStatusModel.swift in Sources */,
 				2580EFF229A6414D0097A50D /* HelpTopicModels.swift in Sources */,
 				25A760C429ACE95F00FF5C0E /* LstCustomerJson.swift in Sources */,
+				8458738D2A065DB6002A183A /* FG_RedemptionCollectionCVC.swift in Sources */,
 				84068D9B2976649D00D4360F /* TextfieldExtension.swift in Sources */,
 				2580EFFB29A651F60097A50D /* DD_QueryListVM.swift in Sources */,
+				84834B082A05377B00FCF73C /* RedemptionDetailsOrderStatus.swift in Sources */,
 				849D350B298A8C93005A41FC /* DashboardTotalPointsModel.swift in Sources */,
 				25C465E229A8EA6200CCA30C /* LstRetailerBonding2.swift in Sources */,
 				259152CF29DAFEE50082F4CD /* FG_DreamGiftDetailsVC.swift in Sources */,
@@ -2760,6 +2834,7 @@
 				84EEBE13297FE21000ECF2DC /* FG_MyCartTVC.swift in Sources */,
 				25C465C329A8C68800CCA30C /* SendSMSModel.swift in Sources */,
 				845FD71F29782A2F00CE487E /* FG_SideMenuTVC.swift in Sources */,
+				84834AFE2A0536A400FCF73C /* FG_MyRedemptionDetailsTVC.swift in Sources */,
 				2511404129DAE9E00085D78E /* ObjCatalogueList2.swift in Sources */,
 				2580EFF529A6437B0097A50D /* FG_SubmitNewQueryVM.swift in Sources */,
 				2593084229A77CDC009A2FBA /* MyRedemptionListingVM.swift in Sources */,
@@ -2767,6 +2842,7 @@
 				25D58BBF29ADCFF300DB135D /* MilestoneRedemptionListingTVC.swift in Sources */,
 				254D8AF5299FB36100CBBBDE /* LstCustOrderDeliveryDetails.swift in Sources */,
 				2585AE1729AE380000E745C7 /* LstOrderDetails.swift in Sources */,
+				84834AF62A05072600FCF73C /* LanguageModel.swift in Sources */,
 				842326CD2980082200DF7325 /* FG_ProductCatalogueMyCartVC.swift in Sources */,
 				84FBC3E92979618B0061ABAE /* FG_NewAdditionVC.swift in Sources */,
 				849D350F298A9290005A41FC /* LsrProductDetails.swift in Sources */,
@@ -2774,6 +2850,7 @@
 				2592E70629B9995F005689CF /* CounterGapVM.swift in Sources */,
 				84068D9E2976649D00D4360F /* ViewExtension.swift in Sources */,
 				2585AE1629AE380000E745C7 /* MyOrderDetailsModels.swift in Sources */,
+				8458738B2A065DA4002A183A /* FG_MyRedemptionTVC.swift in Sources */,
 				254D8AF9299FB3BD00CBBBDE /* MyOrderListingVM.swift in Sources */,
 				84C987AA298B86FD007F00B2 /* ProductQuantityUpdateModel.swift in Sources */,
 				2580EFF129A6414D0097A50D /* ObjHelpTopicList.swift in Sources */,
@@ -2787,6 +2864,8 @@
 				841FCE08297FDC950026CD44 /* FG_DefaultAddressVC.swift in Sources */,
 				25D58BB929ADCC7800DB135D /* FG_MilestoneRedemptionVC.swift in Sources */,
 				842326C6298007B400DF7325 /* FG_Prod_CatalogueCVC.swift in Sources */,
+				84834AF82A05073E00FCF73C /* LstAttributesDetails1.swift in Sources */,
+				84834B012A05372E00FCF73C /* RedemptionCatalogueList.swift in Sources */,
 				84BE3178298E389D0067C2C4 /* RedemptionCatalogueProductRemoveModel.swift in Sources */,
 				842326CB2980080400DF7325 /* FG_ProductCatalogueDetailsVC.swift in Sources */,
 				84662007298145E800D28026 /* FG_MyBillingTVC.swift in Sources */,
@@ -2811,6 +2890,8 @@
 				25A760BC29ACE60400FF5C0E /* LstCustomerOfficalInfoJson1.swift in Sources */,
 				84C1E3FE29758A6D00D188C5 /* SceneDelegate.swift in Sources */,
 				25E8F66029B5C3B90033F405 /* FG_RangeTrendGraphVC.swift in Sources */,
+				84834AFA2A0535EB00FCF73C /* FG_MyRedemptionDetailsVC.swift in Sources */,
+				84834B052A05375600FCF73C /* RedemptionDetailsModels.swift in Sources */,
 				2585AE1529AE380000E745C7 /* LstCustomerCartApi.swift in Sources */,
 				25913E6729C8413100C60D55 /* FG_DreamGiftVC.swift in Sources */,
 				25E8F66729B5D1A20033F405 /* BillingModels.swift in Sources */,
@@ -2857,6 +2938,7 @@
 				84E5DAA8298E1B2F00B20B16 /* RedemptionCatalogueAddToCartModel.swift in Sources */,
 				2519D7B629A87CE1002BE97F /* ObjCustomerAllQueryJsonList.swift in Sources */,
 				25C865FC29A72C8300C1801E /* FG_MyBillingDetailsVC.swift in Sources */,
+				845873962A067556002A183A /* String+Extenssion.swift in Sources */,
 				84662005298145CA00D28026 /* FG_MyOrderTVC.swift in Sources */,
 				84597BC229790BDF00F3A7BC /* FG_MyOrdersVC.swift in Sources */,
 				25116BE429CC1ADF00E78DD7 /* MyLedgerClickViewTVC.swift in Sources */,
@@ -2873,7 +2955,6 @@
 				25D88FC929A9C59E002815A7 /* LstPromotionJsonList1.swift in Sources */,
 				25C865E029A7237F00C1801E /* ChatListViewController.swift in Sources */,
 				84FBC3F529796E350061ABAE /* FG_MarketGapVC.swift in Sources */,
-				845425A7297817DA002A86D1 /* FG_MyRedemptionTVC.swift in Sources */,
 				2511404029DAE9E00085D78E /* PlannerListModels.swift in Sources */,
 				849D34F8298A77BE005A41FC /* UserList.swift in Sources */,
 				25C465E329A8EA6200CCA30C /* RPLStatementViewModels.swift in Sources */,
@@ -2918,6 +2999,7 @@
 				250FFCAC29B7128B003FB8A0 /* LstTransactionApprovalDetails1.swift in Sources */,
 				84DBA6F6297EA4B600B9DCF8 /* FG_RedemptionCatalogueTVC.swift in Sources */,
 				8488E420298A4E5E0032A2D7 /* OTPModel.swift in Sources */,
+				845873892A065D94002A183A /* FG_MyRedemptionVC.swift in Sources */,
 				25C465CC29A8C7AB00CCA30C /* SendSuccessModels.swift in Sources */,
 				2565BBDA29A4F7B90015AFD4 /* FilterProductCatModels.swift in Sources */,
 				84068D912976646F00D4360F /* PersistanceService.swift in Sources */,
@@ -2930,7 +3012,6 @@
 				849D3510298A9290005A41FC /* ProductListingModel.swift in Sources */,
 				849D34EB298A5EF5005A41FC /* FG_LoginOTPVC.swift in Sources */,
 				2565BBC529A4CCA90015AFD4 /* FG_MyOrdersDetailsVC.swift in Sources */,
-				845425A329780F0A002A86D1 /* FG_MyRedemptionVC.swift in Sources */,
 				25D58BBD29ADCDB200DB135D /* MileStoneRedemptionListVM.swift in Sources */,
 				84140DDE298D22770090DD44 /* ProductCataloguesCategoryModel.swift in Sources */,
 				2565BBDD29A4F8660015AFD4 /* FilterProductCatalogeVM.swift in Sources */,
@@ -2981,13 +3062,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		84068DB3297667E700D4360F /* Localizable.strings */ = {
+		845873932A0673B5002A183A /* languageManager.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				84068DB2297667E700D4360F /* en */,
-				25A760AF29ACD6D700FF5C0E /* en-IN */,
+				845873922A0673B5002A183A /* en */,
+				845873942A0673BC002A183A /* hi */,
 			);
-			name = Localizable.strings;
+			name = languageManager.strings;
 			sourceTree = "<group>";
 		};
 		84C1E40129758A6D00D188C5 /* Main.storyboard */ = {
@@ -2996,7 +3077,6 @@
 				84C1E40229758A6D00D188C5 /* Base */,
 				849D34ED298A5F24005A41FC /* en */,
 				25A760AB29ACD19000FF5C0E /* hi */,
-				25A760AD29ACD6D500FF5C0E /* en-IN */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -3006,7 +3086,6 @@
 			children = (
 				84C1E40A29758A7000D188C5 /* Base */,
 				25A760AC29ACD19100FF5C0E /* hi */,
-				25A760AE29ACD6D600FF5C0E /* en-IN */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

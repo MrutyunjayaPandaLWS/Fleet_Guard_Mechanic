@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FG_MyPromotionDetailsVC: BaseViewController {
 
+    @IBOutlet weak var offersPromotionTitleLbl: UILabel!
     @IBOutlet weak var termsandconditionLbl: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var pointsLbl: UILabel!
@@ -27,17 +29,17 @@ class FG_MyPromotionDetailsVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.termsandconditionLbl.text = selectedLongDesc
-        self.descriptionLbl.text = self.selectedShortDesc
+//        self.termsandconditionLbl.text = selectedLongDesc
+        self.descriptionLbl.text = self.selectedLongDesc
         self.categoryTitle.text  = self.selectedTitle
         
         let imageURL = self.selectedImage
         if imageURL != ""{
-            let filteredURLArray = imageURL.dropFirst(2)
+            let filteredURLArray = imageURL.dropFirst(3)
             let urltoUse = String(PROMO_IMG1 + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
             let urlt = URL(string: "\(urltoUse)")
             print(urlt)
-            self.headerImage.kf.setImage(with: URL(string: "\(String(describing: urlt))"), placeholder: UIImage(named: "profileDefault"));
+            self.headerImage.kf.setImage(with: URL(string: "\(String(describing: urlt!))"), placeholder: UIImage(named: "Asset 2"));
         }
         
         self.subView.clipsToBounds = false

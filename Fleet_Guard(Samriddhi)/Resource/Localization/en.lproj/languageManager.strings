@@ -1,0 +1,44 @@
+/* 
+  languageManager.strings
+  Fleet_Guard(Samriddhi)
+
+  Created by admin on 06/05/23.
+  
+*/
+"No_Internet" = "No Internet";
+
+// MARK: - LOGIN
+"welcome_to" = "Welcome to";
+"already_a_Member" = "Already a member ?";
+"login_Now" = "Login Now";
+"mobile_number" = "Mobile Number";
+"enter_mobile_number" = "Enter mobile number";
+"send_otp" = "Send OTP";
+"Accept" = "Accept";
+"Terms_and_condition" = "Terms and condition";
+"new_to_humsafar" = "New to Humsafar ?";
+"contact_us" = "Contact us now";
+"enter_mobile_number_error" = "Please enter mobile number";
+"mobile_number_not_exist" = "The mobile number that you have entered is not present in the  system.";
+
+// MARK: - TERMS AD CONDITIONS
+
+"decline" = "Decline";
+"accept" = "Accept";
+
+// MARK: - HELPLINE
+
+"Name" = "Name";
+"enter_name" = "Enter name";
+"enter_name_error" = "Please enter name";
+"state" = "State";
+"select_state_error" = "Please select state";
+"city" = "City";
+"select_city_error" = "Please select city";
+"comments" = "Comments";
+"enter_comments" = "Enter Comments";
+"submit" = "Submit";
+"valid_mobile_number_error" = "Enter valid mobile number";
+"query_submit_success_message" = "Your query successfully submit";
+"query_submit_failed_message" = "Your submission failed.";
+"mobile_number_already_exist" = "Mobile number already registered !";

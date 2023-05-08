@@ -9,6 +9,8 @@ import UIKit
 
 import SlideMenuControllerSwift
 import IQKeyboardManagerSwift
+import LanguageManager_iOS
+
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -25,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         IQKeyboardManager.shared.enable = true
         RunLoop.current.run(until: Date(timeIntervalSinceNow: 4.0))
         UIApplication.shared.statusBarStyle = .lightContent
+        LanguageManager.shared.setLanguage(language: .en)
         tokendata()
         tokendata1()
         let isUserLoggedIn: Bool = UserDefaults.standard.bool(forKey: "IsloggedIn?")

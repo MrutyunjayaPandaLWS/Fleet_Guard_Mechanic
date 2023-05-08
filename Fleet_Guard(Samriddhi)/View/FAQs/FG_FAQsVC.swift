@@ -18,7 +18,7 @@ class FG_FAQsVC: BaseViewController {
         super.viewDidLoad()
         DispatchQueue.main.async {
             self.stopLoading()
-            self.webviewKit.loadRequest(NSURLRequest(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "fleetguard-retailer-faq-eng", ofType: "html")!) as URL) as URLRequest)
+            self.webviewKit.loadRequest(NSURLRequest(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "fg-Mechanic-faq", ofType: "html")!) as URL) as URLRequest)
         }
     }
     override func viewWillAppear(_ animated: Bool) {

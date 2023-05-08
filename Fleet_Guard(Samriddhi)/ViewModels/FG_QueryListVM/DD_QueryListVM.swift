@@ -27,19 +27,25 @@ class FG_QueryListVM {
         self.requestAPIs.queryListApi(parameters: parameter) { (result, error) in
             if error == nil{
                 if result != nil{
+                    self.queryListArray.removeAll()
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
+//                        let queryList = result?.objCustomerAllQueryJsonList ?? []
+//                        if queryList.count != 0{
+//                            self.queryListArray = self.queryListArray + queryList
                         self.queryListArray = result?.objCustomerAllQueryJsonList ?? []
-                        self.VC?.noofelements = self.queryListArray.count
-                        print(self.queryListArray.count,"skjhdks")
-                        if self.queryListArray.count != 0 {
-                            self.VC?.lodgeQueryListTableView.isHidden = false
-                            self.VC?.lodgeQueryListTableView.reloadData()
-                        }else{
-                            self.VC?.view.makeToast("No data found !", duration: 2.0, position: .bottom)
-                            self.VC?.lodgeQueryListTableView.isHidden = true
-                            //self.VC?.filterView.isHidden = true
-                        }
+//                            self.VC?.noofelements = queryList.count
+                            print(self.queryListArray.count,"skjhdks")
+                            if self.queryListArray.count != 0 {
+                                self.VC?.lodgeQueryListTableView.isHidden = false
+                                self.VC?.lodgeQueryListTableView.reloadData()
+                            }else{
+                                self.VC?.view.makeToast("No data found !", duration: 2.0, position: .bottom)
+                                self.VC?.lodgeQueryListTableView.isHidden = true
+                                //self.VC?.filterView.isHidden = true
+                            }
+//                        }
+
                     }
                 }else{
                     DispatchQueue.main.async {
