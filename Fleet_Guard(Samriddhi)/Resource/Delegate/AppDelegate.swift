@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var slider : SlideMenuController!
     var nav : UINavigationController!
     var gcmMessageIDKey = "gcm.message_id"
+    let languageStatus = UserDefaults.standard.string(forKey: "LanguageName")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
@@ -28,8 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         tokendata()
         tokendata1()
-        UserDefaults.standard.set("EN", forKey: "LanguageName")
-        LanguageManager.shared.setLanguage(language: .en)
+        UserDefaults.standard.setValue("EN", forKey: "LanguageName")
+        if languageStatus == "EN"{
+            LanguageManager.shared.setLanguage(language: .en)
+
+        }else{
+            LanguageManager.shared.setLanguage(language: .en)
+
+        }
+        
         let tokenStatus: Bool = UserDefaults.standard.bool(forKey: "AfterLog")
         UserDefaults.standard.synchronize()
         print(tokenStatus, "Status")
@@ -65,7 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func setHomeAsRootViewController(){
         let leftVC = storyboard.instantiateViewController(withIdentifier: "FG_SideMenuVC") as! FG_SideMenuVC
-        
+        if languageStatus == "EN"{
+            LanguageManager.shared.setLanguage(language: .en)
+
+        }else{
+            LanguageManager.shared.setLanguage(language: .en)
+
+        }
 //        let nav = NavigationController(rootViewController: yourController1)
 //        self.yourViewInsertedInController1.addSubview(nav.view)
         let homeVC = storyboard.instantiateViewController(withIdentifier: "FG_TabbarVc") as! FG_TabbarVc
@@ -85,6 +99,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
     }
     func setInitialViewAsRootViewController(){
+        if languageStatus == "EN"{
+            LanguageManager.shared.setLanguage(language: .en)
+
+        }else{
+            LanguageManager.shared.setLanguage(language: .en)
+
+        }
         let mainStoryboard = UIStoryboard(name: "Main" , bundle: nil)
         let initialVC = mainStoryboard.instantiateViewController(withIdentifier: "FG_LoginVC") as! FG_LoginVC
         UserDefaults.standard.set("1", forKey: "LanguageLocalizable")

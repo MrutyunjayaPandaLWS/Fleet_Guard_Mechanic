@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_TabbarVc: UITabBarController {
 
@@ -17,6 +18,11 @@ class FG_TabbarVc: UITabBarController {
 //            _ = self.tabBarController?.selectedIndex = 1
 //        }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
      

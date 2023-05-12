@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_ProductMyCartVM: popUpDelegate{
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -77,7 +78,7 @@ class FG_ProductMyCartVM: popUpDelegate{
                             DispatchQueue.main.async{
                                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                 vc!.delegate = self
-                                vc!.descriptionInfo = "Something went wrong. Try againg later!"
+                                vc!.descriptionInfo = "Something_went_wrong_error".localiz()
                                 vc!.modalPresentationStyle = .overCurrentContext
                                 vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)
@@ -117,7 +118,7 @@ class FG_ProductMyCartVM: popUpDelegate{
                             DispatchQueue.main.async{
                                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                 vc!.delegate = self
-                                vc!.descriptionInfo = "Something went wrong. Try againg later!"
+                                vc!.descriptionInfo = "Something_went_wrong_error".localiz()
                                 vc!.modalPresentationStyle = .overCurrentContext
                                 vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)
@@ -127,7 +128,7 @@ class FG_ProductMyCartVM: popUpDelegate{
                             DispatchQueue.main.async{
                                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                 vc!.delegate = self
-                                vc!.descriptionInfo = "Product has been removed successfully!"
+                                vc!.descriptionInfo = "product_removed_success".localiz()
                                 vc!.modalPresentationStyle = .overCurrentContext
                                 vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)
@@ -178,7 +179,7 @@ class FG_ProductMyCartVM: popUpDelegate{
                                 DispatchQueue.main.async{
                                     let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                     vc!.delegate = self
-                                    vc!.descriptionInfo = "Something went wrong. Try againg later!"
+                                    vc!.descriptionInfo = "Something_went_wrong_error".localiz()
                                     vc!.modalPresentationStyle = .overCurrentContext
                                     vc!.modalTransitionStyle = .crossDissolve
                                     self.VC?.present(vc!, animated: true, completion: nil)
@@ -189,7 +190,7 @@ class FG_ProductMyCartVM: popUpDelegate{
                             DispatchQueue.main.async{
                                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                 vc!.delegate = self
-                                vc!.descriptionInfo = "Something went wrong. Try againg later!"
+                                vc!.descriptionInfo = "Something_went_wrong_error".localiz()
                                 vc!.modalPresentationStyle = .overCurrentContext
                                 vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)

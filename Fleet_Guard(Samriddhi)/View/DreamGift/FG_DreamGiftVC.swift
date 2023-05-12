@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
     func removeProductButton(_ vc: FG_DreamGiftTVC) {
@@ -80,7 +81,7 @@ class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
             }else{
                 DispatchQueue.main.async{
                     
-                    self.view.makeToast("Something went wrong!", duration: 3.0, position: .bottom)
+                    self.view.makeToast("Something_went_wrong_error".localiz(), duration: 3.0, position: .bottom)
                     self.stopLoading()
                 }
             }
@@ -138,8 +139,8 @@ extension FG_DreamGiftVC : UITableViewDelegate, UITableViewDataSource{
         let balance = Double(self.VM.myPlannerListArray[indexPath.row].pointBalance ?? 0)
         let pointRequired = Double(self.VM.myPlannerListArray[indexPath.row].pointsRequired ?? 0)
         
-        let image =  PROMO_IMG1 + (self.VM.myPlannerListArray[indexPath.row].productImage ?? "")
-            cell?.productImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "profileDefault"))
+        let image =  imageUrl + (self.VM.myPlannerListArray[indexPath.row].productImage ?? "").replacingOccurrences(of: " ", with: "%20")
+            cell?.productImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "Humsafar Logo PNG"))
         var pointBal = CGFloat(self.VM.myPlannerListArray[indexPath.row].pointBalance ?? 0)
         var requiredBal = CGFloat(self.VM.myPlannerListArray[indexPath.row].pointsRequired ?? 0)
         var progressPercent = CGFloat(pointBal/requiredBal) * 100.0
@@ -219,9 +220,9 @@ extension FG_DreamGiftVC : UITableViewDelegate, UITableViewDataSource{
         return cell!
         
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 220
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 220
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

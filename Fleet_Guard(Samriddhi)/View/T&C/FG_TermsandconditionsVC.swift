@@ -7,13 +7,17 @@
 
 import UIKit
 import WebKit
+import LanguageManager_iOS
 
 class FG_TermsandconditionsVC: BaseViewController {
+    
+    @IBOutlet weak var headerLbl: UILabel!
     @IBOutlet weak var webviewKit: UIWebView!
     var fromSideMenu = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.startLoading()
+        headerLbl.text = "Terms_and_condition".localiz()
         DispatchQueue.main.async {
             self.stopLoading()
             self.webviewKit.loadRequest(NSURLRequest(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "fleetguard-mechanic-t&c", ofType: "html")!) as URL) as URLRequest)

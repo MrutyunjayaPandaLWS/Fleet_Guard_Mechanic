@@ -124,7 +124,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Select Country", duration: 3.0, position: .bottom)
+                self.view.makeToast("Select_Country".localiz(), duration: 3.0, position: .bottom)
             }
         }else{
             if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
@@ -197,7 +197,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalPresentationStyle = .overFullScreen
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Enter Name", duration: 3.0, position: .bottom)
+                self.view.makeToast("enter_name_error".localiz(), duration: 3.0, position: .bottom)
             }
 
         }else if mobileTF.text?.count == 0 {
@@ -209,7 +209,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter Mobile Number", duration: 3.0, position: .bottom)
+                self.view.makeToast("enter_mobile_number_error".localiz(), duration: 3.0, position: .bottom)
 
             }
 
@@ -222,7 +222,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter Valid Mobile Number", duration: 3.0, position: .bottom)
+                self.view.makeToast("valid_mobile_number_error".localiz(), duration: 3.0, position: .bottom)
             }
 
         }
@@ -259,7 +259,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter Address", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_Address".localiz(), duration: 3.0, position: .bottom)
             }
 
        }else if self.stateLbl.text == "Select State" || self.stateLbl.text == "" || self.stateLbl.text == nil{
@@ -272,7 +272,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Select State", duration: 3.0, position: .bottom)
+                self.view.makeToast("Select_State".localiz(), duration: 3.0, position: .bottom)
             }
 
        }else if self.selectCityLbl.text == "Select City" || self.selectCityLbl.text == "" || self.selectCityLbl.text == nil{
@@ -285,7 +285,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Select City", duration: 3.0, position: .bottom)
+                self.view.makeToast("Select_City".localiz(), duration: 3.0, position: .bottom)
             }
 
         }else if pincodeTF.text?.count == 0{
@@ -298,7 +298,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter Pin", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_Pin".localiz(), duration: 3.0, position: .bottom)
             }
 
         }else if pincodeTF.text?.count != 6{
@@ -310,7 +310,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter Valid Zip", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_Valid_Zip".localiz(), duration: 3.0, position: .bottom)
             }
 
         }else{

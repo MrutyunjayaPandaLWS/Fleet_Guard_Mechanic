@@ -7,6 +7,8 @@
 
 import UIKit
 import Kingfisher
+import LanguageManager_iOS
+
 class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
     func sendOffersDetails(_ cell: FG_MyPromotionsTVC) {
         guard let tappedIndexPath = myPromotionsTableView.indexPath(for: cell) else {return}
@@ -31,6 +33,7 @@ class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        headerLbl.text = "Offers_promotions".localiz()
         self.VM.VC = self
         self.myPromotionsTableView.delegate = self
         self.myPromotionsTableView.dataSource = self

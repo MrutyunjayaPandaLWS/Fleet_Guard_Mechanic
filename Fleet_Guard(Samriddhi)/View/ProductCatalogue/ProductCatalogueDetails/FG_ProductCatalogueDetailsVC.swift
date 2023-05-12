@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
     
 
+    @IBOutlet weak var headertitle: UILabel!
     @IBOutlet weak var cartCountLbl: UILabel!
     @IBOutlet weak var productNameLbl: UILabel!
     @IBOutlet weak var orderNowStackView: UIStackView!
@@ -66,6 +68,9 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
         self.orderNowStackView.isHidden = true
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        headertitle.text = "Product_Catalogue_Details".localiz()
+//        Product_Catalogue_Details
         self.myCartApi()
       //  self.productListApi()
         self.qtyTF.isEnabled = false
@@ -109,7 +114,7 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
 //                    self.present(vc!, animated: true, completion: nil)
                     
                     
-                    self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
+                    self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
                 }
             }
         }

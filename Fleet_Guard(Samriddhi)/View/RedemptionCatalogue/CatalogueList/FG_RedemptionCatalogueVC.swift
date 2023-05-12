@@ -8,6 +8,7 @@
 import UIKit
 import ImageSlideshow
 import Lottie
+import LanguageManager_iOS
 
 protocol SendDataDelegate: AnyObject{
     func moveToProductList(_ vc: FG_RedemptionCatalogueVC)
@@ -107,10 +108,19 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.VM.redemptionCatalougeListArray.removeAll()
+        localization()
         self.totalPts.text = "\(UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "")"
         self.passBookNumber.text = self.loyaltyId
+        self.VM.redemptionCatalougeListArray.removeAll()
         self.myCartListApi()
         self.plannerListing()
+    }
+    
+    func localization(){
+        totalPtsBalanceLbl.text = "points".localiz()
+        passBookLbl.text = "passbook_number".localiz()
+        headerTextLbl.text = "redemption_catalogue".localiz()
+        
     }
 
     @IBAction func filterBtn(_ sender: Any) {
@@ -253,7 +263,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
+                self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
             }
         }
         
@@ -332,9 +342,15 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
         cell.categoryLbl.text = "Catogory / \(self.VM.redemptionCatalougeListArray[indexPath.row].catogoryName ?? "")"
         cell.pointsLbl.text = "\(self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0)"
         let image = VM.redemptionCatalougeListArray[indexPath.row].productImage ?? ""
-        let images = ("\(imageBaseURL)\(image)").replacingOccurrences(of: " ", with: "%20")
-        cell.productImage.kf.setImage(with: URL(string: "\(String(describing: images))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
-        print(images)
+        if image.count != 0{
+            let images = ("\(imageUrl)\(image)").replacingOccurrences(of: " ", with: "%20")
+            cell.productImage.kf.setImage(with: URL(string: "\(String(describing: images))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
+            print(images)
+        }else{
+            cell.productImage.image = UIImage(named: "Humsafar Logo PNG 1")
+        }
+        
+        
         let filterArray = self.myCartIds.filter{$0 == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId ?? 0}
         let productPoints = self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0
         var filterDreamGiftArray = [ObjCatalogueList2]()
@@ -429,9 +445,9 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 160
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }

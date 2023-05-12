@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import LanguageManager_iOS
+
+
+
 protocol EditDataDelegate {
     func updatedAddressDetails(_ vc: FG_EditProfileVC)
 }
@@ -140,8 +144,8 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
         self.selectDOBLbl.text = dob
         self.selectCountryLbl.text = "India"
         self.addressTF.text = self.addressLbl
-        genderName == "-" ? (self.selectGenderLbl.text = "Select Gender") : (self.selectGenderLbl.text = genderName)
-        dob == "-" ? (self.selectDOBLbl.text = "Select DOB") : (self.selectDOBLbl.text = dob)
+        genderName == "-" ? (self.selectGenderLbl.text = "Select_Gender".localiz()) : (self.selectGenderLbl.text = genderName)
+        dob == "-" ? (self.selectDOBLbl.text = "Select_DOB".localiz()) : (self.selectDOBLbl.text = dob)
         prefLanguage == "-" ? (self.selectPreferredLanguage.text = "Select Preferred Language") : (self.selectPreferredLanguage.text = prefLanguage)
         
         addressId = profileDetails?.lstCustomerJson?[0].addressId ?? 0
@@ -156,6 +160,29 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
         selectedCityId = profileDetails?.lstCustomerJson?[0].cityId ?? -1
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localization()
+    }
+    
+    func localization(){
+        headerLbl.text = "profile".localiz()
+        firstNameLbl.text = "First_Name".localiz()
+        lastNameLbl.text = "Last_Name".localiz()
+        mobileNumberLbl.text = "Mobile_number".localiz()
+        addressDataLbl.text = "Address".localiz()
+        emailAddessLbl.text  = "Email_address".localiz()
+        dobLbl.text = "DOB".localiz()
+        genderLbl.text = "Select_Gender".localiz()
+        preferredLanguageLbl.text = "preferred_Language".localiz()
+        countryLbl.text = "Country".localiz()
+        stateLbl.text = "State".localiz()
+        cityLbl.text = "City".localiz()
+        pincodeLbl.text = "pincode".localiz()
+        savebtn.setTitle("Save_changes".localiz(), for: .normal)
+        
+        
+    }
 
     @IBAction func backBtn(_ sender: Any) {
         self.delegate?.updatedAddressDetails(self)

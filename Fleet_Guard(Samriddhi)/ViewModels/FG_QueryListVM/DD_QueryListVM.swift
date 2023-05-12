@@ -8,6 +8,7 @@
 
 import UIKit
 import Toast_Swift
+import LanguageManager_iOS
 
 class FG_QueryListVM {
     
@@ -40,7 +41,7 @@ class FG_QueryListVM {
                                 self.VC?.lodgeQueryListTableView.isHidden = false
                                 self.VC?.lodgeQueryListTableView.reloadData()
                             }else{
-                                self.VC?.view.makeToast("No data found !", duration: 2.0, position: .bottom)
+                                self.VC?.view.makeToast("No_data_found".localiz(), duration: 2.0, position: .bottom)
                                 self.VC?.lodgeQueryListTableView.isHidden = true
                                 //self.VC?.filterView.isHidden = true
                             }

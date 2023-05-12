@@ -1,0 +1,190 @@
+/* 
+  Localizable.strings
+  Fleet_Guard(Samriddhi)
+
+  Created by admin on 11/05/23.
+  
+*/
+"Allow" = "Allow";
+"No_Internet" = "No Internet";
+"Disallow" = "Disallow";
+"NoCamera" = "No Camera";
+"Sorrynodevice" = "Sorry no device found";
+"OK" = "OK";
+// MARK: - LOGIN
+"welcome_to" = "Welcome to";
+"already_a_Member" = "Already a member ?";
+"login_Now" = "Login Now";
+"mobile_number" = "Mobile Number";
+"enter_mobile_number" = "Enter mobile number";
+"send_otp" = "Send OTP";
+"Accept" = "Accept";
+"Terms_and_condition" = "Terms and condition";
+"new_to_humsafar" = "New to Humsafar ?";
+"contact_us" = "Contact us now";
+"enter_mobile_number_error" = "Please enter mobile number";
+"mobile_number_not_exist" = "The mobile number that you have entered is not present in the  system.";
+
+// MARK: - TERMS AD CONDITIONS
+
+"decline" = "Decline";
+"accept" = "Accept";
+
+// MARK: - HELPLINE
+
+"Name" = "Name";
+"enter_name" = "Enter name";
+"enter_name_error" = "Please enter name";
+"state" = "State";
+"select_state_error" = "Please select state";
+"city" = "City";
+"select_city_error" = "Please select city";
+"comments" = "Comments";
+"enter_comments" = "Enter Comments";
+"submit" = "Submit";
+"valid_mobile_number_error" = "Enter valid mobile number";
+"query_submit_success_message" = "Your query successfully submit";
+"query_submit_failed_message" = "Your submission failed.";
+"mobile_number_already_exist" = "Mobile number already registered !";
+"enter_OTP_sent" = "Enter OTP sent to";
+"otp_Will_Recieve" = "OTP  will receive within";
+"resend_OTP" = "Resend OTP";
+"back" = "Back";
+"Enter_OTP" = "Enter OTP";
+"Enter_valid_OTP" = "Enter valid OTP";
+"Invalid_OTP" = "InValid OTP";
+
+// MARK: - SIDE MENU
+
+"Profile" = "Profile";
+"My_Ledger" = "My Ledger";
+"My_Redemption_History" = "My Redemption History";
+"Redemption_Catalogue" = "Redemption Catalogue";
+"Product_Catalogue" = "Product Catalogue";
+"Dream_Gift" = "Dream Gift";
+"My_Promotions" = "My Promotions";
+"Lodge_Query" = "Lodge Query";
+"About" = "About";
+"FAQs" = "FAQs";
+"T&C" = "T&C";
+"Logout" = "Logout";
+"Delete" = "Delete";
+"Since" = "Since";
+
+
+//MARK: - DASHBOARD
+
+"total_Point_bal" = "Total Point Balance";
+"passbook_number" = "Passbook Number";
+"welcome" = "Welcome !";
+"humsafar" = "HUMSAFAR";
+"View_your_dreamgift" = "View your Dream Gifts";
+"add_your_dreamGift" = "Add Your Dream Gift";
+"product_Catalogoue" = "Product Catalogue";
+"click_Here" = "Click Here";
+"redemption_catalogue" = "Redemption Catalogue";
+"know_more" = "Kow more";
+
+
+// MARK: - MY REDEMPTION
+ 
+"My_redemption" = "My Redemption";
+"Pending" = "Pending";
+"Processed" = "Processed";
+"Rejected" = "Rejected";
+"Vendor_Alloted" = "Vendor Alloted";
+"Return_Pickup_Schedule" = "Return Pickup Schedule";
+"Cancelled" = "Cancelled";
+"Vendor_Rejected" = "Vendor Rejected";
+"Dispatched" = "Dispatched";
+"Re_Dispatched" = "Re-Dispatched";
+"Delivery_Confirmed" = "Delivery Confirmed";
+"InTransit" = "InTransit";
+"Return_Request" = "Return Request";
+"Picked_Up" = "Picked-Up";
+"Clear_All" = "Clear all";
+"Apply" = "Apply";
+"filter" = "Filter";
+
+"from_Date" = "From Date";
+"To_Date" = "Top Date";
+"Filter_By_Status" = "Filter By Status";
+
+
+//MARK: - PROFILE
+
+"profile" = "Profile";
+"Personal_Information" = "Personal Information";
+"First_Name" = "First Name";
+"Last_Name" = "Last Name";
+"Mobile_number" = "Mobile Number";
+"Address" = "Address";
+"Email_address" = "Email Address";
+"DOB" = "DOB";
+"Select_DOB" = "Select DOB";
+"Gender" = "Gender";
+"Select_Gender" = "Select Gender";
+"preferred_Language" = "Preferred Language";
+"select_preferred_Language" = "Select Preferred Language";
+"Country" = "Country";
+"Select_Country" = "Select Country";
+"State" = "State";
+"Select_State" = "Select State";
+"City" = "City";
+"Select_City" = "Select City";
+"pincode" = "Pincode";
+"edit_profile" = "Edit Profile";
+"Save_changes" = "Save Changes";
+"profile_update_message" = "Profile image updated successfully";
+"profile_update_failed" = "Profile image update Failed";
+"Product_Catalogue_Details" = "Product Catalogue Details";
+
+"points" = "Points";
+"Date" = "Date";
+
+//MARK: - REDEMPTION CATALOGUE
+
+"Insufficent_Point_Balance" = "Insufficent Point Balance";
+"added_to_cart_success_message" = "Product added into cart successfully.";
+"Something_went_wrong_error" = "Something went wrong! Try againg Later...";
+"Product_added_to_dreamgift" = "Product added into dream gift  successfully.";
+"faild_to_add_dream_gift" = "Product faild to add into dream gift";
+"redeem_failed_contact_to_admin" = "You are not allowled to redeem .Please contact your administrator";
+"product_removed_success" = "Product has been removed successfully!";
+"shipping_address_required_error" = "Shipping address requires: State,City,Address,Pin code and Mobile Number,details,Click on 'Edit' to edit and add details";
+
+"account_unverified_error" = "Your account is unverified! Kindly contact the administrator to access the redemption Catalogue";
+
+//MARK: - MY CART
+"myCart" = "My Cart";
+"Default_Address" = "Default Address";
+"Edit_Address" = "Edit Address";
+"Enter_Address" = "Enter Address";
+"Enter_Pin" = "Enter Pin";
+"Enter_Valid_Zip" = "Enter Valid Zip";
+
+//MARK: - OFFERS AND PROMOTION
+"Offers_promotions" = "Offers and Promotion";
+
+//MARK: - LODGE QUERY
+"upload_image_info" = "Note: Image format should be .jpg, .png, .webp, .pdf";
+"Select_Your_Topic" = "Select Your Topic";
+"query_Details" = "Query Details";
+"Upload_Image" = "Upload Image";
+"submit_your_query" = "Please submit your query";
+"Select_query_topic" = "Select query topic";
+"Enter_query_Details" = "Enter query Details";
+
+"FleetGuardneedtoaccesscameraGallery" = "Fleet Guard need to access camera & Gallery";
+"Query_Submitted_successfully" = "Query Submitted successfully!";
+"No_data_found" = "No data found !";
+
+
+"Points_more_to_redeem" = "Points more to redeem";
+"DOB_minor_age_error" = "It seems you are less than 18 years of age. You can apply for Fleet Guard membership only if you are 18 years and above";
+
+"acoount_deleted_error_message" = "Your account has been deleted. Kindly contact your administrator.";
+"account_is_not_activate" = "Your account is not activated! Kindly activate your account.";
+"other_device_Login_error" = "Your account loged in by other mobile.";
+"account_deactivated_error" = "Your account is deactivated please check with the administrator";
+"Redemption_Failed" = "Redemption Failed";

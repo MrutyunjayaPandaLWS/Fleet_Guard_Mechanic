@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_DashboardVM: popUpDelegate{
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -36,7 +37,7 @@ class FG_DashboardVM: popUpDelegate{
                         DispatchQueue.main.async {
                             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                             vc!.delegate = self
-                            vc!.descriptionInfo = "Your account loged in by other mobile."
+                            vc!.descriptionInfo = "other_device_Login_error".localiz()
                             vc!.itsComeFrom = "DeviceLogedIn"
                             vc!.modalPresentationStyle = .overCurrentContext
                             vc!.modalTransitionStyle = .crossDissolve
@@ -67,7 +68,7 @@ class FG_DashboardVM: popUpDelegate{
                                     DispatchQueue.main.async{
                                         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                         vc!.delegate = self
-                                        vc!.descriptionInfo = "Your account is deactivated please check with the administrator"
+                                        vc!.descriptionInfo = "account_deactivated_error".localiz()
                                         vc!.modalPresentationStyle = .overCurrentContext
                                         vc!.modalTransitionStyle = .crossDissolve
                                         self.VC?.present(vc!, animated: true, completion: nil)
@@ -82,6 +83,7 @@ class FG_DashboardVM: popUpDelegate{
                                     UserDefaults.standard.setValue(result?.lstCustomerFeedBackJsonApi?[0].firstName, forKey: "FirstName")
                                     
                                     UserDefaults.standard.setValue(result?.lstCustomerFeedBackJsonApi?[0].loyaltyId, forKey: "LoyaltyId")
+                                    self.VC?.loyaltyId = result?.lstCustomerFeedBackJsonApi?[0].loyaltyId ?? ""
                                     UserDefaults.standard.set(result?.lstCustomerFeedBackJsonApi?[0].merchantEmail ?? "", forKey: "MerchantEmail")
                                     print(result?.lstCustomerFeedBackJsonApi?[0].verifiedStatus ?? "")
                                     
@@ -95,16 +97,11 @@ class FG_DashboardVM: popUpDelegate{
                                     UserDefaults.standard.set(result?.lstCustomerFeedBackJsonApi?[0].referralCode ?? "", forKey: "ReferralCode")
                                     UserDefaults.standard.synchronize()
                                 }
-                                
                             }
-                            
-                            
                             self.VC?.stopLoading()
-                            
-                            
-                            
                         }
                     }
+//                    self.VC?.dashboardPointsApi()
                 }else{
                     DispatchQueue.main.async {
                     self.VC?.stopLoading()
@@ -116,7 +113,6 @@ class FG_DashboardVM: popUpDelegate{
                 }
             }
         }
-        
     }
     
     func dashboardTotalPointsApi(parameter: JSON){
@@ -136,7 +132,6 @@ class FG_DashboardVM: popUpDelegate{
                                 UserDefaults.standard.synchronize()
                     }
                     self.VC?.stopLoading()
-                    
                 }
                 }else{
                     DispatchQueue.main.async {
@@ -149,7 +144,6 @@ class FG_DashboardVM: popUpDelegate{
                 }
             }
         }
-        
     }
     
     func productCategoryListingApi(parameter: JSON){
@@ -179,8 +173,7 @@ class FG_DashboardVM: popUpDelegate{
                 self.VC?.stopLoading()
                 }
             }
-        }
-        
+        } 
     }
     
     func pointBalenceAPI(parameter: JSON){
@@ -196,7 +189,7 @@ class FG_DashboardVM: popUpDelegate{
                     if result?.objCustomerDashboardList?.count != 0 {
                         self.pointBalence = result?.objCustomerDashboardList ?? []
                         self.totalPointBalence = result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0
-                        UserDefaults.standard.set(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
+                        UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
                         UserDefaults.standard.set(result?.objCustomerDashboardList?[0].redeemablePointsBalance, forKey: "redeemablePointsBalance")
                         self.VC?.totalPtsBalance.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
                         
@@ -239,8 +232,8 @@ class FG_DashboardVM: popUpDelegate{
                 self.VC?.plannerCategoryLbl.text = "Category: \(result?.objCatalogueList?[0].catogoryName ?? "-")"
                 self.VC?.plannerProductLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
                // self.VC?.plannerPointsRequiredLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
-                let image =  productCatalogueImgURL + (result?.objCatalogueList?[0].productImage ?? "")
-                self.VC?.dreamGiftImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
+                let image =  imageUrl + (result?.objCatalogueList?[0].productImage ?? "").replacingOccurrences(of: " ", with: "%20")
+                self.VC?.plannerImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
                 self.VC?.plannerPointsReqPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointsRequired ?? 0))"
                 var pointBal = CGFloat(result?.objCatalogueList?[0].pointBalance ?? 0)
                 var requiredBal = CGFloat(result?.objCatalogueList?[0].pointsRequired ?? 0)
@@ -285,7 +278,7 @@ class FG_DashboardVM: popUpDelegate{
                 } else {
                     print("No Response")
                     DispatchQueue.main.async {
-                       
+                        completion(result)
                         self.VC?.stopLoading()
                     }
                 }

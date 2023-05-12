@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 
 class FG_LoginOTPVM: popUpDelegate {
@@ -74,7 +75,7 @@ class FG_LoginOTPVM: popUpDelegate {
                             DispatchQueue.main.async{
                                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                 vc!.delegate = self
-                                vc!.descriptionInfo = "Your account has been deleted. Kindly contact your administrator."
+                                vc!.descriptionInfo = "acoount_deleted_error_message".localiz()
                                 vc!.modalPresentationStyle = .overCurrentContext
                                 vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)
@@ -86,7 +87,7 @@ class FG_LoginOTPVM: popUpDelegate {
                             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                             vc!.delegate = self
                             
-                            vc!.descriptionInfo = "Your account has been deleted. Kindly contact your administrator."
+                            vc!.descriptionInfo = "acoount_deleted_error_message".localiz()
                             vc!.modalPresentationStyle = .overCurrentContext
                             vc!.modalTransitionStyle = .crossDissolve
                             self.VC?.present(vc!, animated: true, completion: nil)
@@ -96,7 +97,7 @@ class FG_LoginOTPVM: popUpDelegate {
                             
                             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                             vc!.delegate = self
-                            vc!.descriptionInfo = "Your account is not activated! Kindly activate your account."
+                            vc!.descriptionInfo = "account_is_not_activate".localiz()
                             vc!.modalPresentationStyle = .overCurrentContext
                             vc!.modalTransitionStyle = .crossDissolve
                             self.VC?.present(vc!, animated: true, completion: nil)
@@ -105,7 +106,7 @@ class FG_LoginOTPVM: popUpDelegate {
                             
                             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                             vc!.delegate = self
-                            vc!.descriptionInfo = "Your account is not activated! Kindly activate your account."
+                            vc!.descriptionInfo = "account_is_not_activate".localiz()
                             
                             vc!.modalPresentationStyle = .overCurrentContext
                             vc!.modalTransitionStyle = .crossDissolve
@@ -142,7 +143,7 @@ class FG_LoginOTPVM: popUpDelegate {
                             }else{
                                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                 vc!.delegate = self
-                                vc!.descriptionInfo = "Your account is not activated! Kindly activate your account."
+                                vc!.descriptionInfo = "account_is_not_activate".localiz()
                                 vc!.modalPresentationStyle = .overCurrentContext
                                 vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)

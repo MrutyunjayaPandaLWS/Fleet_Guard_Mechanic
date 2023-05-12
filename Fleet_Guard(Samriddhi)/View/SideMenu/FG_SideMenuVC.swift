@@ -7,6 +7,9 @@
 
 import UIKit
 import SlideMenuControllerSwift
+import LanguageManager_iOS
+
+
 class FG_SideMenuVC: BaseViewController {
 
     @IBOutlet weak var sideMenuTableHeight: NSLayoutConstraint!
@@ -19,7 +22,7 @@ class FG_SideMenuVC: BaseViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var sideMenuTableView: UITableView!
     var requestApis = RestAPI_Requests()
-    var sideMenuArray = ["Profile", "My Ledger", "My Redemption History", "Redemption Catalogue", "Product Catalogue", "Dream Gift", "My Promotions", "Lodge Query", "About", "FAQs", "T&C", "Logout","Delete"]
+    var sideMenuArray = ["Profile".localiz(), "My_Ledger".localiz(), "My_Redemption_History".localiz(), "Redemption_Catalogue".localiz(), "Product_Catalogue".localiz(), "Dream_Gift".localiz(), "My_Promotions".localiz(), "Lodge_Query".localiz(), "About".localiz(), "FAQs".localiz(), "T&C".localiz(), "Logout".localiz(),"Delete".localiz()]
     var sideMenuTitleArray = [String]()
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
@@ -46,7 +49,9 @@ class FG_SideMenuVC: BaseViewController {
         self.menuTitleArray()
         print(CGFloat(sideMenuArray.count * 50))
         self.sideMenuTableHeight.constant = 650
-        self.sinceLbl.text = "Since \(userSince)"
+        self.sinceLbl.text = "\("Since".localiz()) \(userSince)"
+        totalBalanceLbl.text = "total_Point_bal".localiz()
+        passbookNum.text = "passbook_number".localiz()
         dashboardApi()
     }
     

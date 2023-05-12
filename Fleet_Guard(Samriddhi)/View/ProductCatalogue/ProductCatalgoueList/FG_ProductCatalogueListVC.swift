@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,sendProductFilterDelegate {
     func sendProductFilter(_ vc: FG_ProductCatalogueFilterVC) {
@@ -75,6 +76,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        headerText.text = "Product_Catalogue".localiz()
         self.productListApi(StartIndex: startindex, searchText: self.searchTF.text ?? "")
         self.myCartApi()
     }

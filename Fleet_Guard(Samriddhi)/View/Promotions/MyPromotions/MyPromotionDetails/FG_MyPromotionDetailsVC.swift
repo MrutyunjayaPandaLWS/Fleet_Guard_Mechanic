@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import LanguageManager_iOS
 
 class FG_MyPromotionDetailsVC: BaseViewController {
 
@@ -29,6 +30,7 @@ class FG_MyPromotionDetailsVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        headerText.text = "Offers_promotions".localiz()
 //        self.termsandconditionLbl.text = selectedLongDesc
         self.descriptionLbl.text = self.selectedLongDesc
         self.categoryTitle.text  = self.selectedTitle

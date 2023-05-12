@@ -7,15 +7,18 @@
 
 import UIKit
 import WebKit
+import LanguageManager_iOS
 
 class FG_FAQsVC: BaseViewController {
 
    
+    @IBOutlet weak var headerLbl: UILabel!
     @IBOutlet weak var webviewKit: UIWebView!
     
     var fromSideMenu = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        headerLbl.text = "FAQs".localiz()
         DispatchQueue.main.async {
             self.stopLoading()
             self.webviewKit.loadRequest(NSURLRequest(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "fg-Mechanic-faq", ofType: "html")!) as URL) as URLRequest)

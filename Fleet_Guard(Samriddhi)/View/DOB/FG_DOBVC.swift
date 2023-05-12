@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import LanguageManager_iOS
+
 protocol DateSelectedDelegate {
     func acceptDate(_ vc: FG_DOBVC)
     func declineDate(_ vc: FG_DOBVC)
@@ -44,7 +46,7 @@ class FG_DOBVC: BaseViewController {
         print(sevenDaysBeforeToday)
         if isComeFrom == "DOB"{
             if datePicker.date > sevenDaysBeforeToday{
-                let alert = UIAlertController(title: "", message: "It seems you are less than 18 years of age. You can apply for Fleet Guard membership only if you are 18 years and above", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "", message: "DOB_minor_age_error".localiz(), preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }else{

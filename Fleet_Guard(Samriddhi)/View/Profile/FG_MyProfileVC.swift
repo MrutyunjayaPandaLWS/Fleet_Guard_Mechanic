@@ -7,6 +7,7 @@
 
 import UIKit
 import Photos
+import LanguageManager_iOS
 
 class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {
@@ -74,7 +75,26 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        localization()
         self.profileDetailsAPI()
+    }
+    
+    func localization(){
+        headerTitleLbl.text = "profile".localiz()
+        personalInfoLbl.text = "Personal_Information".localiz()
+        firstNameTitleLbl.text = "First_Name".localiz()
+        lastNameTitleLbl.text = "Last_Name".localiz()
+        mobileNumberTitleLbl.text = "Mobile_number".localiz()
+        emailTitleLbl.text = "Email_address".localiz()
+        dobTitleLbl.text = "DOB".localiz()
+        genderLbl.text = "Gender".localiz()
+        addressTitleLbl.text = "Address".localiz()
+        stateTitleLbl.text = "State".localiz()
+        cityTitleLbl.text = "City".localiz()
+        pincodeTitleLbl.text = "pincode".localiz()
+        preferredLanguageTitleLbl.text = "preferred_Language".localiz()
+        editProfileBtn.setTitle("edit_profile".localiz(), for: .normal)
+        
     }
     
 

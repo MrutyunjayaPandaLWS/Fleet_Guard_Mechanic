@@ -31,6 +31,7 @@ class FG_DreamGiftTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        detailsOutBtn.semanticContentAttribute = .forceRightToLeft
     }
     
     @IBAction func detailsActBTN(_ sender: Any) {

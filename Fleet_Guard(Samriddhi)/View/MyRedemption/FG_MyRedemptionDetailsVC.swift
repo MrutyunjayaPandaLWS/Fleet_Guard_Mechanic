@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import LanguageManager_iOS
 
 class FG_MyRedemptionDetailsVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -50,7 +51,12 @@ class FG_MyRedemptionDetailsVC: BaseViewController, UITableViewDelegate, UITable
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        VCtitle.text = "My_redemption".localiz()
         myRedemptionDetailsApi()
+    }
+    
+    func localization(){
+        
     }
     
     @IBAction func selectBackBtn(_ sender: UIButton) {

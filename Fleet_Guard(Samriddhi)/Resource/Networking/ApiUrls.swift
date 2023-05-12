@@ -22,6 +22,7 @@ let profileImageURL = "http://fleetguarddemo.loyltwo3ks.com/UploadFiles/Customer
 //let productCatalogueImgURL = "http://fleetgrdser.loyltwo3ks.com/UploadFiles/CatalogueImages/"
 let productCatalogueImgURL = "http://fleetguarddemo.loyltwo3ks.com/UploadFiles/CatalogueImages/"
 let checkUserExistencyURL = "http://fleetgrdser.loyltwo3ks.com/Mobile/CheckCustomerExistancyAndVerification"
+let imageUrl = "https://fglivebridge.samriddhi.in/FGimages/FG_SFTPCWR_Data/"
 let forgotPassURL = "http://fleetgrdser.loyltwo3ks.com/services/Mobile/forgotPasswordMobileApp"
 
 

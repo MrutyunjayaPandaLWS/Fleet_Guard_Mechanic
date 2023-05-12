@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -26,6 +27,9 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
     }
     
     
+    @IBOutlet weak var editAddressTitleLbl: UILabel!
+    @IBOutlet weak var defaultAddressTitleLbl: UILabel!
+    @IBOutlet weak var headerLvl: UILabel!
     @IBOutlet weak var addressTextView: UITextView!
     @IBOutlet weak var userNameLbl: UILabel!
     @IBOutlet weak var redeemablepts: UILabel!
@@ -64,6 +68,17 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
         NotificationCenter.default.addObserver(self, selector: #selector(afterDismissed), name: Notification.Name.dismissCurrentVC, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(goToMain), name: Notification.Name.goToMain, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localization()
+    }
+    
+    func localization(){
+        headerLvl.text = "Default_Address".localiz()
+        defaultAddressTitleLbl.text = "Default_Address".localiz()
+        editAddressTitleLbl.text = "Edit_Address".localiz()
     }
     
     @objc func goToMain(){
@@ -114,7 +129,7 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
 //                      vc!.modalTransitionStyle = .crossDissolve
 //                      self.present(vc!, animated: true, completion: nil)
                       
-                      self.view.makeToast("Shipping address requires: State,City,Address,Pin code and Mobile Number,details,Click on 'Edit' to edit and add details", duration: 3.0, position: .bottom)
+                      self.view.makeToast("shipping_address_required_error".localiz(), duration: 3.0, position: .bottom)
                   }
               }else{
                   let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionOTPVC") as? FG_RedemptionOTPVC
@@ -143,7 +158,7 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
 //                  vc!.modalTransitionStyle = .crossDissolve
 //                  self.present(vc!, animated: true, completion: nil)
                   
-                  self.view.makeToast("Your account is unverified! Kindly contact the administrator to access the redemption Catalogue", duration: 3.0, position: .bottom)
+                  self.view.makeToast("account_unverified_error".localiz(), duration: 3.0, position: .bottom)
               }
           }
         

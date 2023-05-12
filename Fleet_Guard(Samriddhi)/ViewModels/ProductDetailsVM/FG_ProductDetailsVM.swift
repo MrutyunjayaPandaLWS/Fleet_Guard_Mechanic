@@ -4,7 +4,7 @@
 //
 //  Created by ADMIN on 02/02/2023.
 //
-
+import LanguageManager_iOS
 import UIKit
 
 class FG_ProductDetailsVM: popUpDelegate{
@@ -27,7 +27,7 @@ class FG_ProductDetailsVM: popUpDelegate{
                             DispatchQueue.main.async{
                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                vc!.delegate = self
-                                vc!.descriptionInfo = "Product added into cart successfully."
+                                vc!.descriptionInfo = "added_to_cart_success_message".localiz()
                                vc!.modalPresentationStyle = .overCurrentContext
                                vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)
@@ -37,7 +37,7 @@ class FG_ProductDetailsVM: popUpDelegate{
                             DispatchQueue.main.async{
                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                vc!.delegate = self
-                                vc!.descriptionInfo = "Something went wrong! Try againg Later..."
+                                vc!.descriptionInfo = "Something_went_wrong_error".localiz()
                                vc!.modalPresentationStyle = .overCurrentContext
                                vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)
@@ -173,7 +173,7 @@ class FG_ProductDetailsVM: popUpDelegate{
                             DispatchQueue.main.async{
                                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                 vc!.delegate = self
-                                vc!.descriptionInfo = "Something went wrong. Try againg later!"
+                                vc!.descriptionInfo = "Something_went_wrong_error".localiz()
                                 vc!.modalPresentationStyle = .overCurrentContext
                                 vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)

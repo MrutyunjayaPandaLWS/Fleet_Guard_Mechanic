@@ -5,6 +5,7 @@
 import UIKit
 import Lottie
 import Kingfisher
+import LanguageManager_iOS
 
 class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -71,7 +72,7 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
         self.expectRedeemDate.text = dateOfSubmission
         
         if productPoints  > Int(pointBalance) ?? 0 {
-            self.pointsRequiredLbl.text = "\((Int(productPoints) ) - (Int(pointBalance) ?? 0)) Points more to redeem"
+            self.pointsRequiredLbl.text = "\((Int(productPoints) ) - (Int(pointBalance) ?? 0)) \("Points_more_to_redeem".localiz())"
             //redeemButton.isEnabled = false
             //congratulationsImageView.isHidden = true
            // infoDetailsLbl.isHidden = false
@@ -87,8 +88,8 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
             //            }
             
             //redeemButton.backgroundColor = .lightGray
-            let image =  PROMO_IMG1 + productImage
-                productImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "profileDefault"))
+            let image =  imageUrl + imageUrl.replacingOccurrences(of: " ", with: "%20")
+                productImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
             var pointBal = Float(pointBalance) ?? 0.0
             var requiredBal = Float(productPoints)
             var progressPercent = CGFloat(pointBal/requiredBal) * 100.0
@@ -170,7 +171,7 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
 //            vc!.modalPresentationStyle = .overCurrentContext
 //            vc!.modalTransitionStyle = .crossDissolve
 //            self.present(vc!, animated: true, completion: nil)
-            self.view.makeToast("You are not allowled to redeem .Please contact your administrator", duration: 3.0, position: .bottom)
+            self.view.makeToast("redeem_failed_contact_to_admin".localiz(), duration: 3.0, position: .bottom)
         }
     }
     @IBAction func backButton(_ sender: Any) {
@@ -380,7 +381,7 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
 //                    self.present(vc!, animated: true, completion: nil)
 //                    self.loaderView.isHidden = true
                     
-                    self.view.makeToast("Something went wrong!", duration: 3.0, position: .bottom)
+                    self.view.makeToast("Something_went_wrong_error".localiz(), duration: 3.0, position: .bottom)
                     self.stopLoading()
                 }
             }

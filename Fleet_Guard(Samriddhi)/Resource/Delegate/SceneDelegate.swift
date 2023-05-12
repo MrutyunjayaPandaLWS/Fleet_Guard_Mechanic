@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     var slider : SlideMenuController!
     var nav : UINavigationController!
+    let languageStatus = UserDefaults.standard.string(forKey: "LanguageName")
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -27,7 +28,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         IQKeyboardManager.shared.enable = true
         RunLoop.current.run(until: Date(timeIntervalSinceNow: 4.0))
         UIApplication.shared.statusBarStyle = .lightContent
-        LanguageManager.shared.setLanguage(language: .en)
+        UserDefaults.standard.setValue("EN", forKey: "LanguageName")
+        if languageStatus == "EN"{
+            LanguageManager.shared.setLanguage(language: .en)
+        }else{
+            LanguageManager.shared.setLanguage(language: .en)
+        }
         tokendata()
         tokendata1()
         let isUserLoggedIn: Bool = UserDefaults.standard.bool(forKey: "IsloggedIn?")
@@ -40,6 +46,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
     }
     func setHomeAsRootViewController(){
+        if languageStatus == "EN"{
+            LanguageManager.shared.setLanguage(language: .en)
+
+        }else{
+            LanguageManager.shared.setLanguage(language: .en)
+
+        }
         let leftVC = storyboard.instantiateViewController(withIdentifier: "FG_SideMenuVC") as! FG_SideMenuVC
         let homeVC = storyboard.instantiateViewController(withIdentifier: "FG_TabbarVc") as! FG_TabbarVc
         slider = SlideMenuController(mainViewController: homeVC, leftMenuViewController: leftVC)
@@ -55,6 +68,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
     }
     func setInitialViewAsRootViewController(){
+        if languageStatus == "EN"{
+            LanguageManager.shared.setLanguage(language: .en)
+
+        }else{
+            LanguageManager.shared.setLanguage(language: .en)
+
+        }
         let mainStoryboard = UIStoryboard(name: "Main" , bundle: nil)
         let initialVC = mainStoryboard.instantiateViewController(withIdentifier: "FG_LoginVC") as! FG_LoginVC
         UserDefaults.standard.set("1", forKey: "LanguageLocalizable")

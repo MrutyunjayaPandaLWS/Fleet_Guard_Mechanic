@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     
@@ -96,6 +97,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        localization()
         self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
     }
     
@@ -106,6 +108,10 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         }
     }
     
+    func localization(){
+        headerText.text = "Lodge_Query".localiz()
+        lodgeQueryBtn.setTitle("Lodge_Query".localiz(), for: .normal)
+    }
     
 //
 //    "ActionType": "1",
@@ -229,14 +235,55 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     print(status,"srjdh")
     print(self.selectedFromDate,"slkdls")
     print(selectedToDate,"lskdjsldm")
-    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
-    self.filterShadowView.isHidden = true
+    
+//    self.filterShadowView.isHidden = true
+    
+    
+    
+    if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz() && self.selectedStatusId == -1{
+        self.view.makeToast("Select date or filter status", duration: 2.0, position: .center)
+    }else if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz() && self.selectedStatusId != -1{
+        
+        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+        self.filterShadowView.isHidden = true
+        
+    }else if self.fromDateBtn.currentTitle != "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz(){
+        
+        self.view.makeToast("Select To Date", duration: 2.0, position: .center)
+        
+    }else if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle != "To_Date".localiz(){
+        
+        self.view.makeToast("Select From Date", duration: 2.0, position: .center)
+        
+    }else if self.fromDateBtn.currentTitle != "from_Date".localiz() && self.toDateBtn.currentTitle != "To_Date".localiz() && self.selectedStatusId == -1 || self.selectedStatusId != -1{
+        
+        if selectedToDate < selectedFromDate{
+            
+            self.view.makeToast("ToDate should be lower than FromDate", duration: 2.0, position: .center)
+            
+        }else if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz() && self.selectedStatusId != -1{
+            
+            self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+            self.filterShadowView.isHidden = true
+        }else{
+            self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+            self.filterShadowView.isHidden = true
+        }
+        
+    }else{
+        
+        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+        self.filterShadowView.isHidden = true
+    }
+    
+    
+    
 }
 @IBAction func clearbtn(_ sender: Any) {
     
     self.status = ""
-    self.fromDateBtn.setTitle("From Date", for: .normal)
-    self.toDateBtn.setTitle("To Date", for: .normal)
+    self.fromDateBtn.setTitle("from_Date".localiz(), for: .normal)
+    self.toDateBtn.setTitle("To_Date".localiz(), for: .normal)
     self.approvedBtn.backgroundColor = .white
     self.pendingBtn.backgroundColor = .white
     self.cancelledBtn.backgroundColor = .white
@@ -285,9 +332,9 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     return cell
 }
 
-func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 160
-}
+//func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//    return 160
+//}
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let centerviewcontroller = storyboard!.instantiateViewController(withIdentifier: "ChatListViewController") as! ChatListViewController

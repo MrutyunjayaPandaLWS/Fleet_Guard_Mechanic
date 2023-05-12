@@ -7,6 +7,7 @@
 
 import UIKit
 import Photos
+import LanguageManager_iOS
 
 class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,UITextViewDelegate {
     func stateDidTap(_ vc: FG_DropDownVC) {}
@@ -34,6 +35,12 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
         self.selectTopicLbl.textColor = .black
     }
     
+    @IBOutlet weak var queryDetailsTitleLbl: UILabel!
+    @IBOutlet weak var selectTopicTitleLbl: UILabel!
+    @IBOutlet weak var headerLbl: UILabel!
+    @IBOutlet weak var uploadTitleLbl: UILabel!
+    @IBOutlet weak var submitBtn: GradientButton!
+    @IBOutlet weak var uploadImageInfoLbl: UILabel!
     @IBOutlet weak var queryDetailsView: UITextView!
     @IBOutlet weak var selectReasonLbl: UILabel!
     @IBOutlet weak var selectTopicLbl: UILabel!
@@ -57,6 +64,23 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
         self.queryDetailsView.text = "Please Enter Query Details"
         self.queryDetailsView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToProductsList), name: Notification.Name.sendBackTOQuery, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localization()
+    }
+    
+    func localization(){
+        headerLbl.text = "Lodge_Query".localiz()
+        uploadTitleLbl.text = "Upload_Image".localiz()
+        submitBtn.setTitle("submit".localiz(), for: .normal)
+        selectSubmitQueryLbl.text = "submit_your_query".localiz()
+        selectTopicTitleLbl.text = "Select_Your_Topic".localiz()
+        queryDetailsTitleLbl.text = "query_Details".localiz()
+        uploadImageInfoLbl.text = "upload_image_info".localiz()
+        
+        
     }
     
     @objc func navigateToProductsList() {
@@ -112,7 +136,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Select query topic", duration: 3.0, position: .bottom)
+                self.view.makeToast("Select_query_topic".localiz(), duration: 3.0, position: .bottom)
             }
         }else if self.queryDetailsView.text!.count == 0 || self.queryDetailsView.text == "-" || self.queryDetailsView.text == "Enter query Details..."{
             DispatchQueue.main.async{
@@ -123,7 +147,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter query Details", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_query_Details".localiz(), duration: 3.0, position: .bottom)
             }
             
         }else{
@@ -138,7 +162,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
                 "QuerySummary": "",
                 "ImageUrl": "\(self.strBase64)",
                 "LoyaltyID": "\(self.loyaltyId)",
-                "SourceType": "1",
+                "SourceType": "3",
                 "ActionType": "0"
             ] as [String: Any]
             print(parameter,"dsljd")
@@ -234,7 +258,7 @@ extension FG_CreatenewqueryVC: UIImagePickerControllerDelegate, UINavigationCont
                     }
                 }else{
                     DispatchQueue.main.async {
-                        let alertVC = UIAlertController(title: "HRJohnsonneedtoaccesscameraGallery".localiz(), message: "", preferredStyle: .alert)
+                        let alertVC = UIAlertController(title: "FleetGuardneedtoaccesscameraGallery".localiz(), message: "", preferredStyle: .alert)
                         let okAction = UIAlertAction(title: "Allow".localiz(), style: UIAlertAction.Style.default) {
                             UIAlertAction in
                             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)

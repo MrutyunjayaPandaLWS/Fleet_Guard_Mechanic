@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {
@@ -82,14 +83,14 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
         self.productPoints.text = "Points: \(productPoint)"
         self.descriptionLbl.text = productDetails
         self.termsAndConLbl.text = termsandContions
-        let receivedImage = "\(String(describing: productImage))"
+        let receivedImage = "\(String(describing: self.productImages.replacingOccurrences(of: " ", with: "%20")))"
         print(receivedImage)
-        self.productImag.kf.setImage(with: URL(string: "\(PROMO_IMG1)\(receivedImage)"), placeholder: UIImage(named: "Humsafar Logo PNG"));
+        self.productImag.kf.setImage(with: URL(string: "\(imageUrl)\(receivedImage)"), placeholder: UIImage(named: "Humsafar Logo PNG"));
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        headerText.text = "Redemption_Catalogue".localiz()
         myCartListApi()
     }
     @IBAction func backBtn(_ sender: Any) {
@@ -118,7 +119,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("You are not allowled to redeem .Please contact your administrator", duration: 3.0, position: .bottom)
+                self.view.makeToast("redeem_failed_contact_to_admin".localiz(), duration: 3.0, position: .bottom)
             }
                
             
@@ -150,7 +151,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
 //                    vc!.modalTransitionStyle = .crossDissolve
 //                    self.present(vc!, animated: true, completion: nil)
                     
-                    self.view.makeToast("Insufficent Point Balance", duration: 3.0, position: .bottom)
+                    self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
                 }
             }
         }  

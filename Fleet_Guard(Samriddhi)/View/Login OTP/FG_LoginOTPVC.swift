@@ -16,6 +16,7 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
     @IBOutlet weak var resendBtn: UIButton!
     @IBOutlet weak var welcomeToLbl: UILabel!
     
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var alreadyAmemberLbl: UILabel!
     
     @IBOutlet weak var loginNowLbl: UILabel!
@@ -67,7 +68,21 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
         UserDefaults.standard.set(deviceID, forKey: "deviceID")
         self.OtpApi(mobilenumber: self.enterMobileNumber)
         self.VM.otpTimer()
-        self.otpSentToLbl.text = "Enter OTP sent to \(self.enterMobileNumber)"
+        self.otpSentToLbl.text = "\("enter_OTP_sent".localiz()) \(self.enterMobileNumber)"
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localization()
+    }
+    
+    func localization(){
+        otpWillRecieveLbl.text = "otp_Will_Recieve".localiz()
+        resendBtn.setTitle("resend_OTP".localiz(), for: .normal)
+        submitBtn.setTitle("submit".localiz(), for: .normal)
+        welcomeToLbl.text = "welcome_to".localiz()
+        backBtn.setTitle("back".localiz(), for: .normal)
     }
        
     //9993870230
@@ -92,7 +107,7 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter OTP", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_OTP".localiz(), duration: 3.0, position: .bottom)
             }
         }else if self.enteredValue.count != 4 {
             DispatchQueue.main.async{
@@ -103,7 +118,7 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter valid OTP", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
             }
         }else if self.enteredValue.count == 4{
             print(self.enteredValue)
@@ -121,7 +136,7 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
 //                    vc!.modalTransitionStyle = .crossDissolve
 //                    self.present(vc!, animated: true, completion: nil)
                     
-                    self.view.makeToast("Enter valid OTP", duration: 3.0, position: .bottom)
+                    self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
                 }
             }
         }else{
@@ -133,7 +148,7 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter valid OTP", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
             }
         }
         

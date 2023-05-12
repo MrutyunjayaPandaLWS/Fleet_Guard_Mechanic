@@ -7,47 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C15D7E74-5F84-4C11-B962-587F744C37CC"
+            uuid = "14FCC4F5-65F9-46BF-8E04-3FAA0B62E9A0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/Promotions/MyPromotions/MyPromotionDetails/FG_MyPromotionDetailsVC.swift"
+            filePath = "Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
+            landmarkName = "bannerImagesAPI()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C15D7E74-5F84-4C11-B962-587F744C37CC - 12044de0da540acb"
+                  uuid = "14FCC4F5-65F9-46BF-8E04-3FAA0B62E9A0 - 5cf2d7a680401ea6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FleetGuard_Humsafar.FG_MyPromotionDetailsVC.viewDidLoad() -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;FleetGuard_Humsafar.DashboardBannerImageModels&gt;) -&gt; () in FleetGuard_Humsafar.FG_DashBoardVC.bannerImagesAPI() -&gt; ()"
                   moduleName = "FleetGuard_Humsafar"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/Promotions/MyPromotions/MyPromotionDetails/FG_MyPromotionDetailsVC.swift"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "2530">
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
+                  offsetFromSymbolStart = "480">
                </Location>
                <Location
-                  uuid = "C15D7E74-5F84-4C11-B962-587F744C37CC - 12044de0da540b0d"
+                  uuid = "14FCC4F5-65F9-46BF-8E04-3FAA0B62E9A0 - 5cf2d7a680401ea6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FleetGuard_Humsafar.FG_MyPromotionDetailsVC.viewDidLoad() -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;FleetGuard_Humsafar.DashboardBannerImageModels&gt;) -&gt; () in FleetGuard_Humsafar.FG_DashBoardVC.bannerImagesAPI() -&gt; ()"
                   moduleName = "FleetGuard_Humsafar"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/Promotions/MyPromotions/MyPromotionDetails/FG_MyPromotionDetailsVC.swift"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "2244">
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
+                  offsetFromSymbolStart = "416">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -55,17 +55,97 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "04D81368-BF5E-4B9C-B86A-BD735CF89F36"
+            uuid = "8764DD71-0210-4874-95EB-0269F0623045"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/ProductCatalogue/ProductCatalgoueList/FG_ProductCatalogueListVC.swift"
+            filePath = "Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "746"
+            endingLineNumber = "746"
+            landmarkName = "dashboardBanner_API(parameters:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8764DD71-0210-4874-95EB-0269F0623045 - c052948311d6229a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;FleetGuard_Humsafar.ServiceError&gt;) -&gt; () in FleetGuard_Humsafar.RestAPI_Requests.dashboardBanner_API(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;FleetGuard_Humsafar.DashboardBannerImageModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "FleetGuard_Humsafar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "746"
+                  endingLineNumber = "746"
+                  offsetFromSymbolStart = "532">
+               </Location>
+               <Location
+                  uuid = "8764DD71-0210-4874-95EB-0269F0623045 - c052948311d6229a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;FleetGuard_Humsafar.ServiceError&gt;) -&gt; () in FleetGuard_Humsafar.RestAPI_Requests.dashboardBanner_API(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;FleetGuard_Humsafar.DashboardBannerImageModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "FleetGuard_Humsafar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "746"
+                  endingLineNumber = "746"
+                  offsetFromSymbolStart = "625">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB0482D4-6E02-4D1E-8895-85F4ECE25B74"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "750"
+            endingLineNumber = "750"
+            landmarkName = "dashboardBanner_API(parameters:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BB0482D4-6E02-4D1E-8895-85F4ECE25B74 - c052948311d63d1e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;FleetGuard_Humsafar.ServiceError&gt;) -&gt; () in FleetGuard_Humsafar.RestAPI_Requests.dashboardBanner_API(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;FleetGuard_Humsafar.DashboardBannerImageModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "FleetGuard_Humsafar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "750"
+                  endingLineNumber = "750"
+                  offsetFromSymbolStart = "652">
+               </Location>
+               <Location
+                  uuid = "BB0482D4-6E02-4D1E-8895-85F4ECE25B74 - c052948311d63d1e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;FleetGuard_Humsafar.ServiceError&gt;) -&gt; () in FleetGuard_Humsafar.RestAPI_Requests.dashboardBanner_API(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;FleetGuard_Humsafar.DashboardBannerImageModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "FleetGuard_Humsafar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "750"
+                  endingLineNumber = "750"
+                  offsetFromSymbolStart = "832">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

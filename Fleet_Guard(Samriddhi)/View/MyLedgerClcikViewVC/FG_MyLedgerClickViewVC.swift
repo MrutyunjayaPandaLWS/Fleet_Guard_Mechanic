@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_MyLedgerClickViewVC: BaseViewController {
 
+    @IBOutlet weak var dateTitleLbl: UILabel!
+    @IBOutlet weak var pointsTitleLbl: UILabel!
+    @IBOutlet weak var headerLbl: UILabel!
     @IBOutlet weak var MyLedgerTableView: UITableView!
     @IBOutlet weak var nodataFoundLbl: UILabel!
     @IBOutlet var dateLBL: UILabel!
@@ -29,6 +33,17 @@ class FG_MyLedgerClickViewVC: BaseViewController {
         self.dateLBL.text = accessData
         pointsLbl.text = "\(totalPoints)"
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localization()
+    }
+    
+    func localization(){
+        headerLbl.text = "My_Ledger".localiz()
+        pointsTitleLbl.text = "points".localiz()
+        dateTitleLbl.text = "Date".localiz()
     }
     
     @IBAction func selectBackBtn(_ sender: UIButton) {

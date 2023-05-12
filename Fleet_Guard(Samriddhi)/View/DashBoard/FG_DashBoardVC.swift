@@ -9,8 +9,16 @@ import UIKit
 import ImageSlideshow
 import SlideMenuControllerSwift
 import Kingfisher
+import LanguageManager_iOS
+
+
 class FG_DashBoardVC: BaseViewController {
 
+    @IBOutlet weak var knowMoreLbl: UILabel!
+    @IBOutlet weak var redemptionCatalogueLbl: UILabel!
+    @IBOutlet weak var viewDreamGiftLbl: UILabel!
+    @IBOutlet weak var clickHereBtn: UIButton!
+    @IBOutlet weak var productCatalogueLbl: UILabel!
     @IBOutlet weak var progressCircleView: UIView!
     @IBOutlet weak var progressBarLbl: UILabel!
     //    @IBOutlet weak var offersandPromLbl: UILabel!
@@ -22,6 +30,8 @@ class FG_DashBoardVC: BaseViewController {
 //    @IBOutlet weak var rplNoLbl: UILabel!
 //    @IBOutlet weak var totalValue: UILabel!
     
+    @IBOutlet weak var passbookNumberTitleLbl: UILabel!
+    @IBOutlet weak var totalPointBalTitleLbl: UILabel!
     @IBOutlet weak var progressCircleViewLeading: NSLayoutConstraint!
     @IBOutlet weak var totalPtsBalance: UILabel!
     @IBOutlet weak var welcomeTitle: UILabel!
@@ -63,7 +73,12 @@ class FG_DashBoardVC: BaseViewController {
     var dashboardAarray = [ObjCustomerDashboardList]()
     
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
-    var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
+    var loyaltyId:String = ""{
+        didSet{
+//            dashboardPointsApi()
+            pointsAPI()
+        }
+    }//UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     var secondToken = UserDefaults.standard.string(forKey: "SECONDTOKEN") ?? ""
     var deviceID =  UserDefaults.standard.string(forKey: "deviceID") ?? ""
     var bannerImagesArray = [ObjImageGalleryList]()
@@ -106,12 +121,28 @@ class FG_DashBoardVC: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         slideMenuController()?.changeLeftViewWidth(self.view.frame.size.width * 0.8)
+        localization()
         SlideMenuOptions.contentViewScale = 1
         //self.productViewHeight.constant = 200
         self.tokendata()
-        self.pointsAPI()
+//        self.pointsAPI()
         self.plannerListing()
     }
+    
+
+    func localization(){
+        totalPointBalTitleLbl.text = "total_Point_bal".localiz()
+        passbookNumberTitleLbl.text = "passbook_number".localiz()
+        welcomeTitle.text = "welcome".localiz()
+        welcomeLbl.text = "humsafar".localiz()
+        viewDreamGiftLbl.text = "View_your_dreamgift".localiz()
+        addYourDreamLbl.text = "add_your_dreamGift".localiz()
+        productCatalogueLbl.text = "product_Catalogoue".localiz()
+        clickHereBtn.setTitle("click_Here".localiz(), for: .normal)
+        redemptionCatalogueLbl.text = "redemption_catalogue".localiz()
+        knowMoreLbl.text = "know_more".localiz()
+    }
+    
     
     override func viewDidLayoutSubviews() {
 //        self.orderNowBtn.layer.cornerRadius = 14
@@ -223,7 +254,7 @@ class FG_DashBoardVC: BaseViewController {
         
         let parameter = [
             "ActionType":"1",
-            "ActorId":"\(self.userId)",
+//            "ActorId":"\(self.userId)",
             "LoyaltyId":"\(self.loyaltyId)"
         ] as [String: Any]
         print(parameter)
@@ -282,7 +313,8 @@ class FG_DashBoardVC: BaseViewController {
     func bannerImagesAPI() {
         let parameters = [
                 "ObjImageGallery": [
-                "AlbumCategoryID": "1"
+                "AlbumCategoryID": "1",
+                "ActorId": 2
             ]
             ] as [String: Any]
         print(parameters)
@@ -314,6 +346,9 @@ class FG_DashBoardVC: BaseViewController {
                 
                 
             }else{
+                self.bannerImage.isHidden = true
+                self.emptyImageView.isHidden = false
+                self.emptyImageView.image = UIImage(named: "ic_default_img")
             print("No Resdflksjadfljkasdjflasldjf")
             }
         }
@@ -347,7 +382,7 @@ class FG_DashBoardVC: BaseViewController {
                 let filterImage = (image.proImage ?? "").dropFirst(3)
                 let images = ("\(PROMO_IMG1)\(filterImage)").replacingOccurrences(of: " ", with: "%20")
                 
-                sourceArray1.append(AlamofireSource(urlString: images, placeholder: UIImage(named: "Artboard 91"))!)
+                sourceArray1.append(AlamofireSource(urlString: images, placeholder: UIImage(named: "ic_default_img"))!)
             }
             offersAndPromotionSlideShow.setImageInputs(sourceArray1)
             offersAndPromotionSlideShow.slideshowInterval = 3.0
@@ -425,7 +460,7 @@ class FG_DashBoardVC: BaseViewController {
                         print(parseddata.access_token ?? "", "- Token")
                         UserDefaults.standard.setValue(parseddata.access_token ?? "", forKey: "TOKEN")
                     self.dashboardApi()
-                    self.dashboardPointsApi()
+//                    self.dashboardPointsApi()
                     self.productsCategoryListApi()
                     
                     

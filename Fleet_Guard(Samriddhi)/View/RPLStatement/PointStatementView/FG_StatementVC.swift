@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_StatementVC: BaseViewController,StatementViewDelegate{
     func viewActBTN(_ cell: FG_StatementTVC) {
@@ -38,6 +39,11 @@ class FG_StatementVC: BaseViewController,StatementViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        if itsFrom == "SideMenu"{
+            backBt.isHidden = false
+        }else{
+            backBt.isHidden = true
+        }
         self.statementTableView.delegate = self
         self.statementTableView.dataSource = self
         self.ledgerStackView.clipsToBounds = true
@@ -48,11 +54,7 @@ class FG_StatementVC: BaseViewController,StatementViewDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if itsFrom == "SideMenu"{
-            backBt.isHidden = false
-        }else{
-            backBt.isHidden = true
-        }
+        headerText.text = "My_Ledger".localiz()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

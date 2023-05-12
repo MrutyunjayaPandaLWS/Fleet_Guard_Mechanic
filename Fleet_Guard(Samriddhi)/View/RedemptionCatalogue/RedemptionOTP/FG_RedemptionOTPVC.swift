@@ -219,7 +219,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
 //                            vc!.modalTransitionStyle = .crossDissolve
 //                            self.present(vc!, animated: true, completion: nil)
                             
-                            self.view.makeToast("Redemption Failed", duration: 3.0, position: .bottom)
+                            self.view.makeToast("Redemption_Failed".localiz(), duration: 3.0, position: .bottom)
                         }
                     }
                 }
@@ -234,7 +234,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
 //                        vc!.modalTransitionStyle = .crossDissolve
 //                        self.present(vc!, animated: true, completion: nil)
                         
-                        self.view.makeToast("InValid OTP", duration: 3.0, position: .bottom)
+                        self.view.makeToast("Invalid_OTP".localiz(), duration: 3.0, position: .bottom)
                     }
                 
             }
@@ -249,7 +249,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter OTP", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_OTP".localiz(), duration: 3.0, position: .bottom)
             }
         }else if enteredValue.count != 6{
             DispatchQueue.main.async{
@@ -261,7 +261,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
 //                vc!.modalPresentationStyle = .overCurrentContext
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Enter valid OTP", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
             }
         }
     }
