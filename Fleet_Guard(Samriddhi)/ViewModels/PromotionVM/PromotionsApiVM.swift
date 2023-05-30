@@ -38,12 +38,14 @@ class PromotionsApiVM{
                 }else{
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
+                        self.VC?.noDataFound.isHidden = false
                         print("\(error)")
                     }
                 }
             }else{
                 DispatchQueue.main.async {
                     self.VC?.stopLoading()
+                    self.VC?.noDataFound.isHidden = false
                     print("\(error)")
                 }
             }

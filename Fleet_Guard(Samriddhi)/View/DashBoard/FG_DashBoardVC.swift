@@ -14,6 +14,7 @@ import LanguageManager_iOS
 
 class FG_DashBoardVC: BaseViewController {
 
+    @IBOutlet weak var noDatafoundLbl: UILabel!
     @IBOutlet weak var knowMoreLbl: UILabel!
     @IBOutlet weak var redemptionCatalogueLbl: UILabel!
     @IBOutlet weak var viewDreamGiftLbl: UILabel!
@@ -200,6 +201,8 @@ class FG_DashBoardVC: BaseViewController {
     }
     
     @IBAction func notificationBell(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryNotificationsViewController") as? HistoryNotificationsViewController
+        navigationController?.pushViewController(vc!, animated: true)
     }
 
     
@@ -340,6 +343,7 @@ class FG_DashBoardVC: BaseViewController {
                     }else{
                         self.bannerImage.isHidden = true
                         self.emptyImageView.isHidden = false
+                        self.emptyImageView.image = UIImage(named: "ic_default_img")
                     }
                 }
                

@@ -34,6 +34,7 @@ class FG_MarketGapVC: BaseViewController, MarketingGapDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        noDataFoundLbl.isHidden = true
         self.markrtingGapView.delegate = self
         self.markrtingGapView.dataSource = self
     }

@@ -86,6 +86,10 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
         vc.delegate = self
         vc.modalTransitionStyle = .coverVertical
         vc.modalPresentationStyle = .overFullScreen
+        vc.selectedArrayDataID = categoryId
+        vc.selectedArrayDataID2 = categoryId1
+        vc.selectedArrayDataID3 = categoryId2
+        vc.selectedArrayDataID4 = categoryId3
         self.present(vc, animated: true)
     }
     @IBAction func backBtn(_ sender: Any) {

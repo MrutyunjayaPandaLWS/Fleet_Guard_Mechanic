@@ -29,11 +29,13 @@ class CounterGapVM {
                         
                         print(self.myCounterGapArray.count, "myBillingsListingArrayCount")
                         if self.myCounterGapArray.count != 0{
+                            self.VC?.emptyMessage.isHidden = true
                             self.VC?.CounterGapTableView.isHidden = false
                             self.VC?.CounterGapTableView.reloadData()
                             
                         }else{
                             self.VC?.CounterGapTableView.isHidden = true
+                            self.VC?.emptyMessage.isHidden = false
                         }
                         
                     }
@@ -41,11 +43,13 @@ class CounterGapVM {
                 }else{
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
+                        self.VC?.emptyMessage.isHidden = false
                         print("\(error)")
                     }
                 }
             }else{
                 DispatchQueue.main.async {
+                    self.VC?.emptyMessage.isHidden = false
                     self.VC?.stopLoading()
                     print("\(error)")
                 }

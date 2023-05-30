@@ -102,6 +102,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         self.catalogueListTableView.delegate = self
         self.catalogueListTableView.dataSource = self
         self.levelTwoView.clipsToBounds = true
+        noDataFoundLbl.isHidden = true
         self.levelTwoView.layer.cornerRadius = 20
         self.levelTwoView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }

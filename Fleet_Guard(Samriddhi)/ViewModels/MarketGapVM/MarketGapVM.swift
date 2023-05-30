@@ -32,10 +32,12 @@ class MarketGapVM: UIViewController {
                         print(self.myMarketGapArray.count, "myBillingsListingArrayCount")
                         if self.myMarketGapArray.count != 0{
                             self.VC?.markrtingGapView.isHidden = false
+                            self.VC?.noDataFoundLbl.isHidden = true
                             self.VC?.markrtingGapView.reloadData()
                             
                         }else{
                             self.VC?.markrtingGapView.isHidden = true
+                            self.VC?.noDataFoundLbl.isHidden = false
                         }
                         
                     }
@@ -43,12 +45,14 @@ class MarketGapVM: UIViewController {
                 }else{
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
+                        self.VC?.noDataFoundLbl.isHidden = false
                         print("\(error)")
                     }
                 }
             }else{
                 DispatchQueue.main.async {
                     self.VC?.stopLoading()
+                    self.VC?.noDataFoundLbl.isHidden = false
                     print("\(error)")
                 }
             }

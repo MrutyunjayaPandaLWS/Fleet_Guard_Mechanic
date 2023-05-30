@@ -157,19 +157,23 @@ class FG_DashboardVM: popUpDelegate{
                     self.VC?.stopLoading()
                     self.categoryListArray = result?.lstAttributesDetails ?? []
                     if self.categoryListArray.count != 0 {
+                        self.VC?.noDatafoundLbl.isHidden = true
                         self.VC?.categoryCollectionView.isHidden = false
                         self.VC?.categoryCollectionView.reloadData()
                     }else{
+                        self.VC?.noDatafoundLbl.isHidden = false
                         self.VC?.categoryCollectionView.isHidden = true
                     }
                 }
                 }else{
                     DispatchQueue.main.async {
+                    self.VC?.noDatafoundLbl.isHidden = true
                     self.VC?.stopLoading()
                     }
                 }
             }else{
                 DispatchQueue.main.async {
+                self.VC?.noDatafoundLbl.isHidden = true
                 self.VC?.stopLoading()
                 }
             }
@@ -285,7 +289,8 @@ class FG_DashboardVM: popUpDelegate{
             }else{
                 print("ERROR_Login \(error)")
                 DispatchQueue.main.async {
-                    
+                    self.VC?.bannerImage.isHidden = true
+                    self.VC?.emptyImageView.isHidden = false
                     self.VC?.stopLoading()
                 }
                 

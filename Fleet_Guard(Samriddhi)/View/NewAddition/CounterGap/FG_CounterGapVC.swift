@@ -20,6 +20,7 @@ class FG_CounterGapVC: BaseViewController, CounterGapDelegate {
     }
     
     
+    @IBOutlet weak var emptyMessage: UILabel!
     @IBOutlet weak var CounterGapTableView: UITableView!
     
     var VM = CounterGapVM()
@@ -32,6 +33,7 @@ class FG_CounterGapVC: BaseViewController, CounterGapDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        emptyMessage.isHidden = true
         CounterGapTableView.delegate = self
         CounterGapTableView.dataSource = self
     }

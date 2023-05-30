@@ -219,6 +219,12 @@
 		842F0A7529BC9AE50014602F /* fleetguard-retailer-t&c-kan.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A7029BC9AE40014602F /* fleetguard-retailer-t&c-kan.html */; };
 		842F0A7629BC9AE50014602F /* fleetguard-retailer-t&c-hin.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A7129BC9AE50014602F /* fleetguard-retailer-t&c-hin.html */; };
 		84307EBF2A0CBF5A00BBCB22 /* ObjCatalogueDetailsForCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84307EBE2A0CBF5A00BBCB22 /* ObjCatalogueDetailsForCustomer.swift */; };
+		84369F3E2A135CCB00D1CA28 /* HistoryNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84369F3B2A135CCA00D1CA28 /* HistoryNotificationsViewController.swift */; };
+		84369F3F2A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84369F3C2A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.swift */; };
+		84369F402A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84369F3D2A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.xib */; };
+		84369F432A13603B00D1CA28 /* HistoryNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84369F422A13603A00D1CA28 /* HistoryNotificationsViewModel.swift */; };
+		84369F462A13607400D1CA28 /* NotificationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84369F452A13607400D1CA28 /* NotificationModels.swift */; };
+		84369F492A13609100D1CA28 /* LstPushHistoryJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84369F482A13609100D1CA28 /* LstPushHistoryJson.swift */; };
 		8439109E29812E29007D73B6 /* FG_StatementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439109D29812E29007D73B6 /* FG_StatementVC.swift */; };
 		845873892A065D94002A183A /* FG_MyRedemptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845873882A065D94002A183A /* FG_MyRedemptionVC.swift */; };
 		8458738B2A065DA4002A183A /* FG_MyRedemptionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458738A2A065DA4002A183A /* FG_MyRedemptionTVC.swift */; };
@@ -564,6 +570,12 @@
 		842F0A7029BC9AE40014602F /* fleetguard-retailer-t&c-kan.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-t&c-kan.html"; sourceTree = "<group>"; };
 		842F0A7129BC9AE50014602F /* fleetguard-retailer-t&c-hin.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-t&c-hin.html"; sourceTree = "<group>"; };
 		84307EBE2A0CBF5A00BBCB22 /* ObjCatalogueDetailsForCustomer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCatalogueDetailsForCustomer.swift; sourceTree = "<group>"; };
+		84369F3B2A135CCA00D1CA28 /* HistoryNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryNotificationsViewController.swift; sourceTree = "<group>"; };
+		84369F3C2A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryNotificationsTableViewCell.swift; sourceTree = "<group>"; };
+		84369F3D2A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryNotificationsTableViewCell.xib; sourceTree = "<group>"; };
+		84369F422A13603A00D1CA28 /* HistoryNotificationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryNotificationsViewModel.swift; sourceTree = "<group>"; };
+		84369F452A13607400D1CA28 /* NotificationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModels.swift; sourceTree = "<group>"; };
+		84369F482A13609100D1CA28 /* LstPushHistoryJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LstPushHistoryJson.swift; sourceTree = "<group>"; };
 		8439109D29812E29007D73B6 /* FG_StatementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_StatementVC.swift; sourceTree = "<group>"; };
 		845873882A065D94002A183A /* FG_MyRedemptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FG_MyRedemptionVC.swift; path = "../../../../FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/MyRedemption/FG_MyRedemptionVC.swift"; sourceTree = "<group>"; };
 		8458738A2A065DA4002A183A /* FG_MyRedemptionTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FG_MyRedemptionTVC.swift; path = "../../../../FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/MyRedemption/FG_MyRedemptionTVC.swift"; sourceTree = "<group>"; };
@@ -1511,6 +1523,7 @@
 		84068D8729765DF600D4360F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84369F442A13605600D1CA28 /* NotificationModels */,
 				84834B062A05376500FCF73C /* RedemptionDetailsOrderStatusModel */,
 				84834AFF2A05371D00FCF73C /* RedemptionDetailsModels */,
 				84834AF42A05070300FCF73C /* Language Models */,
@@ -1581,6 +1594,7 @@
 		84068D8829765E0200D4360F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84369F3A2A135CB300D1CA28 /* Notification */,
 				259152CD29DAFEAA0082F4CD /* DreamGiftDetails */,
 				25913E6529C840E300C60D55 /* DreamGift */,
 				842F0A5229BC96860014602F /* TermsandCondition */,
@@ -1621,6 +1635,7 @@
 		84068D8929765E0A00D4360F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				84369F412A13602500D1CA28 /* NotificationVM */,
 				84834AFB2A05366500FCF73C /* FG_RedemptionDetailsVM.swift */,
 				259152D029DB025E0082F4CD /* DreamGiftDetailsVM */,
 				2586CA3629C856230067CD17 /* DreamGiftVM */,
@@ -1900,6 +1915,33 @@
 				842F0A5A29BC9ABF0014602F /* about-telugu.html */,
 			);
 			path = AboutUs;
+			sourceTree = "<group>";
+		};
+		84369F3A2A135CB300D1CA28 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				84369F3B2A135CCA00D1CA28 /* HistoryNotificationsViewController.swift */,
+				84369F3C2A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.swift */,
+				84369F3D2A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.xib */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		84369F412A13602500D1CA28 /* NotificationVM */ = {
+			isa = PBXGroup;
+			children = (
+				84369F422A13603A00D1CA28 /* HistoryNotificationsViewModel.swift */,
+			);
+			path = NotificationVM;
+			sourceTree = "<group>";
+		};
+		84369F442A13605600D1CA28 /* NotificationModels */ = {
+			isa = PBXGroup;
+			children = (
+				84369F452A13607400D1CA28 /* NotificationModels.swift */,
+				84369F482A13609100D1CA28 /* LstPushHistoryJson.swift */,
+			);
+			path = NotificationModels;
 			sourceTree = "<group>";
 		};
 		8439109C29812DC9007D73B6 /* PointStatementView */ = {
@@ -2496,8 +2538,8 @@
 		84FBC3F129796E020061ABAE /* MarketGap */ = {
 			isa = PBXGroup;
 			children = (
-				84FBC3F229796E1E0061ABAE /* FG_MarketGapTVC.swift */,
 				84FBC3F429796E350061ABAE /* FG_MarketGapVC.swift */,
+				84FBC3F229796E1E0061ABAE /* FG_MarketGapTVC.swift */,
 			);
 			path = MarketGap;
 			sourceTree = "<group>";
@@ -2660,6 +2702,7 @@
 				84068DCA2976777200D4360F /* Roboto-LightItalic.ttf in Resources */,
 				84834AF12A04EB6100FCF73C /* fg-Mechanic-about-eng.html in Resources */,
 				842F0A6829BC9AD50014602F /* fleetguard-retailer-faq-eng.html in Resources */,
+				84369F402A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.xib in Resources */,
 				84834AEF2A04DF8700FCF73C /* fleetguard-mechanic-t&c.html in Resources */,
 				84068DD02976777200D4360F /* Roboto-Black.ttf in Resources */,
 				842F0A6B29BC9AD50014602F /* fleetguard-retailer-faq-kan.html in Resources */,
@@ -2780,6 +2823,7 @@
 				84C1E40029758A6D00D188C5 /* FG_LoginVC.swift in Sources */,
 				2592E70B29B99C62005689CF /* LsrProductDetails11.swift in Sources */,
 				25C465C929A8C74400CCA30C /* RedemptionSubmission.swift in Sources */,
+				84369F462A13607400D1CA28 /* NotificationModels.swift in Sources */,
 				2565BBCF29A4D4480015AFD4 /* MyOrderDetailsListingVM.swift in Sources */,
 				841FCE0A297FDCB40026CD44 /* FG_RedemptionOTPVC.swift in Sources */,
 				251F0B82299F4F2E00E2881A /* LstPromotionJsonList.swift in Sources */,
@@ -2794,6 +2838,8 @@
 				849D350B298A8C93005A41FC /* DashboardTotalPointsModel.swift in Sources */,
 				25C465E229A8EA6200CCA30C /* LstRetailerBonding2.swift in Sources */,
 				259152CF29DAFEE50082F4CD /* FG_DreamGiftDetailsVC.swift in Sources */,
+				84369F432A13603B00D1CA28 /* HistoryNotificationsViewModel.swift in Sources */,
+				84369F3F2A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.swift in Sources */,
 				25D88FCD29A9E4B1002815A7 /* FilterRedemptionCatVM.swift in Sources */,
 				25C865F229A7256100C1801E /* ChatDetailsModels.swift in Sources */,
 				25116BDE29CC0B3600E78DD7 /* MyLedgerModels.swift in Sources */,
@@ -2811,6 +2857,7 @@
 				84FD0A82297EC01600E01B00 /* FG_CategoryListCVC.swift in Sources */,
 				2551C3DD29B75EB900EED0FB /* LstRetailerBonding5.swift in Sources */,
 				84068DAB2976656600D4360F /* Reachability.swift in Sources */,
+				84369F492A13609100D1CA28 /* LstPushHistoryJson.swift in Sources */,
 				25C865E729A7237F00C1801E /* senderImageTableViewCell.swift in Sources */,
 				25E8F66329B5C4020033F405 /* FG_BonusTrendGraphVC.swift in Sources */,
 				84307EBF2A0CBF5A00BBCB22 /* ObjCatalogueDetailsForCustomer.swift in Sources */,
@@ -2838,6 +2885,7 @@
 				2588CEEB29B5F62600330CE8 /* PointsTrendModels.swift in Sources */,
 				84EEBE13297FE21000ECF2DC /* FG_MyCartTVC.swift in Sources */,
 				25C465C329A8C68800CCA30C /* SendSMSModel.swift in Sources */,
+				84369F3E2A135CCB00D1CA28 /* HistoryNotificationsViewController.swift in Sources */,
 				845FD71F29782A2F00CE487E /* FG_SideMenuTVC.swift in Sources */,
 				84834AFE2A0536A400FCF73C /* FG_MyRedemptionDetailsTVC.swift in Sources */,
 				2511404129DAE9E00085D78E /* ObjCatalogueList2.swift in Sources */,
@@ -3234,6 +3282,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3268,6 +3317,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

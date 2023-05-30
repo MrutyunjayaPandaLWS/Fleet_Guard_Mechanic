@@ -38,10 +38,12 @@ class FG_QueryListVM {
 //                            self.VC?.noofelements = queryList.count
                             print(self.queryListArray.count,"skjhdks")
                             if self.queryListArray.count != 0 {
+                                self.VC?.nodatafoundLbl.isHidden = true
                                 self.VC?.lodgeQueryListTableView.isHidden = false
                                 self.VC?.lodgeQueryListTableView.reloadData()
                             }else{
                                 self.VC?.view.makeToast("No_data_found".localiz(), duration: 2.0, position: .bottom)
+                                self.VC?.nodatafoundLbl.isHidden = false
                                 self.VC?.lodgeQueryListTableView.isHidden = true
                                 //self.VC?.filterView.isHidden = true
                             }
@@ -50,12 +52,14 @@ class FG_QueryListVM {
                     }
                 }else{
                     DispatchQueue.main.async {
+                        self.VC?.nodatafoundLbl.isHidden = false
                         self.VC?.stopLoading()
                       
                     }
                 }
             }else{
                 DispatchQueue.main.async {
+                    self.VC?.nodatafoundLbl.isHidden = false
                     self.VC?.stopLoading()
                 }
             }

@@ -13,6 +13,7 @@ protocol sendProductDelegate {
 
 class FG_CatalogueFilterView: BaseViewController {
     
+    @IBOutlet weak var categorylistTopConnstraints: NSLayoutConstraint!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var subView: UIView!
     
@@ -192,6 +193,13 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
         print(tableViewData,"lsjidlsd")
         collectionViewData = ""
         self.redemptionCategoryList()
+        if indexPath.row == 0{
+            choosePointView.isHidden = false
+            categorylistTopConnstraints.constant = 90
+        }else if indexPath.row == 1{
+            choosePointView.isHidden = true
+            categorylistTopConnstraints.constant = 20
+        }
         self.categoryListCollectionView.reloadData()
         self.categoryTypeTableView.reloadData()
     }

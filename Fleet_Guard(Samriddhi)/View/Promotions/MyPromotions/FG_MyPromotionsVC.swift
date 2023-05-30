@@ -33,6 +33,7 @@ class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        noDataFound.isHidden = true
         headerLbl.text = "Offers_promotions".localiz()
         self.VM.VC = self
         self.myPromotionsTableView.delegate = self

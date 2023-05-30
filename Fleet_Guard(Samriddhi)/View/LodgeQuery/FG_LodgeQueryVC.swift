@@ -24,6 +24,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
      }
     
 
+    @IBOutlet weak var nodatafoundLbl: UILabel!
     @IBOutlet weak var filterShadowView: UIView!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var filterTitle: UILabel!
@@ -59,7 +60,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     var selectedStatusId = -1
     var selectedFromDate = ""
     var selectedToDate = ""
-    var status = ""
+    var status = "-1"
     var noofelements = 0
     var startindex = 1
     
@@ -73,7 +74,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         self.VM.VC = self
         lodgeQueryListTableView.delegate = self
         lodgeQueryListTableView.dataSource = self
-        
+        nodatafoundLbl.isHidden = true
         self.filterShadowView.isHidden = true
 //        self.filterView.isHidden = true
         subView.clipsToBounds = true
@@ -98,7 +99,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         localization()
-        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.status, StartIndex: startindex)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -118,7 +119,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
 //               "ActorId": "45822",
 //               "HelpTopicID": ""
 
-    func queryListApi(queryTopic: Int, statusId: Int,StartIndex: Int){
+    func queryListApi(queryTopic: Int, statusId: String,StartIndex: Int){
         let parameter = [
             "ActionType": "1",
             "ActorId": "\(self.userId)",
@@ -240,11 +241,11 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     
     
     
-    if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz() && self.selectedStatusId == -1{
-        self.view.makeToast("Select date or filter status", duration: 2.0, position: .center)
-    }else if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz() && self.selectedStatusId != -1{
+    if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz() && self.status == "-1"{
+        self.view.makeToast("Select date or filter status or both", duration: 2.0, position: .center)
+    }else if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz() && self.status != "-1"{
         
-        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.status, StartIndex: startindex)
         self.filterShadowView.isHidden = true
         
     }else if self.fromDateBtn.currentTitle != "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz(){
@@ -255,24 +256,24 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         
         self.view.makeToast("Select From Date", duration: 2.0, position: .center)
         
-    }else if self.fromDateBtn.currentTitle != "from_Date".localiz() && self.toDateBtn.currentTitle != "To_Date".localiz() && self.selectedStatusId == -1 || self.selectedStatusId != -1{
+    }else if self.fromDateBtn.currentTitle != "from_Date".localiz() && self.toDateBtn.currentTitle != "To_Date".localiz() && self.status == "-1" || self.status != "-1"{
         
         if selectedToDate < selectedFromDate{
             
             self.view.makeToast("ToDate should be lower than FromDate", duration: 2.0, position: .center)
             
-        }else if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz() && self.selectedStatusId != -1{
+        }else if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz() && self.status != "-1"{
             
-            self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+            self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.status, StartIndex: startindex)
             self.filterShadowView.isHidden = true
         }else{
-            self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+            self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.status, StartIndex: startindex)
             self.filterShadowView.isHidden = true
         }
         
     }else{
         
-        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.status, StartIndex: startindex)
         self.filterShadowView.isHidden = true
     }
     
@@ -281,17 +282,17 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
 }
 @IBAction func clearbtn(_ sender: Any) {
     
-    self.status = ""
+//    self.status = "-1"
     self.fromDateBtn.setTitle("from_Date".localiz(), for: .normal)
     self.toDateBtn.setTitle("To_Date".localiz(), for: .normal)
     self.approvedBtn.backgroundColor = .white
     self.pendingBtn.backgroundColor = .white
     self.cancelledBtn.backgroundColor = .white
     selectedQueryTopicId = -1
-    selectedStatusId = -1
+    status = "-1"
     selectedFromDate = ""
     selectedToDate = ""
-    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.status, StartIndex: startindex)
     self.filterShadowView.isHidden = true
 }
 }
@@ -307,16 +308,19 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     let ticketStatus = VM.queryListArray[indexPath.row].ticketStatus ?? "-"
     cell.queryId.text = VM.queryListArray[indexPath.row].customerTicketRefNo ?? ""
     cell.statusLbl.text = ticketStatus
-    if ticketStatus == "Pending"{
-        cell.statusLbl.backgroundColor = .systemOrange
-    }else if ticketStatus == "Re-Open"{
-        cell.statusLbl.backgroundColor = .systemOrange
-    }else if ticketStatus == "Resolved"{
-        cell.statusLbl.backgroundColor = .systemGreen
-    }else if ticketStatus == "Closed"{
-        cell.statusLbl.backgroundColor = .systemRed
-    }else if ticketStatus == "Resolved-Follow Up"{
-        cell.statusLbl.backgroundColor = .green
+    
+    if cell.statusLbl.text == "Pending"{
+        cell.statusLbl.backgroundColor = #colorLiteral(red: 0.8146452308, green: 0.6417329907, blue: 0.1795035601, alpha: 1)
+    }else if cell.statusLbl.text == "Approved"{
+        cell.statusLbl.backgroundColor = #colorLiteral(red: 0, green: 0.616204381, blue: 0, alpha: 1)
+    }else if cell.statusLbl.text == "Resolved"{
+        cell.statusLbl.backgroundColor = #colorLiteral(red: 0, green: 0.616204381, blue: 0, alpha: 1)
+    }else if cell.statusLbl.text == "Re-Open"{
+        cell.statusLbl.backgroundColor = #colorLiteral(red: 0.8146452308, green: 0.6417329907, blue: 0.1795035601, alpha: 1)
+    }else if cell.statusLbl.text == "Resolved-Follow Up"{
+        cell.statusLbl.backgroundColor = #colorLiteral(red: 0, green: 0.616204381, blue: 0, alpha: 1)
+    }else{
+        cell.statusLbl.backgroundColor = #colorLiteral(red: 0.7347359657, green: 0, blue: 0, alpha: 1)
     }
     let querydateAndTime = VM.queryListArray[indexPath.row].jCreatedDate ?? ""
     let querydateAndTimeArray = querydateAndTime.components(separatedBy: " ")

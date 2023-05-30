@@ -14,8 +14,8 @@
             filePath = "Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
             landmarkName = "bannerImagesAPI()"
             landmarkType = "7">
             <Locations>
@@ -47,6 +47,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "323"
                   endingLineNumber = "323"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  uuid = "14FCC4F5-65F9-46BF-8E04-3FAA0B62E9A0 - 5cf2d7a680401ec9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FleetGuard_Humsafar.DashboardBannerImageModels&gt;) -&gt; () in FleetGuard_Humsafar.FG_DashBoardVC.bannerImagesAPI() -&gt; ()"
+                  moduleName = "FleetGuard_Humsafar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "326"
+                  endingLineNumber = "326"
                   offsetFromSymbolStart = "416">
                </Location>
             </Locations>
@@ -146,6 +161,22 @@
                   offsetFromSymbolStart = "832">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B650E28-1F20-4896-BA40-9632E72ECD1B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/ViewModels/DashboardVM /FG_DashboardVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "dashboardApi(parameter:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

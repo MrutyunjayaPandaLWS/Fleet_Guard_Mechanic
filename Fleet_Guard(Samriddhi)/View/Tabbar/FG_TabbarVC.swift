@@ -27,6 +27,16 @@ class FG_TabbarVc: UITabBarController {
         super.viewDidLayoutSubviews()
      
     }
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if self.selectedIndex == 0 {
+            self.tabBarController?.selectedIndex = selectedIndex
+        }else if self.selectedIndex == 1{
+            let rootView = self.viewControllers![self.selectedIndex] as! UINavigationController
+            rootView.popToRootViewController(animated: false)
+        }else if self.selectedIndex == 2{
+            self.tabBarController?.selectedIndex = selectedIndex
+        }
+    }
 
 }
 struct Constants{
