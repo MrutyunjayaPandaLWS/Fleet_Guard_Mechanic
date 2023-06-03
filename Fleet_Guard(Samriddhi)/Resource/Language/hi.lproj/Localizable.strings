@@ -1,190 +1,181 @@
-/* 
-  Localizable.strings
-  Fleet_Guard(Samriddhi)
 
-  Created by admin on 11/05/23.
-  
-*/
-"Allow" = "Allow";
-"No_Internet" = "No Internet";
-"Disallow" = "Disallow";
-"NoCamera" = "No Camera";
-"Sorrynodevice" = "Sorry no device found";
-"OK" = "OK";
-// MARK: - LOGIN
-"welcome_to" = "Welcome to";
-"already_a_Member" = "Already a member ?";
-"login_Now" = "Login Now";
-"mobile_number" = "Mobile Number";
-"enter_mobile_number" = "Enter mobile number";
-"send_otp" = "Send OTP";
-"Accept" = "Accept";
-"Terms_and_condition" = "Terms and condition";
-"new_to_humsafar" = "New to Humsafar ?";
-"contact_us" = "Contact us now";
-"enter_mobile_number_error" = "Please enter mobile number";
-"mobile_number_not_exist" = "The mobile number that you have entered is not present in the  system.";
+"Allow" = "अनुमति दें";
+"No_Internet" = "कोई इंटरनेट नहीं";
+"Disallow" = "अस्वीकार करें";
+"NoCamera" = "कोई कैमरा नहीं है";
+"Sorrynodevice" = "क्षमा करें, कोई उपकरण नहीं मिला";
+"OK" = "ओके";
 
-// MARK: - TERMS AD CONDITIONS
+// MARK: - LOGIN = // मार्क: - लॉगिन करें
+"welcome_to" = "इसमें आपका स्वागत है";
+"already_a_Member" = "पहले से सदस्य हैं ?";
+"login_Now" = "अभी लॉगिन करें";
+"mobile_number" = "मोबाइल नंबर";
+"enter_mobile_number" = "मोबाइल नंबर दर्ज करें";
+"send_otp" = "OTP भेजें";
+"Accept" = "स्वीकार करें";
+"Terms_and_condition" = "नियम और शर्तें";
+"new_to_humsafar" = "हमसफ़र में नए हैं?";
+"contact_us" = "हमसे अभी संपर्क करें";
+"enter_mobile_number_error" = "कृपया मोबाइल नंबर दर्ज करें";
+"mobile_number_not_exist" = "आपके द्वारा दर्ज किया गया मोबाइल नंबर सिस्टम में मौजूद नहीं है.";
 
-"decline" = "Decline";
-"accept" = "Accept";
+// MARK: - TERMS AD CONDITIONS = // मार्क: - नियम विज्ञापन शर्तें
 
-// MARK: - HELPLINE
+"decline" = "गिरावट";
+"accept" = "स्वीकार करें";
 
-"Name" = "Name";
-"enter_name" = "Enter name";
-"enter_name_error" = "Please enter name";
-"state" = "State";
-"select_state_error" = "Please select state";
-"city" = "City";
-"select_city_error" = "Please select city";
-"comments" = "Comments";
-"enter_comments" = "Enter Comments";
-"submit" = "Submit";
-"valid_mobile_number_error" = "Enter valid mobile number";
-"query_submit_success_message" = "Your query successfully submit";
-"query_submit_failed_message" = "Your submission failed.";
-"mobile_number_already_exist" = "Mobile number already registered !";
-"enter_OTP_sent" = "Enter OTP sent to";
-"otp_Will_Recieve" = "OTP  will receive within";
-"resend_OTP" = "Resend OTP";
-"back" = "Back";
-"Enter_OTP" = "Enter OTP";
-"Enter_valid_OTP" = "Enter valid OTP";
-"Invalid_OTP" = "InValid OTP";
+// MARK: - HELPLINE = // मार्क: - हेल्पलाइन
 
-// MARK: - SIDE MENU
+"Name" = "नाम";
+"enter_name" = "नाम दर्ज करें";
+"enter_name_error" = "कृपया नाम दर्ज करें";
+"state" = "राज्य";
+"select_state_error" = "कृपया राज्य चुनें";
+"city" = "शहर";
+"select_city_error" = "कृपया शहर चुनें";
+"comments" = "टिप्पणियां";
+"enter_comments" = "टिप्पणियां दर्ज करें";
+"submit" = "सबमिट करें";
+"valid_mobile_number_error" = "मान्य मोबाइल नंबर दर्ज करें";
+"query_submit_success_message" = "आपकी क्वेरी सफलतापूर्वक सबमिट कर दी गयी हैै";
+"query_submit_failed_message" = "आपका सबमिशन विफल हुआ।";
+"mobile_number_already_exist" = "मोबाइल नंबर पहले से पंजीकृत है!";
+"enter_OTP_sent" = "भेजा गया OTP दर्ज करें";
+"otp_Will_Recieve" = "ओटीपी इसी समय प्राप्त होगा";
+"resend_OTP" = "OTP फिर से भेजें";
+"back" = "बैक";
+"Enter_OTP" = "OTP दर्ज करें";
+"Enter_valid_OTP" = "मान्य OTP दर्ज करें";
+"Invalid_OTP" = "अमान्य _OTP";
 
-"Profile" = "Profile";
-"My_Ledger" = "My Ledger";
-"My_Redemption_History" = "My Redemption History";
-"Redemption_Catalogue" = "Redemption Catalogue";
-"Product_Catalogue" = "Product Catalogue";
-"Dream_Gift" = "Dream Gift";
-"My_Promotions" = "My Promotions";
-"Lodge_Query" = "Lodge Query";
-"About" = "About";
+// MARK: - SIDE MENU = // मार्क: - साइड मेनू
+
+"Profile" = "प्रोफाइल";
+"My_Ledger" = "मेरा लेज़र";
+"My_Redemption_History" = "मेरा रिडेम्पशन हिस्ट्री";
+"Redemption_Catalogue" = "रिडेम्पशन कैटेलॉग";
+"Product_Catalogue" = "प्रोडक्ट कैटेलॉग";
+"Dream_Gift" = "ड्रीम_गिफ्ट";
+"My_Promotions" = "मेरे प्रोमोशंस";
+"Lodge_Query" = "क्वेरी दर्ज करे";
+"About" = "के बारे में";
 "FAQs" = "FAQs";
 "T&C" = "T&C";
-"Logout" = "Logout";
-"Delete" = "Delete";
-"Since" = "Since";
+"Logout" = "लॉगआउट";
+"Delete" = "हटाएं";
+"Since" = "तब से";
 
+//MARK: - DASHBOARD = मार्क: - डैशबोर्ड
 
-//MARK: - DASHBOARD
+"total_Point_bal" = "कुल पॉइंट बैलेंस";
+"passbook_number" = "पासबुक नंबर";
+"welcome" = "स्वागत है!";
+"humsafar" = "हमसफ़र";
+"View_your_dreamgift" = "अपना ड्रीम_गिफ्ट देखें";
+"add_your_dreamGift" = "अपना ड्रीम_गिफ्ट जोड़ें";
+"product_Catalogoue" = "प्रोडक्ट कैटेलॉग";
+"click_Here" = "यहां क्लिक करें";
+"redemption_catalogue" = "रिडेम्पशन कैटलॉग";
+"know_more" = "और जानें";
 
-"total_Point_bal" = "Total Point Balance";
-"passbook_number" = "Passbook Number";
-"welcome" = "Welcome !";
-"humsafar" = "HUMSAFAR";
-"View_your_dreamgift" = "View your Dream Gifts";
-"add_your_dreamGift" = "Add Your Dream Gift";
-"product_Catalogoue" = "Product Catalogue";
-"click_Here" = "Click Here";
-"redemption_catalogue" = "Redemption Catalogue";
-"know_more" = "Kow more";
+// MARK: - MY REDEMPTION = // मार्क: - मेरा मोचन
+"My_redemption" = "मेरे रिडेम्पशन";
+"Pending" = "लंबित";
+"Processed" = "संसाधित";
+"Rejected" = "अस्वीकृत";
+"Vendor_Alloted" = "विक्रेता आवंटित";
+"Return_Pickup_Schedule" = "वापसी पिकअप अनुसूची";
+"Cancelled" = "रद्द";
+"Vendor_Rejected" = "विक्रेता रद्द कर दिया गया है"
+"Dispatched" = "भेजा गया";
+"Re_Dispatched" = "फिर से भेजा गया";
+"Delivery_Confirmed" = "डिलीवरी_की_पुष्टि_हो चुकी है";
+"InTransit" = "इनट्रांजिट";
+"Return_Request" = "वापसी का अनुरोध";
+"Picked_Up" = "पिक्ड-अप";
+"Clear_All" = "सभी साफ़ करें";
+"Apply" = "लागू करें";
+"filter" = "फ़िल्टर";
 
+"from_Date" = "तारीख से";
+"To_Date" = "टू डेट";
+"Filter_By_Status" = "फ़िल्टर बाय स्टेटस";
 
-// MARK: - MY REDEMPTION
- 
-"My_redemption" = "My Redemption";
-"Pending" = "Pending";
-"Processed" = "Processed";
-"Rejected" = "Rejected";
-"Vendor_Alloted" = "Vendor Alloted";
-"Return_Pickup_Schedule" = "Return Pickup Schedule";
-"Cancelled" = "Cancelled";
-"Vendor_Rejected" = "Vendor Rejected";
-"Dispatched" = "Dispatched";
-"Re_Dispatched" = "Re-Dispatched";
-"Delivery_Confirmed" = "Delivery Confirmed";
-"InTransit" = "InTransit";
-"Return_Request" = "Return Request";
-"Picked_Up" = "Picked-Up";
-"Clear_All" = "Clear all";
-"Apply" = "Apply";
-"filter" = "Filter";
+//MARK: - PROFILE = // मार्क: - प्रोफाइल
 
-"from_Date" = "From Date";
-"To_Date" = "Top Date";
-"Filter_By_Status" = "Filter By Status";
+"profile" = "प्रोफाइल";
+"Personal_Information" = "व्यक्तिगत जानकारी";
+"First_Name" = "प्रथम नाम";
+"Last_Name" = "अंतिम नाम";
+"Mobile_number" = "मोबाइल नंबर";
+"Address" = "पता";
+"Email_address" = "ईमेल एड्रेस";
+"DOB" = "डीओबी";
+"Select_DOB" = "DOB चुनें";
+"Gender" = "लिंग";
+"Select_Gender" = "लिंग चुनें";
+"preferred_Language" = "पसंदीदा भाषा";
+"select_preferred_Language" = "पसंदीदा भाषा चुनें";
+"Country" = "देश";
+"Select_Country" = "देश चुनें";
+"State" = "राज्य";
+"Select_State" = "सेलेक्ट स्टेट";
+"City" = "शहर";
+"Select_City" = "शहर चुनें";
+"pincode" = "पिनकोड";
+"edit_profile" = "प्रोफ़ाइल संपादित करें";
+"Save_changes" = "परिवर्तन सहेजें";
+"profile_update_message" = "प्रोफ़ाइल छवि सफलतापूर्वक अपडेट की गई";
+"profile_update_failed" = "प्रोफ़ाइल चित्र अपडेट विफल";
+"Product_Catalogue_Details" = "प्रोडक्ट कैटेलॉग विवरण";
 
+"points" = "अंक";
+"Date" = "तारीख";
 
-//MARK: - PROFILE
+//MARK: - REDEMPTION CATALOGUE = // मार्क: - रिडेम्पशन कैटलॉग
 
-"profile" = "Profile";
-"Personal_Information" = "Personal Information";
-"First_Name" = "First Name";
-"Last_Name" = "Last Name";
-"Mobile_number" = "Mobile Number";
-"Address" = "Address";
-"Email_address" = "Email Address";
-"DOB" = "DOB";
-"Select_DOB" = "Select DOB";
-"Gender" = "Gender";
-"Select_Gender" = "Select Gender";
-"preferred_Language" = "Preferred Language";
-"select_preferred_Language" = "Select Preferred Language";
-"Country" = "Country";
-"Select_Country" = "Select Country";
-"State" = "State";
-"Select_State" = "Select State";
-"City" = "City";
-"Select_City" = "Select City";
-"pincode" = "Pincode";
-"edit_profile" = "Edit Profile";
-"Save_changes" = "Save Changes";
-"profile_update_message" = "Profile image updated successfully";
-"profile_update_failed" = "Profile image update Failed";
-"Product_Catalogue_Details" = "Product Catalogue Details";
+"Insufficent_Point_Balance" = "अपर्याप्त पॉइंट बैलेंस";
+"added_to_cart_success_message" = "प्रोडक्ट कार्ट में सफलतापूर्वक जोड़ा गया।";
+"Something_went_wrong_error" = "कुछ गलत हो गया! बाद में पुनः प्रयास करें...";
+"Product_added_to_dreamgift" = "सफलतापूर्वक ड्रीम गिफ्ट में प्रोडक्ट जोड़ा गया।";
+"faild_to_add_dream_gift" = "प्रोडक्ट ड्रीम गिफ्ट में जोड़ने में विफल";
+"redeem_failed_contact_to_admin" = "आपको रिडीम करने की अनुमति नहीं है। कृपया अपने व्यवस्थापक से संपर्क करें";
+"product_removed_success" = "प्रोडक्ट सफलतापूर्वक हटा दिया गया है!";
+"shipping_address_required_error" = "शिपिंग पता आवश्यक है: राज्य, शहर, पता, पिन कोड और मोबाइल नंबर, विवरण, संपादित करने और विवरण जोड़ने के लिए 'संपादन' पर क्लिक करें";
 
-"points" = "Points";
-"Date" = "Date";
+"account_unverified_error" = "आपका खाता असत्यापित है! रिडेम्पशन कैटलॉग का उपयोग करने के लिए कृपया व्यवस्थापक से संपर्क करें";
 
-//MARK: - REDEMPTION CATALOGUE
-
-"Insufficent_Point_Balance" = "Insufficent Point Balance";
-"added_to_cart_success_message" = "Product added into cart successfully.";
-"Something_went_wrong_error" = "Something went wrong! Try againg Later...";
-"Product_added_to_dreamgift" = "Product added into dream gift  successfully.";
-"faild_to_add_dream_gift" = "Product faild to add into dream gift";
-"redeem_failed_contact_to_admin" = "You are not allowled to redeem .Please contact your administrator";
-"product_removed_success" = "Product has been removed successfully!";
-"shipping_address_required_error" = "Shipping address requires: State,City,Address,Pin code and Mobile Number,details,Click on 'Edit' to edit and add details";
-
-"account_unverified_error" = "Your account is unverified! Kindly contact the administrator to access the redemption Catalogue";
-
-//MARK: - MY CART
+//MARK: - MY CART = // मार्क: - मेरा कार्ट
 "myCart" = "My Cart";
-"Default_Address" = "Default Address";
-"Edit_Address" = "Edit Address";
-"Enter_Address" = "Enter Address";
-"Enter_Pin" = "Enter Pin";
-"Enter_Valid_Zip" = "Enter Valid Zip";
+"Default_Address" = "डिफ़ॉल्ट पता";
+"Edit_Address" = "पता संपादित करें";
+"Enter_Address" = "पता दर्ज करें";
+"Enter_Pin" = "पिन दर्ज करें";
+"Enter_Valid_Zip" = "मान्य ज़िप दर्ज करें";
 
-//MARK: - OFFERS AND PROMOTION
-"Offers_promotions" = "Offers and Promotion";
+//MARK: - OFFERS AND PROMOTION = मार्क: - ऑफर और प्रमोशन
+"Offers_promotions" = "ऑफ़र और प्रमोशन";
 
-//MARK: - LODGE QUERY
-"upload_image_info" = "Note: Image format should be .jpg, .png, .webp, .pdf";
-"Select_Your_Topic" = "Select Your Topic";
-"query_Details" = "Query Details";
-"Upload_Image" = "Upload Image";
-"submit_your_query" = "Please submit your query";
-"Select_query_topic" = "Select query topic";
-"Enter_query_Details" = "Enter query Details";
+//MARK: - LODGE QUERY = // मार्क: - लॉज क्वेरी
+"upload_image_info" = "ध्यान दें: इमेज का फ़ॉर्मैट .jpg, .png, .webp, .pdf होना चाहिए";
+"Select_Your_Topic" = "अपना विषय चुनें";
+"query_Details" = "क्वेरी विवरण";
+"Upload_Image" = "इमेज अपलोड करें";
+"submit_your_query" = "कृपया अपनी क्वेरी सबमिट करें";
+"Select_query_topic" = "क्वेरी का विषय चुनें";
+"Enter_query_Details" = "क्वेरी विवरण दर्ज करें";
 
-"FleetGuardneedtoaccesscameraGallery" = "Fleet Guard need to access camera & Gallery";
-"Query_Submitted_successfully" = "Query Submitted successfully!";
-"No_data_found" = "No data found !";
+"FleetGuardneedtoaccesscameraGallery" = "फ्लीट गार्ड को कैमरा और गैलरी एक्सेस करने की आवश्यकता है";
+"Query_Submitted_successfully" = "क्वेरी सफलतापूर्वक सबमिट की गई!";
+"No_data_found" = "कोई डेटा नहीं मिला!";
 
 
-"Points_more_to_redeem" = "Points more to redeem";
-"DOB_minor_age_error" = "It seems you are less than 18 years of age. You can apply for Fleet Guard membership only if you are 18 years and above";
+"Points_more_to_redeem" = "रिडीम करने के लिए और पॉइंट";
+"DOB_minor_age_error" = "ऐसा लगता है कि आपकी आयु 18 वर्ष से कम है। आप फ्लीट गार्ड सदस्यता के लिए तभी आवेदन कर सकते हैं जब आपकी आयु 18 वर्ष और उससे अधिक हो";
 
-"acoount_deleted_error_message" = "Your account has been deleted. Kindly contact your administrator.";
-"account_is_not_activate" = "Your account is not activated! Kindly activate your account.";
-"other_device_Login_error" = "Your account loged in by other mobile.";
-"account_deactivated_error" = "Your account is deactivated please check with the administrator";
-"Redemption_Failed" = "Redemption Failed";
+"acount_deleted_error_message" = "आपका खाता हटा दिया गया है। कृपया अपने व्यवस्थापक से संपर्क करें।";
+"account_is_not_active" = "आपका खाता सक्रिय नहीं है! कृपया अपना खाता सक्रिय करें।";
+"other_device_Login_error" = "आपका खाता अन्य मोबाइल द्वारा लॉग इन किया गया है।";
+"account_deactive_error" = "आपका खाता निष्क्रिय कर दिया गया है, कृपया व्यवस्थापक से संपर्क करें";
+"Redemption_Failed" = "रिडेम्पशन विफल";

@@ -32,7 +32,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "190"
             endingLineNumber = "190"
-            landmarkName = "addtoDreamGift(catalogueId:)"
+            landmarkName = "addToCartApi(catalogueId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -48,7 +48,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
             endingLineNumber = "152"
-            landmarkName = "OtpApi(mobilenumber:)"
+            landmarkName = "submitButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

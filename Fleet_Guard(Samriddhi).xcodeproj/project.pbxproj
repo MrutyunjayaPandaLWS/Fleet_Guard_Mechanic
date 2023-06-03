@@ -426,6 +426,12 @@
 		259152CE29DAFEE50082F4CD /* FG_DreamGiftDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_DreamGiftDetailsVC.swift; sourceTree = "<group>"; };
 		259152D129DB02790082F4CD /* RedemptionPlannerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionPlannerDetailsViewModel.swift; sourceTree = "<group>"; };
 		259152D429DB02DF0082F4CD /* RemovePlannedProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemovePlannedProduct.swift; sourceTree = "<group>"; };
+		259190792A284B9E0002A2EB /* ta-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ta-IN"; path = "ta-IN.lproj/Main.strings"; sourceTree = "<group>"; };
+		2591907A2A284B9E0002A2EB /* ta-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ta-IN"; path = "ta-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		2591907B2A284B9F0002A2EB /* ta-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ta-IN"; path = "ta-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2591907C2A284C260002A2EB /* kn-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "kn-IN"; path = "kn-IN.lproj/Main.strings"; sourceTree = "<group>"; };
+		2591907D2A284C260002A2EB /* kn-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "kn-IN"; path = "kn-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		2591907E2A284C260002A2EB /* kn-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "kn-IN"; path = "kn-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2592E70529B9995F005689CF /* CounterGapVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterGapVM.swift; sourceTree = "<group>"; };
 		2592E70829B99C62005689CF /* CounterGapModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterGapModels.swift; sourceTree = "<group>"; };
 		2592E70929B99C62005689CF /* LsrProductDetails11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LsrProductDetails11.swift; sourceTree = "<group>"; };
@@ -2667,6 +2673,8 @@
 				Base,
 				en,
 				hi,
+				"ta-IN",
+				"kn-IN",
 			);
 			mainGroup = 84C1E3EF29758A6D00D188C5;
 			productRefGroup = 84C1E3F929758A6D00D188C5 /* Products */;
@@ -3121,6 +3129,8 @@
 				84C1E40229758A6D00D188C5 /* Base */,
 				84DA98FA2A0D06BC00F33277 /* en */,
 				84DA98FC2A0D06D300F33277 /* hi */,
+				259190792A284B9E0002A2EB /* ta-IN */,
+				2591907C2A284C260002A2EB /* kn-IN */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -3131,6 +3141,8 @@
 				84C1E40A29758A7000D188C5 /* Base */,
 				84DA98FB2A0D06BC00F33277 /* en */,
 				84DA98FD2A0D06D300F33277 /* hi */,
+				2591907A2A284B9E0002A2EB /* ta-IN */,
+				2591907D2A284C260002A2EB /* kn-IN */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -3140,6 +3152,8 @@
 			children = (
 				84DA99012A0D06F000F33277 /* en */,
 				84DA99032A0D06F500F33277 /* hi */,
+				2591907B2A284B9F0002A2EB /* ta-IN */,
+				2591907E2A284C260002A2EB /* kn-IN */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
