@@ -22,7 +22,7 @@ class FG_SideMenuVC: BaseViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var sideMenuTableView: UITableView!
     var requestApis = RestAPI_Requests()
-    var sideMenuArray = ["Profile".localiz(), "My_Ledger".localiz(), "My_Redemption_History".localiz(), "Redemption_Catalogue".localiz(), "Product_Catalogue".localiz(), "Dream_Gift".localiz(), "My_Promotions".localiz(), "Lodge_Query".localiz(), "About".localiz(), "FAQs".localiz(), "T&C".localiz(), "Logout".localiz(),"Delete".localiz()]
+    var sideMenuArray = ["Profile", "My_Ledger", "My_Redemption_History", "Redemption_Catalogue", "Product_Catalogue", "Dream_Gift", "My_Promotions", "Lodge_Query", "About", "FAQs", "T&C", "Logout","Delete"]
     var sideMenuTitleArray = [String]()
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
@@ -145,7 +145,7 @@ extension FG_SideMenuVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_SideMenuTVC", for: indexPath) as! FG_SideMenuTVC
-        cell.titleLbl.text = self.sideMenuTitleArray[indexPath.row]
+        cell.titleLbl.text = self.sideMenuTitleArray[indexPath.row].localiz()
         return cell
     }
     

@@ -1,10 +1,4 @@
-/* 
-  Localizable.strings
-  Fleet_Guard(Samriddhi)
 
-  Created by admin on 11/05/23.
-  
-*/
 "Allow" = "Allow";
 "No_Internet" = "No Internet";
 "Disallow" = "Disallow";

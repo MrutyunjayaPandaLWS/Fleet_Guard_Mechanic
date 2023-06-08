@@ -1,0 +1,182 @@
+"Allow" = "అనుమతించు";
+"No_Internet" = "ఇంటర్నెట్ లేదు";
+"Disallow" = "నిరాకరించు";
+"NoCamera" = "కెమెరా లేదు";
+"Sorrynodevice" = "క్షమించండి పరికరం కనుగొనబడలేదు";
+"OK" = "అలాగే";
+// MARK: - LOGIN=
+"welcome_to" = "స్వాగతం";
+"already_a_Member" = "ఇప్పటికే సభ్యుడిగా ఉన్నారా?";
+"login_Now" = "ఇప్పుడు లాగిన్ అవ్వండి";
+"mobile_number" = "మొబైల్ నంబర్";
+"enter_mobile_number" = "మొబైల్ నంబర్";
+"send_otp" = "OTP పంపు";
+"Accept" = "అంగీకరించు";
+"Terms_and_condition" = "షరతులు మరియు నిబంధనలు";
+"new_to_humsafar" = "హమ్";
+"contact_us" = "ఇప్పుడే మమ్మల్ని సంప్రదించండి";
+"enter_mobile_number_error" = "దయచేసి మొబైల్ నంబర్";
+"mobile_number_not_exist" = "మీరు నమోదు చేసిన మొబైల్ నంబర్ సిస్టమ్";
+
+// MARK: - TERMS AD CONDITIONS
+
+"decline" = "తగ్గుదల";
+"accept" = "అంగీకరించు";
+
+// MARK: - HELPLINE
+
+"Name" = "పేరు";
+"enter_name" = "పేరు నమోదు చేయండి";
+"enter_name_error" = "దయచేసి పేరు నమోదు చేయండి";
+"state" = "రాష్ట్రం";
+"select_state_error" = "దయచేసి రాష్ట్రాన్ని ఎంచుకోండి";
+"city" = "నగరం";
+"select_city_error" = "దయచేసి నగరాన్ని ఎంచుకోండి";
+"comments" = "వ్యాఖ్యలు";
+"enter_comments" = "వ్యాఖ్యలను నమోదు చేయండి";
+"submit" = "సమర్పించు";
+"valid_mobile_number_error" = "చెల్లుబాటు అయ్యే మొబైల్ నంబర్";
+"query_submit_success_message" = "మీ ప్రశ్న విజయవంతంగా సమర్పించబడింది";
+"query_submit_failed_message" = "మీ సమర్పణ విఫలమైంది.";
+"mobile_number_already_exist" = "మొబైల్ నంబర్ ఇప్పటికే నమోదు చేయబడింది!";
+"enter_OTP_sent" = "ఈకి పంపబడిన OTPని నమోదు చేయండి";
+"otp_Will_Recieve" = "OTP లోపల అందుతుంది";
+"resend_OTP" = "OTP ను మళ్ళీ పంపు";
+"back" = "వెనుక";
+"Enter_OTP" = "OTPని నమోదు చేయండి";
+"Enter_valid_OTP" = "చెల్లుబాటు అయ్యే OTPని నమోదు చేయండి";
+"Invalid_OTP" = "చెల్లని OTP";
+
+// MARK: - SIDE MENU
+
+"Profile" = "ప్రొఫైల్";
+"My_Ledger" = "నా లెడ్జర్";
+"My_Redemption_History" = "నా రెడెంప్షన్ చరిత్ర";
+"Redemption_Catalogue" = "రిడెంప్షన్ కేటలాగ్";
+"Product_Catalogue" = "ఉత్పత్తి కేటలాగ్";
+"Dream_Gift" = "డ్రీం గిఫ్ట్";
+"My_Promotions" = "నా ప్రమోషన్లు";
+"Lodge_Query" = "లాడ్జ్ ప్రశ్న";
+"About" = "గురించి";
+"FAQs" = "FAQలు";
+"T&C" = "T&C";
+"Logout" = "లాగ్అవుట్";
+"Delete" = "తొలగించు";
+"Since" = "నుండి";
+
+
+//MARK: - DASHBOARD
+
+"total_Point_bal" = "మొత్తం పాయింట్ బ్యాలెన్స్";
+"passbook_number" = "పాస్బుక్ నంబర్";
+"welcome" = "స్వాగతం!";
+"humsafar" = "హమ్సాఫర్";
+"View_your_dreamgift" = "మీ కలల బహుమతులను వీక్షించండి";
+"add_your_dreamGift" = "మీ కలల బహుమతిని జోడించండి";
+"product_Catalogoue" = "ఉత్పత్తి కేటలాగ్";
+"click_Here" = "ఇక్కడ నొక్కండి";
+"redemption_catalogue" = "రిడెంప్షన్ కేటలాగ్";
+"know_more" = "కౌ మోర్";
+
+
+// MARK: - MY REDEMPTION
+"My_redemption" = "నా రెడెంప్షన్్తి";
+"Pending" = "పెండింగ్";
+"Processed" = "ప్రాసెస్ చేయబడింది";
+"Rejected" = "తిరస్కరించబడింది";
+"Vendor_Alloted" = "విక్రేత కేటాయించబడింది";
+"Return_Pickup_Schedule" = "రిటర్న్ పికప్ షెడ్యూల్";
+"Cancelled" = "రద్దు";
+"Vendor_Rejected" = "విక్రేత తిరస్కరించబడింది";
+"Dispatched" = "పంపిణీ";
+"Re_Dispatched" = "తిరిగి పంపబడింది";
+"Delivery_Confirmed" = "డెలివరీ నిర్ధారించబడింది";
+"InTransit" = "ట్రాన్సిట్ లో";
+"Return_Request" = "రిటర్న్ రిక్వెస్ట్";
+"Picked_Up" = "పికప్-అప్";
+"Clear_All" = "అన్నీ క్లియర్ చేయండి";
+"Apply" = "వర్తించు";
+"filter" = "ఫిల్టర్";
+
+"from_Date" = "తేదీ నుంచి";
+"To_Date" = "ఈ రోజు వరకు";
+"Filter_By_Status" = "స్టేటస్ ద్వారా ఫిల్టర్";
+
+
+//MARK: - PROFILE
+
+"profile" = "ప్రొఫైల్";
+"Personal_Information" = "వ్యక్తిగత సమాచారం";
+"First_Name" = "మొదటి పేరు";
+"Last_Name" = "చివరి పేరు";
+"Mobile_number" = "మొబైల్ నంబర్";
+"Address" = "చిరునామా";
+"Email_address" = "ఇమెయిల్ చిరునామా";
+"DOB" = "DOB";
+"Select_DOB" = "DOBని ఎంచుకోండి";
+"Gender" = "లింగం";
+"Select_Gender" = "లింగాన్ని ఎంచుకోండి";
+"preferred_Language" = "ప్రాధాన్య భాష";
+"select_preferred_Language" = "ప్రాధాన్యమైన భాషను ఎంచుకోండి";
+"Country" = "దేశం";
+"Select_Country" = "దేశాన్ని ఎంచుకోండి";
+"State" = "రాష్ట్రం";
+"Select_State" = "రాష్ట్రాన్ని ఎంచుకోండి";
+"City" = "నగరం";
+"Select_City" = "నగరాన్ని ఎంచుకోండి";
+"pincode" = "పిన్ కోడ్";
+"edit_profile" = "ప్రొఫైల్";
+"Save_changes" = "మార్పులను ఊంచు";
+"profile_update_message" = "ప్రొఫైల్ చిత్రం విజయవంతంగా నవీకరించబడింది";
+"profile_update_failed" = "ప్రొఫైల్ ఇమేజ్ నవీకరణ విఫలమైంది";
+"Product_Catalogue_Details" = "ఉత్పత్తి కేటలాగ్ వివరాలు";
+
+"points" = "పాయింట్లు";
+"Date" = "తేదీ";
+
+//MARK: - REDEMPTION CATALOGUE
+
+"Insufficent_Point_Balance" = "ఇన్సఫిసెంట్ పాయింట్ బ్యాలెన్స్";
+"added_to_cart_success_message" = "ఉత్పత్తి విజయవంతంగా కార్ట్";
+"Something_went_wrong_error" = "ఏదో తప్పు జరిగింది! తర్వాత మళ్లీ ప్రయత్నించండి...";
+"Product_added_to_dreamgift" = "ఉత్పత్తి కలల బహుమతికి విజయవంతంగా జోడించబడింది.";
+"faild_to_add_dream_gift" = "ఉత్పత్తి కలల బహుమతికి జోడించడంలో విఫలమైంది";
+"redeem_failed_contact_to_admin" = "మీకు రీడీమ్ చేయడానికి అనుమతి లేదు .దయచేసి మీ నిర్వాహకుడిని సంప్రదించండి";
+"product_removed_success" = "ఉత్పత్తి విజయవంతంగా తీసివేయబడింది!";
+"shipping_address_required_error" = "షిప్పింగ్ చిరునామా అవసరం: రాష్ట్రం, నగరం, చిరునామా, పిన్ కోడ్ మరియు మొబైల్ నంబర్, వివరాలు, సవరించడానికి మరియు వివరాలను జోడించడానికి 'సవరించు'పై క్లిక్ చేయండి";
+
+"account_unverified_error" = "మీ ఖాతా ధృవీకరించబడలేదు! దయచేసి రెడెంప్షన్ కేటలాగ్";
+
+//MARK: - MY CART
+"myCart" = "నా కార్ట్";
+"Default_Address" = "డిఫాల్ట్ చిరునామా";
+"Edit_Address" = "చిరునామాను సవరించు";
+"Enter_Address" = "చిరునామాను నమోదు చేయండి";
+"Enter_Pin" = "ఎంటర్ పిన్";
+"Enter_Valid_Zip" = "చెల్లుబాటు అయ్యే జిప్";
+
+//MARK: - OFFERS AND PROMOTION
+"Offers_promotions" = "ఆఫర్లు మరియు ప్రమోషన్";
+
+//MARK: - LODGE QUERY
+"upload_image_info" = "గమనిక: చిత్ర ఆకృతి .jpg, .png, .webp, .pdf";
+"Select_Your_Topic" = "మీ అంశాన్ని ఎంచుకోండి";
+"query_Details" = "ప్రశ్న వివరాలు";
+"Upload_Image" = "చిత్రాన్ని అప్";
+"submit_your_query" = "దయచేసి మీ ప్రశ్నను సమర్పించండి";
+"Select_query_topic" = "ప్రశ్న అంశాన్ని ఎంచుకోండి";
+"Enter_query_Details" = "ప్రశ్న వివరాలను నమోదు చేయండి";
+
+"FleetGuardneedtoaccesscameraGallery" = "ఫ్లీట్ గార్డ్ కెమెరా & గ్యాలరీని యాక్సెస్ చేయాలి";
+"Query_Submitted_successfully" = "ప్రశ్న విజయవంతంగా సమర్పించబడింది!";
+"No_data_found" = "డేటా కనుగొనబడలేదు!";
+
+
+"Points_more_to_redeem" = "రిడీమ్ చేయడానికి మరిన్ని పాయింట్లు";
+"DOB_minor_age_error" = "మీ వయస్సు 18 సంవత్సరాల కంటే తక్కువగా ఉన్నట్లు కనిపిస్తోంది. మీరు 18 సంవత్సరాలు మరియు అంతకంటే ఎక్కువ వయస్సు ఉన్నట్లయితే మాత్రమే ఫ్లీట్ గార్డ్ సభ్యత్వం కోసం దరఖాస్తు చేసుకోవచ్చు";
+
+"acoount_deleted_error_message" = "మీ ఖాతా తొలగించబడింది. దయచేసి మీ నిర్వాహకుడిని సంప్రదించండి.";
+"account_is_not_activate" = "మీ ఖాతా సక్రియం చేయబడలేదు! దయచేసి మీ ఖాతాను సక్రియం చేయండి.";
+"other_device_Login_error" = "మీ ఖాతా ఇతర మొబైల్ ద్వారా లాగిన్ చేయబడింది.";
+"account_deactivated_error" = "మీ ఖాతా నిష్క్రియం చేయబడింది దయచేసి నిర్వాహకుడిని సంప్రదించండి";
+"Redemption_Failed" = "రెడెంప్షన్ విఫలమైంది";

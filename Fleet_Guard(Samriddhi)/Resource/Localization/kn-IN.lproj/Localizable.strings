@@ -40,8 +40,8 @@
 "select_state_error" = "ದಯವಿಟ್ಟು ಸ್ಥಿತಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ";
 "city" = "ನಗರ";
 "select_city_error" = "ದಯವಿಟ್ಟು ನಗರವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
-"comments"  = "ಕಾಮೆಂಟ್
-"enter_comments" = "ಕಾಮೆಂಟ್
+"comments"  = "ಕಾಮೆಂಟ್";
+"enter_comments" = "ಕಾಮೆಂಟ್";
 "submit"  = "ಸಲ್ಲಿಸು";
 "valid_mobile_number_error" = "ಮಾನ್ಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ";
 "query_submit_success_message" = "ನಿಮ್ಮ ಪ್ರಶ್ನೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಸಲ್ಲಿಸಿ";

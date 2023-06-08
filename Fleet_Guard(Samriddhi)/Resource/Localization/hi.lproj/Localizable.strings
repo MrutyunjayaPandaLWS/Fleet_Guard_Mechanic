@@ -87,7 +87,7 @@
 "Vendor_Alloted" = "विक्रेता आवंटित";
 "Return_Pickup_Schedule" = "वापसी पिकअप अनुसूची";
 "Cancelled" = "रद्द";
-"Vendor_Rejected" = "विक्रेता रद्द कर दिया गया है"
+"Vendor_Rejected" = "विक्रेता रद्द कर दिया गया है";
 "Dispatched" = "भेजा गया";
 "Re_Dispatched" = "फिर से भेजा गया";
 "Delivery_Confirmed" = "डिलीवरी_की_पुष्टि_हो चुकी है";

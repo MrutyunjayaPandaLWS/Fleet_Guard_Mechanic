@@ -200,24 +200,8 @@
 		842326CD2980082200DF7325 /* FG_ProductCatalogueMyCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842326CC2980082200DF7325 /* FG_ProductCatalogueMyCartVC.swift */; };
 		842326CF2980083B00DF7325 /* FG_ProductCataloguePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842326CE2980083B00DF7325 /* FG_ProductCataloguePopUp.swift */; };
 		842326D129800CB000DF7325 /* FG_ProductCatalogueListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842326D029800CB000DF7325 /* FG_ProductCatalogueListTVC.swift */; };
-		842B4CF32977EBC10039450A /* FG_LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B4CF22977EBC10039450A /* FG_LanguageVC.swift */; };
 		842F0A5529BC97090014602F /* HR_TermsandCondtionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F0A5329BC97090014602F /* HR_TermsandCondtionVC.swift */; };
 		842F0A5629BC97090014602F /* TermsAndConditionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F0A5429BC97090014602F /* TermsAndConditionsVC.swift */; };
-		842F0A5E29BC9AC10014602F /* about-bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A5929BC9ABE0014602F /* about-bengali.html */; };
-		842F0A5F29BC9AC10014602F /* about-telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A5A29BC9ABF0014602F /* about-telugu.html */; };
-		842F0A6029BC9AC10014602F /* about-hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A5B29BC9ABF0014602F /* about-hindi.html */; };
-		842F0A6129BC9AC10014602F /* about-english.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A5C29BC9AC00014602F /* about-english.html */; };
-		842F0A6229BC9AC10014602F /* about-kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A5D29BC9AC10014602F /* about-kannada.html */; };
-		842F0A6829BC9AD50014602F /* fleetguard-retailer-faq-eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A6329BC9AD20014602F /* fleetguard-retailer-faq-eng.html */; };
-		842F0A6929BC9AD50014602F /* fleetguard-retailer-faq-ben.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A6429BC9AD30014602F /* fleetguard-retailer-faq-ben.html */; };
-		842F0A6A29BC9AD50014602F /* fleetguard-retailer-faq-hin.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A6529BC9AD30014602F /* fleetguard-retailer-faq-hin.html */; };
-		842F0A6B29BC9AD50014602F /* fleetguard-retailer-faq-kan.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A6629BC9AD40014602F /* fleetguard-retailer-faq-kan.html */; };
-		842F0A6C29BC9AD50014602F /* fleetguard-retailer-faq-telu.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A6729BC9AD50014602F /* fleetguard-retailer-faq-telu.html */; };
-		842F0A7229BC9AE50014602F /* fleetguard-retailer-t&c-ben.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A6D29BC9AE20014602F /* fleetguard-retailer-t&c-ben.html */; };
-		842F0A7329BC9AE50014602F /* fleetguard-retailer-t&c-tel.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A6E29BC9AE30014602F /* fleetguard-retailer-t&c-tel.html */; };
-		842F0A7429BC9AE50014602F /* fleetguard-retailer-t&c-eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A6F29BC9AE40014602F /* fleetguard-retailer-t&c-eng.html */; };
-		842F0A7529BC9AE50014602F /* fleetguard-retailer-t&c-kan.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A7029BC9AE40014602F /* fleetguard-retailer-t&c-kan.html */; };
-		842F0A7629BC9AE50014602F /* fleetguard-retailer-t&c-hin.html in Resources */ = {isa = PBXBuildFile; fileRef = 842F0A7129BC9AE50014602F /* fleetguard-retailer-t&c-hin.html */; };
 		84307EBF2A0CBF5A00BBCB22 /* ObjCatalogueDetailsForCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84307EBE2A0CBF5A00BBCB22 /* ObjCatalogueDetailsForCustomer.swift */; };
 		84369F3E2A135CCB00D1CA28 /* HistoryNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84369F3B2A135CCA00D1CA28 /* HistoryNotificationsViewController.swift */; };
 		84369F3F2A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84369F3C2A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.swift */; };
@@ -226,8 +210,28 @@
 		84369F462A13607400D1CA28 /* NotificationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84369F452A13607400D1CA28 /* NotificationModels.swift */; };
 		84369F492A13609100D1CA28 /* LstPushHistoryJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84369F482A13609100D1CA28 /* LstPushHistoryJson.swift */; };
 		8439109E29812E29007D73B6 /* FG_StatementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439109D29812E29007D73B6 /* FG_StatementVC.swift */; };
-		845873892A065D94002A183A /* FG_MyRedemptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845873882A065D94002A183A /* FG_MyRedemptionVC.swift */; };
-		8458738B2A065DA4002A183A /* FG_MyRedemptionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458738A2A065DA4002A183A /* FG_MyRedemptionTVC.swift */; };
+		84448B7B2A319AB000CC5409 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448B7A2A319AAF00CC5409 /* LanguageVC.swift */; };
+		84448B7D2A319AB800CC5409 /* LanguageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448B7C2A319AB800CC5409 /* LanguageTVC.swift */; };
+		84448B842A31A24300CC5409 /* fg-Mechanic-about-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B7E2A31A24200CC5409 /* fg-Mechanic-about-Bengali.html */; };
+		84448B852A31A24300CC5409 /* fg-Mechanic-about-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B7F2A31A24200CC5409 /* fg-Mechanic-about-Tamil.html */; };
+		84448B862A31A24300CC5409 /* fg-Mechanic-about-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B802A31A24200CC5409 /* fg-Mechanic-about-Telugu.html */; };
+		84448B872A31A24300CC5409 /* fg-Mechanic-about-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B812A31A24200CC5409 /* fg-Mechanic-about-Eng.html */; };
+		84448B882A31A24300CC5409 /* fg-Mechanic-about-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B822A31A24300CC5409 /* fg-Mechanic-about-Kannada.html */; };
+		84448B892A31A24300CC5409 /* fg-Mechanic-about-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B832A31A24300CC5409 /* fg-Mechanic-about-Hindi.html */; };
+		84448B902A31A25F00CC5409 /* fg-Mechanic-faq-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B8A2A31A25E00CC5409 /* fg-Mechanic-faq-Hindi.html */; };
+		84448B912A31A25F00CC5409 /* fg-Mechanic-faq-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B8B2A31A25E00CC5409 /* fg-Mechanic-faq-Bengali.html */; };
+		84448B922A31A25F00CC5409 /* fg-Mechanic-faq-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B8C2A31A25E00CC5409 /* fg-Mechanic-faq-Telugu.html */; };
+		84448B932A31A25F00CC5409 /* fg-Mechanic-faq-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B8D2A31A25E00CC5409 /* fg-Mechanic-faq-Eng.html */; };
+		84448B942A31A25F00CC5409 /* fg-Mechanic-faq-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B8E2A31A25F00CC5409 /* fg-Mechanic-faq-Kannada.html */; };
+		84448B952A31A25F00CC5409 /* fg-Mechanic-faq-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B8F2A31A25F00CC5409 /* fg-Mechanic-faq-Tamil.html */; };
+		84448B9C2A31A27300CC5409 /* fleetguard-mechanic-T&C-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B962A31A27200CC5409 /* fleetguard-mechanic-T&C-Telugu.html */; };
+		84448B9D2A31A27300CC5409 /* fleetguard-mechanic-T&C-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B972A31A27200CC5409 /* fleetguard-mechanic-T&C-Hindi.html */; };
+		84448B9E2A31A27300CC5409 /* fleetguard-mechanic-T&C-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B982A31A27300CC5409 /* fleetguard-mechanic-T&C-Eng.html */; };
+		84448B9F2A31A27300CC5409 /* fleetguard-mechanic-T&C-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B992A31A27300CC5409 /* fleetguard-mechanic-T&C-Kannada.html */; };
+		84448BA02A31A27300CC5409 /* fleetguard-mechanic-T&C-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B9A2A31A27300CC5409 /* fleetguard-mechanic-T&C-Bengali.html */; };
+		84448BA12A31A27300CC5409 /* fleetguard-mechanic-T&C-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B9B2A31A27300CC5409 /* fleetguard-mechanic-T&C-Tamil.html */; };
+		84448BA42A31A76200CC5409 /* FG_MyRedemptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448BA22A31A76200CC5409 /* FG_MyRedemptionVC.swift */; };
+		84448BA52A31A76200CC5409 /* FG_MyRedemptionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448BA32A31A76200CC5409 /* FG_MyRedemptionTVC.swift */; };
 		8458738D2A065DB6002A183A /* FG_RedemptionCollectionCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458738C2A065DB5002A183A /* FG_RedemptionCollectionCVC.swift */; };
 		845873962A067556002A183A /* String+Extenssion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845873952A067556002A183A /* String+Extenssion.swift */; };
 		84597BAB2979020800F3A7BC /* FG_CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597BAA2979020800F3A7BC /* FG_CategoryCVC.swift */; };
@@ -247,9 +251,6 @@
 		84662005298145CA00D28026 /* FG_MyOrderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84662004298145CA00D28026 /* FG_MyOrderTVC.swift */; };
 		84662007298145E800D28026 /* FG_MyBillingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84662006298145E800D28026 /* FG_MyBillingTVC.swift */; };
 		84795F4F2979594F00DDA192 /* FG_PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84795F4E2979594F00DDA192 /* FG_PopUpVC.swift */; };
-		84834AEF2A04DF8700FCF73C /* fleetguard-mechanic-t&c.html in Resources */ = {isa = PBXBuildFile; fileRef = 84834AEE2A04DF8700FCF73C /* fleetguard-mechanic-t&c.html */; };
-		84834AF12A04EB6100FCF73C /* fg-Mechanic-about-eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 84834AF02A04EB6100FCF73C /* fg-Mechanic-about-eng.html */; };
-		84834AF32A04F91E00FCF73C /* fg-Mechanic-faq.html in Resources */ = {isa = PBXBuildFile; fileRef = 84834AF22A04F91E00FCF73C /* fg-Mechanic-faq.html */; };
 		84834AF62A05072600FCF73C /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84834AF52A05072600FCF73C /* LanguageModel.swift */; };
 		84834AF82A05073E00FCF73C /* LstAttributesDetails1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84834AF72A05073E00FCF73C /* LstAttributesDetails1.swift */; };
 		84834AFA2A0535EB00FCF73C /* FG_MyRedemptionDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84834AF92A0535EB00FCF73C /* FG_MyRedemptionDetailsVC.swift */; };
@@ -557,24 +558,8 @@
 		842326CC2980082200DF7325 /* FG_ProductCatalogueMyCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_ProductCatalogueMyCartVC.swift; sourceTree = "<group>"; };
 		842326CE2980083B00DF7325 /* FG_ProductCataloguePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_ProductCataloguePopUp.swift; sourceTree = "<group>"; };
 		842326D029800CB000DF7325 /* FG_ProductCatalogueListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_ProductCatalogueListTVC.swift; sourceTree = "<group>"; };
-		842B4CF22977EBC10039450A /* FG_LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_LanguageVC.swift; sourceTree = "<group>"; };
 		842F0A5329BC97090014602F /* HR_TermsandCondtionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HR_TermsandCondtionVC.swift; sourceTree = "<group>"; };
 		842F0A5429BC97090014602F /* TermsAndConditionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsVC.swift; sourceTree = "<group>"; };
-		842F0A5929BC9ABE0014602F /* about-bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "about-bengali.html"; sourceTree = "<group>"; };
-		842F0A5A29BC9ABF0014602F /* about-telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "about-telugu.html"; sourceTree = "<group>"; };
-		842F0A5B29BC9ABF0014602F /* about-hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "about-hindi.html"; sourceTree = "<group>"; };
-		842F0A5C29BC9AC00014602F /* about-english.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "about-english.html"; sourceTree = "<group>"; };
-		842F0A5D29BC9AC10014602F /* about-kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "about-kannada.html"; sourceTree = "<group>"; };
-		842F0A6329BC9AD20014602F /* fleetguard-retailer-faq-eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-faq-eng.html"; sourceTree = "<group>"; };
-		842F0A6429BC9AD30014602F /* fleetguard-retailer-faq-ben.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-faq-ben.html"; sourceTree = "<group>"; };
-		842F0A6529BC9AD30014602F /* fleetguard-retailer-faq-hin.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-faq-hin.html"; sourceTree = "<group>"; };
-		842F0A6629BC9AD40014602F /* fleetguard-retailer-faq-kan.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-faq-kan.html"; sourceTree = "<group>"; };
-		842F0A6729BC9AD50014602F /* fleetguard-retailer-faq-telu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-faq-telu.html"; sourceTree = "<group>"; };
-		842F0A6D29BC9AE20014602F /* fleetguard-retailer-t&c-ben.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-t&c-ben.html"; sourceTree = "<group>"; };
-		842F0A6E29BC9AE30014602F /* fleetguard-retailer-t&c-tel.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-t&c-tel.html"; sourceTree = "<group>"; };
-		842F0A6F29BC9AE40014602F /* fleetguard-retailer-t&c-eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-t&c-eng.html"; sourceTree = "<group>"; };
-		842F0A7029BC9AE40014602F /* fleetguard-retailer-t&c-kan.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-t&c-kan.html"; sourceTree = "<group>"; };
-		842F0A7129BC9AE50014602F /* fleetguard-retailer-t&c-hin.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-t&c-hin.html"; sourceTree = "<group>"; };
 		84307EBE2A0CBF5A00BBCB22 /* ObjCatalogueDetailsForCustomer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCatalogueDetailsForCustomer.swift; sourceTree = "<group>"; };
 		84369F3B2A135CCA00D1CA28 /* HistoryNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryNotificationsViewController.swift; sourceTree = "<group>"; };
 		84369F3C2A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryNotificationsTableViewCell.swift; sourceTree = "<group>"; };
@@ -583,8 +568,28 @@
 		84369F452A13607400D1CA28 /* NotificationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModels.swift; sourceTree = "<group>"; };
 		84369F482A13609100D1CA28 /* LstPushHistoryJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LstPushHistoryJson.swift; sourceTree = "<group>"; };
 		8439109D29812E29007D73B6 /* FG_StatementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_StatementVC.swift; sourceTree = "<group>"; };
-		845873882A065D94002A183A /* FG_MyRedemptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FG_MyRedemptionVC.swift; path = "../../../../FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/MyRedemption/FG_MyRedemptionVC.swift"; sourceTree = "<group>"; };
-		8458738A2A065DA4002A183A /* FG_MyRedemptionTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FG_MyRedemptionTVC.swift; path = "../../../../FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/MyRedemption/FG_MyRedemptionTVC.swift"; sourceTree = "<group>"; };
+		84448B7A2A319AAF00CC5409 /* LanguageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
+		84448B7C2A319AB800CC5409 /* LanguageTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageTVC.swift; sourceTree = "<group>"; };
+		84448B7E2A31A24200CC5409 /* fg-Mechanic-about-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Bengali.html"; sourceTree = "<group>"; };
+		84448B7F2A31A24200CC5409 /* fg-Mechanic-about-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Tamil.html"; sourceTree = "<group>"; };
+		84448B802A31A24200CC5409 /* fg-Mechanic-about-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Telugu.html"; sourceTree = "<group>"; };
+		84448B812A31A24200CC5409 /* fg-Mechanic-about-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Eng.html"; sourceTree = "<group>"; };
+		84448B822A31A24300CC5409 /* fg-Mechanic-about-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Kannada.html"; sourceTree = "<group>"; };
+		84448B832A31A24300CC5409 /* fg-Mechanic-about-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Hindi.html"; sourceTree = "<group>"; };
+		84448B8A2A31A25E00CC5409 /* fg-Mechanic-faq-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Hindi.html"; sourceTree = "<group>"; };
+		84448B8B2A31A25E00CC5409 /* fg-Mechanic-faq-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Bengali.html"; sourceTree = "<group>"; };
+		84448B8C2A31A25E00CC5409 /* fg-Mechanic-faq-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Telugu.html"; sourceTree = "<group>"; };
+		84448B8D2A31A25E00CC5409 /* fg-Mechanic-faq-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Eng.html"; sourceTree = "<group>"; };
+		84448B8E2A31A25F00CC5409 /* fg-Mechanic-faq-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Kannada.html"; sourceTree = "<group>"; };
+		84448B8F2A31A25F00CC5409 /* fg-Mechanic-faq-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Tamil.html"; sourceTree = "<group>"; };
+		84448B962A31A27200CC5409 /* fleetguard-mechanic-T&C-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-mechanic-T&C-Telugu.html"; sourceTree = "<group>"; };
+		84448B972A31A27200CC5409 /* fleetguard-mechanic-T&C-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-mechanic-T&C-Hindi.html"; sourceTree = "<group>"; };
+		84448B982A31A27300CC5409 /* fleetguard-mechanic-T&C-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-mechanic-T&C-Eng.html"; sourceTree = "<group>"; };
+		84448B992A31A27300CC5409 /* fleetguard-mechanic-T&C-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-mechanic-T&C-Kannada.html"; sourceTree = "<group>"; };
+		84448B9A2A31A27300CC5409 /* fleetguard-mechanic-T&C-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-mechanic-T&C-Bengali.html"; sourceTree = "<group>"; };
+		84448B9B2A31A27300CC5409 /* fleetguard-mechanic-T&C-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-mechanic-T&C-Tamil.html"; sourceTree = "<group>"; };
+		84448BA22A31A76200CC5409 /* FG_MyRedemptionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FG_MyRedemptionVC.swift; path = ../../../../../../../Downloads/FG_MyRedemptionVC.swift; sourceTree = "<group>"; };
+		84448BA32A31A76200CC5409 /* FG_MyRedemptionTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FG_MyRedemptionTVC.swift; path = ../../../../../../../Downloads/FG_MyRedemptionTVC.swift; sourceTree = "<group>"; };
 		8458738C2A065DB5002A183A /* FG_RedemptionCollectionCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_RedemptionCollectionCVC.swift; sourceTree = "<group>"; };
 		845873952A067556002A183A /* String+Extenssion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extenssion.swift"; sourceTree = "<group>"; };
 		84597BAA2979020800F3A7BC /* FG_CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_CategoryCVC.swift; sourceTree = "<group>"; };
@@ -599,14 +604,17 @@
 		84597BC729790C6900F3A7BC /* FG_AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_AboutVC.swift; sourceTree = "<group>"; };
 		84597BC929790CC100F3A7BC /* FG_FAQsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_FAQsVC.swift; sourceTree = "<group>"; };
 		84597BCB29790CD900F3A7BC /* FG_TermsandconditionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_TermsandconditionsVC.swift; sourceTree = "<group>"; };
+		845C88D82A3192650034876C /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/Main.strings"; sourceTree = "<group>"; };
+		845C88D92A3192660034876C /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		845C88DA2A3192660034876C /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		845C88DB2A3193050034876C /* bn-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "bn-IN"; path = "bn-IN.lproj/Main.strings"; sourceTree = "<group>"; };
+		845C88DC2A3193050034876C /* bn-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "bn-IN"; path = "bn-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		845C88DD2A3193050034876C /* bn-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "bn-IN"; path = "bn-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		845FD71E29782A2F00CE487E /* FG_SideMenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_SideMenuTVC.swift; sourceTree = "<group>"; };
 		84662002298138B500D28026 /* FG_StatementTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_StatementTVC.swift; sourceTree = "<group>"; };
 		84662004298145CA00D28026 /* FG_MyOrderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyOrderTVC.swift; sourceTree = "<group>"; };
 		84662006298145E800D28026 /* FG_MyBillingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyBillingTVC.swift; sourceTree = "<group>"; };
 		84795F4E2979594F00DDA192 /* FG_PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_PopUpVC.swift; sourceTree = "<group>"; };
-		84834AEE2A04DF8700FCF73C /* fleetguard-mechanic-t&c.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-mechanic-t&c.html"; sourceTree = "<group>"; };
-		84834AF02A04EB6100FCF73C /* fg-Mechanic-about-eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-eng.html"; sourceTree = "<group>"; };
-		84834AF22A04F91E00FCF73C /* fg-Mechanic-faq.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq.html"; sourceTree = "<group>"; };
 		84834AF52A05072600FCF73C /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
 		84834AF72A05073E00FCF73C /* LstAttributesDetails1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LstAttributesDetails1.swift; sourceTree = "<group>"; };
 		84834AF92A0535EB00FCF73C /* FG_MyRedemptionDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_MyRedemptionDetailsVC.swift; sourceTree = "<group>"; };
@@ -837,12 +845,12 @@
 		251F0B8B299F679100E2881A /* TC&Conditions */ = {
 			isa = PBXGroup;
 			children = (
-				84834AEE2A04DF8700FCF73C /* fleetguard-mechanic-t&c.html */,
-				842F0A6D29BC9AE20014602F /* fleetguard-retailer-t&c-ben.html */,
-				842F0A6F29BC9AE40014602F /* fleetguard-retailer-t&c-eng.html */,
-				842F0A7129BC9AE50014602F /* fleetguard-retailer-t&c-hin.html */,
-				842F0A7029BC9AE40014602F /* fleetguard-retailer-t&c-kan.html */,
-				842F0A6E29BC9AE30014602F /* fleetguard-retailer-t&c-tel.html */,
+				84448B9A2A31A27300CC5409 /* fleetguard-mechanic-T&C-Bengali.html */,
+				84448B982A31A27300CC5409 /* fleetguard-mechanic-T&C-Eng.html */,
+				84448B972A31A27200CC5409 /* fleetguard-mechanic-T&C-Hindi.html */,
+				84448B992A31A27300CC5409 /* fleetguard-mechanic-T&C-Kannada.html */,
+				84448B9B2A31A27300CC5409 /* fleetguard-mechanic-T&C-Tamil.html */,
+				84448B962A31A27200CC5409 /* fleetguard-mechanic-T&C-Telugu.html */,
 			);
 			path = "TC&Conditions";
 			sourceTree = "<group>";
@@ -1480,7 +1488,7 @@
 		84068D8229765D9800D4360F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				84DA98F92A0D069A00F33277 /* Language */,
+				84DA98F92A0D069A00F33277 /* Localization */,
 				842F0A5829BC9AA50014602F /* AboutUs */,
 				842F0A5729BC9A9C0014602F /* FAQ */,
 				251F0B8B299F679100E2881A /* TC&Conditions */,
@@ -1600,6 +1608,7 @@
 		84068D8829765E0200D4360F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84448B792A319A3500CC5409 /* l */,
 				84369F3A2A135CB300D1CA28 /* Notification */,
 				259152CD29DAFEAA0082F4CD /* DreamGiftDetails */,
 				25913E6529C840E300C60D55 /* DreamGift */,
@@ -1883,7 +1892,8 @@
 		842B4CF12977EB840039450A /* Language */ = {
 			isa = PBXGroup;
 			children = (
-				842B4CF22977EBC10039450A /* FG_LanguageVC.swift */,
+				84448B7A2A319AAF00CC5409 /* LanguageVC.swift */,
+				84448B7C2A319AB800CC5409 /* LanguageTVC.swift */,
 			);
 			path = Language;
 			sourceTree = "<group>";
@@ -1900,12 +1910,12 @@
 		842F0A5729BC9A9C0014602F /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
-				84834AF22A04F91E00FCF73C /* fg-Mechanic-faq.html */,
-				842F0A6429BC9AD30014602F /* fleetguard-retailer-faq-ben.html */,
-				842F0A6329BC9AD20014602F /* fleetguard-retailer-faq-eng.html */,
-				842F0A6529BC9AD30014602F /* fleetguard-retailer-faq-hin.html */,
-				842F0A6629BC9AD40014602F /* fleetguard-retailer-faq-kan.html */,
-				842F0A6729BC9AD50014602F /* fleetguard-retailer-faq-telu.html */,
+				84448B8B2A31A25E00CC5409 /* fg-Mechanic-faq-Bengali.html */,
+				84448B8D2A31A25E00CC5409 /* fg-Mechanic-faq-Eng.html */,
+				84448B8A2A31A25E00CC5409 /* fg-Mechanic-faq-Hindi.html */,
+				84448B8E2A31A25F00CC5409 /* fg-Mechanic-faq-Kannada.html */,
+				84448B8F2A31A25F00CC5409 /* fg-Mechanic-faq-Tamil.html */,
+				84448B8C2A31A25E00CC5409 /* fg-Mechanic-faq-Telugu.html */,
 			);
 			path = FAQ;
 			sourceTree = "<group>";
@@ -1913,12 +1923,12 @@
 		842F0A5829BC9AA50014602F /* AboutUs */ = {
 			isa = PBXGroup;
 			children = (
-				84834AF02A04EB6100FCF73C /* fg-Mechanic-about-eng.html */,
-				842F0A5929BC9ABE0014602F /* about-bengali.html */,
-				842F0A5C29BC9AC00014602F /* about-english.html */,
-				842F0A5B29BC9ABF0014602F /* about-hindi.html */,
-				842F0A5D29BC9AC10014602F /* about-kannada.html */,
-				842F0A5A29BC9ABF0014602F /* about-telugu.html */,
+				84448B7E2A31A24200CC5409 /* fg-Mechanic-about-Bengali.html */,
+				84448B812A31A24200CC5409 /* fg-Mechanic-about-Eng.html */,
+				84448B832A31A24300CC5409 /* fg-Mechanic-about-Hindi.html */,
+				84448B822A31A24300CC5409 /* fg-Mechanic-about-Kannada.html */,
+				84448B7F2A31A24200CC5409 /* fg-Mechanic-about-Tamil.html */,
+				84448B802A31A24200CC5409 /* fg-Mechanic-about-Telugu.html */,
 			);
 			path = AboutUs;
 			sourceTree = "<group>";
@@ -1957,6 +1967,13 @@
 				84662002298138B500D28026 /* FG_StatementTVC.swift */,
 			);
 			path = PointStatementView;
+			sourceTree = "<group>";
+		};
+		84448B792A319A3500CC5409 /* l */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = l;
 			sourceTree = "<group>";
 		};
 		84597BAC297909F600F3A7BC /* Profile */ = {
@@ -2172,8 +2189,8 @@
 			children = (
 				84834AF92A0535EB00FCF73C /* FG_MyRedemptionDetailsVC.swift */,
 				84834AFD2A0536A400FCF73C /* FG_MyRedemptionDetailsTVC.swift */,
-				845873882A065D94002A183A /* FG_MyRedemptionVC.swift */,
-				8458738A2A065DA4002A183A /* FG_MyRedemptionTVC.swift */,
+				84448BA32A31A76200CC5409 /* FG_MyRedemptionTVC.swift */,
+				84448BA22A31A76200CC5409 /* FG_MyRedemptionVC.swift */,
 				8458738C2A065DB5002A183A /* FG_RedemptionCollectionCVC.swift */,
 			);
 			path = MyRedemption;
@@ -2482,12 +2499,12 @@
 			path = CityModel;
 			sourceTree = "<group>";
 		};
-		84DA98F92A0D069A00F33277 /* Language */ = {
+		84DA98F92A0D069A00F33277 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
 				84DA99022A0D06F000F33277 /* Localizable.strings */,
 			);
-			path = Language;
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		84E0D38A2977C1ED00BD278B /* Login */ = {
@@ -2675,6 +2692,8 @@
 				hi,
 				"ta-IN",
 				"kn-IN",
+				"te-IN",
+				"bn-IN",
 			);
 			mainGroup = 84C1E3EF29758A6D00D188C5;
 			productRefGroup = 84C1E3F929758A6D00D188C5 /* Products */;
@@ -2693,48 +2712,48 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84448B9E2A31A27300CC5409 /* fleetguard-mechanic-T&C-Eng.html in Resources */,
+				84448B872A31A24300CC5409 /* fg-Mechanic-about-Eng.html in Resources */,
 				84068DC82976777200D4360F /* Roboto-ThinItalic.ttf in Resources */,
 				84068DC92976777200D4360F /* Roboto-BoldItalic.ttf in Resources */,
-				842F0A5F29BC9AC10014602F /* about-telugu.html in Resources */,
-				842F0A6029BC9AC10014602F /* about-hindi.html in Resources */,
-				842F0A6A29BC9AD50014602F /* fleetguard-retailer-faq-hin.html in Resources */,
-				842F0A6C29BC9AD50014602F /* fleetguard-retailer-faq-telu.html in Resources */,
-				842F0A7229BC9AE50014602F /* fleetguard-retailer-t&c-ben.html in Resources */,
-				842F0A6929BC9AD50014602F /* fleetguard-retailer-faq-ben.html in Resources */,
 				84DA99002A0D06F000F33277 /* Localizable.strings in Resources */,
-				842F0A7429BC9AE50014602F /* fleetguard-retailer-t&c-eng.html in Resources */,
-				842F0A7529BC9AE50014602F /* fleetguard-retailer-t&c-kan.html in Resources */,
+				84448B862A31A24300CC5409 /* fg-Mechanic-about-Telugu.html in Resources */,
 				25C865DD29A7237F00C1801E /* otherInfoTableViewCell.xib in Resources */,
 				84068DCF2976777200D4360F /* Roboto-Thin.ttf in Resources */,
-				84834AF32A04F91E00FCF73C /* fg-Mechanic-faq.html in Resources */,
 				84068DCA2976777200D4360F /* Roboto-LightItalic.ttf in Resources */,
-				84834AF12A04EB6100FCF73C /* fg-Mechanic-about-eng.html in Resources */,
-				842F0A6829BC9AD50014602F /* fleetguard-retailer-faq-eng.html in Resources */,
 				84369F402A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.xib in Resources */,
-				84834AEF2A04DF8700FCF73C /* fleetguard-mechanic-t&c.html in Resources */,
 				84068DD02976777200D4360F /* Roboto-Black.ttf in Resources */,
-				842F0A6B29BC9AD50014602F /* fleetguard-retailer-faq-kan.html in Resources */,
+				84448B952A31A25F00CC5409 /* fg-Mechanic-faq-Tamil.html in Resources */,
+				84448B842A31A24300CC5409 /* fg-Mechanic-about-Bengali.html in Resources */,
 				84C1E40B29758A7000D188C5 /* LaunchScreen.storyboard in Resources */,
 				84068DCB2976777200D4360F /* Roboto-Italic.ttf in Resources */,
 				84068DCC2976777200D4360F /* LICENSE.txt in Resources */,
 				84068DCD2976777200D4360F /* Roboto-BlackItalic.ttf in Resources */,
 				84AF145429BC66550033D268 /* loader (1).json in Resources */,
+				84448B9C2A31A27300CC5409 /* fleetguard-mechanic-T&C-Telugu.html in Resources */,
 				25C865E229A7237F00C1801E /* otherImageTableViewCell.xib in Resources */,
 				84068DC62976777200D4360F /* Roboto-Regular.ttf in Resources */,
+				84448B902A31A25F00CC5409 /* fg-Mechanic-faq-Hindi.html in Resources */,
+				84448B892A31A24300CC5409 /* fg-Mechanic-about-Hindi.html in Resources */,
 				84068DC42976777200D4360F /* Roboto-Medium.ttf in Resources */,
-				842F0A6229BC9AC10014602F /* about-kannada.html in Resources */,
-				842F0A7629BC9AE50014602F /* fleetguard-retailer-t&c-hin.html in Resources */,
+				84448B932A31A25F00CC5409 /* fg-Mechanic-faq-Eng.html in Resources */,
+				84448BA02A31A27300CC5409 /* fleetguard-mechanic-T&C-Bengali.html in Resources */,
 				25C865EA29A7237F00C1801E /* otherInfoImageTableViewCell.xib in Resources */,
 				25C865DC29A7237F00C1801E /* senderInfoImageTableViewCell.xib in Resources */,
-				842F0A5E29BC9AC10014602F /* about-bengali.html in Resources */,
+				84448B942A31A25F00CC5409 /* fg-Mechanic-faq-Kannada.html in Resources */,
 				84068DA3297664C800D4360F /* lf30_editor_qd1wdceq.json in Resources */,
-				842F0A7329BC9AE50014602F /* fleetguard-retailer-t&c-tel.html in Resources */,
 				84068DC52976777200D4360F /* Roboto-Light.ttf in Resources */,
+				84448B9F2A31A27300CC5409 /* fleetguard-mechanic-T&C-Kannada.html in Resources */,
+				84448B882A31A24300CC5409 /* fg-Mechanic-about-Kannada.html in Resources */,
 				25C865E129A7237F00C1801E /* senderInfoTableViewCell.xib in Resources */,
 				84C1E40829758A7000D188C5 /* Assets.xcassets in Resources */,
-				842F0A6129BC9AC10014602F /* about-english.html in Resources */,
+				84448BA12A31A27300CC5409 /* fleetguard-mechanic-T&C-Tamil.html in Resources */,
+				84448B9D2A31A27300CC5409 /* fleetguard-mechanic-T&C-Hindi.html in Resources */,
 				25C865EB29A7237F00C1801E /* senderImageTableViewCell.xib in Resources */,
+				84448B912A31A25F00CC5409 /* fg-Mechanic-faq-Bengali.html in Resources */,
+				84448B922A31A25F00CC5409 /* fg-Mechanic-faq-Telugu.html in Resources */,
 				84068DC72976777200D4360F /* Roboto-MediumItalic.ttf in Resources */,
+				84448B852A31A24300CC5409 /* fg-Mechanic-about-Tamil.html in Resources */,
 				84068DCE2976777200D4360F /* Roboto-Bold.ttf in Resources */,
 				84C1E40329758A6D00D188C5 /* Main.storyboard in Resources */,
 			);
@@ -2835,6 +2854,7 @@
 				2565BBCF29A4D4480015AFD4 /* MyOrderDetailsListingVM.swift in Sources */,
 				841FCE0A297FDCB40026CD44 /* FG_RedemptionOTPVC.swift in Sources */,
 				251F0B82299F4F2E00E2881A /* LstPromotionJsonList.swift in Sources */,
+				84448B7B2A319AB000CC5409 /* LanguageVC.swift in Sources */,
 				8488E415298A36F80032A2D7 /* TokenModels.swift in Sources */,
 				84834B0A2A05379200FCF73C /* RedemptionDetailsOrderStatusModel.swift in Sources */,
 				2580EFF229A6414D0097A50D /* HelpTopicModels.swift in Sources */,
@@ -2852,6 +2872,7 @@
 				25C865F229A7256100C1801E /* ChatDetailsModels.swift in Sources */,
 				25116BDE29CC0B3600E78DD7 /* MyLedgerModels.swift in Sources */,
 				25C865E429A7237F00C1801E /* otherInfoTableViewCell.swift in Sources */,
+				84448BA52A31A76200CC5409 /* FG_MyRedemptionTVC.swift in Sources */,
 				2565BBC729A4CCD60015AFD4 /* FG_MyOrdersDeatilsTVC.swift in Sources */,
 				84140DDD298D22770090DD44 /* LstAttributesDetails.swift in Sources */,
 				25C465D229A8CD0B00CCA30C /* FG_RedemptionCataloguePopUp.swift in Sources */,
@@ -2911,13 +2932,13 @@
 				2592E70629B9995F005689CF /* CounterGapVM.swift in Sources */,
 				84068D9E2976649D00D4360F /* ViewExtension.swift in Sources */,
 				2585AE1629AE380000E745C7 /* MyOrderDetailsModels.swift in Sources */,
-				8458738B2A065DA4002A183A /* FG_MyRedemptionTVC.swift in Sources */,
 				254D8AF9299FB3BD00CBBBDE /* MyOrderListingVM.swift in Sources */,
 				84C987AA298B86FD007F00B2 /* ProductQuantityUpdateModel.swift in Sources */,
 				2580EFF129A6414D0097A50D /* ObjHelpTopicList.swift in Sources */,
 				84D10F70298E787B00DE283E /* StateList.swift in Sources */,
 				2585AE1029AE1C8700E745C7 /* ObjImageGalleryList.swift in Sources */,
 				25C865F329A7256100C1801E /* ObjQueryResponseJsonList.swift in Sources */,
+				84448B7D2A319AB800CC5409 /* LanguageTVC.swift in Sources */,
 				2586CA3929C856480067CD17 /* DreamGiftListingVM.swift in Sources */,
 				84597BCC29790CD900F3A7BC /* FG_TermsandconditionsVC.swift in Sources */,
 				848B2BD42977D52900A58C73 /* FG_MyEarningTVC.swift in Sources */,
@@ -2930,6 +2951,7 @@
 				84BE3178298E389D0067C2C4 /* RedemptionCatalogueProductRemoveModel.swift in Sources */,
 				842326CB2980080400DF7325 /* FG_ProductCatalogueDetailsVC.swift in Sources */,
 				84662007298145E800D28026 /* FG_MyBillingTVC.swift in Sources */,
+				84448BA42A31A76200CC5409 /* FG_MyRedemptionVC.swift in Sources */,
 				849D350A298A8C93005A41FC /* ObjCustomerDashboardList1.swift in Sources */,
 				849D34F7298A77BE005A41FC /* LoginModel.swift in Sources */,
 				251F0B80299F4F2E00E2881A /* LstPromotionUserActionDetails.swift in Sources */,
@@ -2993,7 +3015,6 @@
 				2565C96929B0B83D0020D93A /* LstLoyaltyProgramReport.swift in Sources */,
 				2592E70A29B99C62005689CF /* CounterGapModels.swift in Sources */,
 				84140DE6298D32540090DD44 /* FG_RedemptionCatalogueVM.swift in Sources */,
-				842B4CF32977EBC10039450A /* FG_LanguageVC.swift in Sources */,
 				84068D9C2976649D00D4360F /* LabelExtension.swift in Sources */,
 				2592E71029B99D27005689CF /* MarketGapModels.swift in Sources */,
 				84E5DAA8298E1B2F00B20B16 /* RedemptionCatalogueAddToCartModel.swift in Sources */,
@@ -3060,7 +3081,6 @@
 				250FFCAC29B7128B003FB8A0 /* LstTransactionApprovalDetails1.swift in Sources */,
 				84DBA6F6297EA4B600B9DCF8 /* FG_RedemptionCatalogueTVC.swift in Sources */,
 				8488E420298A4E5E0032A2D7 /* OTPModel.swift in Sources */,
-				845873892A065D94002A183A /* FG_MyRedemptionVC.swift in Sources */,
 				25C465CC29A8C7AB00CCA30C /* SendSuccessModels.swift in Sources */,
 				2565BBDA29A4F7B90015AFD4 /* FilterProductCatModels.swift in Sources */,
 				84068D912976646F00D4360F /* PersistanceService.swift in Sources */,
@@ -3131,6 +3151,8 @@
 				84DA98FC2A0D06D300F33277 /* hi */,
 				259190792A284B9E0002A2EB /* ta-IN */,
 				2591907C2A284C260002A2EB /* kn-IN */,
+				845C88D82A3192650034876C /* te-IN */,
+				845C88DB2A3193050034876C /* bn-IN */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -3143,6 +3165,8 @@
 				84DA98FD2A0D06D300F33277 /* hi */,
 				2591907A2A284B9E0002A2EB /* ta-IN */,
 				2591907D2A284C260002A2EB /* kn-IN */,
+				845C88D92A3192660034876C /* te-IN */,
+				845C88DC2A3193050034876C /* bn-IN */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -3154,6 +3178,8 @@
 				84DA99032A0D06F500F33277 /* hi */,
 				2591907B2A284B9F0002A2EB /* ta-IN */,
 				2591907E2A284C260002A2EB /* kn-IN */,
+				845C88DA2A3192660034876C /* te-IN */,
+				845C88DD2A3193050034876C /* bn-IN */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -3284,9 +3310,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fleet_Guard(Samriddhi)/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "FleetGuard Need to Access the camera to upload profile Image and Customer support";
@@ -3306,6 +3334,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Humsufer";
 				PRODUCT_NAME = FleetGuard_Humsafar;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = fleet_GuardHumsufer_Adhoc;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3319,9 +3348,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fleet_Guard(Samriddhi)/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "FleetGuard Need to Access the camera to upload profile Image and Customer support";
@@ -3341,6 +3372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Humsufer";
 				PRODUCT_NAME = FleetGuard_Humsafar;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = fleet_GuardHumsufer_Adhoc;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

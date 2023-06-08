@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var slider : SlideMenuController!
     var nav : UINavigationController!
     var gcmMessageIDKey = "gcm.message_id"
-    let languageStatus = UserDefaults.standard.string(forKey: "LanguageName")
-
+    var languageStatus = UserDefaults.standard.string(forKey: "LanguageName")
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
         
@@ -29,14 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         tokendata()
         tokendata1()
-        UserDefaults.standard.setValue("EN", forKey: "LanguageName")
-        if languageStatus == "EN"{
-            LanguageManager.shared.setLanguage(language: .en)
-
-        }else{
-            LanguageManager.shared.setLanguage(language: .en)
-
-        }
+        languageUpdate()
         
         let tokenStatus: Bool = UserDefaults.standard.bool(forKey: "AfterLog")
         UserDefaults.standard.synchronize()
@@ -57,6 +50,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    
+    func languageUpdate(){
+        if languageStatus == "English"{
+            LanguageManager.shared.setLanguage(language: .en)
+        }else if languageStatus == "Hindi"{
+            LanguageManager.shared.setLanguage(language: .hi)
+        }else if languageStatus == "Tamil"{
+            LanguageManager.shared.setLanguage(language: .taIN)
+        }else if languageStatus == "Telugu"{
+            LanguageManager.shared.setLanguage(language: .teIN)
+        }else if languageStatus == "Bengali"{
+            LanguageManager.shared.setLanguage(language: .bnIN)
+        }else if languageStatus == "Kannada"{
+            LanguageManager.shared.setLanguage(language: .knIN)
+        }else{
+            LanguageManager.shared.setLanguage(language: .en)
+        }
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     @available(iOS 13.0, *)
@@ -73,13 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func setHomeAsRootViewController(){
         let leftVC = storyboard.instantiateViewController(withIdentifier: "FG_SideMenuVC") as! FG_SideMenuVC
-        if languageStatus == "EN"{
-            LanguageManager.shared.setLanguage(language: .en)
-
-        }else{
-            LanguageManager.shared.setLanguage(language: .en)
-
-        }
+        languageUpdate()
 //        let nav = NavigationController(rootViewController: yourController1)
 //        self.yourViewInsertedInController1.addSubview(nav.view)
         let homeVC = storyboard.instantiateViewController(withIdentifier: "FG_TabbarVc") as! FG_TabbarVc
@@ -99,13 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
     }
     func setInitialViewAsRootViewController(){
-        if languageStatus == "EN"{
-            LanguageManager.shared.setLanguage(language: .en)
-
-        }else{
-            LanguageManager.shared.setLanguage(language: .en)
-
-        }
+        languageUpdate()
         let mainStoryboard = UIStoryboard(name: "Main" , bundle: nil)
         let initialVC = mainStoryboard.instantiateViewController(withIdentifier: "FG_LoginVC") as! FG_LoginVC
         UserDefaults.standard.set("1", forKey: "LanguageLocalizable")

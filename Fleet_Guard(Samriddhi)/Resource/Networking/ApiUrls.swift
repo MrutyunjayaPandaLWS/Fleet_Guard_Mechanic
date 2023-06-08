@@ -8,9 +8,9 @@
 import Foundation
 
 //DEMO -- http://fleetgrdser.loyltwo3ks.com/Mobile/GetRedemptionPlannerDetails
-let tokenURL = "http://fleetgrdser.loyltwo3ks.com/token"
+let tokenURL = "https://fleetgrdser.loyltwo3ks.com/token"
 let secondToken = "https://lwssrvtest.samriddhi.in/token"
-let baseURl = "http://fleetgrdser.loyltwo3ks.com/Mobile/"
+let baseURl = "https://fleetgrdser.loyltwo3ks.com/Mobile/"
 let myEarningsBaseURL = "https://lwssrvtest.samriddhi.in/Mobile/"
 let baseURL_SE = "http://fleetgrdser.loyltwo3ks.com/SeMobile/"
 let PROMO_IMG = "http://fleetgrdser.loyltwo3ks.com/UploadFiles/"

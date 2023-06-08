@@ -181,14 +181,14 @@ class FG_DashboardVM: popUpDelegate{
     }
     
     func pointBalenceAPI(parameter: JSON){
-        DispatchQueue.main.async {
-            self.VC?.startLoading()
-        }
+//        DispatchQueue.main.async {
+//            self.VC?.startLoading()
+//        }
         self.requestApis.pointBalenceAPI(parameters: parameter) { (result, error) in
             if error == nil{
                 if result != nil{
                 DispatchQueue.main.async {
-                    self.VC?.stopLoading()
+//                    self.VC?.stopLoading()
                   
                     if result?.objCustomerDashboardList?.count != 0 {
                         self.pointBalence = result?.objCustomerDashboardList ?? []
@@ -204,12 +204,12 @@ class FG_DashboardVM: popUpDelegate{
                 }
                 }else{
                     DispatchQueue.main.async {
-                    self.VC?.stopLoading()
+//                    self.VC?.stopLoading()
                     }
                 }
             }else{
                 DispatchQueue.main.async {
-                self.VC?.stopLoading()
+//                self.VC?.stopLoading()
                 }
             }
         }

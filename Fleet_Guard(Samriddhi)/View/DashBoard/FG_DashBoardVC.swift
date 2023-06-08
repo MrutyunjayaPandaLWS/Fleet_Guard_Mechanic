@@ -12,7 +12,11 @@ import Kingfisher
 import LanguageManager_iOS
 
 
-class FG_DashBoardVC: BaseViewController {
+class FG_DashBoardVC: BaseViewController, LanguageDelegate {
+    func didtappedLanguageBtn(item: LanguageVC) {
+        localization()
+    }
+    
 
     @IBOutlet weak var noDatafoundLbl: UILabel!
     @IBOutlet weak var knowMoreLbl: UILabel!
@@ -76,8 +80,11 @@ class FG_DashBoardVC: BaseViewController {
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId:String = ""{
         didSet{
+            if loyaltyId.count != 0 && loyaltyId != nil{
+                pointsAPI()
+            }
 //            dashboardPointsApi()
-            pointsAPI()
+            
         }
     }//UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     var secondToken = UserDefaults.standard.string(forKey: "SECONDTOKEN") ?? ""
@@ -198,6 +205,14 @@ class FG_DashBoardVC: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func languageChangeBtn(_ sender: Any) {
+        
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LanguageVC") as? LanguageVC
+        vc?.delegate = self
+        vc?.modalPresentationStyle = .overFullScreen
+        vc?.modalTransitionStyle = .crossDissolve
+        present(vc!, animated: true)
+        
+        
     }
     
     @IBAction func notificationBell(_ sender: Any) {
