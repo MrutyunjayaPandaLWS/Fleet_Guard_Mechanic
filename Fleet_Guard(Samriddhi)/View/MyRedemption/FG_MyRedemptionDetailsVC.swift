@@ -47,16 +47,22 @@ class FG_MyRedemptionDetailsVC: BaseViewController, UITableViewDelegate, UITable
         orderStatusTV.dataSource = self
         cancelOrderBtn.isHidden = true
         emptyMessage.isHidden = true
+        emptyMessage.text = "noDataFound".localiz()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         VCtitle.text = "My_redemption".localiz()
         myRedemptionDetailsApi()
+        localization()
     }
     
     func localization(){
-        
+        self.VCtitle.text = "My_redemption".localiz()
+        categoryNameLbl.text = "Category".localiz()
+        descriptionTitle.text = "Description".localiz()
+        termAndConditionTitle.text = "Terms_and_condition".localiz()
+        OrderStatusTitleLbl.text = "Order Status".localiz()
     }
     
     @IBAction func selectBackBtn(_ sender: UIButton) {

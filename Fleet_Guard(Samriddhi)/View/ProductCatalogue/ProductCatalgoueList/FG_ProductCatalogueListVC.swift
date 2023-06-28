@@ -9,6 +9,14 @@ import UIKit
 import LanguageManager_iOS
 
 class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,sendProductFilterDelegate {
+   
+    func didTappedImageViewBtn(cell: FG_ProdCatalogueTVC) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductImageDetailsVC") as? FG_ProductImageDetailsVC
+        vc?.imageUrl = cell.imageUrl
+        navigationController?.pushViewController(vc!, animated: true)
+    }
+
+    
     func sendProductFilter(_ vc: FG_ProductCatalogueFilterVC) {
         self.VM.productsArray.removeAll()
         self.VM.productListArray.removeAll()
@@ -72,6 +80,8 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
         self.subView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         self.nodatafoundLbl.isHidden = true
         self.countLbl.isHidden = true
+        searchTF.placeholder = "Search by part no/ cross reference".localiz()
+        nodatafoundLbl.text = "noDataFound".localiz()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -143,16 +153,21 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
         guard let tappedIndexPath = self.productCatalgoueTableView.indexPath(for: cell) else{return}
         if cell.nextButton.tag == tappedIndexPath.row{
             let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueDetailsVC") as! FG_ProductCatalogueDetailsVC
-            vc.productImageURL = self.VM.productListArray[tappedIndexPath.row].productImg ?? ""
+            vc.productImageURL =  cell.imageUrl
+//            vc.productImageURL = self.VM.productListArray[tappedIndexPath.row].productImg ?? ""
             vc.productName = self.VM.productListArray[tappedIndexPath.row].productName ?? ""
             vc.partNo = self.VM.productListArray[tappedIndexPath.row].productCode ?? ""
             vc.shortDesc = self.VM.productListArray[tappedIndexPath.row].productShortDesc ?? ""
             vc.dap = "\(self.VM.productListArray[tappedIndexPath.row].salePrice ?? 0)"
-            vc.mrp = "\(self.VM.productListArray[tappedIndexPath.row].mrp ?? "")"
             vc.productId = "\(self.VM.productListArray[tappedIndexPath.row].productId ?? 0)"
             vc.productDesc = "\(self.VM.productListArray[tappedIndexPath.row].productDesc ?? "")"
 //            vc.cateogryId = "\(self.VM.productListArray[tappedIndexPath.row].category ?? 0)"
          
+            let splitData = "\(self.VM.productListArray[tappedIndexPath.row].mrp ?? "")".split(separator: ".")
+            vc.mrp = "\(splitData[0])"
+//
+            
+            
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
@@ -162,41 +177,53 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     
     @IBAction func searchByEditingChanged(_ sender: Any) {
         
+//        if self.searchTF.text!.count != 0 || self.searchTF.text ?? "" != ""{
+//            if self.VM.productListArray.count > 0 {
+//                let arr = self.VM.productListArray.filter{ ($0.productName!.localizedCaseInsensitiveContains(self.searchTF.text!))}
+//                print(arr.count,"skdjhkdsjh")
+//                if self.searchTF.text! != ""{
+//                    if arr.count > 0 {
+//                        self.VM.productListArray.removeAll(keepingCapacity: true)
+//                        print(VM.productListArray.count,"jshdhs")
+//                        self.VM.productListArray = arr
+//                        self.productCatalgoueTableView.reloadData()
+//                        self.productCatalgoueTableView.isHidden = false
+//                        self.nodatafoundLbl.isHidden = true
+//                    }else {
+//                        self.VM.productListArray = self.VM.productsArray
+//                        self.productCatalgoueTableView.reloadData()
+//                        self.productCatalgoueTableView.isHidden = true
+//                        self.nodatafoundLbl.isHidden = false
+//                    }
+//                }else{
+//                    self.VM.productListArray = self.VM.productsArray
+//                    self.productCatalgoueTableView.reloadData()
+//                    productCatalgoueTableView.isHidden = false
+//                    nodatafoundLbl.isHidden = true
+//                }
+//                let searchText = self.searchTF.text!
+//                if searchText.count > 0 || self.VM.productListArray.count == self.VM.productsArray.count {
+//                    self.productCatalgoueTableView.reloadData()
+//                }
+//            }
+//        }else{
+//            self.VM.productListArray.removeAll()
+//            self.productCatalgoueTableView.reloadData()
+//            productListApi(StartIndex: self.startindex, searchText: self.searchTF.text ?? "")
+//            nodatafoundLbl.isHidden = true
+//        }
         if self.searchTF.text!.count != 0 || self.searchTF.text ?? "" != ""{
-            if self.VM.productListArray.count > 0 {
-                let arr = self.VM.productListArray.filter{ ($0.productName!.localizedCaseInsensitiveContains(self.searchTF.text!))}
-                print(arr.count,"skdjhkdsjh")
-                if self.searchTF.text! != ""{
-                    if arr.count > 0 {
-                        self.VM.productListArray.removeAll(keepingCapacity: true)
-                        print(VM.productListArray.count,"jshdhs")
-                        self.VM.productListArray = arr
-                        self.productCatalgoueTableView.reloadData()
-                        self.productCatalgoueTableView.isHidden = false
-                        self.nodatafoundLbl.isHidden = true
-                    }else {
-                        self.VM.productListArray = self.VM.productsArray
-                        self.productCatalgoueTableView.reloadData()
-                        self.productCatalgoueTableView.isHidden = true
-                        self.nodatafoundLbl.isHidden = false
-                    }
-                }else{
-                    self.VM.productListArray = self.VM.productsArray
-                    self.productCatalgoueTableView.reloadData()
-                    productCatalgoueTableView.isHidden = false
-                    nodatafoundLbl.isHidden = true
-                }
-                let searchText = self.searchTF.text!
-                if searchText.count > 0 || self.VM.productListArray.count == self.VM.productsArray.count {
-                    self.productCatalgoueTableView.reloadData()
-                }
-            }
+
+            self.VM.productListArray.removeAll()
+            self.productCatalgoueTableView.reloadData()
+            productListApi(StartIndex: self.startindex, searchText: self.searchTF.text ?? "")
         }else{
             self.VM.productListArray.removeAll()
             self.productCatalgoueTableView.reloadData()
             productListApi(StartIndex: self.startindex, searchText: self.searchTF.text ?? "")
             nodatafoundLbl.isHidden = true
         }
+
     }
     
     
@@ -214,7 +241,16 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
         cell.partNoLbl.text = self.VM.productListArray[indexPath.row].productCode ?? ""
         //cell.dapValue.text = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"
         cell.mrpValue.text = "\(self.VM.productListArray[indexPath.row].mrp ?? "")"
-        
+        let image = self.VM.productListArray[indexPath.row].productImg ?? ""
+        if image.count == 0 || image == nil{
+            cell.imageViewBtn.isEnabled = false
+            cell.productImage.image = UIImage(named: "Image 3")
+        }else{
+            cell.imageViewBtn.isEnabled = true
+            let imageUrl = "\(product_Image_Url)\(String(describing: image.replacingOccurrences(of: " ", with: "%20")))"
+            cell.imageUrl = imageUrl
+            cell.productImage.kf.setImage(with: URL(string: "\(imageUrl)"),placeholder: UIImage(named: "Image 3"))
+        }
 //        vc.dap = "\(self.VM.productListArray[tappedIndexPath.row].salePrice ?? 0)"
 //        vc.mrp = "\(self.VM.productListArray[tappedIndexPath.row].mrp ?? "")"
        // cell.nextButton.tag = indexPath.row

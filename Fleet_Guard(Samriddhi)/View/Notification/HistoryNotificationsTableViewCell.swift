@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 protocol notificationDelgate{
     func didTappedNotificationimage(cell: HistoryNotificationsTableViewCell)
@@ -35,4 +36,5 @@ class HistoryNotificationsTableViewCell: UITableViewCell {
         delegate?.didTappedNotificationimage(cell: self)
     }
     
+   
 }

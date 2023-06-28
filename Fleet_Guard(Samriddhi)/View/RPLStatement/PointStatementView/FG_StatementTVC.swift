@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 protocol StatementViewDelegate: AnyObject{
     func viewActBTN(_ cell: FG_StatementTVC)
@@ -23,6 +24,7 @@ class FG_StatementTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+        viewOutBtn.setTitle("View".localiz(), for: .normal)
     }
     
     @IBAction func viewBtn(_ sender: Any) {

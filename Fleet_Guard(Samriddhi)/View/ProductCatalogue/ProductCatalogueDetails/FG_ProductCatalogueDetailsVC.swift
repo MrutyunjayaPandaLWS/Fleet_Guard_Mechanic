@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 import LanguageManager_iOS
 
 class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
@@ -73,11 +74,22 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
 //        Product_Catalogue_Details
         self.myCartApi()
       //  self.productListApi()
+        print(productImageURL)
+        if productImageURL.count == 0 || productImageURL == nil{
+//            cell.imageViewBtn.isEnabled = false
+            productImage.image = UIImage(named: "Image 3")
+        }else{
+//            cell.imageViewBtn.isEnabled = true
+            let imageUrl = "\(product_Image_Url)\(String(describing: productImageURL.replacingOccurrences(of: " ", with: "%20")))"
+//            cell.imageUrl = imageUrl
+            productImage.kf.setImage(with: URL(string: "\(imageUrl)"),placeholder: UIImage(named: "Image 3"))
+        }
+//        productImage.kf.setImage(with: URL(string: "\(productImageURL)"),placeholder: UIImage(named: "Image 3"))
         self.qtyTF.isEnabled = false
         
     }
     
-
+    
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
         

@@ -57,7 +57,7 @@
 
 // MARK:  - ಸೈಡ್ ಮೆನು
 
-"Profile" = "ಪ್ರೊಫೈಲ್";
+"profile" = "ಪ್ರೊಫೈಲ್";
 "My_Ledger" = "ನನ್ನ ಲೆಡ್ಜರ್";
 "My_Redemption_History" = "ನನ್ನ ರಿಡೆಂಪ್ಶನ್  ಇತಿಹಾಸ";
 "Redemption_Catalogue" = "ರಿಡೆಂಪ್ಶನ್ ಕ್ಯಾಟಲಾಗ್";
@@ -185,3 +185,35 @@
 "other_device_Login_error" = "ನಿಮ್ಮ ಖಾತೆಯು ಇತರ ಮೊಬೈಲ್ ಮೂಲಕ ಲಾಗ್ ಇನ್ ಆಗಿದೆ.";
 "account_deactivated_error" = "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ ದಯವಿಟ್ಟು ನಿರ್ವಾಹಕರೊಂದಿಗೆ ಪರಿಶೀಲಿಸಿ";
 "Redemption_Failed" = "ರಿಡೆಂಪ್ಶನ್ ವಿಫಲವಾಗಿದೆ";
+"Search by part no/ cross reference" = "ಭಾಗ ಸಂಖ್ಯೆ/ ಅಡ್ಡ ಉಲ್ಲೇಖದ ಮೂಲಕ ಹುಡುಕಿ";
+"Query type" = "ಪ್ರಶ್ನೆ ಪ್ರಕಾರ"; //ಗುರುತು
+"View" = "ವೀಕ್ಷಿಸು";
+"Description"  = "ವಿವರಣೆ";
+"noDataFound" = "ಯಾವುದೇ ಡೇಟಾ ಕಂಡುಬಂದಿಲ್ಲ";
+"Add More" = "ಇನ್ನಷ್ಟು ಸೇರಿಸಿ";
+"Details"  = "ವಿವರಗಳು";
+"Remove"= "ತೆಗೆದುಹಾಕು";
+"Category" = "ವರ್ಗ";
+"Account_deleted_successfully" = "ಖಾತೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಅಳಿಸಲಾಗಿದೆ";
+"are_sure_delete_account" = "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?";
+
+"Points Available"  = "ಪಾಯಿಂಟ್";
+"Points Required" = "ಅಗತ್ಯವಿರುವ ಅಂಕಗಳು";
+"Redeemable Points as on Today"  ="ಇಂದಿನಂತೆಯೇ ರಿಡೀಮ್ ಮಾಡಬಹುದಾದ ಪಾಯಿಂಟ್";
+"Average earning required per month" = "ತಿಂಗಳಿಗೆ ಸರಾಸರಿ ಗಳಿಕೆಯ ಅಗತ್ಯವಿದೆ";
+"Garage Name" = "ಗ್ಯಾರೇಜ್ ಹೆಸರು";
+"Behaviour" = "ಬಿಹೇವಿಯರ್";
+"your_account_is_deleted" = "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಅಳಿಸಲಾಗಿದೆ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ನಿರ್ವಾಹಕರನ್ನು ಸಂಪರ್ಕಿಸಿ.";
+"Order Status" = "ಆರ್ಡರ್ ಸ್ಟೇಟಸ್";
+"Search by product name" = "ಉತ್ಪನ್ನ ಹೆಸರಿನ ಮೂಲಕ ಹುಡುಕಿ";
+"Your details have been submitted successfully." = "ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಸಲ್ಲಿಸಲಾಗಿದೆ.";
+"Failed to submit your details try after some time"  = "ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಸಲ್ಲಿಸಲು ವಿಫಲವಾಗಿದೆ ಸ್ವಲ್ಪ ಸಮಯದ ನಂತರ ಪ್ರಯತ್ನಿಸಿ";
+"Select date or filter status or both" = "ದಿನಾಂಕ ಅಥವಾ ಫಿಲ್ಟರ್ ಸ್ಥಿತಿ ಅಥವಾ ಎರಡನ್ನೂ ಆಯ್ಕೆಮಾಡಿ";
+"Select To Date" = "ಸೆಲೆಕ್ಟ್ ಟು ಡೇಟ್";
+"Select From Date" = "ದಿನಾಂಕದಿಂದ ಆಯ್ಕೆಮಾಡಿ";
+"ToDate should be lower than FromDate" = "ToDate fromDate ಗಿಂತ ಕಡಿಮೆ ಇರಬೇಕು";
+"Notification"= "ಅಧಿಸೂಚನೆ";
+"Add to cart" = "ಕಾರ್ಟ್";
+"Added to cart"= "ಕಾರ್ಟ್";
+"Add to dreamgift" = "Add to dreamgift";
+"Added to dreamgift" = "Added to dreamgift";

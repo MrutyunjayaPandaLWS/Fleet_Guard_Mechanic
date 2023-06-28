@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 protocol dreamGiftPlannerDelegate: AnyObject {
     func detailsButton(_ vc: FG_DreamGiftTVC)
@@ -15,6 +16,8 @@ protocol dreamGiftPlannerDelegate: AnyObject {
 class FG_DreamGiftTVC: UITableViewCell {
     
     
+    @IBOutlet weak var pointsAvailableTitleLbl: UILabel!
+    @IBOutlet weak var pointsRequiredTitlLbl: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var progressBarCircleViewLeading: NSLayoutConstraint!
     @IBOutlet weak var progressBarValueLbl: UILabel!
@@ -32,6 +35,13 @@ class FG_DreamGiftTVC: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         detailsOutBtn.semanticContentAttribute = .forceRightToLeft
+        localizartion()
+    }
+    
+    private func localizartion(){
+//        detailsOutBtn.setTitle("Details".localiz(), for: .normal)
+        pointsRequiredTitlLbl.text = "Points Required".localiz()
+        pointsAvailableTitleLbl.text = "Points Available".localiz()
     }
     
     @IBAction func detailsActBTN(_ sender: Any) {

@@ -37,6 +37,7 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
         myCartTableView.delegate = self
         myCartTableView.dataSource = self
         self.myCartListApi()
+        nodataFoundLbl.text = "noDataFound".localiz()
     }
     
     override func viewWillAppear(_ animated: Bool) {

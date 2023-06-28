@@ -87,7 +87,7 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
         mobileNumberTitleLbl.text = "Mobile_number".localiz()
         emailTitleLbl.text = "Email_address".localiz()
         dobTitleLbl.text = "DOB".localiz()
-        genderLbl.text = "Gender".localiz()
+        gederTitlleLbl.text = "Gender".localiz()
         addressTitleLbl.text = "Address".localiz()
         stateTitleLbl.text = "State".localiz()
         cityTitleLbl.text = "City".localiz()
@@ -132,9 +132,23 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
         vc.state = self.stateLbl.text ?? ""
         vc.city = self.cityLbl.text ?? ""
         vc.pincode = self.pincodeLbl.text ?? ""
-        vc.dob = self.dobLbl.text ?? "Select DOB"
-        vc.genderName = self.genderLbl.text ?? "Select Gender"
-        vc.prefLanguage = self.preferredLanguageLbl.text ?? "Select Preferred Language"
+        if self.dobLbl.text != "-" && self.dobLbl.text != "" {
+            vc.dob =  convertDateFormater1(self.dobLbl.text!)
+        }else{
+            vc.dob = ""
+        }
+        
+        if self.genderLbl.text != "-" && self.genderLbl.text != "" {
+            vc.genderName =  self.genderLbl.text!
+        }else{
+            vc.genderName = ""
+        }
+        if self.preferredLanguageLbl.text != "-" && self.preferredLanguageLbl.text != "" {
+            vc.prefLanguage =  self.preferredLanguageLbl.text!
+        }else{
+            vc.prefLanguage = ""
+        }
+//        vc.prefLanguage = self.preferredLanguageLbl.text ?? "Select Preferred Language"
         vc.selectedLanguageId = languageID
         vc.profileDetails = self.VM.profileDetailsData
         self.navigationController?.pushViewController(vc, animated: true)
@@ -276,5 +290,18 @@ extension FG_MyProfileVC: UIImagePickerControllerDelegate, UINavigationControlle
         dismiss(animated: true, completion: nil)
     }
    
+    func convertDateFormater1(_ date: String) -> String
+   {
+       let dateFormatter = DateFormatter()
+       dateFormatter.dateFormat = "dd/MM/yyyy"
+       let date1 = dateFormatter.date(from: date)
+       dateFormatter.dateFormat = "MM/dd/yyyy"
+       if date1 != nil{
+           return  dateFormatter.string(from: date1!)
+       }else{
+           return date
+       }
+   }
+    
 }
 

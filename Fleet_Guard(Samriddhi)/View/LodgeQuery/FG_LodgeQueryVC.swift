@@ -83,7 +83,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         filterView.clipsToBounds = true
         filterView.layer.cornerRadius = 20
         filterView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
+        nodatafoundLbl.text = "noDataFound".localiz()
         lodgeQueryBtn.clipsToBounds = true
         lodgeQueryBtn.layer.cornerRadius = 16
         lodgeQueryBtn.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
@@ -112,6 +112,12 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     func localization(){
         headerText.text = "Lodge_Query".localiz()
         lodgeQueryBtn.setTitle("Lodge_Query".localiz(), for: .normal)
+        self.fromDateBtn.setTitle("from_Date".localiz(), for: .normal)
+        self.toDateBtn.setTitle("To_Date".localiz(), for: .normal)
+        self.filterTitle.text = "filter".localiz()
+        self.filterByStatusLbl.text = "Filter_By_Status".localiz()
+        self.clearButton.setTitle("Clear_All".localiz(), for: .normal)
+        self.applyBtn.setTitle("Apply".localiz(), for: .normal)
     }
     
 //
@@ -242,7 +248,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     
     
     if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz() && self.status == "-1"{
-        self.view.makeToast("Select date or filter status or both", duration: 2.0, position: .center)
+        self.view.makeToast("Select date or filter status or both".localiz(), duration: 2.0, position: .center)
     }else if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz() && self.status != "-1"{
         
         self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.status, StartIndex: startindex)
@@ -250,17 +256,17 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         
     }else if self.fromDateBtn.currentTitle != "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz(){
         
-        self.view.makeToast("Select To Date", duration: 2.0, position: .center)
+        self.view.makeToast("Select To Date".localiz(), duration: 2.0, position: .center)
         
     }else if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle != "To_Date".localiz(){
         
-        self.view.makeToast("Select From Date", duration: 2.0, position: .center)
+        self.view.makeToast("Select From Date".localiz(), duration: 2.0, position: .center)
         
     }else if self.fromDateBtn.currentTitle != "from_Date".localiz() && self.toDateBtn.currentTitle != "To_Date".localiz() && self.status == "-1" || self.status != "-1"{
         
         if selectedToDate < selectedFromDate{
             
-            self.view.makeToast("ToDate should be lower than FromDate", duration: 2.0, position: .center)
+            self.view.makeToast("ToDate should be lower than FromDate".localiz(), duration: 2.0, position: .center)
             
         }else if self.fromDateBtn.currentTitle == "from_Date".localiz() && self.toDateBtn.currentTitle == "To_Date".localiz() && self.status != "-1"{
             

@@ -32,6 +32,7 @@ class FG_MyLedgerClickViewVC: BaseViewController {
         self.myLegderAPI()
         self.dateLBL.text = accessData
         pointsLbl.text = "\(totalPoints)"
+        nodataFoundLbl.text = "noDataFound".localiz()
         
     }
     

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import LanguageManager_iOS
+
 protocol SendOffersDetailsDelegate {
     func sendOffersDetails(_ cell: FG_MyPromotionsTVC)
 }
@@ -26,6 +28,7 @@ class FG_MyPromotionsTVC: UITableViewCell {
         self.subView.clipsToBounds = true
         self.subView.layer.cornerRadius = 16
         self.subView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        localization()
     
     }
 
@@ -33,6 +36,10 @@ class FG_MyPromotionsTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
+    private func localization(){
+        viewText.text = "View".localiz()
+    }
+    
     @IBAction func viewBtn(_ sender: Any) {
         self.delegate.sendOffersDetails(self)
     }

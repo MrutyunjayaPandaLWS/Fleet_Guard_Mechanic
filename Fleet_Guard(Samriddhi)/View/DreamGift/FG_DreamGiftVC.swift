@@ -16,6 +16,8 @@ class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
     }
     
 
+    @IBOutlet weak var addMoreBtn: GradientButton!
+    @IBOutlet weak var headerLbl: UILabel!
     @IBOutlet var myDreamGiftTV: UITableView!
     @IBOutlet var noDataFoundLbl: UILabel!
 
@@ -29,12 +31,19 @@ class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
         self.myDreamGiftTV.delegate = self
         self.myDreamGiftTV.dataSource = self
         self.myDreamGiftTV.separatorStyle = .none
+        noDataFoundLbl.text = "noDataFound".localiz()
+        localization()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.plannerListing()
+    }
+    
+    private func localization(){
+        headerLbl.text = "Dream_Gift".localiz()
+        addMoreBtn.setTitle("Add More", for: .normal)
     }
     
     func plannerListing(){
@@ -109,6 +118,7 @@ class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
         vc.averageLesserDate = self.VM.myPlannerListArray[tappedIndex.row].avgLesserExpDate ?? ""
         vc.redeemableAverageEarning = self.VM.myPlannerListArray[tappedIndex.row].redeemableAverageEarning ?? ""
         vc.dateOfSubmission = self.VM.myPlannerListArray[tappedIndex.row].achievementDateMonthWize ?? ""
+        vc.categoryName = self.VM.myPlannerListArray[tappedIndex.row].catogoryName ?? ""
         //vc.isRedeem = self.VM.myPlannerListArray[tappedIndex.row].is_Redeemable ?? 0
         let calcValue =  ((self.VM.myPlannerListArray[tappedIndex.row].pointsRequired ?? 0) - (Int(totalPoints) ?? 0))
         print(calcValue)
@@ -132,7 +142,7 @@ extension FG_DreamGiftVC : UITableViewDelegate, UITableViewDataSource{
         cell?.selectionStyle = .none
         
         cell?.productNameLbl.text = self.VM.myPlannerListArray[indexPath.row].productName ?? "-"
-        cell?.categoryLbl.text = "Category: \(self.VM.myPlannerListArray[indexPath.row].catogoryName ?? "-")"
+        cell?.categoryLbl.text = "\("Category".localiz()): \(self.VM.myPlannerListArray[indexPath.row].catogoryName ?? "-")"
         cell?.pointsAvailableLbl.text = "\(Int(VM.myPlannerListArray[indexPath.row].pointBalance ?? 0.0) )"
         cell?.pointsRequiredLbl.text = "Points : \(VM.myPlannerListArray[indexPath.row].pointsRequired ?? 0)"
         

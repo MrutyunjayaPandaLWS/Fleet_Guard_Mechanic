@@ -180,3 +180,36 @@
 "other_device_Login_error" = "మీ ఖాతా ఇతర మొబైల్ ద్వారా లాగిన్ చేయబడింది.";
 "account_deactivated_error" = "మీ ఖాతా నిష్క్రియం చేయబడింది దయచేసి నిర్వాహకుడిని సంప్రదించండి";
 "Redemption_Failed" = "రెడెంప్షన్ విఫలమైంది";
+"Search by part no/ cross reference" = "పార్ట్ సంఖ్య/ క్రాస్ రిఫరెన్స్ ద్వారా శోధించండి";
+"question type" = "ప్రశ్న రకం"; //గుర్తు
+"view" = "వ్యూ";
+"explanation" = "వివరణ";
+"noDataFound" = "డేటా కనుగొనబడలేదు";
+"Add more" = "మరిన్ని జోడించు";
+"details" = "వివరాలు";
+"remove" = "తొలగించు";
+"category" = "వర్గం";
+"Account_deleted_successfully" = "ఖాతా విజయవంతంగా తొలగించబడింది";
+"are_sure_delete_account" = "మీరు ఖచ్చితంగా మీ ఖాతాను తొలగించాలనుకుంటున్నారా?";
+
+"Points Available" = "Points Available";
+"Points Required" = "Points Required";
+"Points that can be redeemed on this day" ="ఈనాడులో రీడీమబుల్ పాయింట్లు";
+"An average income is required" = "నెలకు సగటు సంపాదన అవసరం";
+"garage name" = "గ్యారేజ్ పేరు";
+"behavior" = "బిహేవియర్";
+"your_account_is_deleted" = "మీ ఖాతా తొలగించబడింది. దయచేసి మీ నిర్వాహకుడిని సంప్రదించండి.";
+"order status" = "ఆర్డర్ స్థితి";
+
+"Search by product name" = "ఉత్పత్తి పేరు ద్వారా శోధించండి";
+"Your details have been successfully submitted." = "మీ వివరాలు విజయవంతంగా సమర్పించబడ్డాయి.";
+"Failed to submit your details after some time" = "కొంత సమయం తర్వాత మీ వివరాలను సమర్పించడంలో విఫలమైంది";
+"Select date or filter status or both" = "తేదీ లేదా ఫిల్టర్ స్థితి లేదా రెండింటినీ ఎంచుకోండి";
+"Select a date" = "తేదీని ఎంచుకోండి";
+"Select from date" = "తేదీ నుండి ఎంచుకోండి";
+"ToDate should be lower than FromDate" = "ఈ తేదీ నుండి తేదీ కంటే తక్కువగా ఉండాలి";
+"notification" = "నోటిఫికేషన్";
+"add to cart" = "కార్ట్";
+"Added to cart" = "Added to cart";
+"Add to dreamgift" = "Add to dreamgift";
+"Added to dreamgift" = "Added to dreamgift";

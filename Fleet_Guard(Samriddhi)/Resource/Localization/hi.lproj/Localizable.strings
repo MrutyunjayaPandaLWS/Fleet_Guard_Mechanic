@@ -51,7 +51,7 @@
 
 // MARK: - SIDE MENU = // मार्क: - साइड मेनू
 
-"Profile" = "प्रोफाइल";
+"profile" = "प्रोफाइल";
 "My_Ledger" = "मेरा लेज़र";
 "My_Redemption_History" = "मेरा रिडेम्पशन हिस्ट्री";
 "Redemption_Catalogue" = "रिडेम्पशन कैटेलॉग";
@@ -179,3 +179,35 @@
 "other_device_Login_error" = "आपका खाता अन्य मोबाइल द्वारा लॉग इन किया गया है।";
 "account_deactive_error" = "आपका खाता निष्क्रिय कर दिया गया है, कृपया व्यवस्थापक से संपर्क करें";
 "Redemption_Failed" = "रिडेम्पशन विफल";
+"Search by Part Number / Cross Reference" = "भाग संख्या/क्रॉस संदर्भ द्वारा खोजें";
+"query type" = "क्वेरी प्रकार"; //निशान
+"View" = "देखें";
+"Description" = "विवरण";
+"noDataFound" = "कोई डेटा नहीं मिला";
+"add more" = "और जोड़ें";
+"Details" = "विवरण";
+"delete" = "हटाएं";
+"Category" = "श्रेणी";
+"account_deleted_successfully" = "खाता सफलतापूर्वक हटा दिया गया";
+"are_sure_delete_account" = "क्या आप वाकई अपना खाता हटाना चाहते हैं?";
+
+"points available" = "उपलब्ध अंक";
+"marks required" = "आवश्यक अंक";
+"Redeemable Points as of today" = "आज की स्थिति के अनुसार भुनाए जाने योग्य अंक";
+"required average earning per month" = "प्रति माह आवश्यक औसत कमाई";
+"garage name" = "गैराज नाम";
+"Behaviour" = "व्यवहार";
+"your_account_is_deleted" = "आपका खाता हटा दिया गया है। कृपया अपने व्यवस्थापक से संपर्क करें।";
+"order status" = "आदेश स्थिति";
+"search by product name" = "उत्पाद के नाम से खोजें";
+"Your details have been submitted successfully।" = "आपका विवरण सफलतापूर्वक सबमिट कर दिया गया है।";
+"Failed to submit your details, please try later" = "आपका विवरण सबमिट करने में विफल रहा, कुछ समय बाद प्रयास करें";
+"Select date or filter condition or both" = "तिथि या फ़िल्टर स्थिति या दोनों का चयन करें";
+"pick a date" = "तारीख चुनें";
+"select by date" = "तिथि से चयन करें";
+"toDate must be less than fromDate" = "टूडेट को फ्रॉमडेट से कम होना चाहिए";
+"notification" = "अधिसूचना";
+"Add to Cart" = "कार्ट में जोड़ें";
+"added to cart" = "कार्ट में जोड़ा गया";
+"Add to DreamGift" = "ड्रीमगिफ्ट में जोड़ें";
+"added to dreamgift" = "ड्रीमगिफ्ट में जोड़ा गया";

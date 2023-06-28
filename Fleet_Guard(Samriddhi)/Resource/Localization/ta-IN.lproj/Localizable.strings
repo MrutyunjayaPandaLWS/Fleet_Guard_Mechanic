@@ -50,7 +50,7 @@
 
 // மார்க்: - பக்க மெனு
 
-"Profile" = "சுயவிவரம்";
+"profile" = "சுயவிவரம்";
 "My_Ledger" = "என் லெட்ஜர்";
 "My_Redemption_History" = "எனது மீட்பு வரலாறு";
 "Redemption_Catalogue" = "மீட்பு பட்டியல்";
@@ -178,3 +178,34 @@
 "other_device_Login_error" = "உங்கள் கணக்கு மற்ற மொபைல் மூலம் உள்நுழைந்தது.";
 "account_deactivated_error" = "உங்கள் கணக்கு செயலிழக்கப்பட்டது தயவுசெய்து நிர்வாகியுடன் சரிபார்க்கவும்";
 "Redemption_Failed" = "மீட்பு தோல்வியடைந்தது";
+"Search by part no/ cross reference" = "பகுதி எண்/ குறுக்கு குறிப்பு மூலம் தேடு";
+"Query type" = "வினவல் வகை"; //குறி
+"View" = "பார்வை";
+"Description" = "விளக்கம்";
+"noDataFound" = "தரவு எதுவும் கிடைக்கவில்லை";
+"Add More" = "மேலும் சேர்";
+"Details"  = "விவரங்கள்";
+"Remove"= "நீக்கு";
+"Category"  = "வகை";
+"Account_deleted_successfully" = "கணக்கு வெற்றிகரமாக நீக்கப்பட்டது";
+"are_sure_delete_account" = "உங்கள் கணக்கை நிச்சயமாக நீக்க விரும்புகிறீர்களா?";
+"Points Available" = "Points Available";
+"Points Required" = "Points Required";
+"Redeemable Points as on Today" ="இன்றைய தேதியில் பெறக்கூடிய புள்ளிகள்";
+"Average earning required per month"  = "மாதத்திற்கு சராசரி வருவாய் தேவை";
+"Garage Name" = "கேரேஜ் பெயர்";
+"Behaviour" = "நடத்தை";
+"your_account_is_deleted" = "உங்கள் கணக்கு நீக்கப்பட்டது. தயவுசெய்து உங்கள் நிர்வாகியைத் தொடர்பு கொள்ளவும்.";
+"Order Status" = "ஆர்டர் நிலை";
+"Search by product name"= "தயாரிப்பு பெயர் மூலம் தேடு";
+"Your details have been submitted successfully."  = "உங்கள் விவரங்கள் வெற்றிகரமாக சமர்ப்பிக்கப்பட்டன.";
+"Failed to submit your details try after some time"  = "சிறிது நேரத்திற்குப் பிறகு உங்கள் விவரங்களைச் சமர்ப்பிக்கத் தவறிவிட்டது";
+"Select date or filter status or both" = "தேதி அல்லது வடிகட்டி நிலை அல்லது இரண்டையும் தேர்ந்தெடு";
+"Select To Date"  = "தேர்ந்தெடு தேதி";
+"Select From Date"= "தேதியிலிருந்து தேர்ந்தெடு";
+"ToDate should be lower than FromDate" = "ToDate fromDate ஐ விட குறைவாக இருக்க வேண்டும்";
+"Notification" = "அறிவிப்பு";
+"Add to cart" = "வண்டியில் சேர்";
+"Added to cart"  = "வண்டியில் சேர்க்கப்பட்டது";
+"Add to dreamgift" = "Add to dreamgift";
+"Added to dreamgift" = "Added to dreamgift";

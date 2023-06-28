@@ -77,6 +77,7 @@ class RedemptionCatalogeDetailsVM: popUpDelegate {
                                 self.VC?.present(vc!, animated: true, completion: nil)
                                 self.VC?.addToCartView.isHidden = true
                                 self.VC?.addedToCartView.isHidden = false
+                                self.VC?.addCartBtnStatus = 1
                                 
                             }
                             self.VC?.myCartListApi()
@@ -88,7 +89,7 @@ class RedemptionCatalogeDetailsVM: popUpDelegate {
 //                                vc!.modalPresentationStyle = .overCurrentContext
 //                                vc!.modalTransitionStyle = .crossDissolve
 //                                self.VC?.present(vc!, animated: true, completion: nil)
-                                
+                                self.VC?.addCartBtnStatus = 0
                                 self.VC?.view.makeToast("Something_went_wrong_error".localiz(), duration: 3.0, position: .bottom)
                             }
                         }
@@ -123,10 +124,20 @@ class RedemptionCatalogeDetailsVM: popUpDelegate {
                         if result?.returnValue ?? 0 != 0{
                             DispatchQueue.main.async{
                                 self.VC?.view.makeToast("Product_added_to_dreamgift".localiz(), duration: 3.0, position: .bottom)
+                                self.VC?.addedToCartView.isHidden = true
+                                self.VC?.addToCartView.isHidden = true
+                                self.VC?.addedToDreamGiftView.isHidden = false
+                                self.VC?.addToDreamGiftView.isHidden = true
+                                self.VC?.addDreamGiftBtnStatus = 1
                             }
                         }else{
                             DispatchQueue.main.async{
                                 self.VC?.view.makeToast("faild_to_add_dream_gift".localiz(), duration: 3.0, position: .bottom)
+                                self.VC?.addedToCartView.isHidden = true
+                                self.VC?.addToCartView.isHidden = true
+                                self.VC?.addedToDreamGiftView.isHidden = true
+                                self.VC?.addToDreamGiftView.isHidden = false
+                                self.VC?.addDreamGiftBtnStatus = 0
                             }
                         }
                     }
@@ -144,6 +155,33 @@ class RedemptionCatalogeDetailsVM: popUpDelegate {
                 }
             }
         }
+    }
+    
+    
+    func plannerListingApi(parameters: JSON, completion: @escaping (PlannerListModels?) -> ()){
+        self.VC?.startLoading()
+        self.requestApis.plannerListApi(parameters: parameters) { (result, error) in
+            if error == nil{
+                if result != nil {
+                    DispatchQueue.main.async {
+                        completion(result)
+                        
+                    }
+                } else {
+                    print("No Response")
+                    DispatchQueue.main.async {
+                        self.VC?.stopLoading()
+                    }
+                }
+            }else{
+                print("ERROR_Login \(error)")
+                DispatchQueue.main.async {
+                    self.VC?.stopLoading()
+                }
+
+        }
+    }
+    
     }
     
 }

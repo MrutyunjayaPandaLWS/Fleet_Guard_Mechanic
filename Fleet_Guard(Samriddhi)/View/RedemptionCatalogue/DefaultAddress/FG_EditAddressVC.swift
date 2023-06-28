@@ -105,6 +105,8 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
         self.stateLbl.text = selectedState
         self.selectCityLbl.text = selectedCity
         self.pincodeTF.text = selectedpincode
+        emailAddressTF.keyboardType = .emailAddress
+        addressTF.keyboardType = .emailAddress
 
     }
     @IBAction func backBtn(_ sender: Any) {

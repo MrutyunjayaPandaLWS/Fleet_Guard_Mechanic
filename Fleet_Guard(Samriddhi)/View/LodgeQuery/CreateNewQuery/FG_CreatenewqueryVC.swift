@@ -138,7 +138,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
                 
                 self.view.makeToast("Select_query_topic".localiz(), duration: 3.0, position: .bottom)
             }
-        }else if self.queryDetailsView.text!.count == 0 || self.queryDetailsView.text == "-" || self.queryDetailsView.text == "Enter query Details..."{
+        }else if self.queryDetailsView.text!.count == 0 || self.queryDetailsView.text == "-" || self.queryDetailsView.text == "Please Enter Query Details"{
             DispatchQueue.main.async{
 //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                vc!.delegate = self
@@ -159,7 +159,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
                 "HelpTopic": "\(self.selectedTopic)",
                 "HelpTopicID": "\(self.selectedTopicId)",
                 "QueryDetails": "\(self.queryDetailsView.text!)",
-                "QuerySummary": "",
+                "QuerySummary": "\(self.queryDetailsView.text!)",
                 "ImageUrl": "\(self.strBase64)",
                 "LoyaltyID": "\(self.loyaltyId)",
                 "SourceType": "3",

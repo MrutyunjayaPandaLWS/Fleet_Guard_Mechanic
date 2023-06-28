@@ -105,6 +105,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         noDataFoundLbl.isHidden = true
         self.levelTwoView.layer.cornerRadius = 20
         self.levelTwoView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        searchTF.placeholder = "Search by product name".localiz()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -205,43 +206,54 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     }
     
 @IBAction func searchByEditingTFAct(_ sender: Any) {
-        if self.searchTF.text!.count != 0 || self.searchTF.text ?? "" != ""{
-            if self.VM.redemptionCatalougeListArray.count > 0 {
-                let arr = self.VM.redemptionCatalougeListArray.filter{ ($0.productName!.localizedCaseInsensitiveContains(self.searchTF.text!))}
-                print(arr.count,"dsds")
-                if self.searchTF.text! != ""{
-                    if arr.count > 0 {
-                        self.VM.redemptionCatalougeListArray.removeAll(keepingCapacity: true)
-                        print(VM.redemptionCatalougeListArray.count,"jshdhs")
-                        self.VM.redemptionCatalougeListArray = arr
-                        self.catalogueListTableView.reloadData()
-                        self.catalogueListTableView.isHidden = false
-                        noDataFoundLbl.isHidden = true
-                    }else {
-                        self.VM.redemptionCatalougeListArray = self.VM.productArray
-                        self.catalogueListTableView.reloadData()
-                        self.catalogueListTableView.isHidden = true
-                        noDataFoundLbl.isHidden = false
-                    }
-                }else{
-                    self.VM.redemptionCatalougeListArray = self.VM.productArray
-                    self.catalogueListTableView.reloadData()
-                    catalogueListTableView.isHidden = true
-                    noDataFoundLbl.isHidden = false
-                }
-                let searchText = self.searchTF.text!
-                if searchText.count > 0 || self.VM.redemptionCatalougeListArray.count == self.VM.productArray.count {
-                    self.catalogueListTableView.reloadData()
-                }
-            }
-        }else{
-            self.VM.redemptionCatalougeListArray.removeAll()
-            self.catalogueListTableView.reloadData()
-            //self.itsFrom = "Category"
-            self.redemptionCatalogueListApi(startIndex: startindex)
-            noDataFoundLbl.isHidden = true
-        }
-        
+//        if self.searchTF.text!.count != 0 || self.searchTF.text ?? "" != ""{
+//            if self.VM.redemptionCatalougeListArray.count > 0 {
+//                let arr = self.VM.redemptionCatalougeListArray.filter{ ($0.productName!.localizedCaseInsensitiveContains(self.searchTF.text!))}
+//                print(arr.count,"dsds")
+//                if self.searchTF.text! != ""{
+//                    if arr.count > 0 {
+//                        self.VM.redemptionCatalougeListArray.removeAll(keepingCapacity: true)
+//                        print(VM.redemptionCatalougeListArray.count,"jshdhs")
+//                        self.VM.redemptionCatalougeListArray = arr
+//                        self.catalogueListTableView.reloadData()
+//                        self.catalogueListTableView.isHidden = false
+//                        noDataFoundLbl.isHidden = true
+//                    }else {
+//                        self.VM.redemptionCatalougeListArray = self.VM.productArray
+//                        self.catalogueListTableView.reloadData()
+//                        self.catalogueListTableView.isHidden = true
+//                        noDataFoundLbl.isHidden = false
+//                    }
+//                }else{
+//                    self.VM.redemptionCatalougeListArray = self.VM.productArray
+//                    self.catalogueListTableView.reloadData()
+//                    catalogueListTableView.isHidden = true
+//                    noDataFoundLbl.isHidden = false
+//                }
+//                let searchText = self.searchTF.text!
+//                if searchText.count > 0 || self.VM.redemptionCatalougeListArray.count == self.VM.productArray.count {
+//                    self.catalogueListTableView.reloadData()
+//                }
+//            }
+//        }else{
+//            self.VM.redemptionCatalougeListArray.removeAll()
+//            self.catalogueListTableView.reloadData()
+//            //self.itsFrom = "Category"
+//            self.redemptionCatalogueListApi(startIndex: startindex)
+//            noDataFoundLbl.isHidden = true
+//        }
+    if self.searchTF.text!.count != 0 || self.searchTF.text ?? "" != ""{
+        self.VM.redemptionCatalougeListArray.removeAll()
+        self.catalogueListTableView.reloadData()
+        self.redemptionCatalogueListApi(startIndex: startindex)
+    }else{
+        self.VM.redemptionCatalougeListArray.removeAll()
+        self.catalogueListTableView.reloadData()
+        //self.itsFrom = "Category"
+        self.redemptionCatalogueListApi(startIndex: startindex)
+        noDataFoundLbl.isHidden = true
+    }
+  
         
     }
     
@@ -285,7 +297,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         vc.termsandContions = self.VM.redemptionCatalougeListArray[tappedIndex.row].termsCondition ?? ""
         vc.catalogueId = self.VM.redemptionCatalougeListArray[tappedIndex.row].catalogueId ?? 0
         print(self.VM.redemptionCatalougeListArray[tappedIndex.row].isPlanner!)
-        
+//        vc.myPlannerListArray = self.VM.myPlannerListArray
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

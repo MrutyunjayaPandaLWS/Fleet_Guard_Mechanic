@@ -11,6 +11,7 @@ import LanguageManager_iOS
 
 class FG_MyPromotionDetailsVC: BaseViewController {
 
+    @IBOutlet weak var descriptionTitleLbl: UILabel!
     @IBOutlet weak var offersPromotionTitleLbl: UILabel!
     @IBOutlet weak var termsandconditionLbl: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
@@ -51,6 +52,7 @@ class FG_MyPromotionDetailsVC: BaseViewController {
         subView.layer.shadowOpacity = 0.4
         subView.layer.shadowRadius = 0.4
         subView.layer.shadowColor = UIColor.darkGray.cgColor
+        localization()
     }
     
     
@@ -60,6 +62,9 @@ class FG_MyPromotionDetailsVC: BaseViewController {
     @IBAction func languageBtn(_ sender: Any) {
     }
     
-    
+    private func localization(){
+        offersPromotionTitleLbl.text = "Offers_promotions".localiz()
+        descriptionTitleLbl.text = "Description".localiz()
+    }
     
 }

@@ -51,13 +51,7 @@ class FG_DashboardVM: popUpDelegate{
                                 print(result?.objCustomerDashboardList?[0].memberSince ?? "", "Membersince")
                                 print(result?.objCustomerDashboardList?[0].notificationCount ?? "", "NotificationCount")
                                 print(result?.objCustomerDashboardList?[0].redeemablePointsBalance ?? "", "totalpoints")
-                                
-                                
-                                
-                                
-                                
-                                
-                        UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].redeemablePointsBalance ?? "", forKey: "TotalPoints")
+                                UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].redeemablePointsBalance ?? "", forKey: "TotalPoints")
                                 UserDefaults.standard.synchronize()
                                 
                                 
@@ -101,15 +95,15 @@ class FG_DashboardVM: popUpDelegate{
                             self.VC?.stopLoading()
                         }
                     }
-//                    self.VC?.dashboardPointsApi()
+                    //                    self.VC?.dashboardPointsApi()
                 }else{
                     DispatchQueue.main.async {
-                    self.VC?.stopLoading()
+                        self.VC?.stopLoading()
                     }
                 }
             }else{
                 DispatchQueue.main.async {
-                self.VC?.stopLoading()
+                    self.VC?.stopLoading()
                 }
             }
         }
@@ -122,25 +116,25 @@ class FG_DashboardVM: popUpDelegate{
         self.requestApis.dashboardTotalPointsApi(parameters: parameter) { (result, error) in
             if error == nil{
                 if result != nil{
-                DispatchQueue.main.async {
-                    self.VC?.stopLoading()
-                   let dashboardDetails = result?.objCustomerDashboardList ?? []
-                    if dashboardDetails.count != 0 {
-                        print("\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0), Total Earned Points")
-                    UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0, forKey: "TotalPoints")
-                        //self.VC?.totalValue.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
-                                UserDefaults.standard.synchronize()
+                    DispatchQueue.main.async {
+                        self.VC?.stopLoading()
+                        let dashboardDetails = result?.objCustomerDashboardList ?? []
+                        if dashboardDetails.count != 0 {
+                            print("\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0), Total Earned Points")
+                            UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0, forKey: "TotalPoints")
+                            //self.VC?.totalValue.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
+                            UserDefaults.standard.synchronize()
+                        }
+                        self.VC?.stopLoading()
                     }
-                    self.VC?.stopLoading()
-                }
                 }else{
                     DispatchQueue.main.async {
-                    self.VC?.stopLoading()
+                        self.VC?.stopLoading()
                     }
                 }
             }else{
                 DispatchQueue.main.async {
-                self.VC?.stopLoading()
+                    self.VC?.stopLoading()
                 }
             }
         }
@@ -153,63 +147,63 @@ class FG_DashboardVM: popUpDelegate{
         self.requestApis.productsCategoryListApi(parameters: parameter) { (result, error) in
             if error == nil{
                 if result != nil{
-                DispatchQueue.main.async {
-                    self.VC?.stopLoading()
-                    self.categoryListArray = result?.lstAttributesDetails ?? []
-                    if self.categoryListArray.count != 0 {
-                        self.VC?.noDatafoundLbl.isHidden = true
-                        self.VC?.categoryCollectionView.isHidden = false
-                        self.VC?.categoryCollectionView.reloadData()
-                    }else{
-                        self.VC?.noDatafoundLbl.isHidden = false
-                        self.VC?.categoryCollectionView.isHidden = true
+                    DispatchQueue.main.async {
+                        self.VC?.stopLoading()
+                        self.categoryListArray = result?.lstAttributesDetails ?? []
+                        if self.categoryListArray.count != 0 {
+                            self.VC?.noDatafoundLbl.isHidden = true
+                            self.VC?.categoryCollectionView.isHidden = false
+                            self.VC?.categoryCollectionView.reloadData()
+                        }else{
+                            self.VC?.noDatafoundLbl.isHidden = false
+                            self.VC?.categoryCollectionView.isHidden = true
+                        }
                     }
-                }
                 }else{
                     DispatchQueue.main.async {
-                    self.VC?.noDatafoundLbl.isHidden = true
-                    self.VC?.stopLoading()
+                        self.VC?.noDatafoundLbl.isHidden = true
+                        self.VC?.stopLoading()
                     }
                 }
             }else{
                 DispatchQueue.main.async {
-                self.VC?.noDatafoundLbl.isHidden = true
-                self.VC?.stopLoading()
+                    self.VC?.noDatafoundLbl.isHidden = true
+                    self.VC?.stopLoading()
                 }
             }
-        } 
+        }
     }
     
     func pointBalenceAPI(parameter: JSON){
-//        DispatchQueue.main.async {
-//            self.VC?.startLoading()
-//        }
+        //        DispatchQueue.main.async {
+        //            self.VC?.startLoading()
+        //        }
         self.requestApis.pointBalenceAPI(parameters: parameter) { (result, error) in
             if error == nil{
                 if result != nil{
-                DispatchQueue.main.async {
-//                    self.VC?.stopLoading()
-                  
-                    if result?.objCustomerDashboardList?.count != 0 {
-                        self.pointBalence = result?.objCustomerDashboardList ?? []
-                        self.totalPointBalence = result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0
-                        UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
-                        UserDefaults.standard.set(result?.objCustomerDashboardList?[0].redeemablePointsBalance, forKey: "redeemablePointsBalance")
-                        self.VC?.totalPtsBalance.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
+                    DispatchQueue.main.async {
+                        //                    self.VC?.stopLoading()
                         
-                        UserDefaults.standard.set(true, forKey: "AfterLog")
-                        UserDefaults.standard.synchronize()
+                        if result?.objCustomerDashboardList?.count != 0 {
+                            self.pointBalence = result?.objCustomerDashboardList ?? []
+                            self.totalPointBalence = result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0
+                            UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
+                            UserDefaults.standard.set(result?.objCustomerDashboardList?[0].redeemablePointsBalance, forKey: "redeemablePointsBalance")
+                            self.VC?.totalPtsBalance.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
+                            
+                            UserDefaults.standard.set(true, forKey: "AfterLog")
+                            UserDefaults.standard.synchronize()
+                        }
+                        
                     }
-                  
-                }
                 }else{
                     DispatchQueue.main.async {
-//                    self.VC?.stopLoading()
+                        //                    self.VC?.stopLoading()
                     }
                 }
             }else{
                 DispatchQueue.main.async {
-//                self.VC?.stopLoading()
+                    //                self.VC?.stopLoading()
                 }
             }
         }
@@ -219,54 +213,54 @@ class FG_DashboardVM: popUpDelegate{
         DispatchQueue.main.async {
             self.VC?.startLoading()
         }
-    self.requestApis.plannerListApi(parameters: parameter) { (result, error) in
-        self.myPlannerListArray = result?.objCatalogueList ?? []
-        print(self.myPlannerListArray.count, "Planner List Cout")
-        DispatchQueue.main.async {
-            self.VC?.stopLoading()
-            
-            if self.myPlannerListArray.count > 0 {
-                self.VC?.dreamGiftDetailsOutBtn.isHidden = true
-                self.VC?.dreamGiftImageView.isHidden = true
-                self.VC?.addYourDreamLbl.isHidden = true
-                self.VC?.productViewHeight.constant = 170
-                self.VC?.heightOfTheView.constant = 627
-    
-                self.VC?.plannerPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointBalance ?? 0))"
-                self.VC?.plannerCategoryLbl.text = "Category: \(result?.objCatalogueList?[0].catogoryName ?? "-")"
-                self.VC?.plannerProductLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
-               // self.VC?.plannerPointsRequiredLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
-                let image =  imageUrl + (result?.objCatalogueList?[0].productImage ?? "").replacingOccurrences(of: " ", with: "%20")
-                self.VC?.plannerImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
-                self.VC?.plannerPointsReqPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointsRequired ?? 0))"
-                var pointBal = CGFloat(result?.objCatalogueList?[0].pointBalance ?? 0)
-                var requiredBal = CGFloat(result?.objCatalogueList?[0].pointsRequired ?? 0)
-                var progressPercent = CGFloat(pointBal/requiredBal) * 100.0
-                self.VC?.progressViewDreamGift.progress = Float((progressPercent / 100.0) )
-                if progressPercent < 100.0{
-                    self.VC?.progressBarLbl.text = "\(Int(progressPercent)) %"
-                    self.VC?.progressCircleViewLeading.constant = ((self.VC?.progressViewDreamGift.frame.width ?? 0) * CGFloat(progressPercent/100))
+        self.requestApis.plannerListApi(parameters: parameter) { (result, error) in
+            self.myPlannerListArray = result?.objCatalogueList ?? []
+            print(self.myPlannerListArray.count, "Planner List Cout")
+            DispatchQueue.main.async {
+                self.VC?.stopLoading()
+                
+                if self.myPlannerListArray.count > 0 {
+                    self.VC?.dreamGiftDetailsOutBtn.isHidden = true
+                    self.VC?.dreamGiftImageView.isHidden = true
+                    self.VC?.addYourDreamLbl.isHidden = true
+                    self.VC?.productViewHeight.constant = 170
+                    self.VC?.heightOfTheView.constant = 627
+                    
+                    self.VC?.plannerPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointBalance ?? 0))"
+                    self.VC?.plannerCategoryLbl.text = "Category: \(result?.objCatalogueList?[0].catogoryName ?? "-")"
+                    self.VC?.plannerProductLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
+                    // self.VC?.plannerPointsRequiredLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
+                    let image =  imageUrl + (result?.objCatalogueList?[0].productImage ?? "").replacingOccurrences(of: " ", with: "%20")
+                    self.VC?.plannerImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
+                    self.VC?.plannerPointsReqPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointsRequired ?? 0))"
+                    var pointBal = CGFloat(result?.objCatalogueList?[0].pointBalance ?? 0)
+                    var requiredBal = CGFloat(result?.objCatalogueList?[0].pointsRequired ?? 0)
+                    var progressPercent = CGFloat(pointBal/requiredBal) * 100.0
+                    self.VC?.progressViewDreamGift.progress = Float((progressPercent / 100.0) )
+                    if progressPercent < 100.0{
+                        self.VC?.progressBarLbl.text = "\(Int(progressPercent)) %"
+                        self.VC?.progressCircleViewLeading.constant = ((self.VC?.progressViewDreamGift.frame.width ?? 0) * CGFloat(progressPercent/100))
+                    }else{
+                        self.VC?.progressBarLbl.text = "100 %"
+                        self.VC?.progressCircleViewLeading.constant = self.VC?.progressViewDreamGift.frame.width ?? 0
+                    }
+                    
+                    
                 }else{
-                    self.VC?.progressBarLbl.text = "100 %"
-                    self.VC?.progressCircleViewLeading.constant = self.VC?.progressViewDreamGift.frame.width ?? 0
+                    self.VC?.dreamGiftDetailsOutBtn.isHidden = false
+                    self.VC?.dreamGiftImageView.isHidden = false
+                    self.VC?.addYourDreamLbl.isHidden = false
+                    self.VC?.productViewHeight.constant = 100
+                    self.VC?.heightOfTheView.constant = 550
+                    
                 }
-              
-
-            }else{
-                self.VC?.dreamGiftDetailsOutBtn.isHidden = false
-                self.VC?.dreamGiftImageView.isHidden = false
-                self.VC?.addYourDreamLbl.isHidden = false
-                self.VC?.productViewHeight.constant = 100
-                self.VC?.heightOfTheView.constant = 550
                 
             }
-            
         }
+        
     }
     
-}
     
-
     func dashboardImagesAPICall(parameters: JSON, completion: @escaping (DashboardBannerImageModels?) -> ()) {
         DispatchQueue.main.async {
             self.VC?.startLoading()
@@ -320,10 +314,37 @@ class FG_DashboardVM: popUpDelegate{
                 DispatchQueue.main.async {
                     self.VC?.stopLoading()
                 }
-
+                
+            }
         }
+        
     }
     
+    
+    func deleteAccount(parameters: JSON, completion: @escaping (DeleteAccountModels?) -> ()) {
+        self.VC1?.startLoading()
+        self.requestApis.deleteAccountApi(parameters: parameters) { (result, error) in
+            if error == nil {
+                if result != nil {
+                    DispatchQueue.main.async {
+                        completion(result)
+                        self.VC1?.stopLoading()
+                    }
+                } else {
+                    print("No Response")
+                    DispatchQueue.main.async {
+                        self.VC1?.stopLoading()
+                    }
+                }
+            }else{
+                print("ERROR_Login \(error)")
+                DispatchQueue.main.async {
+                    self.VC1?.stopLoading()
+                }
+                
+            }
+            
+        }
     }
     
 }

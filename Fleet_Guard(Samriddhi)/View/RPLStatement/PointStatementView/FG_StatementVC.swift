@@ -50,11 +50,17 @@ class FG_StatementVC: BaseViewController,StatementViewDelegate{
         self.ledgerStackView.layer.cornerRadius = 15
         self.ledgerStackView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         self.rlpStatemnet()
+        nodataFoundLbl.text = "noDataFound".localiz()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         headerText.text = "My_Ledger".localiz()
+        monthLbl.text = "Date".localiz()
+        ptsEarnedLbl.text = "points".localiz()
+        balanceLbl.text = "Behaviour".localiz()
+        viewLbl.text = "View".localiz()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -144,9 +144,9 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
         self.selectDOBLbl.text = dob
         self.selectCountryLbl.text = "India"
         self.addressTF.text = self.addressLbl
-        genderName == "-" ? (self.selectGenderLbl.text = "Select_Gender".localiz()) : (self.selectGenderLbl.text = genderName)
-        dob == "-" ? (self.selectDOBLbl.text = "Select_DOB".localiz()) : (self.selectDOBLbl.text = dob)
-        prefLanguage == "-" ? (self.selectPreferredLanguage.text = "Select Preferred Language") : (self.selectPreferredLanguage.text = prefLanguage)
+        genderName == "" ? (self.selectGenderLbl.text = "Select_Gender".localiz()) : (self.selectGenderLbl.text = genderName)
+        dob == "" ? (self.selectDOBLbl.text = "Select_DOB".localiz()) : (self.selectDOBLbl.text = dob)
+        prefLanguage == "" ? (self.selectPreferredLanguage.text = "Select Preferred Language") : (self.selectPreferredLanguage.text = prefLanguage)
         
         addressId = profileDetails?.lstCustomerJson?[0].addressId ?? 0
         customerTypeID = profileDetails?.lstCustomerJson?[0].customerTypeID ?? 54
@@ -158,6 +158,7 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
         locationCode = profileDetails?.lstCustomerJson?[0].locationId ?? -1
         selectedStateId = profileDetails?.lstCustomerJson?[0].stateId ?? -1
         selectedCityId = profileDetails?.lstCustomerJson?[0].cityId ?? -1
+        emailTF.keyboardType = .emailAddress
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -265,6 +266,37 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     
     
     func editDataAPI(){
+//        let parameters : [String : Any] = [
+//            "ActionType": "4",
+//            "ActorId": "\(userID)",
+//            "IsMobileRequest": 1,
+//            "ObjCustomerDetails": [
+//                "Gender": genderName,
+//                "LanguageID": selectedLanguageId
+//            ],
+//            "ObjCustomerJson": [
+//                "Address1": addressTF.text ?? "",
+//                "AddressId": addressId,
+//                "CustomerId": customerType,
+//                "CustomerTypeID": customerTypeID,
+//                "Email": emailTF.text ?? "",
+//                "FirstName": firstNameTF.text ?? "",
+//                "LastName": lastNameTF.text ?? "",
+//                "IsActive": "\(isactive)",
+//                "JDOB": dob,
+//                "LoyaltyIdAutoGen": 1,
+//                "MerchantId": 1,
+//                "CountryId": countryId,
+//                "LocationId": locationCode ,
+//                "Mobile": mobileTF.text ?? "",
+//                "RegStatusid": 2,
+//                "RegistrationSource": "5",
+//                "StateId": selectedStateId,
+//                "Zip": pincodeTF.text ?? "",
+//                "cityid": selectedCityId
+//            ]
+//        ]
+//
         let parameters : [String : Any] = [
             "ActionType": "4",
             "ActorId": "\(userID)",
@@ -272,7 +304,7 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
             "ObjCustomerDetails": [
                 "Gender": genderName,
                 "LanguageID": selectedLanguageId
-            ],
+            ] as [String : Any],
             "ObjCustomerJson": [
                 "Address1": addressTF.text ?? "",
                 "AddressId": addressId,
@@ -281,20 +313,21 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
                 "Email": emailTF.text ?? "",
                 "FirstName": firstNameTF.text ?? "",
                 "LastName": lastNameTF.text ?? "",
-                "IsActive": "\(isactive)",
+                "IsActive": "1",
                 "JDOB": dob,
                 "LoyaltyIdAutoGen": 1,
                 "MerchantId": 1,
                 "CountryId": countryId,
                 "LocationId": locationCode ,
                 "Mobile": mobileTF.text ?? "",
-                "RegStatusid": 2,
-                "RegistrationSource": "5",
+                "RegStatusid": 1,
+                "RegistrationSource": "3",
                 "StateId": selectedStateId,
                 "Zip": pincodeTF.text ?? "",
                 "cityid": selectedCityId
-            ]
+            ] as [String : Any]
         ]
+        
         print(parameters)
         self.VM.editProfileSubmissionAPI(paramters: parameters)
     }

@@ -149,6 +149,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
         clickHereBtn.setTitle("click_Here".localiz(), for: .normal)
         redemptionCatalogueLbl.text = "redemption_catalogue".localiz()
         knowMoreLbl.text = "know_more".localiz()
+//        dreamGiftDetailsOutBtn.setTitle("Details".localiz(), for: .normal)
     }
     
     

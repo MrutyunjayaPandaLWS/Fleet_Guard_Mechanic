@@ -182,3 +182,38 @@
 "other_device_Login_error" = "Your account loged in by other mobile.";
 "account_deactivated_error" = "Your account is deactivated please check with the administrator";
 "Redemption_Failed" = "Redemption Failed";
+"Search by part no/ cross reference" = "Search by part no/ cross reference";
+"Query type" = "Query type"; //mark
+"View" = "View";
+"Description" = "Description";
+"noDataFound" = "No data found";
+"Add More" = "Add More";
+"Details" = "Details";
+"Remove" = "Remove";
+"Category" = "Category";
+"Account_deleted_successfully" = "Account deleted successfully";
+"are_sure_delete_account" = "Are you sure you really want to delete your account?";
+
+"Points Available" = "Points Available";
+"Points Required" = "Points Required";
+"Redeemable Points as on Today" ="Redeemable Points as on Today";
+"Average earning required per month" = "Average earning required per month";
+"Garage Name" = "Garage Name";
+"Behaviour" = "Behaviour";
+"your_account_is_deleted" = "Your account has been deleted. Kindly contact your administrator.";
+"Order Status" = "Order Status";
+
+"Search by product name" = "Search by product name";
+"Your details have been submitted successfully." = "Your details have been submitted successfully.";
+"Failed to submit your details try after some time" = "Failed to submit your details try after some time";
+
+"Select date or filter status or both" = "Select date or filter status or both";
+"Select To Date" = "Select To Date";
+"Select From Date" = "Select From Date";
+"ToDate should be lower than FromDate" = "ToDate should be lower than FromDate";
+"Notification" = "Notification";
+"Add to cart" = "Add to cart";
+"Added to cart" = "Added to cart";
+"Add to dreamgift" = "Add to dreamgift";
+"Added to dreamgift" = "Added to dreamgift";
+"add_to_cart_success_message" = "";

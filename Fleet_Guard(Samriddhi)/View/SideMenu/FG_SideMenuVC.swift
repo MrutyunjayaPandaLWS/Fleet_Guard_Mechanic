@@ -10,8 +10,47 @@ import SlideMenuControllerSwift
 import LanguageManager_iOS
 
 
-class FG_SideMenuVC: BaseViewController {
+class FG_SideMenuVC: BaseViewController, popUpDelegate {
+    func popupAlertDidTap(_ vc: FG_PopUpVC) {
+        self.closeLeft()
+        
+        UserDefaults.standard.set(false, forKey: "IsloggedIn?")
+        
+        if #available(iOS 13.0, *) {
+            DispatchQueue.main.async {
+                let pushID = UserDefaults.standard.string(forKey: "UD_DEVICE_TOKEN") ?? ""
+                let domain = Bundle.main.bundleIdentifier!
+                UserDefaults.standard.removePersistentDomain(forName: domain)
+                UserDefaults.standard.set(true, forKey: "AfterLog")
+                UserDefaults.standard.synchronize()
+                UserDefaults.standard.setValue(pushID, forKey: "UD_DEVICE_TOKEN")
+                let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+                sceneDelegate.setInitialViewAsRootViewController()
+             //   self.clearTable2()
+            }
+        } else {
+            DispatchQueue.main.async {
+                let pushID = UserDefaults.standard.string(forKey: "UD_DEVICE_TOKEN") ?? ""
+                let domain = Bundle.main.bundleIdentifier!
+                UserDefaults.standard.removePersistentDomain(forName: domain)
+                UserDefaults.standard.set(true, forKey: "AfterLog")
+                UserDefaults.standard.synchronize()
+                UserDefaults.standard.setValue(pushID, forKey: "UD_DEVICE_TOKEN")
+                if #available(iOS 13.0, *) {
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.setInitialViewAsRootViewController()
+                } else {
+                    // Fallback on earlier versions
+                }
+                
+              //  self.clearTable2()
+            }
+        }
+    }
+    
 
+    @IBOutlet weak var GarageNameLbl: UILabel!
+    @IBOutlet weak var garagenameTitleLbl: UILabel!
     @IBOutlet weak var sideMenuTableHeight: NSLayoutConstraint!
     @IBOutlet weak var passbookNumber: UILabel!
     @IBOutlet weak var passbookNum: UILabel!
@@ -22,7 +61,7 @@ class FG_SideMenuVC: BaseViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var sideMenuTableView: UITableView!
     var requestApis = RestAPI_Requests()
-    var sideMenuArray = ["Profile", "My_Ledger", "My_Redemption_History", "Redemption_Catalogue", "Product_Catalogue", "Dream_Gift", "My_Promotions", "Lodge_Query", "About", "FAQs", "T&C", "Logout","Delete"]
+    var sideMenuArray = ["profile", "My_Ledger", "My_Redemption_History", "Redemption_Catalogue", "Product_Catalogue", "Dream_Gift", "My_Promotions", "Lodge_Query", "About", "FAQs", "T&C", "Logout","Delete"]
     var sideMenuTitleArray = [String]()
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
@@ -52,6 +91,7 @@ class FG_SideMenuVC: BaseViewController {
         self.sinceLbl.text = "\("Since".localiz()) \(userSince)"
         totalBalanceLbl.text = "total_Point_bal".localiz()
         passbookNum.text = "passbook_number".localiz()
+        garagenameTitleLbl.text = "Garage Name".localiz()
         dashboardApi()
     }
     
@@ -75,6 +115,7 @@ class FG_SideMenuVC: BaseViewController {
                     
                         let imageData = (result?.lstCustomerFeedBackJsonApi?[0].customerImage)?.dropFirst(1) ?? ""
                         self.profileImage.kf.setImage(with: URL(string: "\(Promo_ImageData)\(imageData)"), placeholder: UIImage(named: "ic_default_img"));
+                        self.GarageNameLbl.text = "\(result?.lstCustomerFeedBackJsonApi?[0].ownerName ?? "-")"
                     }
                     self.stopLoading()
                 }
@@ -241,9 +282,64 @@ extension FG_SideMenuVC: UITableViewDelegate, UITableViewDataSource{
             }
         }else if indexPath.row == 12{
             print("Your accout is deleted")
+            deleteAccount()
         }
         
     }
     
-    
+    func deleteAccount(){
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+
+                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                vc!.descriptionInfo = "No_Internet".localiz()
+                vc!.itsComeFrom = ""
+                vc!.modalPresentationStyle = .overCurrentContext
+                vc!.modalTransitionStyle = .crossDissolve
+                self.present(vc!, animated: true, completion: nil)
+                
+            }
+        }else{
+            let alert = UIAlertController(title: "", message: "are_sure_delete_account".localiz(), preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { UIAlertAction in
+            let parameters = [
+                "ActionType": 1,
+                "userid":"\(self.userId)"
+            ] as [String : Any]
+            print(parameters)
+                self.VM.deleteAccount(parameters: parameters) { response in
+                    DispatchQueue.main.async {
+                        print(response?.returnMessage ?? "-1")
+                        if response?.returnMessage ?? "-1" == "1"{
+                            DispatchQueue.main.async{
+                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                                vc!.delegate = self
+                                vc!.descriptionInfo = "Account_deleted_successfully".localiz()
+                                vc!.itsComeFrom = "AccounthasbeenDeleted"
+                                vc!.modalPresentationStyle = .overCurrentContext
+                                vc!.modalTransitionStyle = .crossDissolve
+                                self.present(vc!, animated: true, completion: nil)
+                                }
+                        }else{
+                            DispatchQueue.main.async{
+                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                                vc!.delegate = self
+                                vc!.descriptionInfo = "Something_went_wrong_error".localiz()
+                                vc!.itsComeFrom = ""
+                                vc!.modalPresentationStyle = .overCurrentContext
+                                vc!.modalTransitionStyle = .crossDissolve
+                                self.present(vc!, animated: true, completion: nil)
+                                
+                                }
+                        }
+                      self.stopLoading()
+                        }
+                }
+        }))
+            alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+
+        }
+
+    }
 }

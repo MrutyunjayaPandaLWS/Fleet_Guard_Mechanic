@@ -10,6 +10,11 @@ import LanguageManager_iOS
 class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
     
+    @IBOutlet weak var addedToCartBtn: GradientButton!
+    @IBOutlet weak var redeemBtn: GradientButton!
+    @IBOutlet weak var avaragePointsTitle: UILabel!
+    @IBOutlet weak var RedeemablePointsTitle: UILabel!
+    @IBOutlet weak var categoryTitleLbl: UILabel!
     @IBOutlet weak var expectRedeemDate: UILabel!
     @IBOutlet weak var expectRedeemProductName: UILabel!
     @IBOutlet weak var progressBarCircleViewLeading: NSLayoutConstraint!
@@ -23,7 +28,11 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
     @IBOutlet var todayPoints: UILabel!
     @IBOutlet var monthlyPointsLabel: UILabel!
     @IBOutlet var progressiveView: UIProgressView!
+    @IBOutlet weak var pointsTitleLbl: UILabel!
+    @IBOutlet weak var redeemablePointsTodaytitle: UILabel!
+    @IBOutlet weak var avaragePointstitle: UILabel!
     
+    var addCartBtnStatus = 0
     var productImage = ""
     var productName = ""
     var quantity = ""
@@ -37,8 +46,10 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
     var totalPoint = ""
     var cartCounts = ""
     var productPoints = 0
+    var categoryName = ""
     var selectedCatalogueID = 0
     var productId = 0
+    var redeemNowStatus = 0
     
     var VM = RedemptionPlannerDetailsViewModel()
     var pointBalance = UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? ""
@@ -54,18 +65,21 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
     var checkAccountStatus = UserDefaults.standard.string(forKey: "SemiActiveAccount") ?? ""
     var tdspercentage1 = 0.0
     var applicabletds = 0.0
+    var requestApis = RestAPI_Requests()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
        // NotificationCenter.default.addObserver(self, selector: #selector(checkVerificationStatus), name: Notification.Name.verificationStatus, object: nil)
         plannerListing()
         productNameLabel.text = self.productName
+        categoryTitleLbl.text = "\("Category".localiz()) : \(categoryName)"
+        redeemBtn.setTitle("Redeem Now", for: .normal)
 //        print(tdsprice!)
 //        tdsvalue.text = "\(applicabletds)"
 //        tdsprice.text = "\(tdspercentage1)%"
-        points.text = "\(Double(productPoints))"
-        let totalImgURL = productCatalogueImgURL + productImage
-        //productImageView.sd_setImage(with: URL(string: totalImgURL), placeholderImage: UIImage(named: "ic_default_img"))
+        points.text = "\(Int(productPoints))"
+        let totalImgURL = imageUrl + productImage
+        productImageView.kf.setImage(with: URL(string: "\(String(describing: totalImgURL ))"), placeholder: UIImage(named: "Humsafar Logo PNG"))
         self.todayPoints.text = "\(Int(pointBalance) ?? 0)"
         self.monthlyPointsLabel.text = "\(redeemableAverageEarning)"
         self.expectRedeemProductName.text = productName
@@ -73,6 +87,7 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
         
         if productPoints  > Int(pointBalance) ?? 0 {
             self.pointsRequiredLbl.text = "\((Int(productPoints) ) - (Int(pointBalance) ?? 0)) \("Points_more_to_redeem".localiz())"
+            redeemBtn.isHidden = true
             //redeemButton.isEnabled = false
             //congratulationsImageView.isHidden = true
            // infoDetailsLbl.isHidden = false
@@ -103,17 +118,77 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
         }else{
             pointsRequiredLbl.text = ""
             progressBarValueLbl.text = "100 %"
-            progressBarCircleViewLeading.constant = ((progressiveView.frame.width ) * CGFloat(100/100) - 16)
+            progressBarCircleViewLeading.constant = ((progressiveView.frame.width ) * CGFloat(100/100))
+            progressiveView.progress = 1
            // congratulationsImageView.isHidden = true
 //            infoDetailsLbl.isHidden = false
 //            infoDetailsLbl.text = "Congratulations! You are eligible to redeem your Redemption planner product."
 //            giftLabel.text = "You are eligible to redeem this product."
 //            redeemButton.isEnabled = true
 //            redeemButton.backgroundColor = .red
+            redeemBtn.isHidden = false
         }
+ 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localization()
+        myCartListApi()
+    }
+    
+    @IBAction func didTappedRedeemNowBtn(_ sender: Any) {
+        
+        if addCartBtnStatus == 0{
+//        if self.verifiedStatus != 1{
+//            DispatchQueue.main.async{
+//                self.view.makeToast("redeem_failed_contact_to_admin".localiz(), duration: 3.0, position: .bottom)
+//            }
+//
+//
+//        }else{
+            
+            print(productPoints,"dskjkjd")
+            print(pointBalance,"sndksjnd")
+//            self.myCartListApi()
+            let filterArray = self.VM.redemptionCatalogueMyCartListArray.filter{$0.catalogueId == self.selectedCatalogueID}
+            let datain = self.VM.redemptionCatalogueMyCartListArray.filter{$0.catalogueId == self.selectedCatalogueID}
+            
+            if Int(productPoints) <= Int(pointBalance) ?? 0 {
+                if filterArray.count > 0 {
+//                    self.addedToCartView.isHidden = false
+//                    self.addToCartView.isHidden = true
+//                    self.view.makeToast("Product is already added in the Redeem list",duration: 2.0,position: .bottom)
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyCartVC") as! FG_MyCartVC
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+                }else{
+                    self.addToCartApi()
+                    self.myCartListApi()
+                    addCartBtnStatus = 1
+                }
+                
+            }else{
+                DispatchQueue.main.async{
+                    self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
+                }
+            }
+//        }
+        }
+
+        
+        
         
     }
-
+    private func localization(){
+        redemptionPlannerTitleLabel.text = "Dream_Gift".localiz()
+        removeButton.setTitle("Remove".localiz(), for: .normal)
+        pointsTitleLbl.text = "points".localiz()
+        redeemablePointsTodaytitle.text = "Redeemable Points as on Today".localiz()
+        avaragePointstitle.text = "Average earning required per month".localiz()
+        avaragePointsTitle.text = "points".localiz()
+        RedeemablePointsTitle.text = "points".localiz()
+    }
     //    func languagelocalization(){
     //        if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "1"{
     
@@ -189,31 +264,33 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
 //
 //        if filterCategory.count > 0{
 //            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//
-//                vc!.descriptionInfo = "Product is already added in the Redeem list"
-//
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
+////                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
+////                vc!.delegate = self
+////                vc!.titleInfo = ""
+////
+////                vc!.descriptionInfo = "Product is already added in the Redeem list"
+////
+////                vc!.modalPresentationStyle = .overCurrentContext
+////                vc!.modalTransitionStyle = .crossDissolve
+////                self.present(vc!, animated: true, completion: nil)
+//                self.view.makeToast("Product is already added in the Redeem list",duration: 2.0,position: .bottom)
 //            }
 //        }else{
 //            print(self.totalCartValue)
 //            print(self.pointBalance)
-//            if self.totalCartValue <= Int(self.pointBalance) {
+//            if self.totalCartValue <= (Int(self.pointBalance) ?? 0) {
 //                let calcValue = self.totalCartValue + Int(self.productPoints)
-//                if calcValue <= Int(self.pointBalance) {
+//                if calcValue <= (Int(self.pointBalance) ?? 0) {
 //                    if self.verifiedStatus != 1{
 //
-//                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
-//                        vc!.delegate = self
-//                        vc!.titleInfo = ""
-//                        vc!.descriptionInfo = "You are not allowled to redeem .Please contact your administrator"
-//                        vc!.modalPresentationStyle = .overCurrentContext
-//                        vc!.modalTransitionStyle = .crossDissolve
-//                        self.present(vc!, animated: true, completion: nil)
+////                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
+////                        vc!.delegate = self
+////                        vc!.titleInfo = ""
+////                        vc!.descriptionInfo = "You are not allowled to redeem .Please contact your administrator"
+////                        vc!.modalPresentationStyle = .overCurrentContext
+////                        vc!.modalTransitionStyle = .crossDissolve
+////                        self.present(vc!, animated: true, completion: nil)
+//                        self.view.makeToast("You are not allowled to redeem .Please contact your administrator",duration: 2.0,position: .bottom)
 //
 //                    }else{
 //                       // self.verifyAdhaarExistencyApi()
@@ -221,40 +298,42 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
 //                    }
 //                }else{
 //                    DispatchQueue.main.async{
-//                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
-//                        vc!.delegate = self
-//                        vc!.titleInfo = ""
-//                        //  if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "1"{
-//                        vc!.descriptionInfo = "Insufficent Point Balance"
-//                        //                            }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "2"{
-//                        //                                vc!.descriptionInfo = "अपर्याप्त अंक संतुलन"
-//                        //                            }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "3"{
-//                        //                                vc!.descriptionInfo = "অপর্যাপ্ত পয়েন্ট ব্যালেন্স"
-//                        //                            }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "4"{
-//                        //                                vc!.descriptionInfo = "సరిపోని పాయింట్లు బ్యాలెన్స్"
-//                        //                            }
-//                        vc!.modalPresentationStyle = .overCurrentContext
-//                        vc!.modalTransitionStyle = .crossDissolve
-//                        self.present(vc!, animated: true, completion: nil)
+////                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
+////                        vc!.delegate = self
+////                        vc!.titleInfo = ""
+////                        //  if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "1"{
+////                        vc!.descriptionInfo = "Insufficent Point Balance"
+////                        //                            }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "2"{
+////                        //                                vc!.descriptionInfo = "अपर्याप्त अंक संतुलन"
+////                        //                            }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "3"{
+////                        //                                vc!.descriptionInfo = "অপর্যাপ্ত পয়েন্ট ব্যালেন্স"
+////                        //                            }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "4"{
+////                        //                                vc!.descriptionInfo = "సరిపోని పాయింట్లు బ్యాలెన్స్"
+////                        //                            }
+////                        vc!.modalPresentationStyle = .overCurrentContext
+////                        vc!.modalTransitionStyle = .crossDissolve
+////                        self.present(vc!, animated: true, completion: nil)
+//                        self.view.makeToast("Insufficent Point Balance",duration: 2.0,position: .bottom)
 //                    }
 //                }
 //            }else{
 //                DispatchQueue.main.async{
-//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
-//                    vc!.delegate = self
-//                    vc!.titleInfo = ""
-//                    //                        if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "1"{
-//                    vc!.descriptionInfo = "Insufficent Point Balance"
-//                    //                        }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "2"{
-//                    //                            vc!.descriptionInfo = "अपर्याप्त अंक संतुलन"
-//                    //                        }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "3"{
-//                    //                            vc!.descriptionInfo = "অপর্যাপ্ত পয়েন্ট ব্যালেন্স"
-//                    //                        }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "4"{
-//                    //                            vc!.descriptionInfo = "సరిపోని పాయింట్లు బ్యాలెన్స్"
-//                    //                        }
-//                    vc!.modalPresentationStyle = .overCurrentContext
-//                    vc!.modalTransitionStyle = .crossDissolve
-//                    self.present(vc!, animated: true, completion: nil)
+////                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
+////                    vc!.delegate = self
+////                    vc!.titleInfo = ""
+////                    //                        if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "1"{
+////                    vc!.descriptionInfo = "Insufficent Point Balance"
+////                    //                        }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "2"{
+////                    //                            vc!.descriptionInfo = "अपर्याप्त अंक संतुलन"
+////                    //                        }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "3"{
+////                    //                            vc!.descriptionInfo = "অপর্যাপ্ত পয়েন্ট ব্যালেন্স"
+////                    //                        }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "4"{
+////                    //                            vc!.descriptionInfo = "సరిపోని పాయింట్లు బ్యాలెన్స్"
+////                    //                        }
+////                    vc!.modalPresentationStyle = .overCurrentContext
+////                    vc!.modalTransitionStyle = .crossDissolve
+////                    self.present(vc!, animated: true, completion: nil)
+//                    self.view.makeToast("Insufficent Point Balance",duration: 2.0,position: .bottom)
 //                }
 //            }
 //
@@ -307,40 +386,42 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
 //            if response?.returnValue == 1{
 //                DispatchQueue.main.async{
 //
-//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
-//                    vc!.delegate = self
-//                    vc!.titleInfo = ""
-//
-//                    //                    if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "1"{
-//                    vc!.descriptionInfo = "Product has been added to Cart"
-//                    //                     }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "2"{
-//                    //                         vc!.descriptionInfo = "उत्पाद कार्ट में जोड़ दिया गया है"
-//                    //                    }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "3"{
-//                    //                        vc!.descriptionInfo = "পণ্য কার্টে যোগ করা হয়েছে"
-//                    //                    }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "4"{
-//                    //                        vc!.descriptionInfo = "ఉత్పత్తి కార్ట్‌కి జోడించబడింది"
-//                    //                      }
-//                    vc!.modalPresentationStyle = .overCurrentContext
-//                    vc!.modalTransitionStyle = .crossDissolve
-//                    self.present(vc!, animated: true, completion: nil)
+////                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
+////                    vc!.delegate = self
+////                    vc!.titleInfo = ""
+////
+////                    //                    if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "1"{
+////                    vc!.descriptionInfo = "Product has been added to Cart"
+////                    //                     }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "2"{
+////                    //                         vc!.descriptionInfo = "उत्पाद कार्ट में जोड़ दिया गया है"
+////                    //                    }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "3"{
+////                    //                        vc!.descriptionInfo = "পণ্য কার্টে যোগ করা হয়েছে"
+////                    //                    }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "4"{
+////                    //                        vc!.descriptionInfo = "ఉత్పత్తి కార్ట్‌కి జోడించబడింది"
+////                    //                      }
+////                    vc!.modalPresentationStyle = .overCurrentContext
+////                    vc!.modalTransitionStyle = .crossDissolve
+////                    self.present(vc!, animated: true, completion: nil)
+//                    self.view.makeToast("Product has been added to Cart",duration: 2.0,position: .bottom)
 //                }
 //            }else{
 //                DispatchQueue.main.async{
-//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
-//                    vc!.delegate = self
-//                    vc!.titleInfo = ""
-//                    //                    if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "1"{
-//                    vc!.descriptionInfo = "Something went wrong!"
-//                    //                     }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "2"{
-//                    //                         vc!.descriptionInfo = "कुछ गलत हो गया!"
-//                    //                    }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "3"{
-//                    //                        vc!.descriptionInfo = "কিছু ভুল হয়েছে!"
-//                    //                    }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "4"{
-//                    //                        vc!.descriptionInfo = "ఎక్కడో తేడ జరిగింది!"
-//                    //                      }
-//                    vc!.modalPresentationStyle = .overCurrentContext
-//                    vc!.modalTransitionStyle = .crossDissolve
-//                    self.present(vc!, animated: true, completion: nil)
+////                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
+////                    vc!.delegate = self
+////                    vc!.titleInfo = ""
+////                    //                    if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "1"{
+////                    vc!.descriptionInfo = "Something went wrong!"
+////                    //                     }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "2"{
+////                    //                         vc!.descriptionInfo = "कुछ गलत हो गया!"
+////                    //                    }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "3"{
+////                    //                        vc!.descriptionInfo = "কিছু ভুল হয়েছে!"
+////                    //                    }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "4"{
+////                    //                        vc!.descriptionInfo = "ఎక్కడో తేడ జరిగింది!"
+////                    //                      }
+////                    vc!.modalPresentationStyle = .overCurrentContext
+////                    vc!.modalTransitionStyle = .crossDissolve
+////                    self.present(vc!, animated: true, completion: nil)
+//                    self.view.makeToast("Something went wrong!",duration: 2.0,position: .bottom)
 //                }
 //            }
 //            DispatchQueue.main.async {
@@ -459,3 +540,56 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
     
 }
 
+extension FG_DreamGiftDetailsVC{
+    
+    func myCartListApi(){
+        self.VM.redemptionCatalogueMyCartListArray.removeAll()
+        let parameter = [
+            "ActionType": "2",
+            "LoyaltyID": "\(self.loyaltyId)"
+        ] as [String: Any]
+       // self.VM.redemptionCatalogueMyCartListApi(parameter: parameter)
+        self.requestApis.redemptionCatalogueMycartListApi(parameters: parameter) { (result, error) in
+            if error == nil{
+                if result != nil{
+                    DispatchQueue.main.async {
+                        self.stopLoading()
+                        self.VM.redemptionCatalogueMyCartListArray = result?.catalogueSaveCartDetailListResponse ?? []
+                    }
+
+                }else{
+                    DispatchQueue.main.async {
+                        self.stopLoading()
+                        print("\(error)")
+                    }
+                }
+            }else{
+                DispatchQueue.main.async {
+                    self.stopLoading()
+                    print("\(error)")
+                }
+            }
+        }
+    }
+    
+    
+    
+    func addToCartApi(){
+        
+        let parameter = [
+            "ActionType": "1",
+            "ActorId": "\(self.userID)",
+            "CatalogueSaveCartDetailListRequest": [
+                [
+                    "CatalogueId": "\(selectedCatalogueID)",
+                    "DeliveryType": "1",
+                    "NoOfQuantity": "1"
+                ]
+            ],
+            "LoyaltyID": "\(loyaltyId)",
+            "MerchantId": "1"
+        ] as [String: Any]
+        print(parameter)
+        self.VM.redemptionCatalogueAddToCartApi(parameter: parameter)
+    }
+}

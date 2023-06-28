@@ -63,7 +63,7 @@
 "T&C" = "T&C";
 "Logout" = "লগআউট";
 "Delete" = "মুছুন";
-"যখন থেকে" = "যখন থেকে";
+"Since" = "যখন থেকে";
 
 //মার্ক:- ড্যাশবোর্ড
 
@@ -178,3 +178,35 @@
 "other_device_Login_error" = "আপনার অ্যাকাউন্ট অন্য মোবাইলে লগ ইন করেছে।";
 "account_deactivated_error" = "আপনার অ্যাকাউন্ট নিষ্ক্রিয় করা হয়েছে অনুগ্রহ করে প্রশাসকের সাথে চেক করুন";
 "Redemption_Failed" = "রিডেম্পশন ব্যর্থ হয়েছে";
+"Search by part no/ cross reference" = "অংশ নং/ ক্রস রেফারেন্স দ্বারা অনুসন্ধান করুন";
+"Query type" = "কোয়েরির ধরন"; //চিহ্ন
+"View" = "দেখুন";
+"বিবরণ" = "বিবরণ";
+"noDataFound" = "কোন তথ্য পাওয়া যায়নি";
+"Add More" = "আরো যোগ করুন";
+"Details" = "বিশদ বিবরণ";
+"Remove" = "সরান";
+"Category"= "বিভাগ";
+"Account_deleted_successfully" = "অ্যাকাউন্ট সফলভাবে মুছে ফেলা হয়েছে";
+"are_sure_delete_account" = "আপনি কি সত্যিই আপনার অ্যাকাউন্ট মুছে ফেলার বিষয়ে নিশ্চিত?";
+"Points Available" = "পয়েন্ট উপলব্ধ";
+"Points Required" = "পয়েন্ট প্রয়োজনীয়";
+"Redeemable Points as on Today" ="আজকের মতো পুনরুদ্ধারযোগ্য পয়েন্ট";
+"Average earning required per month" = "প্রতি মাসে গড় উপার্জন প্রয়োজন";
+"Garage Name" = "গ্যারেজের নাম";
+"Behaviour"  = "আচরণ";
+"your_account_is_deleted" = "আপনার অ্যাকাউন্ট মুছে ফেলা হয়েছে। অনুগ্রহ করে আপনার প্রশাসকের সাথে যোগাযোগ করুন।";
+"Order Status" = "অর্ডার স্ট্যাটাস";
+"Search by product name" = "পণ্যের নাম দ্বারা অনুসন্ধান করুন";
+"Your details have been submitted successfully."= "আপনার বিবরণ সফলভাবে জমা দেওয়া হয়েছে।";
+"Failed to submit your details try after some time" = "কিছু সময় পরে আপনার বিবরণ জমা দিতে ব্যর্থ হয়েছে";
+"Select date or filter status or both" = "তারিখ বা ফিল্টার স্ট্যাটাস বা উভয় নির্বাচন করুন";
+"Select To Date" = "তারিখ নির্বাচন করুন";
+"Select From Date" = "তারিখ থেকে নির্বাচন করুন";
+"ToDate should be lower than FromDate" = "ToDate FromDate এর চেয়ে কম হওয়া উচিত";
+"Notification"= "বিজ্ঞপ্তি";
+"Add to cart"= "কার্টে যোগ করুন";
+"Added to cart" = "কার্টে যোগ করা হয়েছে";
+"Add to dreamgift" = "স্বপ্ন উপহার যোগ করুন";
+"Added to dreamgift" = "ড্রিমগিফটে যোগ করা হয়েছে";
+

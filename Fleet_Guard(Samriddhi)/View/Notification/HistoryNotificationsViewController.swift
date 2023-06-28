@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import LanguageManager_iOS
 //import SDWebImage
 import Kingfisher
 //import Firebase
@@ -44,7 +45,7 @@ class HistoryNotificationsViewController: BaseViewController, notificationDelgat
         notificationListApi()
         self.NotificationstableView.delegate = self
         self.NotificationstableView.dataSource = self
-        languagelocalization()
+        localization()
         
     }
     
@@ -77,18 +78,9 @@ class HistoryNotificationsViewController: BaseViewController, notificationDelgat
 
     }
     
-    func languagelocalization(){
-        if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "1"{
-            self.header.text = "Notification"
-            
-        }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "2"{
-            self.header.text = "अधिसूचना"
-            
-        }else if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "3"{
-            self.header.text = "বিজ্ঞপ্তি"
-        }else{
-            self.header.text = "నోటిఫికేషన్"
-        }
+    private func localization(){
+        header.text = "Notification".localiz()
+        noDataFound.text = "noDataFound".localiz()
     }
     
     func notificationListApi(){

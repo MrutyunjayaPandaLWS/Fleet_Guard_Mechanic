@@ -51,17 +51,22 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     var categoryId = 0
     var catalogueId = 0
     var isComeFrom = ""
+    var addCartBtnStatus = 0
+    var addDreamGiftBtnStatus = 0
     var requestApis = RestAPI_Requests()
     var pointBalance = UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? ""
    // var pointBalance = UserDefaults.standard.string(forKey: "RedeemablePointBalance") ?? ""
     let verifiedStatus = UserDefaults.standard.integer(forKey: "verificationStatus")
     var userID = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
+
     var VM = RedemptionCatalogeDetailsVM()
+    var myPlannerListArray = [ObjCatalogueList2]()
     
     //let verifiedStatus = UserDefaults.standard.integer(forKey: "VerifiedStatus")
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.VM.VC = self
         self.productImage.clipsToBounds = false
         print(catalogueId,"skjhdk")
         //  self.productImage.layer.borderWidth = 1
@@ -91,6 +96,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         headerText.text = "Redemption_Catalogue".localiz()
+        plannerListing()
         myCartListApi()
     }
     @IBAction func backBtn(_ sender: Any) {
@@ -104,24 +110,27 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     
     
     @IBAction func addToDreamGiftBtn(_ sender: Any) {
+        if addDreamGiftBtnStatus == 0{
         addtoDreamGift()
+            addDreamGiftBtnStatus = 1
+        }
     }
     
     @IBAction func addToCartBTN(_ sender: Any) {
-
+        if addCartBtnStatus == 0{
         if self.verifiedStatus != 1{
             DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "You are not allowled to redeem .Please contact your administrator"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
+                //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                //                vc!.delegate = self
+                //                vc!.titleInfo = ""
+                //                vc!.descriptionInfo = "You are not allowled to redeem .Please contact your administrator"
+                //                vc!.modalPresentationStyle = .overCurrentContext
+                //                vc!.modalTransitionStyle = .crossDissolve
+                //                self.present(vc!, animated: true, completion: nil)
                 
                 self.view.makeToast("redeem_failed_contact_to_admin".localiz(), duration: 3.0, position: .bottom)
             }
-               
+            
             
         }else{
             
@@ -139,22 +148,62 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
                 }else{
                     self.addToCartApi()
                     self.myCartListApi()
+                    addCartBtnStatus = 1
                 }
                 
             }else{
                 DispatchQueue.main.async{
-//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                    vc!.delegate = self
-//                    vc!.titleInfo = ""
-//                    vc!.descriptionInfo = "Insufficent Point Balance"
-//                    vc!.modalPresentationStyle = .overCurrentContext
-//                    vc!.modalTransitionStyle = .crossDissolve
-//                    self.present(vc!, animated: true, completion: nil)
+                    //                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                    vc!.delegate = self
+                    //                    vc!.titleInfo = ""
+                    //                    vc!.descriptionInfo = "Insufficent Point Balance"
+                    //                    vc!.modalPresentationStyle = .overCurrentContext
+                    //                    vc!.modalTransitionStyle = .crossDissolve
+                    //                    self.present(vc!, animated: true, completion: nil)
                     
                     self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
                 }
             }
-        }  
+        }
+        }
+    }
+    
+    func plannerListing(){
+        let parameters = [
+            "ActionType": "6",
+            "Points": pointBalance,
+            "ActorId": "\(userID)"
+        ] as [String : Any]
+        print(parameters)
+        self.VM.plannerListingApi(parameters: parameters) { response in
+            self.myPlannerListArray = response?.objCatalogueList ?? []
+            print(self.myPlannerListArray.count, "Planner List Cout")
+            DispatchQueue.main.async {
+//                if self.VM.myPlannerListArray.count != 0 {
+//                    self.ad
+//                }else{
+//                    self.VM?.countLbl.isHidden = true
+//
+//                }
+
+                
+                //if self.VM.myPlannerListArray.count != 0 {
+                    
+//                    UserDefaults.standard.set(self.VM.myPlannerListArray[0].is_Redeemable ?? 0, forKey: "PlannerIsRedeemable")
+//                    UserDefaults.standard.synchronize()
+//                    print(UserDefaults.standard.integer(forKey: "PlannerIsRedeemable"))
+//                    self.myDreamGiftTV.isHidden = false
+//                    self.noDataFoundLbl.isHidden = true
+//                    self.myDreamGiftTV.reloadData()
+                //}else{
+//                    self.myDreamGiftTV.isHidden = true
+//                    self.noDataFoundLbl.isHidden = false
+//                }
+//                self.stopLoading()
+                self.configure()
+            }
+        }
+        
     }
     
     func addtoDreamGift () {
@@ -210,46 +259,8 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
                             self.countLbl.isHidden = true
                             
                         }
-                        let filterArray = self.VM.redemptionCatalogueMyCartListArray.filter{$0.catalogueId == self.catalogueId}
-                        
-                        print(filterArray.count,"skhask")
-                        
-                        
-//                        if Int(self.totalPoints) ?? 0 >= productPoints{
-//                            if filterArray.count > 0 {
-//                                cell.addedToCartView.isHidden = false
-//                                cell.addToCartView.isHidden = true
-//                            }else{
-//                                cell.addedToCartView.isHidden = true
-//                                cell.addToCartView.isHidden = false
-//                            }
-//                            cell.addtoDreamGiftView.isHidden = true
-//                            cell.addedToDreamGiftView.isHidden = true
-//                        }else{
-//                            cell.addedToCartView.isHidden = true
-//                            cell.addToCartView.isHidden = true
-//                            cell.addedToDreamGiftView.isHidden = true
-//                            cell.addtoDreamGiftView.isHidden = false
-//                        }
-                        if Int(self.pointBalance) ?? 0 >= Int(self.productPoint) ?? 0 {
-                       
-                            if filterArray.count > 0 {
-                                self.addedToCartView.isHidden = false
-                                self.addToCartView.isHidden = true
-                            }else{
-                                self.addedToCartView.isHidden = true
-                                self.addToCartView.isHidden = false
-                            }
-                            self.addedToDreamGiftView.isHidden = true
-                            self.addToDreamGiftView.isHidden = true
-                            
-                        }else{
-                            self.addedToCartView.isHidden = true
-                            self.addToCartView.isHidden = true
-                            self.addedToDreamGiftView.isHidden = true
-                            self.addToDreamGiftView.isHidden = false
-                        }
-                       
+
+                        self.configure()
                     }
 
                 }else{
@@ -269,6 +280,42 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
         
 
     
-    
+    func configure(){
+        let filterArray = self.VM.redemptionCatalogueMyCartListArray.filter{$0.catalogueId == self.catalogueId}
+        
+        print(filterArray.count,"skhask")
+        
+        var filterDreamGiftArray = [ObjCatalogueList2]()
+        if (self.myPlannerListArray.count != 0){
+            filterDreamGiftArray = self.myPlannerListArray.filter{$0.catalogueId == self.catalogueId}
+        }
+        
+        if Int(self.pointBalance) ?? 0 >= Int(self.productPoint) ?? 0 {
+       
+            if filterArray.count > 0 {
+                self.addedToCartView.isHidden = false
+                self.addToCartView.isHidden = true
+            }else{
+                self.addedToCartView.isHidden = true
+                self.addToCartView.isHidden = false
+            }
+            self.addedToDreamGiftView.isHidden = true
+            self.addToDreamGiftView.isHidden = true
+            
+        }else{
+            if filterDreamGiftArray.count > 0 {
+                self.addedToCartView.isHidden = true
+                self.addToCartView.isHidden = true
+                self.addedToDreamGiftView.isHidden = false
+                self.addToDreamGiftView.isHidden = true
+                
+            }else{
+                self.addedToCartView.isHidden = true
+                self.addToCartView.isHidden = true
+                self.addedToDreamGiftView.isHidden = true
+                self.addToDreamGiftView.isHidden = false
+            }
+        }
+    }
     
 }

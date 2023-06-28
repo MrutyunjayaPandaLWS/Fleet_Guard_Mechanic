@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import LanguageManager_iOS
+
 protocol popUpDelegate : AnyObject {
     func popupAlertDidTap(_ vc: FG_PopUpVC)
 }
@@ -27,7 +29,7 @@ class FG_PopUpVC: BaseViewController {
         subView.layer.cornerRadius = 20
         subView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         self.titleLbl.text = descriptionInfo
-        self.okBtn.setTitle("OK", for: .normal)
+        self.okBtn.setTitle("OK".localiz(), for: .normal)
         
         
     }
