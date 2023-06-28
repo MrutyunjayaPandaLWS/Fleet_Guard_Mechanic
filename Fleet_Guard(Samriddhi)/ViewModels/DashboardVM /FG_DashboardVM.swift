@@ -339,6 +339,7 @@ class FG_DashboardVM: popUpDelegate{
             }else{
                 print("ERROR_Login \(error)")
                 DispatchQueue.main.async {
+                    completion(result)
                     self.VC1?.stopLoading()
                 }
                 

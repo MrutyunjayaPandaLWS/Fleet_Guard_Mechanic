@@ -160,7 +160,7 @@ extension FG_DreamGiftVC : UITableViewDelegate, UITableViewDataSource{
             cell?.progressBarCircleViewLeading.constant = ((cell?.progressBar.frame.width ?? 0) * CGFloat(progressPercent/100))
         }else{
             cell?.progressBarValueLbl.text = "100 %"
-            cell?.progressBarCircleViewLeading.constant = cell?.progressBar.frame.width ?? 0
+            cell?.progressBarCircleViewLeading.constant = ((cell?.progressBar.frame.width ?? 0) + 5)
         }
         
         if pointRequired < balance{

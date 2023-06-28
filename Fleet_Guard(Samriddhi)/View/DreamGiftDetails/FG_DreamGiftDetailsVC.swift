@@ -118,7 +118,7 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
         }else{
             pointsRequiredLbl.text = ""
             progressBarValueLbl.text = "100 %"
-            progressBarCircleViewLeading.constant = ((progressiveView.frame.width ) * CGFloat(100/100))
+            progressBarCircleViewLeading.constant = ((progressiveView.frame.width) + 8)
             progressiveView.progress = 1
            // congratulationsImageView.isHidden = true
 //            infoDetailsLbl.isHidden = false
