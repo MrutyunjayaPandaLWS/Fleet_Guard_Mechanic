@@ -29,9 +29,9 @@
 "Name" = "Name";
 "enter_name" = "Enter name";
 "enter_name_error" = "Please enter name";
-"state" = "State";
 "select_state_error" = "Please select state";
 "city" = "City";
+"state" = "State";
 "select_city_error" = "Please select city";
 "comments" = "Comments";
 "enter_comments" = "Enter Comments";
@@ -216,4 +216,54 @@
 "Added to cart" = "Added to cart";
 "Add to dreamgift" = "Add to dreamgift";
 "Added to dreamgift" = "Added to dreamgift";
-"add_to_cart_success_message" = "";
+"add_to_cart_success_message" = "Product added into cart successfully.";
+
+//MARK: - NEW
+"My points" = "My points";
+"Home" = "Home";
+"Know more" = "Know more";
+"Delete account" = " Delete account";
+"Catalogue name" = "Catalogue name";
+"qty" = "Qty";
+"ref. no" = "Ref. no";
+"Points redeem" = "Points redeem";
+"Part number" = "Part No";
+"Redeem now" = "Redeem now";
+"Short Description" = "Short Description";
+"Add more part no" = "Add more part no";
+"Order_Now" = "Order Now";
+"Offers and Promotions Click Here" = "Offers and Promotions Click Here";
+"Choose a point range below" = "Choose a point range below";
+"Points Range" = "Points Range";
+"Please select Segment value" = "Please select Segment value";
+"Please select OME value" = "Please select OME value";
+"Please select Model value" = "Please select Model value";
+
+////MARK: - Existing
+"Default_Address" = "Default Address";
+"Edit_Address" = "Edit Address";
+"resend_OTP" = "Resend OTP";
+"submit" = "Submit";
+"Search by part no/ cross reference" = "Search by part no/ cross reference";
+"Query type" = "Query type";
+"submit_your_query" = "Please submit your query";
+"Select_Your_Topic" = "Select Your Topic";
+"query_Details" = "Query Details";
+"Upload_Image" = "Upload Image";
+
+//MARK: - NEW
+"Redeemable points" = "Redeemable points";
+"Process to checkout" = "Process to checkout";
+"Confirm Order" = "Confirm Order";
+"OTP Verification" = "OTP Verification";
+"We send a OTP to your number" = "We send a OTP to your number";
+"OTP will Receive within" = "OTP will Receive within";
+"Didn't receive OTP code?" = "Didn't receive OTP code?";
+"Segment" = "Segment";
+"Model" = "Model";
+"Product Category" = "Product Category";
+"Your Expected Redemption" = "Your Expected Redemption";
+"Please Enter Query Details" = "Please Enter Query Details";
+"Note: Image formate should be" = "Note: Image formate should be";
+
+"OTP" = "OTP";

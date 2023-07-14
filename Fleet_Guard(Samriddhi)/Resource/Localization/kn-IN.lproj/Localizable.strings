@@ -1,9 +1,8 @@
-/* 
-  Localizable.strings
-  Fleet_Guard(Samriddhi)
+/*
+Localizable.strings
+Fleet_Guard(Samriddhi)
 
-  Created by admin on 11/05/23.
-  
+Created by admin on 11/05/23.
 */
 "Allow" = "ಅನುಮತಿಸು";
 "No_Internet" = "ಇಂಟರ್ನೆಟ್ ಇಲ್ಲ";
@@ -16,7 +15,7 @@
 "welcome_to" = "ಸುಸ್ವಾಗತ";
 "already_a_Member" = "ಈಗಾಗಲೇ ಸದಸ್ಯ ?";
 "login_Now" = "ಈಗ ಲಾಗಿನ್ ಮಾಡಿ";
-"mobile_number" = "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ";
+"mobile_number" = "ಮೊಬೈಲ್ ನಂಬರ್";
 "enter_mobile_number" = "ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ";
 "send_otp" = "OTP ಕಳುಹಿಸಿ";
 "Accept" = "ಸ್ವೀಕರಿಸಿ";
@@ -26,7 +25,7 @@
 "enter_mobile_number_error" = "ದಯವಿಟ್ಟು ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ";
 "mobile_number_not_exist" = "ನೀವು ನಮೂದಿಸಿದ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯು ಸಿಸ್ಟಂನಲ್ಲಿ ಇಲ್ಲ.";
 
-// MARK: -  ನಿಯಮಗಳು ಜಾಹೀರಾತು ಷರತ್ತುಗಳು
+// MARK: - ನಿಯಮಗಳು ಜಾಹೀರಾತು ಷರತ್ತುಗಳು
 
 "decline" = "ಇಳಿಸುವಿಕೆ";
 "accept" = "ಸ್ವೀಕರಿಸಿ";
@@ -36,13 +35,13 @@
 "Name"= "ಹೆಸರು";
 "enter_name" = "ಹೆಸರನ್ನು ನಮೂದಿಸಿ";
 "enter_name_error" = "ದಯವಿಟ್ಟು ಹೆಸರನ್ನು ನಮೂದಿಸಿ";
-"state"  = "ರಾಜ್ಯ";
+"state" = "ರಾಜ್ಯ";
 "select_state_error" = "ದಯವಿಟ್ಟು ಸ್ಥಿತಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ";
 "city" = "ನಗರ";
 "select_city_error" = "ದಯವಿಟ್ಟು ನಗರವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
-"comments"  = "ಕಾಮೆಂಟ್";
+"comments" = "ಕಾಮೆಂಟ್";
 "enter_comments" = "ಕಾಮೆಂಟ್";
-"submit"  = "ಸಲ್ಲಿಸು";
+"submit" = "ಸಲ್ಲಿಸು";
 "valid_mobile_number_error" = "ಮಾನ್ಯ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ";
 "query_submit_success_message" = "ನಿಮ್ಮ ಪ್ರಶ್ನೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಸಲ್ಲಿಸಿ";
 "query_submit_failed_message" = "ನಿಮ್ಮ ಸಲ್ಲಿಕೆ ವಿಫಲವಾಗಿದೆ.";
@@ -55,28 +54,28 @@
 "Enter_valid_OTP" = "ಮಾನ್ಯ OTP ನಮೂದಿಸಿ";
 "Invalid_OTP" = "ಅಮಾನ್ಯ OTP";
 
-// MARK:  - ಸೈಡ್ ಮೆನು
+// MARK: - ಸೈಡ್ ಮೆನು
 
 "profile" = "ಪ್ರೊಫೈಲ್";
 "My_Ledger" = "ನನ್ನ ಲೆಡ್ಜರ್";
-"My_Redemption_History" = "ನನ್ನ ರಿಡೆಂಪ್ಶನ್  ಇತಿಹಾಸ";
+"My_Redemption_History" = "ನನ್ನ ರಿಡೆಂಪ್ಶನ್ ಇತಿಹಾಸ";
 "Redemption_Catalogue" = "ರಿಡೆಂಪ್ಶನ್ ಕ್ಯಾಟಲಾಗ್";
-"Product_Catalogue" = "ಉತ್ಪನ್ನ ಕ್ಯಾಟಲಾಗ್";
+"Product_Catalogue" = "ಪ್ರಾಡಕ್ಟ ಕ್ಯಾಟಲಾಗ್";
 "Dream_Gift" = "ಡ್ರೀಮ್ ಗಿಫ್ಟ್";
 "My_Promotions" = "ನನ್ನ ಪ್ರಚಾರಗಳು";
-"Lodge_Query" = "ಲಾಡ್ಜ್ ಪ್ರಶ್ನೆ";
+"Lodge_Query" = "ಪ್ರಶ್ನೆಯನ್ನು ಸಲ್ಲಿಸಿ";
 "About" = "ಬಗ್ಗೆ";
 "FAQs" = "FAQs";
 "T&C" = "T&C";
 "Logout"= "ಲಾಗ್ಔಟ್";
-"Delete"  = "ಅಳಿಸು";
+"Delete" = "ಅಳಿಸು";
 "Since" = "ಆದರೆ";
 
-//MARK:  - ಡ್ಯಾಶ್
+//MARK: - ಡ್ಯಾಶ್
 
 "total_Point_bal" = "ಒಟ್ಟು ಪಾಯಿಂಟ್ ಬ್ಯಾಲೆನ್ಸ್";
 "passbook_number" = "ಪಾಸ್";
-"welcome"  = "ಸ್ವಾಗತ!";
+"welcome" = "ಸ್ವಾಗತ!";
 "humsafar" = "ಹಮ್ಸಾಫರ್";
 "View_your_dreamgift" = "ನಿಮ್ಮ ಕನಸಿನ ಉಡುಗೊರೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ";
 "add_your_dreamGift" = "ನಿಮ್ಮ ಕನಸಿನ ಉಡುಗೊರೆಯನ್ನು ಸೇರಿಸಿ";
@@ -161,7 +160,7 @@
 "Enter_Valid_Zip" = "ಮಾನ್ಯವಾದ ಜಿಪ್ ನಮೂದಿಸಿ";
 
 //MARK: - ಕೊಡುಗೆಗಳು ಮತ್ತು ಪ್ರಚಾರ
-"Offers_promotions" = "ಆಫರ್";
+"Offers_promotions" = "ಆಫರ್ ಗಳು ಮತ್ತು ಪ್ರಚಾರಗಳು";
 
 //MARK: - ಲಾಡ್ಜ್ ಪ್ರಶ್ನೆ
 "upload_image_info" = "ಗಮನಿಸಿ: ಇಮೇಜ್ ಫಾರ್ಮ್ಯಾಟ್ .jpg, .png, .webp, .pdf ಆಗಿರಬೇಕು";
@@ -186,20 +185,20 @@
 "account_deactivated_error" = "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ ದಯವಿಟ್ಟು ನಿರ್ವಾಹಕರೊಂದಿಗೆ ಪರಿಶೀಲಿಸಿ";
 "Redemption_Failed" = "ರಿಡೆಂಪ್ಶನ್ ವಿಫಲವಾಗಿದೆ";
 "Search by part no/ cross reference" = "ಭಾಗ ಸಂಖ್ಯೆ/ ಅಡ್ಡ ಉಲ್ಲೇಖದ ಮೂಲಕ ಹುಡುಕಿ";
-"Query type" = "ಪ್ರಶ್ನೆ ಪ್ರಕಾರ"; //ಗುರುತು
+"Query type" = "ಪ್ರಶ್ನೆ ಪ್ರಕಾರ";
 "View" = "ವೀಕ್ಷಿಸು";
-"Description"  = "ವಿವರಣೆ";
+"Description" = "ವಿವರಣೆ";
 "noDataFound" = "ಯಾವುದೇ ಡೇಟಾ ಕಂಡುಬಂದಿಲ್ಲ";
 "Add More" = "ಇನ್ನಷ್ಟು ಸೇರಿಸಿ";
-"Details"  = "ವಿವರಗಳು";
-"Remove"= "ತೆಗೆದುಹಾಕು";
+"Details" = "ವಿವರಗಳು";
+"Remove" = "ತೆಗೆದುಹಾಕು";
 "Category" = "ವರ್ಗ";
 "Account_deleted_successfully" = "ಖಾತೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಅಳಿಸಲಾಗಿದೆ";
 "are_sure_delete_account" = "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?";
 
-"Points Available"  = "ಪಾಯಿಂಟ್";
+"Points Available" = "ಪಾಯಿಂಟ್";
 "Points Required" = "ಅಗತ್ಯವಿರುವ ಅಂಕಗಳು";
-"Redeemable Points as on Today"  ="ಇಂದಿನಂತೆಯೇ ರಿಡೀಮ್ ಮಾಡಬಹುದಾದ ಪಾಯಿಂಟ್";
+"Redeemable Points as on Today" ="ಇಂದಿನಂತೆಯೇ ರಿಡೀಮ್ ಮಾಡಬಹುದಾದ ಪಾಯಿಂಟ್";
 "Average earning required per month" = "ತಿಂಗಳಿಗೆ ಸರಾಸರಿ ಗಳಿಕೆಯ ಅಗತ್ಯವಿದೆ";
 "Garage Name" = "ಗ್ಯಾರೇಜ್ ಹೆಸರು";
 "Behaviour" = "ಬಿಹೇವಿಯರ್";
@@ -207,7 +206,7 @@
 "Order Status" = "ಆರ್ಡರ್ ಸ್ಟೇಟಸ್";
 "Search by product name" = "ಉತ್ಪನ್ನ ಹೆಸರಿನ ಮೂಲಕ ಹುಡುಕಿ";
 "Your details have been submitted successfully." = "ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಸಲ್ಲಿಸಲಾಗಿದೆ.";
-"Failed to submit your details try after some time"  = "ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಸಲ್ಲಿಸಲು ವಿಫಲವಾಗಿದೆ ಸ್ವಲ್ಪ ಸಮಯದ ನಂತರ ಪ್ರಯತ್ನಿಸಿ";
+"Failed to submit your details try after some time" = "ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಸಲ್ಲಿಸಲು ವಿಫಲವಾಗಿದೆ ಸ್ವಲ್ಪ ಸಮಯದ ನಂತರ ಪ್ರಯತ್ನಿಸಿ";
 "Select date or filter status or both" = "ದಿನಾಂಕ ಅಥವಾ ಫಿಲ್ಟರ್ ಸ್ಥಿತಿ ಅಥವಾ ಎರಡನ್ನೂ ಆಯ್ಕೆಮಾಡಿ";
 "Select To Date" = "ಸೆಲೆಕ್ಟ್ ಟು ಡೇಟ್";
 "Select From Date" = "ದಿನಾಂಕದಿಂದ ಆಯ್ಕೆಮಾಡಿ";
@@ -215,5 +214,56 @@
 "Notification"= "ಅಧಿಸೂಚನೆ";
 "Add to cart" = "ಕಾರ್ಟ್";
 "Added to cart"= "ಕಾರ್ಟ್";
-"Add to dreamgift" = "Add to dreamgift";
-"Added to dreamgift" = "Added to dreamgift";
+"Add to dreamgift" = "ಕನಸಿನ ಉಡುಗೊರೆಗೆ ಸೇರಿಸಿ";
+"Added to dreamgift" = "ಕನಸಿನ ಉಡುಗೊರೆಗೆ ಸೇರಿಸಲಾಗಿದೆ";
+"add_to_cart_success_message" = "ಉತ್ಪನ್ನವನ್ನು ಕಾರ್ಟ್";
+"Offers and Promotions Click Here" = "ಕೊಡುಗೆಗಳು ಮತ್ತು ಪ್ರಚಾರಗಳು ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ";
+
+"My points" = "ನನ್ನ ಅಂಕಗಳು";
+"Home" = "ಮುಖಪುಟ";
+"Know more" = "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ";
+"Delete account" = " ಖಾತೆಯನ್ನು ಅಳಿಸಿ";
+"Catalogue name" = "ಕ್ಯಾಟಲಾಗ್ ಹೆಸರು";
+"qty" = "qty";
+"ref. no" = "ref. no";
+"Points redeem" = "ಅಂಕಗಳನ್ನು ಪಡೆದುಕೊಳ್ಳಿ";
+"Part number" = "ಭಾಗದ ಸಂಖ್ಯೆ";
+"Redeem now" = "ಈಗ ರಿಡೀಮ್ ಮಾಡಿ";
+"Short Description" = "ಸಣ್ಣ ವಿವರಣೆ";
+"Add more part no" = "ಹೆಚ್ಚಿನ ಭಾಗ ಸಂಖ್ಯೆ ಸೇರಿಸಿ";
+"Order_Now" = "ಈಗ ಆದೇಶಿಸು";
+"Choose a point range below" = "ಕೆಳಗಿನ ಪಾಯಿಂಟ್ ಶ್ರೇಣಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ";
+"Points Range" = "ಅಂಕಗಳ ಶ್ರೇಣಿ";
+"Please select Segment value" = "ದಯವಿಟ್ಟು ಸೆಗ್ಮೆಂಟ್ ಮೌಲ್ಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
+"Please select OME value" = "ದಯವಿಟ್ಟು OME ಮೌಲ್ಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
+"Please select Model value" = "ದಯವಿಟ್ಟು ಮಾದರಿ ಮೌಲ್ಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
+
+
+
+//////MARK: - Existing
+//"Default_Address" = "Default Address";
+//"Edit_Address" = "Edit Address";
+//"resend_OTP" = "Resend OTP";
+//"submit" = "Submit";
+//"Search by part no/ cross reference" = "Search by part no/ cross reference";
+//"Query type" = "Query type";
+//"submit_your_query" = "Please submit your query";
+//"Select_Your_Topic" = "Select Your Topic";
+//"query_Details" = "Query Details";
+//"Upload_Image" = "Upload Image";
+
+//MARK: - NEW
+"Redeemable points" = "ರಿಡೀಮ್ ಮಾಡಬಹುದಾದ ಅಂಕಗಳು";
+"Process to checkout" = "ಚೆಕ್ಔಟ್ ಮಾಡುವ ಪ್ರಕ್ರಿಯೆ";
+"Confirm Order" = "ಆದೇಶವನ್ನು ದೃಢೀಕರಿಸಿ";
+"OTP Verification" = "OTP ಪರಿಶೀಲನೆ";
+"We send a OTP to your number" = "ನಾವು ನಿಮ್ಮ ಸಂಖ್ಯೆಗೆ OTP ಕಳುಹಿಸುತ್ತೇವೆ";
+"OTP will Receive within" = "ಒಳಗೆ OTP ಸ್ವೀಕರಿಸುತ್ತದೆ";
+"Didn't receive OTP code?" = "OTP ಕೋಡ್ ಸ್ವೀಕರಿಸಲಿಲ್ಲವೇ?";
+"Segment" = "ವಿಭಾಗ";
+"Model" = "ಮಾದರಿ";
+"Product Category" = "ಉತ್ಪನ್ನ ವರ್ಗ";
+"Your Expected Redemption" = "ನಿಮ್ಮ ನಿರೀಕ್ಷಿತ ವಿಮೋಚನೆ";
+"Please Enter Query Details" = "ದಯವಿಟ್ಟು ಪ್ರಶ್ನೆ ವಿವರಗಳನ್ನು ನಮೂದಿಸಿ";
+"Note: Image formate should be" = "ಗಮನಿಸಿ: ಇಮೇಜ್ ಫಾರ್ಮೇಟ್ ಆಗಿರಬೇಕು";
+"OTP" = "ಒ.ಟಿ.ಪಿ.";

@@ -31,19 +31,20 @@ class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
         self.myDreamGiftTV.delegate = self
         self.myDreamGiftTV.dataSource = self
         self.myDreamGiftTV.separatorStyle = .none
-        noDataFoundLbl.text = "noDataFound".localiz()
-        localization()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        localization()
         self.plannerListing()
     }
     
     private func localization(){
         headerLbl.text = "Dream_Gift".localiz()
-        addMoreBtn.setTitle("Add More", for: .normal)
+        noDataFoundLbl.text = "noDataFound".localiz()
+        addMoreBtn.setTitle("+ \("Add More".localiz())", for: .normal)
+//        addMoreBtn.setTitle("Add More".localiz(), for: .normal)
     }
     
     func plannerListing(){
@@ -141,10 +142,17 @@ extension FG_DreamGiftVC : UITableViewDelegate, UITableViewDataSource{
         cell?.delegate = self
         cell?.selectionStyle = .none
         
+        cell?.detailsOutBtn.setTitle("Details".localiz(), for: .normal)
+        cell?.detailsOutBtn.imageEdgeInsets.left = 15
+        cell?.detailsOutBtn.setImage(UIImage(named: "arrow-right-circle-fill 1"), for: .normal)
+//        arrow-right-circle-fill 1
+        cell?.detailsOutBtn.titleEdgeInsets.left = 10
+        
+        
         cell?.productNameLbl.text = self.VM.myPlannerListArray[indexPath.row].productName ?? "-"
         cell?.categoryLbl.text = "\("Category".localiz()): \(self.VM.myPlannerListArray[indexPath.row].catogoryName ?? "-")"
         cell?.pointsAvailableLbl.text = "\(Int(VM.myPlannerListArray[indexPath.row].pointBalance ?? 0.0) )"
-        cell?.pointsRequiredLbl.text = "Points : \(VM.myPlannerListArray[indexPath.row].pointsRequired ?? 0)"
+        cell?.pointsRequiredLbl.text = "\("points".localiz()) : \(VM.myPlannerListArray[indexPath.row].pointsRequired ?? 0)"
         
         let balance = Double(self.VM.myPlannerListArray[indexPath.row].pointBalance ?? 0)
         let pointRequired = Double(self.VM.myPlannerListArray[indexPath.row].pointsRequired ?? 0)

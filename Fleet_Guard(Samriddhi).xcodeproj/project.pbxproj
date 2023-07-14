@@ -188,6 +188,10 @@
 		84140DE2298D31B20090DD44 /* ObjCatalogueList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84140DE0298D31B20090DD44 /* ObjCatalogueList.swift */; };
 		84140DE3298D31B20090DD44 /* RedemptionCatalogueListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84140DE1298D31B20090DD44 /* RedemptionCatalogueListModel.swift */; };
 		84140DE6298D32540090DD44 /* FG_RedemptionCatalogueVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84140DE5298D32540090DD44 /* FG_RedemptionCatalogueVM.swift */; };
+		8418A1AF2A6026700055E039 /* fg-Mechanic-about-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 8418A1AD2A6026700055E039 /* fg-Mechanic-about-Bengali.html */; };
+		8418A1B02A6026700055E039 /* fg-Mechanic-about-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 8418A1AE2A6026700055E039 /* fg-Mechanic-about-Telugu.html */; };
+		8418A1B22A6027300055E039 /* fg-Mechanic-faq-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 8418A1B12A6027300055E039 /* fg-Mechanic-faq-Telugu.html */; };
+		8418A1B42A6028EA0055E039 /* fg-Mechanic-faq-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 8418A1B32A6028EA0055E039 /* fg-Mechanic-faq-Tamil.html */; };
 		841FCE06297FDC790026CD44 /* FG_MyCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841FCE05297FDC790026CD44 /* FG_MyCartVC.swift */; };
 		841FCE08297FDC950026CD44 /* FG_DefaultAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841FCE07297FDC950026CD44 /* FG_DefaultAddressVC.swift */; };
 		841FCE0A297FDCB40026CD44 /* FG_RedemptionOTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841FCE09297FDCB40026CD44 /* FG_RedemptionOTPVC.swift */; };
@@ -212,18 +216,14 @@
 		8439109E29812E29007D73B6 /* FG_StatementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439109D29812E29007D73B6 /* FG_StatementVC.swift */; };
 		84448B7B2A319AB000CC5409 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448B7A2A319AAF00CC5409 /* LanguageVC.swift */; };
 		84448B7D2A319AB800CC5409 /* LanguageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448B7C2A319AB800CC5409 /* LanguageTVC.swift */; };
-		84448B842A31A24300CC5409 /* fg-Mechanic-about-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B7E2A31A24200CC5409 /* fg-Mechanic-about-Bengali.html */; };
 		84448B852A31A24300CC5409 /* fg-Mechanic-about-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B7F2A31A24200CC5409 /* fg-Mechanic-about-Tamil.html */; };
-		84448B862A31A24300CC5409 /* fg-Mechanic-about-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B802A31A24200CC5409 /* fg-Mechanic-about-Telugu.html */; };
 		84448B872A31A24300CC5409 /* fg-Mechanic-about-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B812A31A24200CC5409 /* fg-Mechanic-about-Eng.html */; };
 		84448B882A31A24300CC5409 /* fg-Mechanic-about-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B822A31A24300CC5409 /* fg-Mechanic-about-Kannada.html */; };
 		84448B892A31A24300CC5409 /* fg-Mechanic-about-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B832A31A24300CC5409 /* fg-Mechanic-about-Hindi.html */; };
 		84448B902A31A25F00CC5409 /* fg-Mechanic-faq-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B8A2A31A25E00CC5409 /* fg-Mechanic-faq-Hindi.html */; };
 		84448B912A31A25F00CC5409 /* fg-Mechanic-faq-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B8B2A31A25E00CC5409 /* fg-Mechanic-faq-Bengali.html */; };
-		84448B922A31A25F00CC5409 /* fg-Mechanic-faq-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B8C2A31A25E00CC5409 /* fg-Mechanic-faq-Telugu.html */; };
 		84448B932A31A25F00CC5409 /* fg-Mechanic-faq-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B8D2A31A25E00CC5409 /* fg-Mechanic-faq-Eng.html */; };
 		84448B942A31A25F00CC5409 /* fg-Mechanic-faq-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B8E2A31A25F00CC5409 /* fg-Mechanic-faq-Kannada.html */; };
-		84448B952A31A25F00CC5409 /* fg-Mechanic-faq-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B8F2A31A25F00CC5409 /* fg-Mechanic-faq-Tamil.html */; };
 		84448B9C2A31A27300CC5409 /* fleetguard-mechanic-T&C-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B962A31A27200CC5409 /* fleetguard-mechanic-T&C-Telugu.html */; };
 		84448B9D2A31A27300CC5409 /* fleetguard-mechanic-T&C-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B972A31A27200CC5409 /* fleetguard-mechanic-T&C-Hindi.html */; };
 		84448B9E2A31A27300CC5409 /* fleetguard-mechanic-T&C-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 84448B982A31A27300CC5409 /* fleetguard-mechanic-T&C-Eng.html */; };
@@ -548,6 +548,10 @@
 		84140DE0298D31B20090DD44 /* ObjCatalogueList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCatalogueList.swift; sourceTree = "<group>"; };
 		84140DE1298D31B20090DD44 /* RedemptionCatalogueListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedemptionCatalogueListModel.swift; sourceTree = "<group>"; };
 		84140DE5298D32540090DD44 /* FG_RedemptionCatalogueVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_RedemptionCatalogueVM.swift; sourceTree = "<group>"; };
+		8418A1AD2A6026700055E039 /* fg-Mechanic-about-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Bengali.html"; sourceTree = "<group>"; };
+		8418A1AE2A6026700055E039 /* fg-Mechanic-about-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Telugu.html"; sourceTree = "<group>"; };
+		8418A1B12A6027300055E039 /* fg-Mechanic-faq-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Telugu.html"; sourceTree = "<group>"; };
+		8418A1B32A6028EA0055E039 /* fg-Mechanic-faq-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Tamil.html"; sourceTree = "<group>"; };
 		841FCE05297FDC790026CD44 /* FG_MyCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyCartVC.swift; sourceTree = "<group>"; };
 		841FCE07297FDC950026CD44 /* FG_DefaultAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_DefaultAddressVC.swift; sourceTree = "<group>"; };
 		841FCE09297FDCB40026CD44 /* FG_RedemptionOTPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_RedemptionOTPVC.swift; sourceTree = "<group>"; };
@@ -572,18 +576,14 @@
 		8439109D29812E29007D73B6 /* FG_StatementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_StatementVC.swift; sourceTree = "<group>"; };
 		84448B7A2A319AAF00CC5409 /* LanguageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
 		84448B7C2A319AB800CC5409 /* LanguageTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageTVC.swift; sourceTree = "<group>"; };
-		84448B7E2A31A24200CC5409 /* fg-Mechanic-about-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Bengali.html"; sourceTree = "<group>"; };
 		84448B7F2A31A24200CC5409 /* fg-Mechanic-about-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Tamil.html"; sourceTree = "<group>"; };
-		84448B802A31A24200CC5409 /* fg-Mechanic-about-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Telugu.html"; sourceTree = "<group>"; };
 		84448B812A31A24200CC5409 /* fg-Mechanic-about-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Eng.html"; sourceTree = "<group>"; };
 		84448B822A31A24300CC5409 /* fg-Mechanic-about-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Kannada.html"; sourceTree = "<group>"; };
 		84448B832A31A24300CC5409 /* fg-Mechanic-about-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Hindi.html"; sourceTree = "<group>"; };
 		84448B8A2A31A25E00CC5409 /* fg-Mechanic-faq-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Hindi.html"; sourceTree = "<group>"; };
 		84448B8B2A31A25E00CC5409 /* fg-Mechanic-faq-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Bengali.html"; sourceTree = "<group>"; };
-		84448B8C2A31A25E00CC5409 /* fg-Mechanic-faq-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Telugu.html"; sourceTree = "<group>"; };
 		84448B8D2A31A25E00CC5409 /* fg-Mechanic-faq-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Eng.html"; sourceTree = "<group>"; };
 		84448B8E2A31A25F00CC5409 /* fg-Mechanic-faq-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Kannada.html"; sourceTree = "<group>"; };
-		84448B8F2A31A25F00CC5409 /* fg-Mechanic-faq-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Tamil.html"; sourceTree = "<group>"; };
 		84448B962A31A27200CC5409 /* fleetguard-mechanic-T&C-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-mechanic-T&C-Telugu.html"; sourceTree = "<group>"; };
 		84448B972A31A27200CC5409 /* fleetguard-mechanic-T&C-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-mechanic-T&C-Hindi.html"; sourceTree = "<group>"; };
 		84448B982A31A27300CC5409 /* fleetguard-mechanic-T&C-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-mechanic-T&C-Eng.html"; sourceTree = "<group>"; };
@@ -1915,12 +1915,12 @@
 		842F0A5729BC9A9C0014602F /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
+				8418A1B32A6028EA0055E039 /* fg-Mechanic-faq-Tamil.html */,
+				8418A1B12A6027300055E039 /* fg-Mechanic-faq-Telugu.html */,
 				84448B8B2A31A25E00CC5409 /* fg-Mechanic-faq-Bengali.html */,
 				84448B8D2A31A25E00CC5409 /* fg-Mechanic-faq-Eng.html */,
 				84448B8A2A31A25E00CC5409 /* fg-Mechanic-faq-Hindi.html */,
 				84448B8E2A31A25F00CC5409 /* fg-Mechanic-faq-Kannada.html */,
-				84448B8F2A31A25F00CC5409 /* fg-Mechanic-faq-Tamil.html */,
-				84448B8C2A31A25E00CC5409 /* fg-Mechanic-faq-Telugu.html */,
 			);
 			path = FAQ;
 			sourceTree = "<group>";
@@ -1928,12 +1928,12 @@
 		842F0A5829BC9AA50014602F /* AboutUs */ = {
 			isa = PBXGroup;
 			children = (
-				84448B7E2A31A24200CC5409 /* fg-Mechanic-about-Bengali.html */,
 				84448B812A31A24200CC5409 /* fg-Mechanic-about-Eng.html */,
 				84448B832A31A24300CC5409 /* fg-Mechanic-about-Hindi.html */,
 				84448B822A31A24300CC5409 /* fg-Mechanic-about-Kannada.html */,
 				84448B7F2A31A24200CC5409 /* fg-Mechanic-about-Tamil.html */,
-				84448B802A31A24200CC5409 /* fg-Mechanic-about-Telugu.html */,
+				8418A1AD2A6026700055E039 /* fg-Mechanic-about-Bengali.html */,
+				8418A1AE2A6026700055E039 /* fg-Mechanic-about-Telugu.html */,
 			);
 			path = AboutUs;
 			sourceTree = "<group>";
@@ -2731,14 +2731,11 @@
 				84068DC82976777200D4360F /* Roboto-ThinItalic.ttf in Resources */,
 				84068DC92976777200D4360F /* Roboto-BoldItalic.ttf in Resources */,
 				84DA99002A0D06F000F33277 /* Localizable.strings in Resources */,
-				84448B862A31A24300CC5409 /* fg-Mechanic-about-Telugu.html in Resources */,
 				25C865DD29A7237F00C1801E /* otherInfoTableViewCell.xib in Resources */,
 				84068DCF2976777200D4360F /* Roboto-Thin.ttf in Resources */,
 				84068DCA2976777200D4360F /* Roboto-LightItalic.ttf in Resources */,
 				84369F402A135CCB00D1CA28 /* HistoryNotificationsTableViewCell.xib in Resources */,
 				84068DD02976777200D4360F /* Roboto-Black.ttf in Resources */,
-				84448B952A31A25F00CC5409 /* fg-Mechanic-faq-Tamil.html in Resources */,
-				84448B842A31A24300CC5409 /* fg-Mechanic-about-Bengali.html in Resources */,
 				84C1E40B29758A7000D188C5 /* LaunchScreen.storyboard in Resources */,
 				84068DCB2976777200D4360F /* Roboto-Italic.ttf in Resources */,
 				84068DCC2976777200D4360F /* LICENSE.txt in Resources */,
@@ -2757,17 +2754,20 @@
 				84448B942A31A25F00CC5409 /* fg-Mechanic-faq-Kannada.html in Resources */,
 				84068DA3297664C800D4360F /* lf30_editor_qd1wdceq.json in Resources */,
 				84068DC52976777200D4360F /* Roboto-Light.ttf in Resources */,
+				8418A1B22A6027300055E039 /* fg-Mechanic-faq-Telugu.html in Resources */,
+				8418A1AF2A6026700055E039 /* fg-Mechanic-about-Bengali.html in Resources */,
 				84448B9F2A31A27300CC5409 /* fleetguard-mechanic-T&C-Kannada.html in Resources */,
 				84448B882A31A24300CC5409 /* fg-Mechanic-about-Kannada.html in Resources */,
+				8418A1B42A6028EA0055E039 /* fg-Mechanic-faq-Tamil.html in Resources */,
 				25C865E129A7237F00C1801E /* senderInfoTableViewCell.xib in Resources */,
 				84C1E40829758A7000D188C5 /* Assets.xcassets in Resources */,
 				84448BA12A31A27300CC5409 /* fleetguard-mechanic-T&C-Tamil.html in Resources */,
 				84448B9D2A31A27300CC5409 /* fleetguard-mechanic-T&C-Hindi.html in Resources */,
 				25C865EB29A7237F00C1801E /* senderImageTableViewCell.xib in Resources */,
 				84448B912A31A25F00CC5409 /* fg-Mechanic-faq-Bengali.html in Resources */,
-				84448B922A31A25F00CC5409 /* fg-Mechanic-faq-Telugu.html in Resources */,
 				84068DC72976777200D4360F /* Roboto-MediumItalic.ttf in Resources */,
 				84448B852A31A24300CC5409 /* fg-Mechanic-about-Tamil.html in Resources */,
+				8418A1B02A6026700055E039 /* fg-Mechanic-about-Telugu.html in Resources */,
 				84068DCE2976777200D4360F /* Roboto-Bold.ttf in Resources */,
 				84C1E40329758A6D00D188C5 /* Main.storyboard in Resources */,
 			);

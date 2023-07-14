@@ -113,7 +113,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         localization()
         self.totalPts.text = "\(UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "")"
         self.passBookNumber.text = self.loyaltyId
-        self.VM.redemptionCatalougeListArray.removeAll()
+        catalogueListTableView.reloadData()
         self.myCartListApi()
         self.plannerListing()
     }
@@ -352,7 +352,7 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
         cell.selectionStyle = .none
         cell.delegate = self
         cell.productNameLbl.text = self.VM.redemptionCatalougeListArray[indexPath.row].productName ?? ""
-        cell.categoryLbl.text = "Catogory / \(self.VM.redemptionCatalougeListArray[indexPath.row].catogoryName ?? "")"
+        cell.categoryLbl.text = "\("Category".localiz()) / \(self.VM.redemptionCatalougeListArray[indexPath.row].catogoryName ?? "")"
         cell.pointsLbl.text = "\(self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0)"
         let image = VM.redemptionCatalougeListArray[indexPath.row].productImage ?? ""
         if image.count != 0{

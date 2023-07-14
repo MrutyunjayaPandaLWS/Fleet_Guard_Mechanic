@@ -45,7 +45,6 @@ class HistoryNotificationsViewController: BaseViewController, notificationDelgat
         notificationListApi()
         self.NotificationstableView.delegate = self
         self.NotificationstableView.dataSource = self
-        localization()
         
     }
     
@@ -56,7 +55,7 @@ class HistoryNotificationsViewController: BaseViewController, notificationDelgat
 //
 //        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
 //        tracker.send(builder.build() as [NSObject : AnyObject])
-
+        localization()
         tabBarController?.tabBar.isHidden =  true
     }
     

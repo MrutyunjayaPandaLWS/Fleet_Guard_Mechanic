@@ -35,10 +35,12 @@ class FG_RedemptionDetailsVM{
                             self.VC?.termAndConditionLbl.text = "\(self.redemptionDetails[0].termsCondition ?? "")"
                             let proImage = self.redemptionDetails[0].productImage ?? ""
                             if proImage.count != 0{
-                                self.VC?.productImage.kf.setImage(with: URL(string: "\(productCatalogueImgURL)\(proImage)")  , placeholder: UIImage(named: "Humsafar Logo PNG"))
+                                let images = ("\(imageUrl)\(proImage)").replacingOccurrences(of: " ", with: "%20")
+                                self.VC?.productImage.kf.setImage(with: URL(string: "\(images)")  , placeholder: UIImage(named: "Humsafar Logo PNG"))
                             }else{
                                 self.VC?.productImage.image = UIImage(named: "Humsafar Logo PNG")
                             }
+                            
                             
                             self.VC?.orderStatusApi()
                             self.VC?.stopLoading()

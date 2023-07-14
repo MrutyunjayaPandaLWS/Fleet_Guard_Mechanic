@@ -34,13 +34,17 @@ class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         noDataFound.isHidden = true
-        headerLbl.text = "Offers_promotions".localiz()
+        
         self.VM.VC = self
         self.myPromotionsTableView.delegate = self
         self.myPromotionsTableView.dataSource = self
         promotionListingAPI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        noDataFound.text = "noDataFound".localiz()
+        headerLbl.text = "Offers_promotions".localiz()
+    }
 
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)

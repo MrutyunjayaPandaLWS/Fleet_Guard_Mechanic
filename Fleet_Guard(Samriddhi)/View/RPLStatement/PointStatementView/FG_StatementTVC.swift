@@ -24,7 +24,7 @@ class FG_StatementTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        viewOutBtn.setTitle("View".localiz(), for: .normal)
+//        viewOutBtn.setTitle("View".localiz(), for: .normal)
     }
     
     @IBAction func viewBtn(_ sender: Any) {

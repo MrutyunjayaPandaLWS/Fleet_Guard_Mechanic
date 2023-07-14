@@ -10,6 +10,7 @@ import LanguageManager_iOS
 class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
     
+    @IBOutlet weak var yourExpetedRedeemTitleLbl: UILabel!
     @IBOutlet weak var addedToCartBtn: GradientButton!
     @IBOutlet weak var redeemBtn: GradientButton!
     @IBOutlet weak var avaragePointsTitle: UILabel!
@@ -73,7 +74,7 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
         plannerListing()
         productNameLabel.text = self.productName
         categoryTitleLbl.text = "\("Category".localiz()) : \(categoryName)"
-        redeemBtn.setTitle("Redeem Now", for: .normal)
+        
 //        print(tdsprice!)
 //        tdsvalue.text = "\(applicabletds)"
 //        tdsprice.text = "\(tdspercentage1)%"
@@ -183,12 +184,15 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
     private func localization(){
         redemptionPlannerTitleLabel.text = "Dream_Gift".localiz()
         removeButton.setTitle("Remove".localiz(), for: .normal)
+        redeemBtn.setTitle("Redeem now".localiz(), for: .normal)
         pointsTitleLbl.text = "points".localiz()
         redeemablePointsTodaytitle.text = "Redeemable Points as on Today".localiz()
         avaragePointstitle.text = "Average earning required per month".localiz()
         avaragePointsTitle.text = "points".localiz()
         RedeemablePointsTitle.text = "points".localiz()
+        self.yourExpetedRedeemTitleLbl.text = "Your Expected Redemption".localiz()
     }
+    
     //    func languagelocalization(){
     //        if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "1"{
     

@@ -37,6 +37,10 @@ class FG_CounterGapVC: BaseViewController, CounterGapDelegate {
         emptyMessage.isHidden = true
         CounterGapTableView.delegate = self
         CounterGapTableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         emptyMessage.text = "noDataFound".localiz()
     }
     

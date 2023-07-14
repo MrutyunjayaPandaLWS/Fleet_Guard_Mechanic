@@ -80,13 +80,14 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
         self.subView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         self.nodatafoundLbl.isHidden = true
         self.countLbl.isHidden = true
-        searchTF.placeholder = "Search by part no/ cross reference".localiz()
-        nodatafoundLbl.text = "noDataFound".localiz()
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         headerText.text = "Product_Catalogue".localiz()
+        searchTF.placeholder = "Search by part no/ cross reference".localiz()
+        nodatafoundLbl.text = "noDataFound".localiz()
         self.productListApi(StartIndex: startindex, searchText: self.searchTF.text ?? "")
         self.myCartApi()
     }

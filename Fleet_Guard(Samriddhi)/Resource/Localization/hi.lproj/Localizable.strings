@@ -1,4 +1,3 @@
-
 "Allow" = "अनुमति दें";
 "No_Internet" = "कोई इंटरनेट नहीं";
 "Disallow" = "अस्वीकार करें";
@@ -60,11 +59,11 @@
 "My_Promotions" = "मेरे प्रोमोशंस";
 "Lodge_Query" = "क्वेरी दर्ज करे";
 "About" = "के बारे में";
-"FAQs" = "FAQs";
-"T&C" = "T&C";
+"FAQs" = "अक्सर पूछे जाने वाले प्रश्न";
+"T&C" = "टी एंड सी";
 "Logout" = "लॉगआउट";
 "Delete" = "हटाएं";
-"Since" = "तब से";
+"Since" = "से सदस्य";
 
 //MARK: - DASHBOARD = मार्क: - डैशबोर्ड
 
@@ -147,7 +146,7 @@
 "account_unverified_error" = "आपका खाता असत्यापित है! रिडेम्पशन कैटलॉग का उपयोग करने के लिए कृपया व्यवस्थापक से संपर्क करें";
 
 //MARK: - MY CART = // मार्क: - मेरा कार्ट
-"myCart" = "My Cart";
+"myCart" = "मेरा काट";
 "Default_Address" = "डिफ़ॉल्ट पता";
 "Edit_Address" = "पता संपादित करें";
 "Enter_Address" = "पता दर्ज करें";
@@ -184,18 +183,18 @@
 "View" = "देखें";
 "Description" = "विवरण";
 "noDataFound" = "कोई डेटा नहीं मिला";
-"add more" = "और जोड़ें";
+"Add More" = "और जोड़ें";
 "Details" = "विवरण";
-"delete" = "हटाएं";
+"Remove" = "हटाएं";
 "Category" = "श्रेणी";
 "account_deleted_successfully" = "खाता सफलतापूर्वक हटा दिया गया";
 "are_sure_delete_account" = "क्या आप वाकई अपना खाता हटाना चाहते हैं?";
 
-"points available" = "उपलब्ध अंक";
-"marks required" = "आवश्यक अंक";
-"Redeemable Points as of today" = "आज की स्थिति के अनुसार भुनाए जाने योग्य अंक";
-"required average earning per month" = "प्रति माह आवश्यक औसत कमाई";
-"garage name" = "गैराज नाम";
+"Points Available" = "उपलब्ध अंक";
+"Points Required" = "आवश्यक अंक";
+"Redeemable Points as on Today" = "आज की स्थिति के अनुसार भुनाए जाने योग्य अंक";
+"Average earning required per month" = "प्रति माह आवश्यक औसत कमाई";
+"Garage Name" = "गैराज नाम";
 "Behaviour" = "व्यवहार";
 "your_account_is_deleted" = "आपका खाता हटा दिया गया है। कृपया अपने व्यवस्थापक से संपर्क करें।";
 "order status" = "आदेश स्थिति";
@@ -207,7 +206,56 @@
 "select by date" = "तिथि से चयन करें";
 "toDate must be less than fromDate" = "टूडेट को फ्रॉमडेट से कम होना चाहिए";
 "notification" = "अधिसूचना";
-"Add to Cart" = "कार्ट में जोड़ें";
-"added to cart" = "कार्ट में जोड़ा गया";
-"Add to DreamGift" = "ड्रीमगिफ्ट में जोड़ें";
-"added to dreamgift" = "ड्रीमगिफ्ट में जोड़ा गया";
+"Add to cart" = "कार्ट में जोड़ें";
+"Added to cart" = "कार्ट में जोड़ा गया";
+"Add to dreamgift" = "ड्रीमगिफ्ट में जोड़ें";
+"Added to dreamgift" = "ड्रीमगिफ्ट में जोड़ा गया";
+"add_to_cart_success_message" = "उत्पाद कार्ट में सफलतापूर्वक जोड़ा गया।";
+"Offers and Promotions Click Here" = "ऑफर और प्रमोशन यहां क्लिक करें";
+
+"My points" = "मेरे अंक";
+"Home" = "घर";
+"Know more" = "अधिक जानते हैं";
+"Delete account" = " खाता हटा दो";
+"Catalogue name" = "कैटलॉग नाम";
+"qty" = "qty";
+"ref. no" = "ref. no";
+"Points redeem" = "अंक भुनाएं";
+"Part number" = "भाग संख्या";
+"Redeem now" = "अब एवज करें";
+"Short Description" = "संक्षिप्त वर्णन";
+"Add more part no" = "और भाग संख्या जोड़ें";
+"Order_Now" = "अब ऑर्डर दें";
+"Choose a point range below" = "नीचे एक बिंदु सीमा चुनें";
+"Points Range" = "अंक सीमा";
+"Please select Segment value" = "कृपया सेगमेंट वैल्यू चुनें";
+"Please select OME value" = "कृपया OME मान चुनें";
+"Please select Model value" = "कृपया मॉडल मूल्य का चयन करें";
+
+//////MARK: - Existing
+//"Default_Address" = "Default Address";
+//"Edit_Address" = "Edit Address";
+//"resend_OTP" = "Resend OTP";
+//"submit" = "Submit";
+//"Search by part no/ cross reference" = "Search by part no/ cross reference";
+//"Query type" = "Query type";
+//"submit_your_query" = "Please submit your query";
+//"Select_Your_Topic" = "Select Your Topic";
+//"query_Details" = "Query Details";
+//"Upload_Image" = "Upload Image";
+
+//MARK: - NEW
+"Redeemable points" = "भुनाने योग्य अंक";
+"Process to checkout" = "चेकआउट करने की प्रक्रिया";
+"Confirm Order" = "आदेश की पुष्टि";
+"OTP Verification" = "ओटीपी सत्यापन";
+"We send a OTP to your number" = "हम आपके नंबर पर एक ओटीपी भेजते हैं";
+"OTP will Receive within" = "ओटीपी भीतर प्राप्त होगा";
+"Didn't receive OTP code?" = "ओटीपी कोड प्राप्त नहीं हुआ?";
+"Segment" = "खंड";
+"Model" = "नमूना";
+"Product Category" = "उत्पाद श्रेणी";
+"Your Expected Redemption" = "आपकी अपेक्षित मुक्ति";
+"Please Enter Query Details" = "कृपया क्वेरी विवरण दर्ज करें";
+"Note: Image formate should be" = "नोट: इमेज फॉर्मेट होना चाहिए";
+"OTP" = "ओ.टी.पी";

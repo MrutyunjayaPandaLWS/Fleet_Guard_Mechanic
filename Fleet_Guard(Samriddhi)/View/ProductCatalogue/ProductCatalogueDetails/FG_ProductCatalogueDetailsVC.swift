@@ -12,7 +12,11 @@ import LanguageManager_iOS
 class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
     
-
+    @IBOutlet weak var orderNowBtn: UIButton!
+    
+    @IBOutlet weak var addMorePartNoBtn: UIButton!
+    @IBOutlet weak var shortDescriptionTitleLbl: UILabel!
+    @IBOutlet weak var partNoTitlelbl: UILabel!
     @IBOutlet weak var headertitle: UILabel!
     @IBOutlet weak var cartCountLbl: UILabel!
     @IBOutlet weak var productNameLbl: UILabel!
@@ -72,6 +76,7 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
         super.viewWillAppear(animated)
         headertitle.text = "Product_Catalogue_Details".localiz()
 //        Product_Catalogue_Details
+        localization()
         self.myCartApi()
       //  self.productListApi()
         print(productImageURL)
@@ -87,6 +92,13 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
 //        productImage.kf.setImage(with: URL(string: "\(productImageURL)"),placeholder: UIImage(named: "Image 3"))
         self.qtyTF.isEnabled = false
         
+    }
+    
+    private func localization(){
+        partNoTitlelbl.text = "Part number".localiz()
+        shortDescriptionTitleLbl.text = "Short Description".localiz()
+        orderNowBtn.setTitle("Order_Now".localiz(), for: .normal)
+        addMorePartNoBtn.setTitle("Add more part no".localiz(), for: .normal)
     }
     
     

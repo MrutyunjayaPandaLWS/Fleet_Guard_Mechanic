@@ -14,6 +14,8 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     }
     
     
+    @IBOutlet weak var termsAndConditionTitleLbl: UILabel!
+    @IBOutlet weak var descriptionTitleLbl: UILabel!
     @IBOutlet weak var addedToDreamGiftLbl: UILabel!
     @IBOutlet weak var addToDreamGiftLbl: UILabel!
     @IBOutlet weak var addedToCartLbl: UILabel!
@@ -83,9 +85,9 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
         self.productBackgroundView.layer.cornerRadius = 36
         self.productBackgroundView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         
-       
+        self.categoryLbl.text = "\("Category".localiz()) : \(productCategory)"
         self.productNameLbl.text = productName
-        self.productPoints.text = "Points: \(productPoint)"
+        self.productPoints.text = "\("points".localiz()) : \(productPoint)"
         self.descriptionLbl.text = productDetails
         self.termsAndConLbl.text = termsandContions
         let receivedImage = "\(String(describing: self.productImages.replacingOccurrences(of: " ", with: "%20")))"
@@ -95,10 +97,22 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        headerText.text = "Redemption_Catalogue".localiz()
+        localization()
         plannerListing()
         myCartListApi()
     }
+    
+    private func localization(){
+        descriptionTitleLbl.text = "Description".localiz()
+        termsAndConditionTitleLbl.text = "Terms_and_condition".localiz()
+        headerText.text = "Redemption_Catalogue".localiz()
+        addToCartBtn.text = "Add to cart".localiz()
+        addedToCartLbl.text = "Added to cart".localiz()
+        addToDreamGiftLbl.text = "Add to dreamgift".localiz()
+        addedToDreamGiftLbl.text = "Added to dreamgift".localiz()
+    }
+    
+    
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

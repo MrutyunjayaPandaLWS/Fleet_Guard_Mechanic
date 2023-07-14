@@ -18,6 +18,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     }
     
 
+    @IBOutlet weak var offersAndPromotionTitleLbl: UILabel!
     @IBOutlet weak var noDatafoundLbl: UILabel!
     @IBOutlet weak var knowMoreLbl: UILabel!
     @IBOutlet weak var redemptionCatalogueLbl: UILabel!
@@ -139,6 +140,9 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     
 
     func localization(){
+        tabBarController?.tabBar.items![0].title = "My_Ledger".localiz()
+        tabBarController?.tabBar.items![1].title = "Home".localiz()
+        tabBarController?.tabBar.items![2].title = "My_redemption".localiz()
         totalPointBalTitleLbl.text = "total_Point_bal".localiz()
         passbookNumberTitleLbl.text = "passbook_number".localiz()
         welcomeTitle.text = "welcome".localiz()
@@ -149,6 +153,21 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
         clickHereBtn.setTitle("click_Here".localiz(), for: .normal)
         redemptionCatalogueLbl.text = "redemption_catalogue".localiz()
         knowMoreLbl.text = "know_more".localiz()
+        offersAndPromotionTitleLbl.text = "Offers and Promotions Click Here".localiz()
+        plannerPointsRequiredLbl.text = "Points Required".localiz()
+        plannerPointsAvailableHeadingLbl.text = "Points Available".localiz()
+        plannerDetailsBTN.setTitle("Details".localiz(), for: .normal)
+        plannerDetailsBTN.imageEdgeInsets.left = 5
+        plannerDetailsBTN.titleEdgeInsets.left = 8
+        dreamGiftDetailsOutBtn.setTitle("Details".localiz(), for: .normal)
+        dreamGiftDetailsOutBtn.imageEdgeInsets.left = 1
+//        dreamGiftDetailsOutBtn.titleEdgeInsets.left = 1
+//        dreamGiftDetailsOutBtn.titleEdgeInsets.right = 10
+//        dreamGiftDetailsOutBtn.adjustsImageSizeForAccessibilityContentSizeCategory = true
+        if self.VM.myPlannerListArray.count > 0{
+            plannerCategoryLbl.text = "\("Category".localiz()) : \(self.VM.myPlannerListArray[0].catogoryName ?? "-")"
+            
+        }
 //        dreamGiftDetailsOutBtn.setTitle("Details".localiz(), for: .normal)
     }
     

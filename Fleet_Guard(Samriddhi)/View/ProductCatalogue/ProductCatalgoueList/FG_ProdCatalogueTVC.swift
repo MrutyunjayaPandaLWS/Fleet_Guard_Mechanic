@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import LanguageManager_iOS
+
 protocol SendDataToDetailsDelegate: class{
     func sendDataToDetails(_ cell: FG_ProdCatalogueTVC)
     func didTappedImageViewBtn(cell: FG_ProdCatalogueTVC)
@@ -13,6 +15,7 @@ protocol SendDataToDetailsDelegate: class{
 
 class FG_ProdCatalogueTVC: UITableViewCell {
 
+    @IBOutlet weak var partNoTitleLbl: UILabel!
     @IBOutlet weak var imageViewBtn: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var mrpValue: UILabel!
@@ -26,6 +29,7 @@ class FG_ProdCatalogueTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        partNoTitleLbl.text = "Part number".localiz()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -26,7 +26,9 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
         self.addressTextView.text = "\(selectedname),\n\(self.selectedmobile),\n\(self.selectedaddress),\n\(self.selectedCity),\n\(self.selectedState),\n\(self.selectedCountry),\n\(self.selectedemail),\n\(self.selectedpincode)"
     }
     
+    @IBOutlet weak var confirmBtn: UIButton!
     
+    @IBOutlet weak var redeemablePointsTitleLbl: UILabel!
     @IBOutlet weak var editAddressTitleLbl: UILabel!
     @IBOutlet weak var defaultAddressTitleLbl: UILabel!
     @IBOutlet weak var headerLvl: UILabel!
@@ -79,6 +81,8 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
         headerLvl.text = "Default_Address".localiz()
         defaultAddressTitleLbl.text = "Default_Address".localiz()
         editAddressTitleLbl.text = "Edit_Address".localiz()
+        confirmBtn.setTitle("Confirm Order".localiz(), for: .normal)
+        redeemablePointsTitleLbl.text = "Redeemable points".localiz()
     }
     
     @objc func goToMain(){

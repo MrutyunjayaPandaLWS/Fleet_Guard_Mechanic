@@ -227,7 +227,7 @@ class FG_DashboardVM: popUpDelegate{
                     self.VC?.heightOfTheView.constant = 627
                     
                     self.VC?.plannerPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointBalance ?? 0))"
-                    self.VC?.plannerCategoryLbl.text = "Category: \(result?.objCatalogueList?[0].catogoryName ?? "-")"
+                    self.VC?.plannerCategoryLbl.text = "\("Category".localiz()) : \(result?.objCatalogueList?[0].catogoryName ?? "-")"
                     self.VC?.plannerProductLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
                     // self.VC?.plannerPointsRequiredLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
                     let image =  imageUrl + (result?.objCatalogueList?[0].productImage ?? "").replacingOccurrences(of: " ", with: "%20")

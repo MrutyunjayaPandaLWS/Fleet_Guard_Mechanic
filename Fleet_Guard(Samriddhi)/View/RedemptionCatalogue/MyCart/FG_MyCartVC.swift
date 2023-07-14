@@ -11,6 +11,9 @@ import LanguageManager_iOS
 class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
     
+    
+    @IBOutlet weak var proceedToCheckOutBtn: UIButton!
+    @IBOutlet weak var redeemableTitleLbl: UILabel!
     @IBOutlet weak var nodataFoundLbl: UILabel!
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var myCartTableView: UITableView!
@@ -37,7 +40,7 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
         myCartTableView.delegate = self
         myCartTableView.dataSource = self
         self.myCartListApi()
-        nodataFoundLbl.text = "noDataFound".localiz()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +49,10 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
     }
     
     func localization(){
+        nodataFoundLbl.text = "noDataFound".localiz()
         myCartLbl.text = "myCart".localiz()
+        redeemableTitleLbl.text = "Redeemable points".localiz()
+        proceedToCheckOutBtn.setTitle("Process to checkout".localiz(), for: .normal)
     }
     
     @IBAction func backBtn(_ sender: Any) {
@@ -216,8 +222,17 @@ extension FG_MyCartVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_MyCartTVC", for: indexPath) as! FG_MyCartTVC
         cell.selectionStyle = .none
         cell.delegate = self
+        cell.pointsTitle.text = "points".localiz()
         cell.categoryTitle.text = "Category / \(self.VM.redemptionCatalogueMyCartListArray[indexPath.row].categoryName ?? "")"
 //        cell.productImage
+        let image = VM.redemptionCatalogueMyCartListArray[indexPath.row].productImage ?? ""
+        if image.count != 0{
+            let images = ("\(imageUrl)\(image)").replacingOccurrences(of: " ", with: "%20")
+            cell.productImage.kf.setImage(with: URL(string: "\(String(describing: images))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
+            print(images)
+        }else{
+            cell.productImage.image = UIImage(named: "Humsafar Logo PNG 1")
+        }
         cell.productNameLbl.text = self.VM.redemptionCatalogueMyCartListArray[indexPath.row].productName ?? ""
         cell.pointsLbl.text = "\(self.VM.redemptionCatalogueMyCartListArray[indexPath.row].pointsRequired ?? 0)"
         cell.qtyTF.text = "\(self.VM.redemptionCatalogueMyCartListArray[indexPath.row].noOfQuantity ?? 0)"

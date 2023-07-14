@@ -8,6 +8,8 @@
 import UIKit
 import DPOTPView
 //import Firebase
+import LanguageManager_iOS
+
 import Lottie
 class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate, RedemptionPopUpMessageDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -15,6 +17,11 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
         navigationController?.popToRootViewController(animated: true)
     }
    
+    @IBOutlet weak var headerLbl: UILabel!
+    @IBOutlet weak var didNotReceiveTitleLbl: UILabel!
+    @IBOutlet weak var otpWillRecieveTitleLbl: UILabel!
+    @IBOutlet weak var weSendOtpTitleLbl: UILabel!
+    @IBOutlet weak var otpVerificationTitileLbl: UILabel!
     @IBOutlet weak var submitBtnTopSpace: NSLayoutConstraint!
     //    @IBOutlet var otpTF: UITextField!
     @IBOutlet weak var otpView: DPOTPView!
@@ -108,11 +115,24 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.otpView.text = ""
+        localization()
     }
     
     @objc func sendSuccess(){
       //  sendSuccessMessage()
     }
+    
+    private func localization(){
+        self.headerLbl.text = "OTP".localiz()
+        otpVerificationTitileLbl.text = "OTP Verification".localiz()
+        weSendOtpTitleLbl.text = "We send a OTP to your number".localiz()
+        otpWillRecieveTitleLbl.text  = "OTP will Receive within".localiz()
+        didNotReceiveTitleLbl.text = "Didn't receive OTP code?".localiz()
+        resendOTPButton.setTitle("resend_OTP".localiz(), for: .normal)
+        submitBTN.setTitle("submit".localiz(), for: .normal)
+        
+    }
+    
     @objc func dismissNavigator() {
         self.dismiss(animated: true){
             NotificationCenter.default.post(name: .goToMain, object: nil)

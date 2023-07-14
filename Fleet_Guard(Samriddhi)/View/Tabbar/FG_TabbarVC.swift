@@ -17,6 +17,9 @@ class FG_TabbarVc: UITabBarController {
 //        if self.comingFrom == "DelegateData"{
 //            _ = self.tabBarController?.selectedIndex = 1
 //        }
+        tabBarController?.tabBar.items![0].title = "My_Ledger".localiz()
+        tabBarController?.tabBar.items![1].title = "Home".localiz()
+        tabBarController?.tabBar.items![2].title = "My_redemption".localiz()
     }
     
     override func viewWillAppear(_ animated: Bool) {

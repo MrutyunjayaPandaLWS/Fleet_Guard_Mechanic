@@ -83,7 +83,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         filterView.clipsToBounds = true
         filterView.layer.cornerRadius = 20
         filterView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        nodatafoundLbl.text = "noDataFound".localiz()
+        
         lodgeQueryBtn.clipsToBounds = true
         lodgeQueryBtn.layer.cornerRadius = 16
         lodgeQueryBtn.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
@@ -110,6 +110,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     }
     
     func localization(){
+        nodatafoundLbl.text = "noDataFound".localiz()
         headerText.text = "Lodge_Query".localiz()
         lodgeQueryBtn.setTitle("Lodge_Query".localiz(), for: .normal)
         self.fromDateBtn.setTitle("from_Date".localiz(), for: .normal)
@@ -314,6 +315,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     let ticketStatus = VM.queryListArray[indexPath.row].ticketStatus ?? "-"
     cell.queryId.text = VM.queryListArray[indexPath.row].customerTicketRefNo ?? ""
     cell.statusLbl.text = ticketStatus
+    cell.queryTypeLhl.text = "Query type".localiz()
     
     if cell.statusLbl.text == "Pending"{
         cell.statusLbl.backgroundColor = #colorLiteral(red: 0.8146452308, green: 0.6417329907, blue: 0.1795035601, alpha: 1)

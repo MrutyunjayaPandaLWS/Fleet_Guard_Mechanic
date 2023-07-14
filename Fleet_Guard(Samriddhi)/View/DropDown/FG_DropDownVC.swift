@@ -62,6 +62,7 @@ class FG_DropDownVC: BaseViewController {
         self.VM.VC = self
         self.dropDownTableView.delegate = self
         self.dropDownTableView.dataSource = self
+        noDataFoundLbl.isHidden = true
         if isComeFrom == 1{
              self.stateListingAPI(CountryID: countryIDfromPreviousScreen)
          }else if isComeFrom == 2{

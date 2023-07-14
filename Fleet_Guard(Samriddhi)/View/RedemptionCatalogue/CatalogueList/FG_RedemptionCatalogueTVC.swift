@@ -17,6 +17,7 @@ protocol DidTapActionDelegate: AnyObject{
 
 class FG_RedemptionCatalogueTVC: UITableViewCell {
 
+    @IBOutlet weak var detailsTitleBtn: UIButton!
     @IBOutlet weak var detailsBtn: UILabel!
     @IBOutlet weak var pointsTitleLbl: UILabel!
     @IBOutlet weak var addToDreamGiftLbl: UILabel!
@@ -62,10 +63,11 @@ class FG_RedemptionCatalogueTVC: UITableViewCell {
     private func localization(){
         detailsBtn.text = "Details".localiz()
         pointsTitleLbl.text = "points".localiz()
-        addToDreamGiftLbl.text = "Added to dreamgift".localiz()
+        addCartLbl.text = "Add to cart".localiz()
         addedTocartLbl.text = "Added to cart".localiz()
         addToDreamGiftLbl.text = "Add to dreamgift".localiz()
-        addCartLbl.text = "Add to cart".localiz()
+        addedToDreamGiftLbl.text = "Added to dreamgift".localiz()
+        detailsTitleBtn.setTitle("Details".localiz(), for: .normal)
     }
 
     @IBAction func addToCartButton(_ sender: Any) {

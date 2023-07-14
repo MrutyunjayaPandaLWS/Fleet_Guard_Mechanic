@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import LanguageManager_iOS
+
 protocol CatalogueActionDelegate: AnyObject{
     
     func removeBtnDidTap(_ cell: FG_MyCartTVC)

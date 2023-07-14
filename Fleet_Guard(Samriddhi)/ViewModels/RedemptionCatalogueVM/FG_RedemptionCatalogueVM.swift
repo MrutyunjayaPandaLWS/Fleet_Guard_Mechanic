@@ -190,12 +190,12 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
                         print(result?.returnValue ?? 0)
                         if result?.returnValue ?? 0 != 0{
                             DispatchQueue.main.async{
-                                self.VC?.view.makeToast("added_to_cart_success_message".localiz(), duration: 3.0, position: .bottom)
+                                self.VC?.view.makeToast("Product_added_to_dreamgift".localiz(), duration: 3.0, position: .bottom)
                                 self.VC?.plannerListing()
                             }
                         }else{
                             DispatchQueue.main.async{
-                                self.VC?.view.makeToast("added_to_cart_success_message".localiz(), duration: 3.0, position: .bottom)
+                                self.VC?.view.makeToast("faild_to_add_dream_gift".localiz(), duration: 3.0, position: .bottom)
                             }
                         }
                     }

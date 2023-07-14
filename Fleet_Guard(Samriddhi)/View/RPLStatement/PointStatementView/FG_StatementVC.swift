@@ -49,8 +49,7 @@ class FG_StatementVC: BaseViewController,StatementViewDelegate{
         self.ledgerStackView.clipsToBounds = true
         self.ledgerStackView.layer.cornerRadius = 15
         self.ledgerStackView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        self.rlpStatemnet()
-        nodataFoundLbl.text = "noDataFound".localiz()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +59,9 @@ class FG_StatementVC: BaseViewController,StatementViewDelegate{
         ptsEarnedLbl.text = "points".localiz()
         balanceLbl.text = "Behaviour".localiz()
         viewLbl.text = "View".localiz()
+        nodataFoundLbl.text = "noDataFound".localiz()
+        self.rlpStatemnet()
+       
         
     }
     
@@ -99,7 +101,7 @@ extension FG_StatementVC: UITableViewDelegate, UITableViewDataSource{
         cell.monthLbl.text = "\(date[0])"
         cell.pointEarnedLbl.text = "\(VM.rlpStatemnetArray[indexPath.row].overAllPoints ?? 0)"
         cell.totalPoints = VM.rlpStatemnetArray[indexPath.row].overAllPoints ?? 0
-        
+        cell.viewOutBtn.setTitle("View".localiz(), for: .normal)
         
         if (indexPath.row) % 2 == 0{
             cell.balanceLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -114,7 +116,6 @@ extension FG_StatementVC: UITableViewDelegate, UITableViewDataSource{
         }
         return cell
     }
-    
     
     
     

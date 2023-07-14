@@ -23,7 +23,6 @@ class FG_LodgeQueryTVC: UITableViewCell {
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 16
         subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        queryInfoLbl.text = "Query type".localiz()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

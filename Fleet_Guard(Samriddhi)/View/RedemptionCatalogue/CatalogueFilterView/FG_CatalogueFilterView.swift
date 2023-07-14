@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 protocol sendProductDelegate {
     func prodiuctDetails(_ vc:FG_CatalogueFilterView)
@@ -13,6 +14,10 @@ protocol sendProductDelegate {
 
 class FG_CatalogueFilterView: BaseViewController {
     
+    @IBOutlet weak var choosePointRangeLbl: UILabel!
+    @IBOutlet weak var applyBtn: UIButton!
+    @IBOutlet weak var clearAllBtn: UIButton!
+    @IBOutlet weak var filterTitle: UILabel!
     @IBOutlet weak var categorylistTopConnstraints: NSLayoutConstraint!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var subView: UIView!
@@ -104,7 +109,10 @@ class FG_CatalogueFilterView: BaseViewController {
 //        print(parameter)
 //        self.VM.redemptionCatalogueListApi(parameter: parameter)
 //    }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localization()
+    }
 
     
     func redemptionCategoryList(){
@@ -117,6 +125,14 @@ class FG_CatalogueFilterView: BaseViewController {
         self.VM.redemptionCateogry(parameters: parameters)
     }
 
+    
+    private func localization(){
+        filterTitle.text = "filter".localiz()
+        clearAllBtn.setTitle("Clear_All".localiz(), for: .normal)
+        applyBtn.setTitle("Apply".localiz(), for: .normal)
+        choosePointRangeLbl.text = "Choose a point range below".localiz()
+    }
+    
     
     @IBAction func closeBtn(_ sender: Any) {
         self.dismiss(animated: true)
@@ -155,7 +171,7 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_CatalogueCategoryTypeTVC", for: indexPath) as! FG_CatalogueCategoryTypeTVC
-        cell.categoryTitleLbl.text = self.pointsCatagoryArray[indexPath.row]
+        cell.categoryTitleLbl.text = self.pointsCatagoryArray[indexPath.row].localiz()
         print(tableViewData,"slkdls")
         if tableViewData == "Points Range"{
             if indexPath.row == 0{

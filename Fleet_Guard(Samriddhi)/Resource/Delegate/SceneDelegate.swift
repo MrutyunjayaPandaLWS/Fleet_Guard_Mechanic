@@ -133,7 +133,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func tokendata1(){
             if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             }else{
-                let parameters : Data = "username=\(username)&password=\(password)&grant_type=password".data(using: .utf8)!
+                let parameters : Data = "username=\(username2)&password=\(password2)&grant_type=password".data(using: .utf8)!
 
             let url = URL(string: secondToken)!
             let session = URLSession.shared
