@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zMJ-ki-3gJ">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="DZ5-J0-iZw">
+            <objects>
+                <viewController id="zMJ-ki-3gJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K0E-v9-wIe">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppTitle" translatesAutoresizingMaskIntoConstraints="NO" id="gPI-fu-vzv">
+                                <rect key="frame" x="66.666666666666686" y="386" width="260" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="FhQ-9x-xiq"/>
+                                    <constraint firstAttribute="width" constant="260" id="w4d-Ae-kdm"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group-8071" translatesAutoresizingMaskIntoConstraints="NO" id="nMu-iv-D0T">
+                                <rect key="frame" x="0.0" y="47" width="393" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="cWD-JG-o57"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group-8113 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="zWX-q8-JgJ">
+                                <rect key="frame" x="0.0" y="730" width="393" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="esD-ya-bv4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Y5-al-1Lw">
+                                <rect key="frame" x="147" y="334.33333333333331" width="99.333333333333314" height="21.666666666666686"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bhx-DY-qIe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zWX-q8-JgJ" firstAttribute="leading" secondItem="bhx-DY-qIe" secondAttribute="leading" id="6r7-AU-ntV"/>
+                            <constraint firstItem="gPI-fu-vzv" firstAttribute="centerY" secondItem="K0E-v9-wIe" secondAttribute="centerY" id="7aT-pt-faM"/>
+                            <constraint firstItem="2Y5-al-1Lw" firstAttribute="centerX" secondItem="K0E-v9-wIe" secondAttribute="centerX" id="Lr3-KG-Tcr"/>
+                            <constraint firstItem="zWX-q8-JgJ" firstAttribute="trailing" secondItem="bhx-DY-qIe" secondAttribute="trailing" id="RZD-fq-Jzq"/>
+                            <constraint firstItem="nMu-iv-D0T" firstAttribute="leading" secondItem="bhx-DY-qIe" secondAttribute="leading" id="Sx7-JE-jRZ"/>
+                            <constraint firstItem="gPI-fu-vzv" firstAttribute="top" secondItem="2Y5-al-1Lw" secondAttribute="bottom" constant="30" id="TsQ-I7-BN4"/>
+                            <constraint firstItem="bhx-DY-qIe" firstAttribute="trailing" secondItem="nMu-iv-D0T" secondAttribute="trailing" id="bZi-E0-eyI"/>
+                            <constraint firstItem="nMu-iv-D0T" firstAttribute="top" secondItem="bhx-DY-qIe" secondAttribute="top" constant="-12" id="c3R-YI-VkQ"/>
+                            <constraint firstItem="bhx-DY-qIe" firstAttribute="bottom" secondItem="zWX-q8-JgJ" secondAttribute="bottom" constant="-12" id="iif-Oj-pQu"/>
+                            <constraint firstItem="gPI-fu-vzv" firstAttribute="centerX" secondItem="K0E-v9-wIe" secondAttribute="centerX" id="zJ2-Dv-9Cj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FPr-xx-shU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="441.98473282442745" y="10.563380281690142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AppTitle" width="386" height="142"/>
+        <image name="Group-8071" width="1657" height="271"/>
+        <image name="Group-8113 (1)" width="1655" height="339"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

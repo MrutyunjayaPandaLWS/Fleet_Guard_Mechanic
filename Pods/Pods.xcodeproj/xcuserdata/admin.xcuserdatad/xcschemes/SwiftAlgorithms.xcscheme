@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2C511EE63C6E7D5843B971D1E441119E"
-               BuildableName = "libSwiftAlgorithms.a"
+               BuildableName = "Algorithms.framework"
                BlueprintName = "SwiftAlgorithms"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

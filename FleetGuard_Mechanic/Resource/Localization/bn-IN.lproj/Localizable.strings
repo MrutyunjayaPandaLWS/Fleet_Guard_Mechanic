@@ -1,0 +1,271 @@
+"Allow" = "অনুমতি দিন";
+"No_Internet" = "ইন্টারনেট নেই";
+"Disallow" = "অনুমোদন";
+"NoCamera" = "কোন ক্যামেরা নেই";
+"Sorrynodevice" = "দুঃখিত কোনো ডিভাইস পাওয়া যায়নি";
+"OK" = "ঠিক আছে";
+
+// মার্ক:- লগইন করুন
+"welcome_to" = "আপনাকে স্বাগতম";
+"already_a_Member" = "ইতিমধ্যে একজন সদস্য?";
+"login_Now" = "এখন লগ ইন করুন";
+"mobile_number" = "মোবাইল নম্বর";
+"enter_mobile_number" = "আপনার মোবাইল নম্বর লিখুন";
+"send_otp" = "ওটিপি পাঠান";
+"accept Terms_and_condition" = "শর্তাবলী স্বীকার করুন";
+
+"new_to_humsafar" = "হামসাফারে নতুন?";
+"contact_us" = "এখনই আমাদের সাথে যোগাযোগ করুন";
+"enter_mobile_number_error" = "অনুগ্রহ করে মোবাইল নম্বর লিখুন";
+"mobile_number_not_exist" = "আপনি যে মোবাইল নম্বরটি দিয়েছেন সেটি সিস্টেমে নেই।";
+
+// মার্ক: - শর্তাবলী বিজ্ঞাপন শর্তাবলী
+
+"decline" = "অস্বীকৃতি";
+"accept" = "স্বীকার করুন";
+
+// মার্ক:- হেল্পলাইন
+
+"Name" = "নাম";
+"enter_name" = "আপনার নাম লিখুন";
+"enter_name_error" = "অনুগ্রহ করে আপনার  নাম লিখুন";
+"state" = "রাজ্য";
+"select_state_error" = "অনুগ্রহ করে রাজ্য নির্বাচন করুন";
+"city" = "শহর";
+"select_city_error" = "অনুগ্রহ করে শহর নির্বাচন করুন";
+"comments" = "মন্তব্য";
+"enter_comments" = "আপনার মন্তব্য লিখুন";
+"submit" = "জমা দিন";
+"valid_mobile_number_error" = "বৈধ মোবাইল নম্বর লিখুন";
+"query_submit_success_message" = "আপনার প্রশ্ন সফলভাবে জমা দেওয়া হয়েছে";
+"query_submit_failed_message" = "আপনার জমা দেওয়া ব্যর্থ হয়েছে।";
+"mobile_number_already_exist" = "মোবাইল নম্বর ইতিমধ্যে নিবন্ধিত!";
+"enter_OTP_sent" = "9965555555 এই নম্বরে পাঠানো OTP লিখুন";
+"otp_Will_Recieve" = "ওটিপি এর মধ্যেই পাবেন";
+"resend_OTP" = "ওটিপি আবার পাঠান";
+"back" = "পিছনে";
+"Enter_OTP" = "ওটিপি লিখুন";
+"Enter_valid_OTP" = "বৈধ OTP লিখুন";
+"Invalid_OTP" = "অবৈধ OTP";
+
+// মার্ক:- সাইড মেনু
+
+"প্রোফাইল" = "প্রোফাইল";
+"My_Ledger" = "আমার লেজার";
+"My_Redemption_History" = "আমার রিডেম্পশন ইতিহাস";
+"Redemption_Catalogue" = "রিডেম্পশন ক্যাটালগ";
+"Product_Catalogue" = "পণ্য তালিকা";
+"Dream_Gift" = "স্বপ্নের উপহার";
+"My_Promotions" = "অফার এবং প্রচার";
+"Lodge_Query" = "লজ কোয়েরি";
+"About" = "সম্পর্কে";
+"FAQs" = "FAQs";
+"T&C" = "T&C";
+"Logout" = "প্রস্থান";
+"Delete" = "মুছুন";
+"Since" = "যখন থেকে";
+
+//মার্ক:- ড্যাশবোর্ড
+
+"total_Point_bal" = "মোট পয়েন্ট ব্যালেন্স";
+"passbook_number" = "পাসবুক নম্বর";
+"welcome" = "স্বাগত!";
+"humsafar" = "হুমসাফর";
+"View_your_dreamgift" = "আপনার স্বপ্নের উপহার দেখুন";
+"add_your_dreamGift" = "আপনার স্বপ্নের উপহার যোগ করুন";
+"product_Catalogoue" = "পণ্য ক্যাটালগ";
+"click_Here" = "এখানে ক্লিক করুন";
+"redemption_catalogue" = "রিডেম্পশন ক্যাটালগ";
+"know_more" = "আরো জানুন";
+
+// মার্ক: - আমার মুক্তি
+"My_redemption" = "আমার মুক্তি";
+"পেন্ডিং" = "পেন্ডিং";
+"প্রসেসড" = "প্রসেসড";
+"Rejected" = "প্রত্যাখ্যাত";
+"Vendor_Aloted" = "বিক্রেতা বরাদ্দ";
+"Return_Pickup_Schedule" = "রিটার্ন পিকআপ সময়সূচী";
+"বাতিল" = "বাতিল";
+"Vendor_Rejected" = "বিক্রেতা প্রত্যাখ্যাত";
+"Dispatched" = "প্রেরিত";
+"Re_Dispatched" = "পুনরায় পাঠানো";
+"Delivery_Confirmed" = "ডেলিভারি নিশ্চিত করা হয়েছে";
+"InTransit" = "InTransit";
+"Return_Request" = "ফেরত অনুরোধ";
+"Picked_Up" = "পিক আপ";
+"Clear_All" = "সব সাফ করুন";
+"Apply" = "প্রয়োগ করুন";
+"filter" = "ফিল্টার";
+
+"from_Date" = "তারিখ হইতে";
+"To_Date" = "এখন পর্যন্ত";
+"Filter_By_Status" = "স্থিতি দ্বারা ফিল্টার করুন";
+"Date" = "তারিখ";
+//মার্ক: - প্রোফাইল
+
+"profile" = "প্রোফাইল";
+"Personal_Information" = "ব্যক্তিগত তথ্য";
+"First_Name" = "নামের প্রথম অংশ";
+"Last_Name" = "নামের শেষাংশ";
+"Mobile_number" = "মোবাইল নম্বর";
+"Address" = "ঠিকানা";
+"Email_address" = "ইমেইল";
+"DOB" = "জন্মতারিখ";
+"Select_DOB" = "DOB নির্বাচন করুন";
+"জেন্ডার" = "লিঙ্গ";
+"সিলেক্ট_জেন্ডার" = "লিঙ্গ নির্বাচন করুন";
+"preferred_Language" = "পছন্দের ভাষা";
+"select_preferred_Language" = "পছন্দের ভাষা নির্বাচন করুন";
+"দেশ" = "দেশ";
+"Select_Country" = "দেশ নির্বাচন করুন";
+"State" = "রাজ্য";
+"Select_State" = "রাজ্য নির্বাচন করুন";
+"City" = "শহর";
+"Select_City" = "সিলেক্ট সিটি";
+"pincode" = "পিনকোড";
+"edit_profile" = "জীবন বৃত্তান্ত সম্পাদনা";
+"Save_changes" = "পরিবর্তনগুলোর সংরক্ষন";
+"profile_update_message" = "প্রোফাইল ছবি সফলভাবে আপডেট হয়েছে";
+"profile_update_failed" = "প্রোফাইল ইমেজ আপডেট ব্যর্থ হয়েছে";
+"Product_Catalogue_Details" = "পণ্য ক্যাটালগ বিবরণ";
+
+"points" = "পয়েন্ট";
+"তারিখ" = "তারিখ";
+
+//মার্ক: - রিডেম্পশন ক্যাটালগ
+
+"Insufficent_Point_Balance" = "অপর্যাপ্ত পয়েন্ট ব্যালেন্স";
+"added_to_cart_success_message" = "পণ্যটি সফলভাবে কার্টে যোগ করা হয়েছে।";
+"Something_went_wrong_error" = "কিছু ভুল হয়েছে! পরে আবার চেষ্টা করুন...";
+"Product_added_to_dreamgift" = "স্বপ্নের উপহারে পণ্যটি সফলভাবে যোগ করা হয়েছে।";
+"faild_to_add_dream_gift" = "স্বপ্নের উপহারে পণ্য যোগ করতে ব্যর্থ হয়েছে";
+"redeem_failed_contact_to_admin" = "আপনি রিডিম করতে পারবেন না। অনুগ্রহ করে আপনার প্রশাসকের সাথে যোগাযোগ করুন";
+"product_removed_success" = "পণ্যটি সফলভাবে সরানো হয়েছে!";
+"shipping_address_required_error" = "শিপিংয়ের ঠিকানা প্রয়োজন: রাজ্য, শহর, ঠিকানা, পিন কোড এবং মোবাইল নম্বর, বিশদ বিবরণ, সম্পাদনা করতে এবং বিশদ যোগ করতে 'সম্পাদনা' এ ক্লিক করুন";
+
+"account_unverified_error" = "আপনার অ্যাকাউন্ট যাচাই করা হয়নি! রিডেম্পশন ক্যাটালগ অ্যাক্সেস করতে অনুগ্রহ করে প্রশাসকের সাথে যোগাযোগ করুন";
+
+//মার্ক: - আমার কার্ট
+"myCart" = "আমার কার্ট";
+"Default_Address" = "ডিফল্ট ঠিকানা";
+"Edit_Address" = "ঠিকানা সম্পাদনা করুন";
+"Enter_Address" = "ঠিকানা লিখুন";
+"Enter_Pin" = "পিন লিখুন";
+"Enter_Valid_Zip" = "বৈধ জিপ লিখুন";
+
+//মার্ক: - অফার এবং প্রচার
+"Offers_promotions" = "অফার এবং প্রচার";
+
+//মার্ক: - লজ প্রশ্ন
+"upload_image_info" = "দ্রষ্টব্য: ছবির বিন্যাস .jpg, .png, .webp, .pdf হওয়া উচিত";
+"Select_Your_Topic" = "আপনার বিষয় নির্বাচন করুন";
+"query_Details" = "কোয়েরি বিবরণ";
+"Upload_Image" = "ছবি আপলোড করুন";
+"submit_your_query" = "অনুগ্রহ করে আপনার প্রশ্ন জমা দিন";
+"Select_query_topic" = "কোয়েরি বিষয় নির্বাচন করুন";
+"Enter_query_Details" = "কোয়েরির বিবরণ লিখুন";
+
+"FleetGuardneedtoaccesscameraGallery" = "ফ্লিট গার্ডকে ক্যামেরা এবং গ্যালারি অ্যাক্সেস করতে হবে";
+"Query_Submitted_successfully" = "কোয়েরি সফলভাবে জমা দেওয়া হয়েছে!";
+"No_data_found" = "কোন তথ্য পাওয়া যায়নি!";
+
+
+"Points_more_to_redeem" = "রেডিমর জন্য আরও পয়েন্ট চায়";
+"DOB_minor_age_error" = "মনে হচ্ছে আপনার বয়স 18 বছরের কম। আপনি 18 বছর বা তার বেশি হলেই ফ্লিট গার্ড সদস্যতার জন্য আবেদন করতে পারবেন";
+
+"acoount_deleted_error_message" = "আপনার অ্যাকাউন্ট মুছে ফেলা হয়েছে। অনুগ্রহ করে আপনার প্রশাসকের সাথে যোগাযোগ করুন।";
+"account_is_not_activate" = "আপনার অ্যাকাউন্ট সক্রিয় করা হয়নি! অনুগ্রহ করে আপনার অ্যাকাউন্ট সক্রিয় করুন।";
+"other_device_Login_error" = "আপনার অ্যাকাউন্ট অন্য মোবাইলে লগ ইন করেছে।";
+"account_deactivated_error" = "আপনার অ্যাকাউন্ট নিষ্ক্রিয় করা হয়েছে অনুগ্রহ করে প্রশাসকের সাথে চেক করুন";
+"Redemption_Failed" = "রিডেম্পশন ব্যর্থ হয়েছে";
+"Search by part no/ cross reference" = "অংশ নং/ ক্রস রেফারেন্স দ্বারা অনুসন্ধান করুন";
+"Query type" = "কোয়েরির ধরন"; //চিহ্ন
+"View" = "দেখুন";
+"বিবরণ" = "বিবরণ";
+"noDataFound" = "কোন তথ্য পাওয়া যায়নি";
+"Add More" = "আরো যোগ করুন";
+"Details" = "বিস্তারিত";
+"Remove" = "সরান";
+"Category"= "শ্রেণী";
+"Account_deleted_successfully" = "অ্যাকাউন্ট সফলভাবে মুছে ফেলা হয়েছে";
+"are_sure_delete_account" = "আপনি কি সত্যিই আপনার অ্যাকাউন্ট মুছে ফেলার বিষয়ে নিশ্চিত?";
+"Points Available" = "পয়েন্ট উপলব্ধ";
+"Points Required" = "পয়েন্ট প্রয়োজন";
+"Redeemable Points as on Today" ="আজকের মতো পুনরুদ্ধারযোগ্য পয়েন্ট";
+"Average earning required per month" = "প্রতি মাসে গড় উপার্জন প্রয়োজন";
+"Garage Name" = "গ্যারেজের নাম";
+"Behaviour" = "আচরণ";
+"your_account_is_deleted" = "আপনার অ্যাকাউন্ট মুছে ফেলা হয়েছে। অনুগ্রহ করে আপনার প্রশাসকের সাথে যোগাযোগ করুন।";
+"Order Status" = "অর্ডার স্ট্যাটাস";
+"Search by product name" = "পণ্যের নাম দ্বারা অনুসন্ধান করুন";
+"Your details have been submitted successfully."= "আপনার বিবরণ সফলভাবে জমা দেওয়া হয়েছে।";
+"Failed to submit your details try after some time" = "কিছু সময় পরে আপনার বিবরণ জমা দিতে ব্যর্থ হয়েছে";
+"Select date or filter status or both" = "তারিখ বা ফিল্টার স্ট্যাটাস বা উভয় নির্বাচন করুন";
+"Select To Date" = "তারিখ নির্বাচন করুন";
+"Select From Date" = "তারিখ থেকে নির্বাচন করুন";
+"ToDate should be lower than FromDate" = "ToDate FromDate এর চেয়ে কম হওয়া উচিত";
+"Notification"= "বিজ্ঞপ্তি";
+"Add to cart"= "কার্টে যোগ করুন";
+"Added to cart" = "কার্টে যোগ করা হয়েছে";
+"Add to dreamgift" = "স্বপ্ন উপহার যোগ করুন";
+"Added to dreamgift" = "পণ্যটি সফলভাবে কার্টে যোগ করা হয়েছে।";
+"Offers and Promotions Click Here" = "অফার এবং প্রচার এখানে ক্লিক করুন";
+
+
+//MARK: - NEW
+"My points" = "আমার পয়েন্ট";
+"Home" = "বাড়ি";
+"Know more" = "আরও জানুন";
+"Delete account" = " হিসাব মুছে ফেলা";
+"Catalogue name" = "ক্যাটালগ নাম";
+"qty" = "qty";
+"ref. no" = "ref. no";
+"Points redeem" = "পয়েন্ট রিডিম করা হয়েছে";
+"Part number" = "অংশ সংখ্যা";
+"Redeem now" = "এখন খালাস";
+"Short Description" = "ছোট বিবরণ";
+"Add more part no" = "আরো অংশ নং যোগ করুন";
+"Order_Now" = "এখনি আদেশ কর";
+"Choose a point range below" = "নীচে একটি বিন্দু পরিসীমা চয়ন করুন";
+"Points Range" = "পয়েন্ট রেঞ্জ";
+"Please select Segment value" = "দয়া করে সেগমেন্ট মান নির্বাচন করুন";
+"Please select OME value" = "অনুগ্রহ করে OME মান নির্বাচন করুন";
+"Please select Model value" = "দয়া করে মডেল মান নির্বাচন করুন";
+
+
+
+
+
+////MARK: - Existing
+//"Default_Address" = "Default Address";
+//"Edit_Address" = "Edit Address";
+//"resend_OTP" = "Resend OTP";
+//"submit" = "Submit";
+//"Search by part no/ cross reference" = "Search by part no/ cross reference";
+//"Query type" = "Query type";
+//"submit_your_query" = "Please submit your query";
+//"Select_Your_Topic" = "Select Your Topic";
+//"query_Details" = "Query Details";
+//"Upload_Image" = "Upload Image";
+
+//MARK: - NEW
+"Redeemable points" = "রিডিমেবল পয়েন্ট";
+"Process to checkout" = "চেকআউটে এগিয়ে যান";
+"Confirm Order" = "আদেশ নিশ্চিত করুন";
+"OTP Verification" = "OTP যাচাইকরণ";
+"We send a OTP to your number" = "আমরা আপনার নম্বরে একটি OTP পাঠাই";
+"OTP will Receive within" = "ওটিপি এর মধ্যেই পাবেন";
+"Didn't receive OTP code?" = "OTP কোড পাননি?";
+"Segment" = "সেগমেন্ট";
+"Model" = "মডেল";
+"Product Category" = "পণ্য তালিকা";
+"Your Expected Redemption" = "আপনার প্রত্যাশিত রিডেম্পশন";
+"Please Enter Query Details" = "অনুগ্রহ করে ক্যোয়ারী বিবরণ লিখুন";
+"Note: Image formate should be" = "দ্রষ্টব্য: ছবির বিন্যাস হওয়া উচিত";
+"OTP" = "ওটিপি";
+
+
+"Remarks" = "মন্তব্য";
+"Go to Dashboard" = "ড্যাশবোর্ড এ যান";
+"Your order placed successfully !"= "আপনার অর্ডার সফলভাবে স্থাপন করা হয়েছে!";
+"Milestone code" = "মাইলস্টোন কোড";

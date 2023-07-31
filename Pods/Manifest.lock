@@ -14,7 +14,7 @@ PODS:
   - IQKeyboardManagerSwift (6.5.11)
   - Kingfisher (7.6.2)
   - LanguageManager-iOS (1.2.5)
-  - lottie-ios (4.0.1)
+  - lottie-ios (4.2.0)
   - SlideMenuControllerSwift (4.0.0)
   - SwiftAlgorithms (1.0.0)
   - Toast-Swift (5.0.1)
@@ -55,11 +55,11 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
   LanguageManager-iOS: 049345fe4d1c5fbe22af93d438540917f4936359
-  lottie-ios: 54d22edf55b839f0929cabbfe609c9aa548b1145
+  lottie-ios: 809ecf2d460ed650a6aed7aa88b2ec45fab4779c
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: fe2948faeac0cda719816b04d1e94767544a2bcc
+PODFILE CHECKSUM: 7bf1c56ce2af108d677185b9a32aecb4cd732485
 
 COCOAPODS: 1.12.0
