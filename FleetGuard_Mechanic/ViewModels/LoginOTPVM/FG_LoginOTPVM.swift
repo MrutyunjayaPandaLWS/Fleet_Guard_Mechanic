@@ -132,11 +132,11 @@ class FG_LoginOTPVM: popUpDelegate {
                                 UserDefaults.standard.set(true, forKey: "IsloggedIn?")
                                 DispatchQueue.main.async{
                                     if #available(iOS 13.0, *) {
-                                        let sceneDelegate = self.VC?.view.window?.windowScene?.delegate as! SceneDelegate
-                                        sceneDelegate.setHomeAsRootViewController()
+                                        let sceneDelegate = self.VC?.view.window?.windowScene?.delegate as? SceneDelegate
+                                        sceneDelegate?.setHomeAsRootViewController()
                                     } else {
-                                        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                                        appDelegate.setHomeAsRootViewController()
+                                        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                                        appDelegate?.setHomeAsRootViewController()
                                     }
                                 }
                                

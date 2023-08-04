@@ -179,7 +179,7 @@
 "other_device_Login_error" = "आपका खाता अन्य मोबाइल द्वारा लॉग इन किया गया है।";
 "account_deactive_error" = "आपका खाता निष्क्रिय कर दिया गया है, कृपया व्यवस्थापक से संपर्क करें";
 "Redemption_Failed" = "रिडेम्पशन विफल";
-"Search by Part Number / Cross Reference" = "भाग संख्या/क्रॉस संदर्भ द्वारा खोजें";
+"Search by part no/ cross reference" = "भाग संख्या/क्रॉस संदर्भ द्वारा खोजें";
 "query type" = "क्वेरी प्रकार";
 "View" = "देखें";
 "Description" = "विवरण";
@@ -199,7 +199,7 @@
 "Behaviour" = "व्यवहार";
 "your_account_is_deleted" = "आपका खाता हटा दिया गया है। कृपया अपने व्यवस्थापक से संपर्क करें।";
 "order status" = "आदेश स्थिति";
-"search by product name" = "उत्पाद के नाम से खोजें";
+"Search by product name" = "उत्पाद के नाम से खोजें";
 "Your details have been submitted successfully।" = "आपका विवरण सफलतापूर्वक सबमिट कर दिया गया है।";
 "Failed to submit your details, please try later" = "आपका विवरण सबमिट करने में विफल रहा, कुछ समय बाद प्रयास करें";
 "Select date or filter condition or both" = "तिथि या फ़िल्टर स्थिति या दोनों का चयन करें";
@@ -219,8 +219,8 @@
 "Know more" = "अधिक जानते हैं";
 "Delete account" = " खाता हटा दो";
 "Catalogue name" = "कैटलॉग नाम";
-"qty" = "qty";
-"ref. no" = "ref. no";
+"qty" = "मात्रा";
+"ref. no" = "रेफरेंस नंबर";
 "Points redeem" = "रिडिम पॉईंट्स";
 "Part number" = "पार्ट नंबर";
 "Redeem now" = "अब एवज करें";

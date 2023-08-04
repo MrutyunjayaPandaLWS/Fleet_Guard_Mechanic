@@ -9,14 +9,14 @@
 "already_a_Member" = "ఇప్పటికేసభ్యులుగాఉన్నారా ?";
 "login_Now" = "ఇప్పుడే లాగిన్అవ్వండి";
 "mobile_number" = "మొబైల్ నంబర్ ";
-"enter_mobile_number" = "మీ మొబైల్ నంబర్ ఎంటర్చేయండి";
+"enter_mobile_number" = "మీ మొబైల్ నంబర్ ఎంటర్ చేయండి";
 "send_otp" = "OTP ని పంపండి";
 "Accept" = "అంగీకరించు";
 "Terms_and_condition" = "షరతులు మరియు నిబంధనలు";
 "new_to_humsafar" = "హమ్సఫర్ కి కొత్తనా?";
 "contact_us" = "ఇప్పుడే మమ్మల్ని సంప్రదించండి";
 "enter_mobile_number_error" = "దయచేసి మొబైల్ నంబర్";
-"mobile_number_not_exist" = "మీరు నమోదు చేసిన మొబైల్ నంబర్ సిస్టమ్";
+"mobile_number_not_exist" = "మీరు నమోదు చేసిన మొబైల్ నంబర్ సిస్టమ్ లేదు";
 
 // MARK: - TERMS AD CONDITIONS
 
@@ -27,7 +27,7 @@
 
 "Name" = "పేరు";
 "enter_name" = "పేరు నమోదు చేయండి";
-"enter_name_error" = "మీ పేరు ను ఎంటర్చేయండి";
+"enter_name_error" = "మీ పేరు ను ఎంటర్ చేయండి";
 "state" = "రాష్ట్రం";
 "select_state_error" = "దయచేసి రాష్ట్రాన్ని ఎంచుకోండి";
 "city" = "నగరం";
@@ -51,7 +51,7 @@
 
 "Profile" = "ప్రొఫైల్";
 "My_Ledger" = "నా లెడ్జర్";
-"My_Redemption_History" = "నా రెడెంప్షన్ చరిత్ర";
+"My_Redemption_History" = "నా రిడెంప్షన్ చరిత్ర";
 "Redemption_Catalogue" = "రిడెంప్షన్ కేటలాగ్";
 "Product_Catalogue" = "ప్రోడక్ట్ కేటలాగ్";
 "Dream_Gift" = "కలల బహుమతి";
@@ -73,14 +73,14 @@
 "humsafar" = "హమ్సాఫర్";
 "View_your_dreamgift" = "మీ కలల బహుమతులను వీక్షించండి";
 "add_your_dreamGift" = "మీ కలల బహుమతిని జోడించండి";
-"product_Catalogoue" = "ఉత్పత్తి కేటలాగ్";
+"product_Catalogoue" = "ప్రోడక్ట్ కేటలాగ్";
 "click_Here" = "ఇక్కడ నొక్కండి";
 "redemption_catalogue" = "రిడెంప్షన్ కేటలాగ్";
 "know_more" = "మరింత తెలుసుకోవాలా";
 
 
 // MARK: - MY REDEMPTION
-"My_redemption" = "నా రెడెంప్షన్";
+"My_redemption" = "నా రిడెంప్షన్";
 "Pending" = "పెండింగ్";
 "Processed" = "ప్రాసెస్ చేయబడింది";
 "Rejected" = "తిరస్కరించబడింది";
@@ -129,7 +129,7 @@
 "Save_changes" = "మార్పులను సేవ్చేయండి";
 "profile_update_message" = "ప్రొఫైల్ చిత్రం విజయవంతంగా నవీకరించబడింది";
 "profile_update_failed" = "ప్రొఫైల్ ఇమేజ్ నవీకరణ విఫలమైంది";
-"Product_Catalogue_Details" = "ఉత్పత్తి కేటలాగ్ వివరాలు";
+"Product_Catalogue_Details" = "ప్రోడక్ట్ కేటలాగ్ వివరాలు";
 
 "points" = "పాయింట్లు";
 "Date" = "తేదీ";
@@ -139,10 +139,10 @@
 "Insufficent_Point_Balance" = "ఇన్సఫిసెంట్ పాయింట్ బ్యాలెన్స్";
 "added_to_cart_success_message" = "ఉత్పత్తి విజయవంతంగా కార్ట్";
 "Something_went_wrong_error" = "ఏదో తప్పు జరిగింది! తర్వాత మళ్లీ ప్రయత్నించండి...";
-"Product_added_to_dreamgift" = "ఉత్పత్తి కలల బహుమతికి విజయవంతంగా జోడించబడింది.";
+"Product_added_to_dreamgift" = "ప్రోడక్ట్ కలల బహుమతికి విజయవంతంగా జోడించబడింది.";
 "faild_to_add_dream_gift" = "ఉత్పత్తి కలల బహుమతికి జోడించడంలో విఫలమైంది";
 "redeem_failed_contact_to_admin" = "మీకు రీడీమ్ చేయడానికి అనుమతి లేదు .దయచేసి మీ నిర్వాహకుడిని సంప్రదించండి";
-"product_removed_success" = "ఉత్పత్తి విజయవంతంగా తీసివేయబడింది!";
+"product_removed_success" = "ప్రోడక్ట్ విజయవంతంగా తీసివేయబడింది!";
 "shipping_address_required_error" = "షిప్పింగ్ చిరునామా అవసరం: రాష్ట్రం, నగరం, చిరునామా, పిన్ కోడ్ మరియు మొబైల్ నంబర్, వివరాలు, సవరించడానికి మరియు వివరాలను జోడించడానికి 'సవరించు'పై క్లిక్ చేయండి";
 
 "account_unverified_error" = "మీ ఖాతా ధృవీకరించబడలేదు! దయచేసి రెడెంప్షన్ కేటలాగ్";
@@ -165,7 +165,7 @@
 "Upload_Image" = "చిత్రాన్ని అప్‌లోడ్ చేయండి";
 "submit_your_query" = "మీ ప్రశ్నను సమర్పించండి";
 "Select_query_topic" = "ప్రశ్న అంశాన్ని ఎంచుకోండి";
-"Enter_query_Details" = "ప్రశ్న వివరాలను నమోదు చేయండి";
+"Enter_query_Details" = "మీ వివరాలను నమోదు చేయండి";
 "Query type" = "ప్రశ్నకేటగిరి";
 
 "FleetGuardneedtoaccesscameraGallery" = "ఫ్లీట్ గార్డ్ కెమెరా & గ్యాలరీని యాక్సెస్ చేయాలి";
@@ -179,16 +179,16 @@
 "account_is_not_activate" = "మీ ఖాతా సక్రియం చేయబడలేదు! దయచేసి మీ ఖాతాను సక్రియం చేయండి.";
 "other_device_Login_error" = "మీ ఖాతా ఇతర మొబైల్ ద్వారా లాగిన్ చేయబడింది.";
 "account_deactivated_error" = "మీ ఖాతా నిష్క్రియం చేయబడింది దయచేసి నిర్వాహకుడిని సంప్రదించండి";
-"Redemption_Failed" = "రెడెంప్షన్ విఫలమైంది";
+"Redemption_Failed" = "రిడెంప్షన్ విఫలమైంది";
 "Search by part no/ cross reference" = "పార్ట్ సంఖ్య/ క్రాస్ రిఫరెన్స్ ద్వారా శోధించండి";
 "question type" = "ప్రశ్నకేటగిరి";
-"view" = "వీక్షణ";
-"explanation" = "వివరణ";
+"View" = "చూడండి";
+"Description" = "వివరణ";
 "noDataFound" = "డేటా కనుగొనబడలేదు";
 "Add More" = "మరిన్ని జోడించు";
-"details" = "వివరాలు";
+"Details" = "వివరాలు";
 "Remove" = "తొలగించు";
-"category" = "కేటగిరి";
+"Category" = "కేటగిరి";
 "Account_deleted_successfully" = "ఖాతా విజయవంతంగా తొలగించబడింది";
 "are_sure_delete_account" = "మీరు ఖచ్చితంగా మీ ఖాతాను తొలగించాలనుకుంటున్నారా?";
 
@@ -223,8 +223,8 @@
 "Know more" = "మరింత తెలుసుకోండి";
 "Delete account" = " ఖాతాను తొలగించండి";
 "Catalogue name" = "కేటలాగ్ పేరు";
-"qty" = "qty";
-"ref. no" = "ref. no";
+"qty" = "పరిమాణం";
+"ref. no" = "సూచన సంఖ్య";
 "Points redeem" = "పాయింట్లు రీడీమ్";
 "Part number" = "పార్ట్ నంబర్";
 "Redeem now" = "ఇప్పుడే రీడీమ్ చేయండి";
@@ -261,8 +261,8 @@
 "Didn't receive OTP code?" = "OTP కోడ్ అందలేదా?";
 "Segment" = "సెగ్మెంట్";
 "Model" = "మోడల్";
-"Product Category" = "ప్రోడక్ట్కే వర్గం";
-"Your Expected Redemption" = "మీ ఆశించిన రెడెంప్షన్";
+"Product Category" = "ప్రోడక్ట్ వర్గం";
+"Your Expected Redemption" = "మీ ఆశించిన రిడెంప్షన్";
 "Please Enter Query Details" = "దయచేసి ప్రశ్న వివరాలను నమోదు చేయండి";
 "Note: Image formate should be" = "గమనిక: చిత్రం ఫార్మాట్ ఇ ఉండాలి";
 "Points Redeemed" = "రీడీమ్ చేయబడిన పాయింట్లు";

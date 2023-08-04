@@ -73,12 +73,14 @@ extension FG_MyLedgerClickViewVC: UITableViewDelegate, UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyLedgerClickViewTVC", for: indexPath) as! MyLedgerClickViewTVC
 
+        cell.partNoTitleLbl.text = "Part number".localiz()
+        cell.pointsTitleLbl.text = "points".localiz()
         cell.pointsLbl.text = "\(VM.rlpStatemnetArray[indexPath.row].points ?? "")"
         cell.remarksLbl.text = "\(VM.rlpStatemnetArray[indexPath.row].behaviour ?? "")"
         
         cell.partNoLbl.text = "\(VM.rlpStatemnetArray[indexPath.row].part_No ?? "")"
         cell.productNameLbl.text = "\(VM.rlpStatemnetArray[indexPath.row].part_Desc ?? "")"
-        cell.remarksTitleLbl.text = "Remark"
+        cell.remarksTitleLbl.text = "Remarks".localiz()
         cell.selectionStyle = .none
         return cell
     }

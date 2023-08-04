@@ -20,7 +20,7 @@ class FG_RedemptionCataloguePopUp: BaseViewController {
     var delegate: RedemptionPopUpMessageDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        localize()
     }
     
     func localize(){

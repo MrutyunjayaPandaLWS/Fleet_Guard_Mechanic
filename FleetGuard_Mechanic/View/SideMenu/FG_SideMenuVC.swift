@@ -63,7 +63,7 @@ class FG_SideMenuVC: BaseViewController, popUpDelegate {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var sideMenuTableView: UITableView!
     var requestApis = RestAPI_Requests()
-    var sideMenuArray = ["profile", "My_Ledger", "My_Redemption_History", "Redemption_Catalogue", "Product_Catalogue", "Dream_Gift", "My_Promotions", "Lodge_Query", "About", "FAQs", "T&C", "Logout","Delete"]
+    var sideMenuArray = ["profile", "My_Ledger", "My_Redemption_History", "Redemption_Catalogue", "Product_Catalogue", "Dream_Gift", "Offers_promotions", "Lodge_Query", "About", "FAQs", "T&C", "Logout","Delete"]
     var sideMenuTitleArray = [String]()
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
