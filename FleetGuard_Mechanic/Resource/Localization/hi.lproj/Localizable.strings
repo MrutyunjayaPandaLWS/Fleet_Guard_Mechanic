@@ -165,6 +165,8 @@
 "submit_your_query" = "कृपया अपनी क्वेरी सबमिट करें";
 "Select_query_topic" = "क्वेरी का विषय चुनें";
 "Enter_query_Details" = "क्वेरी विवरण दर्ज करें";
+"select_Topic" = "विषय चुनें";
+"enter_Details" = "कृपया क्वेरी विवरण दर्ज करें";
 
 "FleetGuardneedtoaccesscameraGallery" = "फ्लीट गार्ड को कैमरा और गैलरी एक्सेस करने की आवश्यकता है";
 "Query_Submitted_successfully" = "आपका प्रश्न सफलतापूर्वक दर्ज हो गया है";
@@ -180,7 +182,7 @@
 "account_deactive_error" = "आपका खाता निष्क्रिय कर दिया गया है, कृपया व्यवस्थापक से संपर्क करें";
 "Redemption_Failed" = "रिडेम्पशन विफल";
 "Search by part no/ cross reference" = "भाग संख्या/क्रॉस संदर्भ द्वारा खोजें";
-"query type" = "क्वेरी प्रकार";
+"Query type" = "क्वेरी प्रकार";
 "View" = "देखें";
 "Description" = "विवरण";
 "noDataFound" = "कोई डेटा नहीं मिला";
@@ -206,7 +208,7 @@
 "pick a date" = "तारीख चुनें";
 "select by date" = "तिथि से चयन करें";
 "toDate must be less than fromDate" = "टूडेट को फ्रॉमडेट से कम होना चाहिए";
-"notification" = "अधिसूचना";
+"Notification" = "अधिसूचना";
 "Add to cart" = "कार्ट में जोड़ें";
 "Added to cart" = "कार्ट में जोड़ा गया";
 "Add to dreamgift" = "ड्रीमगिफ्ट में जोड़ें";

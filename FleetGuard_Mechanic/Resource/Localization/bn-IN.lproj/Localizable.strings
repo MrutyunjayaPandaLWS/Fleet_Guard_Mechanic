@@ -164,6 +164,8 @@
 "submit_your_query" = "অনুগ্রহ করে আপনার প্রশ্ন জমা দিন";
 "Select_query_topic" = "কোয়েরি বিষয় নির্বাচন করুন";
 "Enter_query_Details" = "কোয়েরির বিবরণ লিখুন";
+"select_Topic" = "বিষয় নির্বাচন করুন";
+"enter_Details" = "অনুগ্রহ করে ক্যোয়ারী বিবরণ লিখুন";
 
 "FleetGuardneedtoaccesscameraGallery" = "ফ্লিট গার্ডকে ক্যামেরা এবং গ্যালারি অ্যাক্সেস করতে হবে";
 "Query_Submitted_successfully" = "কোয়েরি সফলভাবে জমা দেওয়া হয়েছে!";

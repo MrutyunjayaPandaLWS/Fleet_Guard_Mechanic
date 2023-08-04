@@ -170,6 +170,8 @@ Created by admin on 11/05/23.
 "submit_your_query" = "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಪ್ರಶ್ನೆಯನ್ನು ಸಲ್ಲಿಸಿ";
 "Select_query_topic" = "ಪ್ರಶ್ನೆ ವಿಷಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
 "Enter_query_Details" = "ಪ್ರಶ್ನೆ ವಿವರಗಳನ್ನು ನಮೂದಿಸಿ";
+"select_Topic" = "ವಿಷಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
+"enter_Details" = "ದಯವಿಟ್ಟು ಪ್ರಶ್ನೆ ವಿವರಗಳನ್ನು ನಮೂದಿಸಿ";
 
 "FleetGuardneedtoaccesscameraGallery" = "ಫ್ಲೀಟ್ ಗಾರ್ಡ್ ಕ್ಯಾಮರಾ ಮತ್ತು ಗ್ಯಾಲರಿಯನ್ನು ಪ್ರವೇಶಿಸುವ ಅಗತ್ಯವಿದೆ";
 "Query_Submitted_successfully" = "ಪ್ರಶ್ನೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಸಲ್ಲಿಸಲಾಗಿದೆ!";

@@ -168,6 +168,8 @@
 "submit_your_query" = "Please submit your query";
 "Select_query_topic" = "Select query topic";
 "Enter_query_Details" = "Enter query Details";
+"select_Topic" = "Select Topic";
+"enter_Details" = "Please Enter Query Details";
 
 "FleetGuardneedtoaccesscameraGallery" = "Fleet Guard need to access camera & Gallery";
 "Query_Submitted_successfully" = "Query Submitted successfully!";

@@ -167,6 +167,8 @@
 "Select_query_topic" = "ప్రశ్న అంశాన్ని ఎంచుకోండి";
 "Enter_query_Details" = "మీ వివరాలను నమోదు చేయండి";
 "Query type" = "ప్రశ్నకేటగిరి";
+"select_Topic" = "అంశాన్ని ఎంచుకోండి";
+"enter_Details" = "దయచేసి ప్రశ్న వివరాలను నమోదు చేయండి";
 
 "FleetGuardneedtoaccesscameraGallery" = "ఫ్లీట్ గార్డ్ కెమెరా & గ్యాలరీని యాక్సెస్ చేయాలి";
 "Query_Submitted_successfully" = "ప్రశ్న విజయవంతంగా సమర్పించబడింది!";

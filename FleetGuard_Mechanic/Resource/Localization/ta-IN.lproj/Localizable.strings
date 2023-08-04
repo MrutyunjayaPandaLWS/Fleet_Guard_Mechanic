@@ -164,6 +164,8 @@
 "submit_your_query" = "உங்கள் வினவலை சமர்ப்பிக்கவும்";
 "Select_query_topic" = "வினவல் தலைப்பை தேர்ந்தெடு";
 "Enter_query_Details" = "வினவல் விவரங்களை உள்ளிடவும்";
+"select_Topic" = "தலைப்பைத் தேர்ந்தெடுக்கவும்";
+"enter_Details" = "வினவல் விவரங்களை உள்ளிடவும்";
 
 "FleetGuardneedtoaccesscameraGallery" = "கப்பற்படை காவலர் கேமரா & கேலரியை அணுக வேண்டும்";
 "Query_Submitted_successfully" = "வினவல் வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது!";

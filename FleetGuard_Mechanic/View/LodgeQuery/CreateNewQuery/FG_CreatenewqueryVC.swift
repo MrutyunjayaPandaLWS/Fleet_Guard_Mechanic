@@ -61,7 +61,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
         self.VM.VC = self
         self.picker.delegate = self
         self.queryDetailsView.textColor = .gray
-        self.queryDetailsView.text = "Please Enter Query Details"
+        self.queryDetailsView.text = "enter_Details".localiz()
         self.queryDetailsView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToProductsList), name: Notification.Name.sendBackTOQuery, object: nil)
     }
@@ -79,6 +79,8 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
         selectTopicTitleLbl.text = "Select_Your_Topic".localiz()
         queryDetailsTitleLbl.text = "query_Details".localiz()
         uploadImageInfoLbl.text = "upload_image_info".localiz()
+        selectTopicLbl.text = "select_Topic".localiz()
+        queryDetailsView.text = "enter_Details".localiz()
         
         
     }
@@ -93,7 +95,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
     
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if self.queryDetailsView.text == "Please Enter Query Details"{
+        if self.queryDetailsView.text == "enter_Details".localiz(){
             self.queryDetailsView.text = ""
             self.queryDetailsView.textColor = .black
         }
@@ -127,7 +129,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
         self.present(vc, animated: true)
     }
     @IBAction func submitBtn(_ sender: Any) {
-        if self.selectTopicLbl.text == "" || self.selectTopicLbl.text == "Select Topic"{
+        if self.selectTopicLbl.text == "" || self.selectTopicLbl.text == "select_Topic".localiz(){
             DispatchQueue.main.async{
 //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                vc!.delegate = self
@@ -138,7 +140,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
                 
                 self.view.makeToast("Select_query_topic".localiz(), duration: 3.0, position: .bottom)
             }
-        }else if self.queryDetailsView.text!.count == 0 || self.queryDetailsView.text == "-" || self.queryDetailsView.text == "Please Enter Query Details"{
+        }else if self.queryDetailsView.text!.count == 0 || self.queryDetailsView.text == "-" || self.queryDetailsView.text == "enter_Details".localiz(){
             DispatchQueue.main.async{
 //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                vc!.delegate = self
