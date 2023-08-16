@@ -60,7 +60,7 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     var VM = MyProfileDetailsVM()
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
-    let picker = UIImagePickerController()
+    lazy var picker = UIImagePickerController()
     var strdata1 = ""
     var fileType = ""
     var languageID = -1
@@ -68,7 +68,7 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
-        self.picker.delegate = self
+//        self.picker.delegate = self
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 30
         subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]

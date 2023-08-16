@@ -31,6 +31,7 @@ class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
         self.myDreamGiftTV.delegate = self
         self.myDreamGiftTV.dataSource = self
         self.myDreamGiftTV.separatorStyle = .none
+        self.myDreamGiftTV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 70, right: 0)
     }
     
     

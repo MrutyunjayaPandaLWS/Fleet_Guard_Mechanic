@@ -157,11 +157,13 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
     
     func OtpApi(mobilenumber: String){
         let parameter = [
-            "UserName": "",
-              "UserId": 5,
+            "MerchantUserName": "FleedguardMerchantDemo",
             "MobileNo": mobilenumber,
-              "OTPType": "Enrollment",
-              "MerchantUserName": "FleedguardMerchantDemo"
+            "OTPType": "Enrollment",
+            "UserId": -1,
+            "UserName": "",
+            "CustomerType": "Mechanic"
+
         ] as [String: Any]
         print(parameter)
         self.VM.loginOTPApi(parameter: parameter)
