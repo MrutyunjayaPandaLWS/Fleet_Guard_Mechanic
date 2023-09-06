@@ -29,7 +29,17 @@ class FG_MyLedgerClickViewVC: BaseViewController {
         self.VM.VC = self
         self.MyLedgerTableView.delegate = self
         self.MyLedgerTableView.dataSource = self
-        self.myLegderAPI()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.myLegderAPI()
+        }
+        
         self.dateLBL.text = accessData
         pointsLbl.text = "\(totalPoints)"
         

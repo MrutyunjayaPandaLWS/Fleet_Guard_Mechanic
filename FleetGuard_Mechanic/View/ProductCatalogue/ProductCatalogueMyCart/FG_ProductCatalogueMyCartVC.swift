@@ -35,7 +35,18 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
         self.VM.VC = self
         self.prodCatalogueCartTableView.dataSource = self
         self.prodCatalogueCartTableView.delegate = self
-        self.myCartApi()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.myCartApi()
+        }
+
+       
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToProductsList), name: Notification.Name.navigateToProductList, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToDashBoard), name: Notification.Name.navigateToDashboard, object: nil)
     }
@@ -111,6 +122,13 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
     // Delegates:-
     
     func didTapMinusBtn(_ cell: FG_ProdMyCartTVC) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
         guard let tappedIndexPath = self.prodCatalogueCartTableView.indexPath(for: cell)else {return}
         self.value = self.VM.myCartListArray[tappedIndexPath.row].quantity ?? 0
         self.customerCartId = "\(self.VM.myCartListArray[tappedIndexPath.row].customerCartId ?? 0)"
@@ -130,6 +148,13 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
     }
     
     func didTapPlusBtn(_ cell: FG_ProdMyCartTVC) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
         guard let tappedIndexPath = self.prodCatalogueCartTableView.indexPath(for: cell)else {return}
         self.value = self.VM.myCartListArray[tappedIndexPath.row].quantity ?? 0
         self.customerCartId = "\(self.VM.myCartListArray[tappedIndexPath.row].customerCartId ?? 0)"
@@ -177,6 +202,13 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
     }
     
     func didTapRemoveBtn(_ cell: FG_ProdMyCartTVC) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
         guard let tappedIndexPath = self.prodCatalogueCartTableView.indexPath(for: cell) else {return}
         self.productId = "\(self.VM.myCartListArray[tappedIndexPath.row].productId ?? 0)"
         self.customerCartId = "\(self.VM.myCartListArray[tappedIndexPath.row].customerCartId ?? 0)"

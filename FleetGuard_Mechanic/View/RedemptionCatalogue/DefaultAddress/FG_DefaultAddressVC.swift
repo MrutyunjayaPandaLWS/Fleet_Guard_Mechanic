@@ -65,7 +65,17 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
-        self.profileDetailsApi()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.profileDetailsApi()
+        }
+        
         self.redeemablepts.text = "\(self.totalPts)"
         
         NotificationCenter.default.addObserver(self, selector: #selector(afterDismissed), name: Notification.Name.dismissCurrentVC, object: nil)
@@ -96,6 +106,14 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
     }
     
     @IBAction func editAddressBtn(_ sender: Any) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
+        
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_EditAddressVC") as! FG_EditAddressVC
         vc.delegate = self
             vc.selectedname = self.VM.defaultAddressArray[0].firstName ?? "-"
@@ -117,6 +135,13 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
     }
     
     @IBAction func processToCheckOut(_ sender: Any) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
         print(selectedStateID)
           print(selectedCityID)
           print(selectedaddress)

@@ -68,7 +68,7 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
-//        self.picker.delegate = self
+        self.picker.delegate = self
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 30
         subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -76,7 +76,18 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         localization()
-        self.profileDetailsAPI()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.profileDetailsAPI()
+        }
+
+        
     }
     
     func localization(){
@@ -122,6 +133,14 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     }
     
     @IBAction func editProfileBtn(_ sender: Any) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
+        
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_EditProfileVC") as! FG_EditProfileVC
         vc.delegate = self
         vc.firstName = self.firstNameLbl.text ?? ""

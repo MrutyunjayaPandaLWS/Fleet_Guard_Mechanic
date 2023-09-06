@@ -98,8 +98,18 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         localization()
-        plannerListing()
-        myCartListApi()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            plannerListing()
+            myCartListApi()
+        }
+        
     }
     
     private func localization(){
@@ -131,6 +141,14 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     }
     
     @IBAction func addToCartBTN(_ sender: Any) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
+        
         if addCartBtnStatus == 0{
         if self.verifiedStatus != 1{
             DispatchQueue.main.async{

@@ -100,24 +100,10 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
         
         if self.enteredValue.count == 0 {
             DispatchQueue.main.async{
-//               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Enter OTP"
-//                vc!.modalPresentationStyle = .overFullScreen
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                
                 self.view.makeToast("Enter_OTP".localiz(), duration: 3.0, position: .bottom)
             }
         }else if self.enteredValue.count != 4 {
             DispatchQueue.main.async{
-//               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Enter valid OTP"
-//                vc!.modalPresentationStyle = .overFullScreen
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                
                 self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
             }
         }else if self.enteredValue.count == 4{
@@ -129,35 +115,22 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
                 }
             }else{
                 DispatchQueue.main.async{
-//                   let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                    vc!.delegate = self
-//                    vc!.descriptionInfo = "Enter valid OTP"
-//                    vc!.modalPresentationStyle = .overFullScreen
-//                    vc!.modalTransitionStyle = .crossDissolve
-//                    self.present(vc!, animated: true, completion: nil)
-                    
                     self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
                 }
             }
         }else{
             DispatchQueue.main.async{
-//               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Enter valid OTP"
-//                vc!.modalPresentationStyle = .overFullScreen
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                
                 self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
             }
         }
         
         
     }
+//https://fleetgrdser.loyltwo3ks.com/Mobile/SaveAndGetOTPDetails
     
     func OtpApi(mobilenumber: String){
         let parameter = [
-            "MerchantUserName": "FleedguardMerchantDemo",
+            "MerchantUserName": "FleedguardDemo",
             "MobileNo": mobilenumber,
             "OTPType": "Enrollment",
             "UserId": -1,
@@ -180,15 +153,18 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
 //       "UserType": "Customer"
     
     func loginSubmissionApi(mobileNumber: String, deviceID: String, pushID: String){
+        
         let parameter = [
-            "Password": "123456",
+            "Browser": "54",
+            "SessionId": "FLEETGUARD",
+            "LoggedDeviceName": "IOS",
             "UserName": mobileNumber,
-            "UserActionType": "GetPasswordDetails",
-            "Browser": "iOS",
-            "LoggedDeviceName": "iOS",
+            "Password": "123456",
             "PushID": pushID,
-            "UserType": "Customer",
-            "LoggedDeviceID": deviceID
+            "LoggedDeviceID": deviceID,
+            "UserActionType": "GetPasswordDetails",
+            "UserType": "Customer"
+            
         ] as [String: Any]
         print(parameter)
         self.VM.loginSubmissionApi(parameter: parameter)

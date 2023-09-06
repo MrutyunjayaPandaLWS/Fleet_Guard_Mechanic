@@ -10,9 +10,18 @@ import LanguageManager_iOS
 
 class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
     func removeProductButton(_ vc: FG_DreamGiftTVC) {
-        guard let tappedIndex = myDreamGiftTV.indexPath(for: vc) else{return}
-        self.selectedPlannerID = "\(self.VM.myPlannerListArray[tappedIndex.row].redemptionPlannerId ?? 0)"
-        self.removeProductInPlanner()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            guard let tappedIndex = myDreamGiftTV.indexPath(for: vc) else{return}
+            self.selectedPlannerID = "\(self.VM.myPlannerListArray[tappedIndex.row].redemptionPlannerId ?? 0)"
+            self.removeProductInPlanner()
+        }
     }
     
 
@@ -38,7 +47,16 @@ class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         localization()
-        self.plannerListing()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.plannerListing()
+        }
     }
     
     private func localization(){
@@ -109,23 +127,31 @@ class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
         
     }
     func detailsButton(_ vc: FG_DreamGiftTVC) {
-        
-        guard let tappedIndex = myDreamGiftTV.indexPath(for: vc) else{return}
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DreamGiftDetailsVC") as! FG_DreamGiftDetailsVC
-        vc.productImage = self.VM.myPlannerListArray[tappedIndex.row].productImage ?? ""
-        vc.productName = self.VM.myPlannerListArray[tappedIndex.row].productName ?? ""
-        vc.productPoints = self.VM.myPlannerListArray[tappedIndex.row].pointsRequired ?? 0
-        vc.selectedPlannerID = self.VM.myPlannerListArray[tappedIndex.row].redemptionPlannerId ?? 0
-        vc.selectedCatalogueID = self.VM.myPlannerListArray[tappedIndex.row].catalogueId ?? 0
-        vc.averageLesserDate = self.VM.myPlannerListArray[tappedIndex.row].avgLesserExpDate ?? ""
-        vc.redeemableAverageEarning = self.VM.myPlannerListArray[tappedIndex.row].redeemableAverageEarning ?? ""
-        vc.dateOfSubmission = self.VM.myPlannerListArray[tappedIndex.row].achievementDateMonthWize ?? ""
-        vc.categoryName = self.VM.myPlannerListArray[tappedIndex.row].catogoryName ?? ""
-        //vc.isRedeem = self.VM.myPlannerListArray[tappedIndex.row].is_Redeemable ?? 0
-        let calcValue =  ((self.VM.myPlannerListArray[tappedIndex.row].pointsRequired ?? 0) - (Int(totalPoints) ?? 0))
-        print(calcValue)
-        vc.requiredPoints = calcValue
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            guard let tappedIndex = myDreamGiftTV.indexPath(for: vc) else{return}
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DreamGiftDetailsVC") as! FG_DreamGiftDetailsVC
+            vc.productImage = self.VM.myPlannerListArray[tappedIndex.row].productImage ?? ""
+            vc.productName = self.VM.myPlannerListArray[tappedIndex.row].productName ?? ""
+            vc.productPoints = self.VM.myPlannerListArray[tappedIndex.row].pointsRequired ?? 0
+            vc.selectedPlannerID = self.VM.myPlannerListArray[tappedIndex.row].redemptionPlannerId ?? 0
+            vc.selectedCatalogueID = self.VM.myPlannerListArray[tappedIndex.row].catalogueId ?? 0
+            vc.averageLesserDate = self.VM.myPlannerListArray[tappedIndex.row].avgLesserExpDate ?? ""
+            vc.redeemableAverageEarning = self.VM.myPlannerListArray[tappedIndex.row].redeemableAverageEarning ?? ""
+            vc.dateOfSubmission = self.VM.myPlannerListArray[tappedIndex.row].achievementDateMonthWize ?? ""
+            vc.categoryName = self.VM.myPlannerListArray[tappedIndex.row].catogoryName ?? ""
+            //vc.isRedeem = self.VM.myPlannerListArray[tappedIndex.row].is_Redeemable ?? 0
+            let calcValue =  ((self.VM.myPlannerListArray[tappedIndex.row].pointsRequired ?? 0) - (Int(totalPoints) ?? 0))
+            print(calcValue)
+            vc.requiredPoints = calcValue
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }

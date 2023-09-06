@@ -114,7 +114,17 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.noDataFoundLbl.text = "noDataFound".localiz()
-        self.myRedemptionListing()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.myRedemptionListing()
+        }
+        
         
 //        let collectionViewFLowLayout2 = UICollectionViewFlowLayout()
 //        collectionViewFLowLayout2.itemSize = CGSize(width: CGFloat(((self.view.bounds.width - 38) - (self.collectionView.contentInset.left + self.collectionView.contentInset.right)) / 2), height: 45)
@@ -172,6 +182,13 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     @IBAction func notificationBtn(_ sender: Any) {
     }
     @IBAction func filterBtn(_ sender: Any) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                   let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                   vc.modalTransitionStyle = .crossDissolve
+                   vc.modalPresentationStyle = .overFullScreen
+                   self.present(vc, animated: true)
+               return
+               }
         if self.filterShadowView.isHidden == false{
             self.filterShadowView.isHidden = true
         }else{

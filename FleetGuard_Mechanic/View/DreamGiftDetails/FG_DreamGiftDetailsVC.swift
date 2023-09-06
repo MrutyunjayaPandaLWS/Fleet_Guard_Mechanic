@@ -79,7 +79,8 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
 //        tdsvalue.text = "\(applicabletds)"
 //        tdsprice.text = "\(tdspercentage1)%"
         points.text = "\(Int(productPoints))"
-        let totalImgURL = imageUrl + productImage
+        let totalImgURL = imageUrl + productImage.replacingOccurrences(of: " ", with: "%20")
+       // productImageView.kf.setImage(with: URL(string: "\(String(describing: totalImgURL ))"), placeholder: UIImage(named: "Humsafar Logo PNG"))
         productImageView.kf.setImage(with: URL(string: "\(String(describing: totalImgURL ))"), placeholder: UIImage(named: "Humsafar Logo PNG"))
         self.todayPoints.text = "\(Int(pointBalance) ?? 0)"
         self.monthlyPointsLabel.text = "\(redeemableAverageEarning)"
@@ -104,7 +105,7 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
             //            }
             
             //redeemButton.backgroundColor = .lightGray
-            let image =  imageUrl + imageUrl.replacingOccurrences(of: " ", with: "%20")
+            let image =  imageUrl + productImage.replacingOccurrences(of: " ", with: "%20")
                 productImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
             var pointBal = Float(pointBalance) ?? 0.0
             var requiredBal = Float(productPoints)
@@ -135,11 +136,26 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         localization()
-        myCartListApi()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            myCartListApi()
+        }
     }
     
     @IBAction func didTappedRedeemNowBtn(_ sender: Any) {
-        
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        return
+        }
         if addCartBtnStatus == 0{
 //        if self.verifiedStatus != 1{
 //            DispatchQueue.main.async{
@@ -346,6 +362,13 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
 //
 //    }
     @IBAction func removeButton(_ sender: Any) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        return
+        }
         removeProductInPlanner()
     }
     

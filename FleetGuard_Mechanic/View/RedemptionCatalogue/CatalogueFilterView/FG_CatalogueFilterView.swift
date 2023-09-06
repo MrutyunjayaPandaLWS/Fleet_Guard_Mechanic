@@ -67,8 +67,19 @@ class FG_CatalogueFilterView: BaseViewController {
         mainView.clipsToBounds = true
         mainView.layer.cornerRadius = 20
         mainView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.redemptionCategoryList()
+        }
+
+
         
-        self.redemptionCategoryList()
     }
     
 //    {

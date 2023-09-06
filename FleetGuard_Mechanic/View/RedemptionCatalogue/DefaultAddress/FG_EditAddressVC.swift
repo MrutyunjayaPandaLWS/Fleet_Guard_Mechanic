@@ -117,6 +117,14 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
     }
     
     @IBAction func stateBtn(_ sender: Any) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
+        
         if self.selectedCountryId == 0{
             DispatchQueue.main.async{
 //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
@@ -152,6 +160,14 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
     }
     
     @IBAction func cityBtn(_ sender: Any) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
+        
         print(self.selectedStateID,"ID")
         if self.selectedStateID == 0 || self.selectedCountryId == 0{
             DispatchQueue.main.async{
@@ -190,6 +206,13 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
     }
     
     @IBAction func saveChangesBtn(_ sender: Any) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
         
         if nameTF.text?.count == 0{
             DispatchQueue.main.async{

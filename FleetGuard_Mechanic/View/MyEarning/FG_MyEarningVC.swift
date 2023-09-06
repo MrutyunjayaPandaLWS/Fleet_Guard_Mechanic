@@ -27,7 +27,17 @@ class FG_MyEarningVC: BaseViewController {
         }else{
             self.backBtn.isHidden = true
         }
-        self.myEarningsAPI()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.myEarningsAPI()
+        }
+        
     }
     
     @IBAction func backButton(_ sender: Any) {

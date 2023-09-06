@@ -38,7 +38,17 @@ class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
         self.VM.VC = self
         self.myPromotionsTableView.delegate = self
         self.myPromotionsTableView.dataSource = self
-        promotionListingAPI()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            promotionListingAPI()
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,11 +89,11 @@ extension FG_MyPromotionsVC: UITableViewDelegate, UITableViewDataSource{
         print(imageURL)
         if imageURL != ""{
             let filteredURLArray = imageURL.dropFirst(3)
-            let urltoUse = String(PROMO_IMG1 + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
+            let urltoUse = String(Promo_ImageData + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
             let urlt = URL(string: "\(urltoUse)")
             print(urlt)
 //            cell.promotionImage.kf.setImage(with: URL(string: String(describing: urlt)), placeholder: UIImage(named: "Asset 2"));
-            cell.promotionImage.kf.setImage(with: URL(string: "\(urlt!)"),placeholder: UIImage(named: "Asset 2"))
+            cell.promotionImage.kf.setImage(with: urlt,placeholder: UIImage(named: "Asset 2"))
 //            self.productImag.kf.setImage(with: URL(string: "\(PROMO_IMG1)\(receivedImage)"), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"));
         }
         return cell

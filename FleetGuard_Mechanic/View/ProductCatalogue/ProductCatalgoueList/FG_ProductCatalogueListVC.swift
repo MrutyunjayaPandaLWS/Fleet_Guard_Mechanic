@@ -88,11 +88,29 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
         headerText.text = "Product_Catalogue".localiz()
         searchTF.placeholder = "Search by part no/ cross reference".localiz()
         nodatafoundLbl.text = "noDataFound".localiz()
-        self.productListApi(StartIndex: startindex, searchText: self.searchTF.text ?? "")
-        self.myCartApi()
+        
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.productListApi(StartIndex: startindex, searchText: self.searchTF.text ?? "")
+            self.myCartApi()
+        }
+        
     }
     
     @IBAction func filterButton(_ sender: Any) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueFilterVC") as! FG_ProductCatalogueFilterVC
         vc.delegate = self
         vc.modalTransitionStyle = .coverVertical
@@ -151,6 +169,13 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     }
     
     func sendDataToDetails(_ cell: FG_ProdCatalogueTVC) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
         guard let tappedIndexPath = self.productCatalgoueTableView.indexPath(for: cell) else{return}
         if cell.nextButton.tag == tappedIndexPath.row{
             let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueDetailsVC") as! FG_ProductCatalogueDetailsVC

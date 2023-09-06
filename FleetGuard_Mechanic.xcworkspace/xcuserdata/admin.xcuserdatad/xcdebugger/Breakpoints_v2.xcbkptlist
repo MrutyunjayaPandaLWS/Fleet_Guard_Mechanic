@@ -18,6 +18,182 @@
             endingLineNumber = "55"
             landmarkName = "languageUpdate()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6E924C3B-C9AD-43CE-9C1F-D436480BF5A1 - 68ca511ece2fc4af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Mechanic.AppDelegate.languageUpdate() -&gt; ()"
+                  moduleName = "FleetGuard_Mechanic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/FleetGuard_Mechanic/Resource/Delegate/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "6E924C3B-C9AD-43CE-9C1F-D436480BF5A1 - 68ca511ece2fc4af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Mechanic.AppDelegate.languageUpdate() -&gt; ()"
+                  moduleName = "FleetGuard_Mechanic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/FleetGuard_Mechanic/Resource/Delegate/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE8823E7-04BF-41E5-8911-3FF762EF4DA7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FleetGuard_Mechanic/View/Promotions/MyPromotions/MyPromotionDetails/FG_MyPromotionDetailsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CE8823E7-04BF-41E5-8911-3FF762EF4DA7 - be0077714188c775"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Mechanic.FG_MyPromotionDetailsVC.viewDidLoad() -&gt; ()"
+                  moduleName = "FleetGuard_Mechanic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/FleetGuard_Mechanic/View/Promotions/MyPromotions/MyPromotionDetails/FG_MyPromotionDetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "2398">
+               </Location>
+               <Location
+                  uuid = "CE8823E7-04BF-41E5-8911-3FF762EF4DA7 - be0077714188c775"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Mechanic.FG_MyPromotionDetailsVC.viewDidLoad() -&gt; ()"
+                  moduleName = "FleetGuard_Mechanic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/FleetGuard_Mechanic/View/Promotions/MyPromotions/MyPromotionDetails/FG_MyPromotionDetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "2144">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C46B9CA2-CC50-4DFA-B429-21FD1269EFB1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FleetGuard_Mechanic/View/DreamGiftDetails/FG_DreamGiftDetailsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C46B9CA2-CC50-4DFA-B429-21FD1269EFB1 - ba334ad8a1e3c69d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Mechanic.FG_DreamGiftDetailsVC.viewDidLoad() -&gt; ()"
+                  moduleName = "FleetGuard_Mechanic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/FleetGuard_Mechanic/View/DreamGiftDetails/FG_DreamGiftDetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "2016">
+               </Location>
+               <Location
+                  uuid = "C46B9CA2-CC50-4DFA-B429-21FD1269EFB1 - ba334ad8a1e3c69d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Mechanic.FG_DreamGiftDetailsVC.viewDidLoad() -&gt; ()"
+                  moduleName = "FleetGuard_Mechanic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/FleetGuard_Mechanic/View/DreamGiftDetails/FG_DreamGiftDetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1952">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6AD380BA-B748-4251-909C-16EB38F4F16F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FleetGuard_Mechanic/View/DreamGiftDetails/FG_DreamGiftDetailsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6AD380BA-B748-4251-909C-16EB38F4F16F - ba334ad8a1e3ca33"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Mechanic.FG_DreamGiftDetailsVC.viewDidLoad() -&gt; ()"
+                  moduleName = "FleetGuard_Mechanic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/FleetGuard_Mechanic/View/DreamGiftDetails/FG_DreamGiftDetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "6614">
+               </Location>
+               <Location
+                  uuid = "6AD380BA-B748-4251-909C-16EB38F4F16F - ba334ad8a1e3ca33"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Mechanic.FG_DreamGiftDetailsVC.viewDidLoad() -&gt; ()"
+                  moduleName = "FleetGuard_Mechanic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/Fleet_Guard_Mechanic/FleetGuard_Mechanic/View/DreamGiftDetails/FG_DreamGiftDetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "5808">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -135,10 +135,17 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
         slideMenuController()?.changeLeftViewWidth(self.view.frame.size.width * 0.8)
         localization()
         SlideMenuOptions.contentViewScale = 1
-        //self.productViewHeight.constant = 200
-        self.tokendata()
-//        self.pointsAPI()
-        self.plannerListing()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.tokendata()
+            self.plannerListing()
+        }
     }
     
 
@@ -224,8 +231,17 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     }
     
     @IBAction func viewProductBtn(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_NewAdditionVC") as! FG_NewAdditionVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_NewAdditionVC") as! FG_NewAdditionVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     @IBAction func languageChangeBtn(_ sender: Any) {
         
@@ -239,8 +255,18 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     }
     
     @IBAction func notificationBell(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryNotificationsViewController") as? HistoryNotificationsViewController
-        navigationController?.pushViewController(vc!, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryNotificationsViewController") as? HistoryNotificationsViewController
+            navigationController?.pushViewController(vc!, animated: true)
+        }
+       
     }
 
     
@@ -250,38 +276,81 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
 //    }
     
     @IBAction func dreamGiftProductDetailsBTN(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DreamGiftVC") as! FG_DreamGiftVC
-        self.navigationController?.pushViewController(vc, animated: true)
-  
-    }
-    
-    @IBAction func dreamGiftDetailsViewActBTN(_ sender: Any) {
-        if VM.myPlannerListArray.count > 0 {
-            self.dreamGiftDetailsOutBtn.isHidden = true
-            self.dreamGiftImageView.isHidden = true
-            self.addYourDreamLbl.isHidden = true
-            self.productViewHeight.constant = 170
-            self.heightOfTheView.constant = 627
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DreamGiftVC") as! FG_DreamGiftVC
-            self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                self.view.makeToast("",duration: 2.0,position: .center)
+            }
         }else{
             let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DreamGiftVC") as! FG_DreamGiftVC
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        
+  
+    }
+    
+    @IBAction func dreamGiftDetailsViewActBTN(_ sender: Any) {
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            if VM.myPlannerListArray.count > 0 {
+                self.dreamGiftDetailsOutBtn.isHidden = true
+                self.dreamGiftImageView.isHidden = true
+                self.addYourDreamLbl.isHidden = true
+                self.productViewHeight.constant = 170
+                self.heightOfTheView.constant = 627
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DreamGiftVC") as! FG_DreamGiftVC
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DreamGiftVC") as! FG_DreamGiftVC
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
     //Product Catalogue ActBTN Down
     @IBAction func redemptionCatalogueBtn(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueListVC") as! FG_ProductCatalogueListVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueListVC") as! FG_ProductCatalogueListVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     @IBAction func redemptionCatActBtn(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionCatalogueVC") as! FG_RedemptionCatalogueVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionCatalogueVC") as! FG_RedemptionCatalogueVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func promotionViewBTN(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyPromotionsVC") as! FG_MyPromotionsVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyPromotionsVC") as! FG_MyPromotionsVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     func dashboardApi(){
         let parameter = [

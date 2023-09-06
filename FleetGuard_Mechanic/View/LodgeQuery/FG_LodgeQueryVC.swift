@@ -99,7 +99,15 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         localization()
-        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.status, StartIndex: startindex)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        }else{
+            self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.status, StartIndex: startindex)
+        }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -133,7 +141,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
             "HelpTopicID": queryTopic,
             "JFromDate":"\(selectedFromDate)",
             "JToDate":"\(selectedToDate)",
-            "PageSize": 20,
+//            "PageSize": 20,
             "StartIndex": StartIndex,
             "TicketStatusId": "\(self.status)"
         ] as [String: Any]
@@ -151,6 +159,14 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     @IBAction func notificationBtn(_ sender: Any) {
     }
     @IBAction func filterBtn(_ sender: Any) {
+        
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                   let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                   vc.modalTransitionStyle = .crossDissolve
+                   vc.modalPresentationStyle = .overFullScreen
+                   self.present(vc, animated: true)
+               return
+               }
         filterShadowView.isHidden = false
 }
 @IBAction func closeBtn(_ sender: Any) {
@@ -233,6 +249,14 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     }
     
     @IBAction func createNewQueryBtn(_ sender: Any) {
+        
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                   let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                   vc.modalTransitionStyle = .crossDissolve
+                   vc.modalPresentationStyle = .overFullScreen
+                   self.present(vc, animated: true)
+               return
+               }
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_CreatenewqueryVC") as! FG_CreatenewqueryVC
         
         self.navigationController?.pushViewController(vc, animated: true)

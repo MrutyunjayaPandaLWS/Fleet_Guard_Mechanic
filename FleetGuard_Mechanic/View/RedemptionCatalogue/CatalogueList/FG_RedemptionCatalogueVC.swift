@@ -114,8 +114,18 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         self.totalPts.text = "\(UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "")"
         self.passBookNumber.text = self.loyaltyId
         catalogueListTableView.reloadData()
-        self.myCartListApi()
-        self.plannerListing()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.myCartListApi()
+            self.plannerListing()
+        }
+        
     }
     
     func localization(){
@@ -126,6 +136,13 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     }
 
     @IBAction func filterBtn(_ sender: Any) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
         
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_CatalogueFilterView") as! FG_CatalogueFilterView
         vc.delegate = self
@@ -142,6 +159,14 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
 //        }
     }
     @IBAction func cartBtn(_ sender: Any) {
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                return
+                }
+        
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyCartVC") as! FG_MyCartVC
         self.navigationController?.pushViewController(vc, animated: true)
     }

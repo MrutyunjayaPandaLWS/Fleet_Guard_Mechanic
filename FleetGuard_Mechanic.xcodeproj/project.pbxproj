@@ -323,6 +323,9 @@
 		8441FF972A62CA0300004721 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8441FF5F2A62CA0300004721 /* Reach.swift */; };
 		8441FF9F2A62CC6100004721 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8441FF9E2A62CC6100004721 /* NotificationService.swift */; };
 		8441FFA32A62CC6100004721 /* NotificationServices.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8441FF9C2A62CC6100004721 /* NotificationServices.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		847E2D4D2A8CE04E001913EE /* IOS_FG_Internet_Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E2D4C2A8CE04E001913EE /* IOS_FG_Internet_Check.swift */; };
+		847E2D4F2A8CE0EF001913EE /* no_internet_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 847E2D4E2A8CE0EF001913EE /* no_internet_lottie.json */; };
+		847E2D512A8CE171001913EE /* ReachabilityAutoSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E2D502A8CE171001913EE /* ReachabilityAutoSync.swift */; };
 		84804A752A62B8B200AADFBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84804A742A62B8B200AADFBB /* AppDelegate.swift */; };
 		84804A772A62B8B200AADFBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84804A762A62B8B200AADFBB /* SceneDelegate.swift */; };
 		84804A7C2A62B8B200AADFBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84804A7A2A62B8B200AADFBB /* Main.storyboard */; };
@@ -711,6 +714,9 @@
 		8441FF9C2A62CC6100004721 /* NotificationServices.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServices.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8441FF9E2A62CC6100004721 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		8441FFA02A62CC6100004721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847E2D4C2A8CE04E001913EE /* IOS_FG_Internet_Check.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOS_FG_Internet_Check.swift; sourceTree = "<group>"; };
+		847E2D4E2A8CE0EF001913EE /* no_internet_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_internet_lottie.json; sourceTree = "<group>"; };
+		847E2D502A8CE171001913EE /* ReachabilityAutoSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityAutoSync.swift; sourceTree = "<group>"; };
 		84804A712A62B8B200AADFBB /* FleetGuard_Mechanic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FleetGuard_Mechanic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84804A742A62B8B200AADFBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84804A762A62B8B200AADFBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -912,6 +918,7 @@
 		8441FC1F2A62C89D00004721 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				847E2D4B2A8CDF0D001913EE /* No Internet connection */,
 				8441FCB72A62C95400004721 /* About */,
 				8441FCCE2A62C95400004721 /* BillingDetails */,
 				8441FC692A62C95300004721 /* Chat */,
@@ -2490,6 +2497,7 @@
 		8441FF442A62CA0200004721 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				847E2D4E2A8CE0EF001913EE /* no_internet_lottie.json */,
 				8441FF452A62CA0200004721 /* loader (1).json */,
 				8441FF462A62CA0200004721 /* lf30_editor_qd1wdceq.json */,
 			);
@@ -2509,6 +2517,7 @@
 		8441FF4F2A62CA0200004721 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				847E2D502A8CE171001913EE /* ReachabilityAutoSync.swift */,
 				8441FF502A62CA0200004721 /* URLRequest.swift */,
 				8441FF512A62CA0200004721 /* RestAPI_Requests.swift */,
 				8441FF522A62CA0200004721 /* URLExtension.swift */,
@@ -2558,6 +2567,14 @@
 				8441FFA02A62CC6100004721 /* Info.plist */,
 			);
 			path = NotificationServices;
+			sourceTree = "<group>";
+		};
+		847E2D4B2A8CDF0D001913EE /* No Internet connection */ = {
+			isa = PBXGroup;
+			children = (
+				847E2D4C2A8CE04E001913EE /* IOS_FG_Internet_Check.swift */,
+			);
+			path = "No Internet connection";
 			sourceTree = "<group>";
 		};
 		84804A682A62B8B200AADFBB = {
@@ -2844,6 +2861,7 @@
 				8441FD042A62C95400004721 /* otherInfoTableViewCell.xib in Resources */,
 				8441FF602A62CA0300004721 /* Roboto-Medium.ttf in Resources */,
 				8441FF622A62CA0300004721 /* Roboto-Regular.ttf in Resources */,
+				847E2D4F2A8CE0EF001913EE /* no_internet_lottie.json in Resources */,
 				8441FF842A62CA0300004721 /* fg-Mechanic-faq-Eng.html in Resources */,
 				84B882482A70FAE400B55D98 /* fg-Mechanic-faq-Bengali.html in Resources */,
 				8441FD122A62C95400004721 /* senderImageTableViewCell.xib in Resources */,
@@ -3047,6 +3065,7 @@
 				8441FD5A2A62C95400004721 /* FG_MyCartTVC.swift in Sources */,
 				8441FE212A62C98300004721 /* LstRetailerBonding.swift in Sources */,
 				8441FF0B2A62C9B200004721 /* HistoryNotificationsViewModel.swift in Sources */,
+				847E2D512A8CE171001913EE /* ReachabilityAutoSync.swift in Sources */,
 				8441FF932A62CA0300004721 /* BaseViewController.swift in Sources */,
 				8441FD2A2A62C95400004721 /* FG_LodgeQueryTVC.swift in Sources */,
 				8441FE4B2A62C98300004721 /* ObjCatalogueCategoryListJson.swift in Sources */,
@@ -3220,6 +3239,7 @@
 				8441FD4A2A62C95400004721 /* FG_ProdCatalogueTVC.swift in Sources */,
 				8441FF732A62CA0300004721 /* NotificationExtension.swift in Sources */,
 				8441FD532A62C95400004721 /* FG_RedemptionCatalogueDetailsVC.swift in Sources */,
+				847E2D4D2A8CE04E001913EE /* IOS_FG_Internet_Check.swift in Sources */,
 				8441FF012A62C9B200004721 /* RedemptionPlannerDetailsViewModel.swift in Sources */,
 				8441FF942A62CA0300004721 /* EmptySegue.swift in Sources */,
 				8441FD432A62C95400004721 /* MyLedgerClickViewTVC.swift in Sources */,
@@ -3527,6 +3547,7 @@
 				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FleetGuard_Mechanic/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Fleet Guard APP Need to Access the Photo Library to upload profile Image  and Customer support";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -3562,6 +3583,7 @@
 				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FleetGuard_Mechanic/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Fleet Guard APP Need to Access the Photo Library to upload profile Image  and Customer support";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

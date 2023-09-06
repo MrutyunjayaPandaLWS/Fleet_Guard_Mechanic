@@ -46,7 +46,15 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate,CheckBo
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.loaderView.isHidden = true
-        self.tokendata()
+        
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == true{
+            self.tokendata()
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        }
         localization()
     }
     
@@ -55,6 +63,14 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate,CheckBo
     
 
     @IBAction func sendOTPBtn(_ sender: Any) {
+        
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                   let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                   vc.modalTransitionStyle = .crossDissolve
+                   vc.modalPresentationStyle = .overFullScreen
+                   self.present(vc, animated: true)
+               return
+               }
         if self.mobileTF.text!.count == 0 {
 //            DispatchQueue.main.async{
 //               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
@@ -91,6 +107,14 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate,CheckBo
     }
     
     @IBAction func contactUsNowBtn(_ sender: Any) {
+        
+        guard MyCommonFunctionalUtilities.isInternetCallTheApi() == true else{
+                   let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                   vc.modalTransitionStyle = .crossDissolve
+                   vc.modalPresentationStyle = .overFullScreen
+                   self.present(vc, animated: true)
+               return
+               }
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RegistrationVC") as! FG_RegistrationVC
         self.navigationController?.pushViewController(vc, animated: true)
     }

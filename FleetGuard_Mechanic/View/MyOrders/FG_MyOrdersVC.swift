@@ -33,7 +33,17 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate {
         self.VM.VC = self
         self.myOrderTableView.delegate = self
         self.myOrderTableView.dataSource = self
-        self.myOrderListingAPI(startInx: startindex)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.myOrderListingAPI(startInx: startindex)
+        }
+        
         
         self.orderHeaderStack.clipsToBounds = true
         orderHeaderStack.layer.cornerRadius = 15

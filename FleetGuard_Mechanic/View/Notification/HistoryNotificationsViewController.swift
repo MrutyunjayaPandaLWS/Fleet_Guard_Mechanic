@@ -42,7 +42,18 @@ class HistoryNotificationsViewController: BaseViewController, notificationDelgat
         expandedview.isHidden = true
         self.noDataFound.isHidden = true
         self.NotificationstableView.register(UINib(nibName: "HistoryNotificationsTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryNotificationsTableViewCell")
-        notificationListApi()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            notificationListApi()
+        }
+
+        
         self.NotificationstableView.delegate = self
         self.NotificationstableView.dataSource = self
         

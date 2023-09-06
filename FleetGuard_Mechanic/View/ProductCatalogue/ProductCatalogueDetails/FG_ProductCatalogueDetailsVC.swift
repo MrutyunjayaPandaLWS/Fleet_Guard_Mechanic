@@ -77,8 +77,19 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
         headertitle.text = "Product_Catalogue_Details".localiz()
 //        Product_Catalogue_Details
         localization()
-        self.myCartApi()
+        
       //  self.productListApi()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.myCartApi()
+        }
+
         print(productImageURL)
         if productImageURL.count == 0 || productImageURL == nil{
 //            cell.imageViewBtn.isEnabled = false
