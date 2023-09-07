@@ -26,6 +26,7 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
         //var totalPoints = UserDefaults.standard.string(forKey: "TotalPoints") ?? ""
     var totalPoints = UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? ""
+    var totalPendingCount = UserDefaults.standard.string(forKey: "totalPendingCount") ?? ""
     var productCalcValue = 0
     var value = 1
     var totalRedeemabelPts = 0

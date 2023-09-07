@@ -21,7 +21,6 @@ class MyLedgerClickVM {
                 if error == nil{
                     if result != nil {
                         DispatchQueue.main.async {
-                            self.VC?.stopLoading()
                             self.rlpStatemnetArray = result?.objCustomerDashboardList ?? []
                             print(self.rlpStatemnetArray.count,"dlskjdkj")
                             if self.rlpStatemnetArray.count != 0 {
@@ -34,6 +33,7 @@ class MyLedgerClickVM {
                                 self.VC?.MyLedgerTableView.isHidden = true
                                 self.VC?.nodataFoundLbl.isHidden = false
                             }
+                            self.VC?.stopLoading()
                         }
                     } else {
                         print("No Response")

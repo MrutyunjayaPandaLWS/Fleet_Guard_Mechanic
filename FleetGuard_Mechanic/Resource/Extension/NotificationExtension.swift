@@ -46,4 +46,6 @@ extension Notification.Name{
     static let sendBackTOQuery = Notification.Name(rawValue: "sendBackTOQuery")
     static let logedInByOtherMobile = Notification.Name(rawValue: "logedInByOtherMobile")
     static let redirectingToLogin = Notification.Name(rawValue: "redirectingToLogin")
+    static let navigateToProfile = Notification.Name(rawValue: "navigateToProfile")
+    
 }

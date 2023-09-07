@@ -35,6 +35,7 @@ class FG_DashboardVM: popUpDelegate{
                     print(result?.deviceID,"kshjk")
                     if self.deviceID != result?.deviceID{
                         DispatchQueue.main.async {
+                            self.VC?.stopLoading()
                             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                             vc!.delegate = self
                             vc!.descriptionInfo = "other_device_Login_error".localiz()
@@ -52,6 +53,8 @@ class FG_DashboardVM: popUpDelegate{
                                 print(result?.objCustomerDashboardList?[0].notificationCount ?? "", "NotificationCount")
                                 print(result?.objCustomerDashboardList?[0].redeemablePointsBalance ?? "", "totalpoints")
                                 UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].redeemablePointsBalance ?? "", forKey: "TotalPoints")
+                                UserDefaults.standard.setValue(result?.totalPendingCount ?? 0, forKey: "totalPendingCount")
+                                self.VC?.plannerPointsLbl.text = "\(Int(result?.objCustomerDashboardList?[0].redeemablePointsBalance ?? 0) - (result?.totalPendingCount ?? 0))"
                                 UserDefaults.standard.synchronize()
                                 
                                 
@@ -66,6 +69,7 @@ class FG_DashboardVM: popUpDelegate{
                                         vc!.modalPresentationStyle = .overCurrentContext
                                         vc!.modalTransitionStyle = .crossDissolve
                                         self.VC?.present(vc!, animated: true, completion: nil)
+                                        self.VC?.stopLoading()
                                     }
                                 }else{
                                     self.VC?.welcomeNameLbl.text = result?.lstCustomerFeedBackJsonApi?[0].firstName ?? ""
@@ -175,14 +179,14 @@ class FG_DashboardVM: popUpDelegate{
     }
     
     func pointBalenceAPI(parameter: JSON){
-        //        DispatchQueue.main.async {
-        //            self.VC?.startLoading()
-        //        }
+                DispatchQueue.main.async {
+                    self.VC?.startLoading()
+                }
         self.requestApis.pointBalenceAPI(parameters: parameter) { (result, error) in
             if error == nil{
                 if result != nil{
                     DispatchQueue.main.async {
-                        //                    self.VC?.stopLoading()
+                                            self.VC?.stopLoading()
                         
                         if result?.objCustomerDashboardList?.count != 0 {
                             self.pointBalence = result?.objCustomerDashboardList ?? []
@@ -193,17 +197,18 @@ class FG_DashboardVM: popUpDelegate{
                             
                             UserDefaults.standard.set(true, forKey: "AfterLog")
                             UserDefaults.standard.synchronize()
+                            
+                            self.VC?.plannerListing(totalPointBalence: "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)" )
                         }
-                        
                     }
                 }else{
                     DispatchQueue.main.async {
-                        //                    self.VC?.stopLoading()
+                                            self.VC?.stopLoading()
                     }
                 }
             }else{
                 DispatchQueue.main.async {
-                    //                self.VC?.stopLoading()
+                                    self.VC?.stopLoading()
                 }
             }
         }
@@ -214,49 +219,74 @@ class FG_DashboardVM: popUpDelegate{
             self.VC?.startLoading()
         }
         self.requestApis.plannerListApi(parameters: parameter) { (result, error) in
-            self.myPlannerListArray = result?.objCatalogueList ?? []
-            print(self.myPlannerListArray.count, "Planner List Cout")
-            DispatchQueue.main.async {
-                self.VC?.stopLoading()
-                
-                if self.myPlannerListArray.count > 0 {
-                    self.VC?.dreamGiftDetailsOutBtn.isHidden = true
-                    self.VC?.dreamGiftImageView.isHidden = true
-                    self.VC?.addYourDreamLbl.isHidden = true
-                    self.VC?.productViewHeight.constant = 170
-                    self.VC?.heightOfTheView.constant = 627
-                    
-                    self.VC?.plannerPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointBalance ?? 0))"
-                    self.VC?.plannerCategoryLbl.text = "\("Category".localiz()) : \(result?.objCatalogueList?[0].catogoryName ?? "-")"
-                    self.VC?.plannerProductLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
-                    // self.VC?.plannerPointsRequiredLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
-                    let image =  imageUrl + (result?.objCatalogueList?[0].productImage ?? "").replacingOccurrences(of: " ", with: "%20")
-                    self.VC?.plannerImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
-                    self.VC?.plannerPointsReqPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointsRequired ?? 0))"
-                    var pointBal = CGFloat(result?.objCatalogueList?[0].pointBalance ?? 0)
-                    var requiredBal = CGFloat(result?.objCatalogueList?[0].pointsRequired ?? 0)
-                    var progressPercent = CGFloat(pointBal/requiredBal) * 100.0
-                    self.VC?.progressViewDreamGift.progress = Float((progressPercent / 100.0) )
-                    if progressPercent < 100.0{
-                        self.VC?.progressBarLbl.text = "\(Int(progressPercent)) %"
-                        self.VC?.progressCircleViewLeading.constant = ((self.VC?.progressViewDreamGift.frame.width ?? 0) * CGFloat(progressPercent/100))
-                    }else{
-                        self.VC?.progressBarLbl.text = "100 %"
-                        self.VC?.progressCircleViewLeading.constant = self.VC?.progressViewDreamGift.frame.width ?? 0
+            if error == nil{
+                if result != nil{
+                    DispatchQueue.main.async {
+                        self.VC?.stopLoading()
+                        self.myPlannerListArray = result?.objCatalogueList ?? []
+                        print(self.myPlannerListArray.count, "Planner List Cout")
+                        
+                            if self.myPlannerListArray.count > 0 {
+                                self.VC?.dreamGiftDetailsOutBtn.isHidden = true
+                                self.VC?.dreamGiftImageView.isHidden = true
+                                self.VC?.addYourDreamLbl.isHidden = true
+                                self.VC?.productViewHeight.constant = 170
+                                self.VC?.heightOfTheView.constant = 627
+                                //UserDefaults.standard.setValue(result?.totalPendingCount ?? 0, forKey: "totalPendingCount")
+                                let totalPoints = UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? ""
+                                let totalPendingCount = UserDefaults.standard.string(forKey: "totalPendingCount")
+                                
+                                let totalPointsData = Int(totalPoints)! - Int(totalPendingCount ?? "")!
+                                self.VC?.plannerPointsLbl.text = "\(totalPointsData)"
+//                                let totalPoints = Int(totalPoints)! - Int(totalPendingCount ?? "")!
+//                                self.totalPts.text = "\(totalPoints)"
+                                
+                                
+                                //self.VC?.plannerPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointBalance ?? 0))"
+                                self.VC?.plannerCategoryLbl.text = "\("Category".localiz()) : \(result?.objCatalogueList?[0].catogoryName ?? "-")"
+                                self.VC?.plannerProductLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
+                                // self.VC?.plannerPointsRequiredLbl.text = "\(result?.objCatalogueList?[0].productName ?? "-")"
+                                let image =  imageUrl + (result?.objCatalogueList?[0].productImage ?? "").replacingOccurrences(of: " ", with: "%20")
+                                self.VC?.plannerImageView.kf.setImage(with: URL(string: "\(String(describing: image ))"), placeholder: UIImage(named: "Humsafar Logo PNG 1"))
+                                self.VC?.plannerPointsReqPointsLbl.text = "\(Int(result?.objCatalogueList?[0].pointsRequired ?? 0))"
+                                var pointBal = CGFloat(result?.objCatalogueList?[0].pointBalance ?? 0)
+                                var requiredBal = CGFloat(result?.objCatalogueList?[0].pointsRequired ?? 0)
+                                var progressPercent = CGFloat(pointBal/requiredBal) * 100.0
+                                self.VC?.progressViewDreamGift.progress = Float((progressPercent / 100.0) )
+                                if progressPercent < 100.0{
+                                    self.VC?.progressBarLbl.text = "\(Int(progressPercent)) %"
+                                    self.VC?.progressCircleViewLeading.constant = ((self.VC?.progressViewDreamGift.frame.width ?? 0) * CGFloat(progressPercent/100))
+                                }else{
+                                    self.VC?.progressBarLbl.text = "100 %"
+                                    self.VC?.progressCircleViewLeading.constant = self.VC?.progressViewDreamGift.frame.width ?? 0
+                                }
+                                
+                                
+                            }else{
+                                self.VC?.dreamGiftDetailsOutBtn.isHidden = false
+                                self.VC?.dreamGiftImageView.isHidden = false
+                                self.VC?.addYourDreamLbl.isHidden = false
+                                self.VC?.productViewHeight.constant = 100
+                                self.VC?.heightOfTheView.constant = 550
+                                
+                            }
+                        self.VC?.stopLoading()
+                        }
+                }else{
+                    DispatchQueue.main.async {
+                        print(error?.localizedDescription)
+                        self.VC?.stopLoading()
                     }
                     
-                    
-                }else{
-                    self.VC?.dreamGiftDetailsOutBtn.isHidden = false
-                    self.VC?.dreamGiftImageView.isHidden = false
-                    self.VC?.addYourDreamLbl.isHidden = false
-                    self.VC?.productViewHeight.constant = 100
-                    self.VC?.heightOfTheView.constant = 550
-                    
                 }
+            }else{
+                DispatchQueue.main.async {
+                    print(error?.localizedDescription)
+                    self.VC?.stopLoading()
+                }
+            }
                 
             }
-        }
         
     }
     

@@ -128,7 +128,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(logedInByOtherMobile), name: Notification.Name.logedInByOtherMobile, object: nil)
         self.bannerImagesAPI()
-        self.plannerListing()
+//        self.plannerListing()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -144,7 +144,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
             }
         }else{
             self.tokendata()
-            self.plannerListing()
+            
         }
     }
     
@@ -392,10 +392,10 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
         
     }
     
-    func plannerListing(){
+    func plannerListing(totalPointBalence: String){
         let parameters = [
             "ActionType": "6",
-            "Points": "\(VM.totalPointBalence)",
+            "Points": totalPointBalence,
             "ActorId": "\(userId)"
         ] as [String : Any]
         print(parameters)
@@ -424,7 +424,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
         let parameters = [
                 "ObjImageGallery": [
                 "AlbumCategoryID": "1",
-                "ActorId": 2
+                "ActorId": "\(self.userId)"
             ]
             ] as [String: Any]
         print(parameters)
@@ -571,9 +571,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
                         print(parseddata.access_token ?? "", "- Token")
                         UserDefaults.standard.setValue(parseddata.access_token ?? "", forKey: "TOKEN")
                     self.dashboardApi()
-//                    self.dashboardPointsApi()
                     self.productsCategoryListApi()
-                    
                     
                      }catch let parsingError {
                     print("Error", parsingError)

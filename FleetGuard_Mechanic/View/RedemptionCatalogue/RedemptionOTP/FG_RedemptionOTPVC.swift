@@ -176,7 +176,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
                               "DomainName": "FLEET_GUARD"
                           ],
                         "ObjCatalogueList": self.newproductArray as [[String: Any]],
-                        "ObjCustShippingAddressDetails":["Address1":"\(self.address1)","CityId":"\(self.cityID)", "CityName":"\(self.cityName)","CountryId":"\(self.countryId)","StateName": "\(self.stateName)","StateId":"\(self.stateID)","Zip":"\(self.pincode)","Email":"\(self.emailId)","FullName":"\(self.customerName)","Mobile": self.mobile],"SourceMode":5
+                        "ObjCustShippingAddressDetails":["Address1":"\(self.address1)","CityId":"\(self.cityID)", "CityName":"\(self.cityName)","CountryId":"\(self.countryId)","StateName": "\(self.stateName)","StateId":"\(self.stateID)","Zip":"\(self.pincode)","Email":"\(self.emailId)","FullName":"\(self.customerName)","Mobile": self.mobile],"SourceMode":10
                     ]
                     print(productsParameter ?? [])
                 }else{
@@ -199,7 +199,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
                             "StateName": "\(self.stateName)",
                             "Zip": "\(self.pincode)"
                         ],
-                        "SourceMode": 5
+                        "SourceMode": 10
 
                     ] as [String: Any]
                     print(self.productsParameter ?? [], "Dream Gift")

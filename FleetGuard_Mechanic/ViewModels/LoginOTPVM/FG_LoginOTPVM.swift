@@ -24,15 +24,13 @@ class FG_LoginOTPVM: popUpDelegate {
     func loginOTPApi(parameter: JSON){
         DispatchQueue.main.async {
             self.VC?.startLoading()
-            //self.VC!.loaderView.isHidden = false
-            //self.VC!.lottieAnimation(animationView: self.VC!.loaderAnimation)
         }
         self.requestAPIs.otp_Post_API(parameters: parameter) { (result, error) in
             if error == nil{
                 if result != nil{
+                    DispatchQueue.main.async {
                     let response = result?.returnMessage ?? ""
                         print(response, "- OTP")
-                    DispatchQueue.main.async {
                         //self.VC!.loaderView.isHidden = true
                         self.otpVerify = result?.returnMessage ?? ""
                         self.VC?.stopLoading()

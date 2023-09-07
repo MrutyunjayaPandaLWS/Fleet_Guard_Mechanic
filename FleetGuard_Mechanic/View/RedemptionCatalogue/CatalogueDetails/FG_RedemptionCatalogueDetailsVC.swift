@@ -149,7 +149,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
                 return
                 }
         
-        if addCartBtnStatus == 0{
+//        if addCartBtnStatus == 0{
         if self.verifiedStatus != 1{
             DispatchQueue.main.async{
                 //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
@@ -180,7 +180,6 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
                 }else{
                     self.addToCartApi()
                     self.myCartListApi()
-                    addCartBtnStatus = 1
                 }
                 
             }else{
@@ -197,7 +196,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
                 }
             }
         }
-        }
+//        }
     }
     
     func plannerListing(){

@@ -47,7 +47,10 @@ class FG_PopUpVC: BaseViewController {
             self.dismiss(animated: true)
         }else if itsComeFrom == "AccounthasbeenDeleted"{
             delegate?.popupAlertDidTap(self)
-        }else{
+        }else if itsComeFrom == "EDIT"{
+            NotificationCenter.default.post(name: .navigateToProfile, object: nil)
+            self.dismiss(animated: true)
+        } else{
             self.dismiss(animated: true)
         }
         

@@ -72,19 +72,19 @@ class BaseViewController: UIViewController {
     
        func startLoading(){
         DispatchQueue.main.async {
-//            self.activityIndicator.transform = CGAffineTransform(scaleX: 2, y: 2)
-//            self.activityIndicator.center = self.view.center;
-//            self.activityIndicator.hidesWhenStopped = true;
-//            self.activityIndicator.color = UIColor.black
-//            self.view.addSubview(self.activityIndicator);
-//            self.activityIndicator.startAnimating();
-//            self.view.isUserInteractionEnabled = false
+            self.activityIndicator.transform = CGAffineTransform(scaleX: 2, y: 2)
+            self.activityIndicator.center = self.view.center;
+            self.activityIndicator.hidesWhenStopped = true;
+            self.activityIndicator.color = UIColor.black
+            self.view.addSubview(self.activityIndicator);
+            self.activityIndicator.startAnimating();
+            self.view.isUserInteractionEnabled = false
         }
        }
        func stopLoading(){
         DispatchQueue.main.async {
-//            self.activityIndicator.stopAnimating();
-//            self.view.isUserInteractionEnabled = true
+            self.activityIndicator.stopAnimating();
+            self.view.isUserInteractionEnabled = true
         }
           
        }

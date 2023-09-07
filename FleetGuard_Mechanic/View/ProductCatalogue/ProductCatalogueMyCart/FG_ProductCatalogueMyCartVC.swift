@@ -219,7 +219,7 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
     func placeOrderSubmissionApi(){
         let parameter = [
             "LoyaltyId": "\(self.loyaltyId)",
-            "SourceModeId": "5",
+            "SourceModeId": "10",
             "ActorId": "\(self.userId)",
             "OrderStatus": "0",
             "CartDetailsList": self.cartDetailsArray,

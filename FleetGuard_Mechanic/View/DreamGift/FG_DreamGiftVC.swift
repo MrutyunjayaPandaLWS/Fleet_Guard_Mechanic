@@ -34,6 +34,7 @@ class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
     var userID = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyID = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     var totalPoints = UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? ""
+    var totalPendingCount = UserDefaults.standard.string(forKey: "totalPendingCount") ?? ""
     var selectedPlannerID = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -178,7 +179,7 @@ extension FG_DreamGiftVC : UITableViewDelegate, UITableViewDataSource{
         
         cell?.productNameLbl.text = self.VM.myPlannerListArray[indexPath.row].productName ?? "-"
         cell?.categoryLbl.text = "\("Category".localiz()): \(self.VM.myPlannerListArray[indexPath.row].catogoryName ?? "-")"
-        cell?.pointsAvailableLbl.text = "\(Int(VM.myPlannerListArray[indexPath.row].pointBalance ?? 0.0) )"
+        cell?.pointsAvailableLbl.text = "\(Int(VM.myPlannerListArray[indexPath.row].pointBalance ?? 0.0) - (Int(totalPendingCount) ?? 0))"
         cell?.pointsRequiredLbl.text = "\("points".localiz()) : \(VM.myPlannerListArray[indexPath.row].pointsRequired ?? 0)"
         
         let balance = Double(self.VM.myPlannerListArray[indexPath.row].pointBalance ?? 0)

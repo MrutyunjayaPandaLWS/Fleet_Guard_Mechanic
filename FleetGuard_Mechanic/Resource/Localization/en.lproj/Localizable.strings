@@ -70,7 +70,7 @@
 
 "total_Point_bal" = "Total Point Balance";
 "passbook_number" = "Passbook Number";
-"welcome" = "Welcome !";
+"welcome" = "Welcome ";
 "humsafar" = "HUMSAFAR";
 "View_your_dreamgift" = "View your Dream Gifts";
 "add_your_dreamGift" = "Add Your Dream Gift";
@@ -274,3 +274,10 @@
 "Go to Dashboard" = "Go to Dashboard";
 "Your order placed successfully !" = "Your order placed successfully !";
 "Milestone code" = "Milestone code";
+
+
+
+
+
+//NewLine
+

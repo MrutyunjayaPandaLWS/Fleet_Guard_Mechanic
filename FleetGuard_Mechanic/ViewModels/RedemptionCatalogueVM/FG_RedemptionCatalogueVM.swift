@@ -29,7 +29,7 @@ class FG_RedemptionCatalogueVM: popUpDelegate{
                 if result != nil {
                     DispatchQueue.main.async {
                         completion(result)
-                        
+                        self.VC?.stopLoading()
                     }
                 } else {
                     print("No Response")
@@ -58,7 +58,7 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
             if error == nil{
                 if result != nil{
                     DispatchQueue.main.async {
-                        self.VC?.stopLoading()
+                        
                         self.redemptionCatalogueMyCartListArray = result?.catalogueSaveCartDetailListResponse ?? []
                         if self.redemptionCatalogueMyCartListArray.count != 0 {
                             self.VC?.countLbl.isHidden = false
@@ -72,6 +72,8 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
                             
                         }
                         self.VC?.redemptionCatalogueListApi(startIndex: self.VC?.startindex ?? 0)
+                        
+                        self.VC?.stopLoading()
                     }
 
                 }else{
@@ -96,7 +98,7 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
             if error == nil{
                 if result != nil{
                     DispatchQueue.main.async {
-                        self.VC?.stopLoading()
+                        
                         self.redemptionCatalougeListArray1 = result?.objCatalogueList ?? []
                         self.VC?.noofelements = self.redemptionCatalougeListArray1.count
                         
@@ -112,6 +114,8 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
                             self.VC?.noDataFoundLbl.isHidden = false
                         }
                         self.VC?.plannerListing()
+                        
+                        self.VC?.stopLoading()
                     }
 
                 }else{
@@ -138,28 +142,29 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
             if error == nil{
                 if result != nil{
                     DispatchQueue.main.async {
-                        self.VC?.stopLoading()
+                        
                         print(result?.returnValue ?? 0)
                         if result?.returnValue ?? 0 == 1{
-                            DispatchQueue.main.async{
+                            
                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                vc!.delegate = self
                                 vc!.descriptionInfo = "added_to_cart_success_message".localiz()
                                vc!.modalPresentationStyle = .overCurrentContext
                                vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)
-                            }
+                        
                             self.VC?.myCartListApi()
                         }else{
-                            DispatchQueue.main.async{
+                            
                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                vc!.delegate = self
                                 vc!.descriptionInfo = "Something_went_wrong_error".localiz()
                                vc!.modalPresentationStyle = .overCurrentContext
                                vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)
-                            }
+                            
                         }
+                        self.VC?.stopLoading()
                     }
                     
                 }else{
@@ -186,18 +191,21 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
             if error == nil{
                 if result != nil{
                     DispatchQueue.main.async {
-                        self.VC?.stopLoading()
+                        
                         print(result?.returnValue ?? 0)
                         if result?.returnValue ?? 0 != 0{
                             DispatchQueue.main.async{
+                                self.VC?.stopLoading()
                                 self.VC?.view.makeToast("Product_added_to_dreamgift".localiz(), duration: 3.0, position: .bottom)
                                 self.VC?.plannerListing()
                             }
                         }else{
                             DispatchQueue.main.async{
+                                self.VC?.stopLoading()
                                 self.VC?.view.makeToast("faild_to_add_dream_gift".localiz(), duration: 3.0, position: .bottom)
                             }
                         }
+                        self.VC?.stopLoading()
                     }
                     
                 }else{

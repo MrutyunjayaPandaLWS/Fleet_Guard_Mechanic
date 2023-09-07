@@ -159,11 +159,18 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
         selectedStateId = profileDetails?.lstCustomerJson?[0].stateId ?? -1
         selectedCityId = profileDetails?.lstCustomerJson?[0].cityId ?? -1
         emailTF.keyboardType = .emailAddress
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateToProfileFunc), name: Notification.Name.navigateToProfile, object: nil)
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         localization()
+    }
+    @objc func navigateToProfileFunc() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func localization(){

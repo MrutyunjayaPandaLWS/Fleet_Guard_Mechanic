@@ -62,7 +62,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     var noofelements = 0
-    var startindex = 0
+    var startindex = 1
     
     var categoryId = 0
     var categoryId1 = 0

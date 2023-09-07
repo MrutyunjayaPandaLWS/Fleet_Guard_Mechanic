@@ -76,6 +76,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     var totalPoints = UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? ""
+    var totalPendingCount = UserDefaults.standard.string(forKey: "totalPendingCount")
     
     var sortBy = ""
     var cartTotalPts = 0
@@ -111,7 +112,9 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         super.viewWillAppear(true)
         self.VM.redemptionCatalougeListArray.removeAll()
         localization()
-        self.totalPts.text = "\(UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "")"
+        let totalPoints = Int(totalPoints ?? "")! - Int(totalPendingCount ?? "")!
+        self.totalPts.text = "\(totalPoints)"
+        //self.totalPts.text = "\(UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "")"
         self.passBookNumber.text = self.loyaltyId
         catalogueListTableView.reloadData()
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
@@ -196,6 +199,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
             "ActionType": "2",
             "LoyaltyID": "\(self.loyaltyId)"
         ] as [String: Any]
+        print(parameter)
         self.VM.redemptionCatalogueMyCartListApi(parameter: parameter)
     }
     
@@ -281,6 +285,12 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
   
         
     }
+    
+    
+    @IBAction func searchActBTN(_ sender: Any) {
+        searchTF.endEditing(true)
+    }
+    
     
     
     // Delegate:-
@@ -392,75 +402,20 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
         let filterArray = self.myCartIds.filter{$0 == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId ?? 0}
         let productPoints = self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0
         var filterDreamGiftArray = [ObjCatalogueList2]()
-        if (self.VM.myPlannerListArray.count != 0){
+        if self.VM.myPlannerListArray.count != 0{
             filterDreamGiftArray = self.VM.myPlannerListArray.filter{$0.catalogueId == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId}
         }
          
-//        let catalogoueID = self.VM.redemptionCatalogueMyCartListArray[indexPath.row].catalogueId ?? 0
-//        if dreamGiftListArray.contains(catalogoueID){
-//            cell.addedToCartView.isHidden = true
-//            cell.addToCartView.isHidden = true
-//            cell.addedToDreamGiftView.isHidden = false
-//            cell.addtoDreamGiftView.isHidden = true
-//        }
-//        let filterCategory = self.myCartIds.filter { $0 == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId ?? 0 }
-//        let filterPlannerList = self.VM.myPlannerListArray.filter { $0.catalogueId == self.VM.redemptionCatalogueMyCartListArray[indexPath.row].catalogueId ?? 0 }
-//        let productPoints = self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0
-//        if Int(self.totalPoints) ?? 0 >= productPoints{
-//
-//            cell.addedToCartView.isHidden = true
-//            cell.addToCartView.isHidden = false
-//            cell.addedToDreamGiftView.isHidden = true
-//            cell.addtoDreamGiftView.isHidden = true
-//        }else{
-//            if self.VM.redemptionCatalogueMyCartListArray[indexPath.row].isPlanner! == true{
-//                cell.addedToCartView.isHidden = true
-//                cell.addToCartView.isHidden = true
-//                cell.addedToDreamGiftView.isHidden = false
-//                cell.addtoDreamGiftView.isHidden = true
-//
-//            }else{
-//
-//                cell.addedToCartView.isHidden = true
-//                cell.addToCartView.isHidden = true
-//                cell.addedToDreamGiftView.isHidden = true
-//                cell.addtoDreamGiftView.isHidden = true
-//
-//
-//            }
-//        }
-////        if filterCategory.count > 0 {
-////            cell.addedToCart.isHidden = false
-////            cell.addToPlanner.isHidden = true
-////            cell.addToCartButton.isHidden = true
-////            cell.addedToPlanner.isHidden = true
-////        }
-//        if filterPlannerList.count > 0 {
-//            if Int(totalPoints) ?? 0 > Int(productPoints) {
-//
-//                cell.addedToCartView.isHidden = true
-//                cell.addToCartView.isHidden = false
-//                cell.addedToDreamGiftView.isHidden = true
-//                cell.addtoDreamGiftView.isHidden = true
-//
-//            }else{
-//
-//                cell.addedToCartView.isHidden = true
-//                cell.addToCartView.isHidden = true
-//                cell.addedToDreamGiftView.isHidden = false
-//                cell.addtoDreamGiftView.isHidden = true
-//
-//            }
-//
-//        }
         
         if Int(self.totalPoints) ?? 0 >= productPoints{
             if filterArray.count > 0 {
                 cell.addedToCartView.isHidden = false
                 cell.addToCartView.isHidden = true
+                cell.addToPlannerOutletBTN.setImage(UIImage(named: "favorite-filled 1"), for: .normal)
             }else{
                 cell.addedToCartView.isHidden = true
                 cell.addToCartView.isHidden = false
+                cell.addToPlannerOutletBTN.setImage(UIImage(named: "favorite-filled 1"), for: .normal)
             }
             cell.addtoDreamGiftView.isHidden = true
             cell.addedToDreamGiftView.isHidden = true
