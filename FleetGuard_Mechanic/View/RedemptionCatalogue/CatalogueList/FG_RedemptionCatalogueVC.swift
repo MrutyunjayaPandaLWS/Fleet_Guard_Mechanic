@@ -27,36 +27,24 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     }
     
     func prodiuctDetails(_ vc: FG_CatalogueFilterView) {
-        if vc.tableViewData == "Points Range"{
-            self.VM.redemptionCatalougeListArray.removeAll()
-            self.miniValue = vc.minimumValueTF.text ?? ""
-            self.maximiumValue = vc.maximumValueTF.text ?? ""
-            let a = "-"
-            let minMax = "\(miniValue)"+"\(a)"+"\(maximiumValue)"
-            print(minMax,"ksjdksnd")
-            self.categoryIDs = "\(vc.categoryID)"
-            self.pointsRangeDatas = "\(vc.collectionViewData)"
-            
-            if self.miniValue != "" && self.maximiumValue != "" {
-                if maximiumValue <= miniValue{
-                    self.view.makeToast("Maximum feild should be higher then Minimum field", duration: 3.0, position: .bottom)
-                
-                }else{
-                   // if minMax != "-"{
-                        self.pointsRangeDatas = "\(minMax)"
-//                    }else{
-//                        self.pointsRangeDatas = "\(vc.collectionViewData)"
-//                    }
-                }
-            }
-            self.redemptionCatalogueListApi(startIndex: startindex)
+        self.VM.redemptionCatalougeListArray.removeAll()
+        self.startindex = 1
+        self.miniValue = vc.minimumValueTF.text ?? ""
+        self.maximiumValue = vc.maximumValueTF.text ?? ""
+        let a = "-"
+        let minMax = "\(miniValue)"+"\(a)"+"\(maximiumValue)"
+        self.pointRangeCategory = vc.pointRangeCategory
+        self.tableViewData = vc.tableViewData
+        self.collectionViewData = vc.collectionViewData
+        print(minMax,"ksjdksnd")
+        if self.miniValue != "" && self.maximiumValue != "" {
+            self.pointsRangeDatas = "\(minMax)"
         }else{
-            self.VM.redemptionCatalougeListArray.removeAll()
             self.pointsRangeDatas = "\(vc.collectionViewData)"
-            self.categoryIDs = "\(vc.categoryID)"
-            self.redemptionCatalogueListApi(startIndex: startindex)
         }
-        //self.redemptionCatalogueListApi(startIndex: startindex)
+        self.categoryID = vc.categoryID
+        self.redemptionCatalogueListApi(startIndex: startindex)
+        
     }
     
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -94,6 +82,10 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     var plannerListingData = ""
     var dreamGiftListArray = [Int]()
     
+    var categoryID = 0
+    var pointRangeCategory = ""
+    var tableViewData = "Category"
+    var collectionViewData = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,7 +104,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         super.viewWillAppear(true)
         self.VM.redemptionCatalougeListArray.removeAll()
         localization()
-        let totalPoints = Int(totalPoints ?? "")! - Int(totalPendingCount ?? "")!
+//        let totalPoints = Int(totalPoints ?? "")! - Int(totalPendingCount ?? "")!
         self.totalPts.text = "\(totalPoints)"
         //self.totalPts.text = "\(UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "")"
         self.passBookNumber.text = self.loyaltyId
@@ -149,6 +141,12 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_CatalogueFilterView") as! FG_CatalogueFilterView
         vc.delegate = self
+        vc.minValue = self.miniValue
+        vc.maxValue = self.maximiumValue
+        vc.categoryID = self.categoryID
+        vc.tableViewData = self.tableViewData
+        vc.pointRangeCategory = self.pointRangeCategory
+        vc.collectionViewData = self.collectionViewData
         vc.modalTransitionStyle = .coverVertical
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true)
@@ -178,10 +176,10 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         let parameter = [
                 "ActionType": "6",
                 "ActorId": "\(self.userId)",
-                "NoOfRows": 20,
+                "NoOfRows": 10,
                 "ObjCatalogueDetails": [
                     "MerchantId": 1,
-                    "CatogoryId": "\(categoryIDs)",
+                    "CatogoryId": "\(categoryID)",
                     "MultipleRedIds": "\(pointsRangeDatas)",
                 ],
                 "SearchText": "\(searchTF.text ?? "")",
@@ -273,12 +271,14 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
 //        }
     if self.searchTF.text!.count != 0 || self.searchTF.text ?? "" != ""{
         self.VM.redemptionCatalougeListArray.removeAll()
+        self.startindex = 1
         self.catalogueListTableView.reloadData()
         self.redemptionCatalogueListApi(startIndex: startindex)
     }else{
         self.VM.redemptionCatalougeListArray.removeAll()
         self.catalogueListTableView.reloadData()
         //self.itsFrom = "Category"
+        self.startindex = 1
         self.redemptionCatalogueListApi(startIndex: startindex)
         noDataFoundLbl.isHidden = true
     }
@@ -448,10 +448,10 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
             if indexPath.row == VM.redemptionCatalougeListArray.count - 2{
-                if noofelements == 20{
+                if noofelements == 10{
                     self.startindex = startindex + 1
                     self.redemptionCatalogueListApi(startIndex: startindex)
-                }else if noofelements < 20{
+                }else if noofelements < 10{
                     return
                 }else{
                     print("n0 more elements")

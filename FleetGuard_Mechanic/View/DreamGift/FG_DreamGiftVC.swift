@@ -8,7 +8,10 @@
 import UIKit
 import LanguageManager_iOS
 
-class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
+class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate, popUpDelegate {
+    func popupAlertDidTap(_ vc: FG_PopUpVC) {
+    }
+    
     func removeProductButton(_ vc: FG_DreamGiftTVC) {
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
@@ -107,6 +110,7 @@ class FG_DreamGiftVC: BaseViewController,dreamGiftPlannerDelegate {
         self.VM.removePlannedProduct(parameters: parameters) { response in
             if response?.returnValue == 1{
                 self.plannerListing()
+                self.removedDreamGiftPop()
 //                self.navigationController?.popViewController(animated: true)
             }else{
                 DispatchQueue.main.async{
@@ -179,7 +183,7 @@ extension FG_DreamGiftVC : UITableViewDelegate, UITableViewDataSource{
         
         cell?.productNameLbl.text = self.VM.myPlannerListArray[indexPath.row].productName ?? "-"
         cell?.categoryLbl.text = "\("Category".localiz()): \(self.VM.myPlannerListArray[indexPath.row].catogoryName ?? "-")"
-        cell?.pointsAvailableLbl.text = "\(Int(VM.myPlannerListArray[indexPath.row].pointBalance ?? 0.0) - (Int(totalPendingCount) ?? 0))"
+        cell?.pointsAvailableLbl.text = "\(Int(VM.myPlannerListArray[indexPath.row].pointBalance ?? 0.0))" // - (Int(totalPendingCount) ?? 0))"
         cell?.pointsRequiredLbl.text = "\("points".localiz()) : \(VM.myPlannerListArray[indexPath.row].pointsRequired ?? 0)"
         
         let balance = Double(self.VM.myPlannerListArray[indexPath.row].pointBalance ?? 0)
@@ -272,5 +276,16 @@ extension FG_DreamGiftVC : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+}
+
+extension FG_DreamGiftVC{
+    func removedDreamGiftPop(){
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+        vc!.delegate = self
+        vc!.descriptionInfo = "product_removed_success".localiz()
+        vc!.modalPresentationStyle = .overCurrentContext
+        vc!.modalTransitionStyle = .crossDissolve
+        present(vc!, animated: true, completion: nil)
     }
 }

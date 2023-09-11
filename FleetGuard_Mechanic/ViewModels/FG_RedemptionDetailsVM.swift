@@ -78,7 +78,14 @@ class FG_RedemptionDetailsVM{
         
         if error == nil{
             if result != nil{
-                self.orderStatusArrayList = result?.objCatalogueList ?? []
+                let filterData = result?.objCatalogueList ?? []
+                let status  = [2,14,15,9,11,13,14,15,16,17,18]
+                for data in filterData{
+                    if status.contains(data.status ?? 0) == false{
+                        self.orderStatusArrayList.append(data)
+                    }
+                }
+//                self.orderStatusArrayList = result?.objCatalogueList ?? []
                 if self.orderStatusArrayList.count != 0{
                     DispatchQueue.main.async {
                         self.VC?.OrderStatusTitleLbl.isHidden = false

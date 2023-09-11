@@ -109,15 +109,19 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
         }else if self.enteredValue.count == 4{
             print(self.enteredValue)
             print(self.receivedOTP)
-            if self.enteredValue == self.receivedOTP{
-                DispatchQueue.main.async{
-                    self.loginSubmissionApi(mobileNumber: self.enterMobileNumber, deviceID: self.deviceID, pushID: self.pushID)
-                }
-            }else{
-                DispatchQueue.main.async{
-                    self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
-                }
+            self.VM.serverOTP(mobileNumber: self.enterMobileNumber, otpNumber: self.txtDPOTPView.text ?? ""){
+                self.loginSubmissionApi(mobileNumber: self.enterMobileNumber, deviceID: self.deviceID, pushID: self.pushID)
             }
+            
+//            if self.enteredValue == self.receivedOTP{
+//                DispatchQueue.main.async{
+//                    self.loginSubmissionApi(mobileNumber: self.enterMobileNumber, deviceID: self.deviceID, pushID: self.pushID)
+//                }
+//            }else{
+//                DispatchQueue.main.async{
+//                    self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
+//                }
+//            }
         }else{
             DispatchQueue.main.async{
                 self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)

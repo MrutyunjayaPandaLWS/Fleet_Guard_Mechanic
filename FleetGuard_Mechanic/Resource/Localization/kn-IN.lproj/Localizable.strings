@@ -240,20 +240,6 @@ Created by admin on 11/05/23.
 "Please select OME value" = "ದಯವಿಟ್ಟು OME ಮೌಲ್ಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
 "Please select Model value" = "ದಯವಿಟ್ಟು ಮಾದರಿ ಮೌಲ್ಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
 
-
-
-//////MARK: - Existing
-//"Default_Address" = "Default Address";
-//"Edit_Address" = "Edit Address";
-//"resend_OTP" = "Resend OTP";
-//"submit" = "ಸಲ್ಲಿಸು";
-//"Search by part no/ cross reference" = "Search by part no/ cross reference";
-//"Query type" = "ಪ್ರಶ್ನೆಯ ಪ್ರಕಾರ";
-//"submit_your_query" = "Please submit your query";
-//"Select_Your_Topic" = "ನಿಮ್ಮ ವಿಷಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
-//"query_Details" = "ಪ್ರಶ್ನೆಯ ವಿವರಗಳು";
-//"Upload_Image" = "Upload Image";
-
 //MARK: - NEW
 "Redeemable points" = "ರಿಡೀಮ್ ಮಾಡಬಹುದಾದ ಅಂಕಗಳು";
 "Process to checkout" = "ಚೆಕ್ಔಟ್ ಮಾಡುವ ಪ್ರಕ್ರಿಯೆ";
@@ -276,3 +262,6 @@ Created by admin on 11/05/23.
 "Your order placed successfully !" = "ನಿಮ್ಮ ಆದೇಶವನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಇರಿಸಲಾಗಿದೆ!";
 "Milestone code" = "ಮೈಲಿಗಲ್ಲು ಕೋಡ್";
 "My_Redemption_History" = "ನನ್ನ ರಿಡೆಂಪ್ಶನ್ ಇತಿಹಾಸ";
+"Please select the points range or category or both" = "ದಯವಿಟ್ಟು ಅಂಕಗಳ ಶ್ರೇಣಿ ಅಥವಾ ವರ್ಗ ಅಥವಾ ಎರಡನ್ನೂ ಆಯ್ಕೆಮಾಡಿ";
+"Please enter the max points" = "ದಯವಿಟ್ಟು ಗರಿಷ್ಠ ಅಂಕಗಳನ್ನು ನಮೂದಿಸಿ";
+"Please enter the Min points" = "ದಯವಿಟ್ಟು ಕನಿಷ್ಠ ಅಂಕಗಳನ್ನು ನಮೂದಿಸಿ";

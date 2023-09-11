@@ -8,7 +8,9 @@ import Kingfisher
 import LanguageManager_iOS
 
 class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
-    func popupAlertDidTap(_ vc: FG_PopUpVC) {}
+    func popupAlertDidTap(_ vc: FG_PopUpVC) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBOutlet weak var yourExpetedRedeemTitleLbl: UILabel!
     @IBOutlet weak var addedToCartBtn: GradientButton!
@@ -83,7 +85,7 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
        // productImageView.kf.setImage(with: URL(string: "\(String(describing: totalImgURL ))"), placeholder: UIImage(named: "Humsafar Logo PNG"))
         productImageView.kf.setImage(with: URL(string: "\(String(describing: totalImgURL ))"), placeholder: UIImage(named: "Humsafar Logo PNG"))
         self.todayPoints.text = "\(Int(pointBalance) ?? 0)"
-        self.monthlyPointsLabel.text = "\(redeemableAverageEarning)"
+        self.monthlyPointsLabel.text = "\(Int(pointBalance) ?? 0)"//"\(redeemableAverageEarning)"
         self.expectRedeemProductName.text = productName
         self.expectRedeemDate.text = dateOfSubmission
         
@@ -469,7 +471,9 @@ class FG_DreamGiftDetailsVC: BaseViewController, popUpDelegate {
         self.VM.removePlannedProduct(parameters: parameters) { response in
             if response?.returnValue == 1{
                 self.plannerListing()
-                self.navigationController?.popViewController(animated: true)
+                self.removedDreamGiftPop()
+//                self.navigationController?.popViewController(animated: true)
+                
             }else{
                 DispatchQueue.main.async{
 //                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PopupAlertOne_VC") as? PopupAlertOne_VC
@@ -618,5 +622,15 @@ extension FG_DreamGiftDetailsVC{
         ] as [String: Any]
         print(parameter)
         self.VM.redemptionCatalogueAddToCartApi(parameter: parameter)
+    }
+    
+    func removedDreamGiftPop(){
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+        vc!.delegate = self
+        vc!.itsComeFrom = "LodgeQuery"
+        vc!.descriptionInfo = "product_removed_success".localiz()
+        vc!.modalPresentationStyle = .overCurrentContext
+        vc!.modalTransitionStyle = .crossDissolve
+        present(vc!, animated: true, completion: nil)
     }
 }

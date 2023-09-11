@@ -26,7 +26,7 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
         //var totalPoints = UserDefaults.standard.string(forKey: "TotalPoints") ?? ""
     var totalPoints = UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? ""
-    var totalPendingCount = UserDefaults.standard.string(forKey: "totalPendingCount") ?? ""
+//    var totalPendingCount = UserDefaults.standard.string(forKey: "totalPendingCount") ?? ""
     var productCalcValue = 0
     var value = 1
     var totalRedeemabelPts = 0
@@ -137,7 +137,7 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
                "CustomerCartList": [
                    [
                        "CustomerCartId": "\(self.customerCartId)",
-                       "Quantity": "\(self.quantity)"
+                       "Quantity": "\(quantity)"
                    ]
                ]
         ] as [String: Any]
@@ -170,49 +170,65 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
         self.value = self.VM.redemptionCatalogueMyCartListArray[tappedIndexPath.row].noOfQuantity ?? 0
         self.customerCartId = "\(self.VM.redemptionCatalogueMyCartListArray[tappedIndexPath.row].customerCartId ?? 0)"
         self.productId = "\(self.VM.redemptionCatalogueMyCartListArray[tappedIndexPath.row].catalogueId ?? 0)"
-        let productPrice = Int(self.VM.redemptionCatalogueMyCartListArray[tappedIndexPath.row].pointsRequired ?? 0)
+        let productPrice = Int(self.VM.redemptionCatalogueMyCartListArray[tappedIndexPath.row].pointsPerUnit ?? 0)
         let calcValues = (productPrice) * Int(self.VM.redemptionCatalogueMyCartListArray[tappedIndexPath.row].noOfQuantity ?? 0)
-        let calcExisting =  self.totalRedeemabelPts - calcValues
-        if self.value < 1{
-            self.value = 1
-            self.quantity = "1"
-            let calcValue = Int(self.VM.redemptionCatalogueMyCartListArray[tappedIndexPath.row].pointsRequired ?? 0) * self.value
-            self.finalValue = calcValue + calcExisting
-            if finalValue <= Int(self.totalPoints)!{
-                cell.qtyTF.text = self.quantity
-                self.productQuantityUpdate(customerCartId: self.customerCartId, quantity: "\(self.value)")
-            }else{
-                DispatchQueue.main.async{
-//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                    vc!.delegate = self
-//                    vc!.descriptionInfo = "Insufficient point balance"
-//                    vc!.modalPresentationStyle = .overFullScreen
-//                    vc!.modalTransitionStyle = .crossDissolve
-//                    self.present(vc!, animated: true, completion: nil)
-                    self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
-
-                }
-            }
+//        let calcExisting =  self.totalRedeemabelPts - calcValues
+        let redemableBalance = productPrice + (Int(totalRedeemablePtsLbl.text ?? "") ?? 0)
+        
+        if (Int(totalPoints) ?? 0) >= redemableBalance{
+            self.value = value + 1
+            cell.qtyTF.text = "\(value)"
+            self.productQuantityUpdate(customerCartId: self.customerCartId, quantity: "\(self.value)")
         }else{
-            self.value += 1
-            self.quantity = "\(value)"
-            let calcValue = Int(self.VM.redemptionCatalogueMyCartListArray[tappedIndexPath.row].pointsRequired ?? 0) * self.value
-            let finalValue = calcValue + calcExisting
-            if finalValue <= Int(self.totalPoints)!{
-                cell.qtyTF.text = self.quantity
-                self.productQuantityUpdate(customerCartId: self.customerCartId, quantity: "\(self.value)")
-            }else{
-                DispatchQueue.main.async{
-//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                    vc!.delegate = self
-//                    vc!.descriptionInfo = "Insufficient point balance"
-//                    vc!.modalPresentationStyle = .overFullScreen
-//                    vc!.modalTransitionStyle = .crossDissolve
-//                    self.present(vc!, animated: true, completion: nil)
-                    self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
-                }
-            }
+            self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
         }
+        
+        
+        
+        
+        
+        
+//        let calcExisting =  (Int(totalPoints) ?? 0) - calcValues
+//        if self.value < 1{
+//            self.value = 1
+//            self.quantity = "1"
+//            let calcValue = Int(self.VM.redemptionCatalogueMyCartListArray[tappedIndexPath.row].pointsRequired ?? 0) * self.value
+//            self.finalValue = calcValue + calcExisting
+//            if finalValue <= Int(self.totalPoints)!{
+//                cell.qtyTF.text = self.quantity
+//                self.productQuantityUpdate(customerCartId: self.customerCartId, quantity: "\(self.value)")
+//            }else{
+//                DispatchQueue.main.async{
+////                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+////                    vc!.delegate = self
+////                    vc!.descriptionInfo = "Insufficient point balance"
+////                    vc!.modalPresentationStyle = .overFullScreen
+////                    vc!.modalTransitionStyle = .crossDissolve
+////                    self.present(vc!, animated: true, completion: nil)
+//                    self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
+//
+//                }
+//            }
+//        }else{
+//            self.value += 1
+//            self.quantity = "\(value)"
+//            let calcValue = Int(self.VM.redemptionCatalogueMyCartListArray[tappedIndexPath.row].pointsRequired ?? 0) * self.value
+//            let finalValue = calcValue + calcExisting
+//            if finalValue <= Int(self.totalPoints)!{
+//                cell.qtyTF.text = self.quantity
+//                self.productQuantityUpdate(customerCartId: self.customerCartId, quantity: "\(self.value)")
+//            }else{
+//                DispatchQueue.main.async{
+////                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+////                    vc!.delegate = self
+////                    vc!.descriptionInfo = "Insufficient point balance"
+////                    vc!.modalPresentationStyle = .overFullScreen
+////                    vc!.modalTransitionStyle = .crossDissolve
+////                    self.present(vc!, animated: true, completion: nil)
+//                    self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
+//                }
+//            }
+//        }
     }
     
     func minusBtnDidTap(_ cell: FG_MyCartTVC) {

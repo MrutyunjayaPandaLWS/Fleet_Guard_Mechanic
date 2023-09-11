@@ -96,6 +96,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     var sourceArray1 = [AlamofireSource]()
     var VM = FG_DashboardVM()
     var slidsemenu = SlideMenuController()
+    var pendingRedemptionBal = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -382,6 +383,8 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     
     func pointsAPI(){
         UserDefaults.standard.set(false, forKey: "AfterLog")
+        UserDefaults.standard.setValue(0, forKey: "totalEarnedPoints")
+        UserDefaults.standard.set(0, forKey: "redeemablePointsBalance")
         UserDefaults.standard.synchronize()
         let parameters = [
               "ActionType": "1",

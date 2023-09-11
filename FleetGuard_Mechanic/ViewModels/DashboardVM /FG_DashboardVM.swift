@@ -55,6 +55,7 @@ class FG_DashboardVM: popUpDelegate{
                                 UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].redeemablePointsBalance ?? "", forKey: "TotalPoints")
                                 UserDefaults.standard.setValue(result?.totalPendingCount ?? 0, forKey: "totalPendingCount")
                                 self.VC?.plannerPointsLbl.text = "\(Int(result?.objCustomerDashboardList?[0].redeemablePointsBalance ?? 0) - (result?.totalPendingCount ?? 0))"
+                                self.VC?.pendingRedemptionBal = Int(result?.objCustomerDashboardList?[0].redeemablePointsBalance ?? 0)
                                 UserDefaults.standard.synchronize()
                                 
                                 
@@ -191,9 +192,19 @@ class FG_DashboardVM: popUpDelegate{
                         if result?.objCustomerDashboardList?.count != 0 {
                             self.pointBalence = result?.objCustomerDashboardList ?? []
                             self.totalPointBalence = result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0
-                            UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
+                            let totalPendingCount = UserDefaults.standard.string(forKey: "totalPendingCount")
+                            
+                            
+                            let totalPointsData = (self.totalPointBalence) - Int(totalPendingCount ?? "0")!
+                            
+//                            UserDefaults.standard.setValue(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
+                            UserDefaults.standard.setValue(totalPointsData, forKey: "totalEarnedPoints")
+                            UserDefaults.standard.setValue(self.totalPointBalence, forKey: "totalPointsBal11")
                             UserDefaults.standard.set(result?.objCustomerDashboardList?[0].redeemablePointsBalance, forKey: "redeemablePointsBalance")
                             self.VC?.totalPtsBalance.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
+                            
+                            
+                           
                             
                             UserDefaults.standard.set(true, forKey: "AfterLog")
                             UserDefaults.standard.synchronize()
@@ -237,7 +248,7 @@ class FG_DashboardVM: popUpDelegate{
                                 let totalPendingCount = UserDefaults.standard.string(forKey: "totalPendingCount")
                                 
                                 let totalPointsData = Int(totalPoints)! - Int(totalPendingCount ?? "")!
-                                self.VC?.plannerPointsLbl.text = "\(totalPointsData)"
+                                self.VC?.plannerPointsLbl.text = "\(totalPoints)"
 //                                let totalPoints = Int(totalPoints)! - Int(totalPendingCount ?? "")!
 //                                self.totalPts.text = "\(totalPoints)"
                                 

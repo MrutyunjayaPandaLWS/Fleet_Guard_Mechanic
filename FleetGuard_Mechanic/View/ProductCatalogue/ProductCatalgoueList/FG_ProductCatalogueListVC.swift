@@ -21,7 +21,12 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
         self.VM.productsArray.removeAll()
         self.VM.productListArray.removeAll()
         
-        
+        filtercatagoryId = vc.catagoryId
+        filtercatagoryId1 = vc.catagoryId1
+        filtercatagoryId2 = vc.catagoryId2
+        filtercatagoryId3 = vc.catagoryId3
+        catagoryName = vc.catagoryName
+        self.passingProductId = vc.passingProductId
         self.categoryId = vc.selectedArrayDataID
         self.categoryId1 = vc.selectedArrayDataID2
         self.categoryId2 = vc.selectedArrayDataID3
@@ -68,7 +73,12 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     var categoryId1 = 0
     var categoryId2 = 0
     var categoryId3 = 0
-    
+    var passingProductId = 1
+    var catagoryName = ""
+    var filtercatagoryId = 1
+    var filtercatagoryId1 = 0
+    var filtercatagoryId2 = 0
+    var filtercatagoryId3 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +107,8 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
                 self.present(vc, animated: true)
             }
         }else{
+            self.VM.productListArray.removeAll()
+            self.startindex = 1
             self.productListApi(StartIndex: startindex, searchText: self.searchTF.text ?? "")
             self.myCartApi()
         }
@@ -119,6 +131,12 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
         vc.selectedArrayDataID2 = categoryId1
         vc.selectedArrayDataID3 = categoryId2
         vc.selectedArrayDataID4 = categoryId3
+        vc.passingProductId = self.passingProductId
+        vc.catagoryId  = filtercatagoryId
+        vc.catagoryId1 = filtercatagoryId1
+        vc.catagoryId2 = filtercatagoryId2
+        vc.catagoryId3 = filtercatagoryId3
+        vc.catagoryName = catagoryName
         self.present(vc, animated: true)
     }
     @IBAction func backBtn(_ sender: Any) {
@@ -137,7 +155,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
                     "SearchText": searchText,
                     "LoyaltyID": "\(self.loyaltyId)",
                     "StartIndex":StartIndex,
-                    "PageSize": 20,
+                    "PageSize": 10,
                     "ProductDetails": [
                         "BrandId": 0,
                         "Cat1": "\(categoryId)",
@@ -268,7 +286,7 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
         //cell.dapValue.text = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"
         cell.mrpValue.text = "\(self.VM.productListArray[indexPath.row].mrp ?? "")"
         let image = self.VM.productListArray[indexPath.row].productImg ?? ""
-        if image.count == 0 || image == nil{
+        if image.count == 0{
             cell.imageViewBtn.isEnabled = false
             cell.productImage.image = UIImage(named: "Image 3")
         }else{
@@ -304,10 +322,10 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
             if indexPath.row == VM.productListArray.count - 2{
-                if noofelements == 20{
+                if noofelements == 10{
                     startindex = startindex + 1
                     self.productListApi(StartIndex: startindex, searchText: self.searchTF.text ?? "")
-                }else if noofelements < 20{
+                }else if noofelements < 10{
                     return
                 }else{
                     print("n0 more elements")

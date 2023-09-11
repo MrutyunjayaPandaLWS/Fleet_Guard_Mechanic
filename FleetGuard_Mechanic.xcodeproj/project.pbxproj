@@ -10,6 +10,8 @@
 		054194AD3DD54B7190E13E86 /* Pods_FleetGuard_Mechanic_FleetGuard_MechanicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68328F6DFE71F6120074F5C3 /* Pods_FleetGuard_Mechanic_FleetGuard_MechanicUITests.framework */; };
 		8435141D2A79197400CEC3AB /* fg-Mechanic-faq-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 8435141C2A79197400CEC3AB /* fg-Mechanic-faq-Hindi.html */; };
 		8435141F2A7919C000CEC3AB /* fg-Mechanic-about-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 8435141E2A7919C000CEC3AB /* fg-Mechanic-about-Hindi.html */; };
+		843936B62AAED46800F71136 /* UserList2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843936B42AAED46800F71136 /* UserList2.swift */; };
+		843936B72AAED46800F71136 /* ServerOTPModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843936B52AAED46800F71136 /* ServerOTPModels.swift */; };
 		8441FCF92A62C95400004721 /* FG_TermsandconditionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8441FC5A2A62C95300004721 /* FG_TermsandconditionsVC.swift */; };
 		8441FCFA2A62C95400004721 /* FG_CounterGapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8441FC5D2A62C95300004721 /* FG_CounterGapVC.swift */; };
 		8441FCFB2A62C95400004721 /* FG_CounterGapTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8441FC5E2A62C95300004721 /* FG_CounterGapTVC.swift */; };
@@ -395,6 +397,8 @@
 		68328F6DFE71F6120074F5C3 /* Pods_FleetGuard_Mechanic_FleetGuard_MechanicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FleetGuard_Mechanic_FleetGuard_MechanicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8435141C2A79197400CEC3AB /* fg-Mechanic-faq-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-faq-Hindi.html"; sourceTree = "<group>"; };
 		8435141E2A7919C000CEC3AB /* fg-Mechanic-about-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Hindi.html"; sourceTree = "<group>"; };
+		843936B42AAED46800F71136 /* UserList2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList2.swift; sourceTree = "<group>"; };
+		843936B52AAED46800F71136 /* ServerOTPModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerOTPModels.swift; sourceTree = "<group>"; };
 		8441FC5A2A62C95300004721 /* FG_TermsandconditionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_TermsandconditionsVC.swift; sourceTree = "<group>"; };
 		8441FC5D2A62C95300004721 /* FG_CounterGapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_CounterGapVC.swift; sourceTree = "<group>"; };
 		8441FC5E2A62C95300004721 /* FG_CounterGapTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_CounterGapTVC.swift; sourceTree = "<group>"; };
@@ -796,9 +800,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		843936B32AAED43900F71136 /* OTP Validation */ = {
+			isa = PBXGroup;
+			children = (
+				843936B52AAED46800F71136 /* ServerOTPModels.swift */,
+				843936B42AAED46800F71136 /* UserList2.swift */,
+			);
+			path = "OTP Validation";
+			sourceTree = "<group>";
+		};
 		8441FC1D2A62C87D00004721 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				843936B32AAED43900F71136 /* OTP Validation */,
 				8441FD692A62C98000004721 /* AddToCartModel */,
 				8441FE0F2A62C98300004721 /* BannerImageModels */,
 				8441FDAD2A62C98100004721 /* BillingDetailsModels */,
@@ -3065,6 +3079,7 @@
 				8441FD5A2A62C95400004721 /* FG_MyCartTVC.swift in Sources */,
 				8441FE212A62C98300004721 /* LstRetailerBonding.swift in Sources */,
 				8441FF0B2A62C9B200004721 /* HistoryNotificationsViewModel.swift in Sources */,
+				843936B72AAED46800F71136 /* ServerOTPModels.swift in Sources */,
 				847E2D512A8CE171001913EE /* ReachabilityAutoSync.swift in Sources */,
 				8441FF932A62CA0300004721 /* BaseViewController.swift in Sources */,
 				8441FD2A2A62C95400004721 /* FG_LodgeQueryTVC.swift in Sources */,
@@ -3117,6 +3132,7 @@
 				8441FD372A62C95400004721 /* FG_MyBillingsVC.swift in Sources */,
 				8441FE452A62C98300004721 /* PromotionsModels.swift in Sources */,
 				8441FE982A62C98300004721 /* ObjCustomerAllQueryJsonList.swift in Sources */,
+				843936B62AAED46800F71136 /* UserList2.swift in Sources */,
 				8441FD392A62C95400004721 /* FG_AboutVC.swift in Sources */,
 				8441FD0F2A62C95400004721 /* SelectquerytopicInListingTableViewCell.swift in Sources */,
 				8441FF8B2A62CA0300004721 /* URLRequest.swift in Sources */,
@@ -3547,6 +3563,7 @@
 				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FleetGuard_Mechanic/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Fleet Guard APP Need to Access the camera to upload profile Image and Customer support";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Fleet Guard APP Need to Access the Photo Library to upload profile Image  and Customer support";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -3583,6 +3600,7 @@
 				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FleetGuard_Mechanic/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Fleet Guard APP Need to Access the camera to upload profile Image and Customer support";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Fleet Guard APP Need to Access the Photo Library to upload profile Image  and Customer support";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

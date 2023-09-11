@@ -52,7 +52,7 @@
 
 "profile" = "சுயவிவரம்";
 "My_Ledger" = "என் லெட்ஜர்";
-"My_Redemption_History" = "மீட்பு வரலாறு";
+"My_Redemption_History" = "நான் வாங்கிய Gift விவரம்";
 "Redemption_Catalogue" = "மீட்பு தொகுப்பு";
 "Product_Catalogue" = "பொருள் பட்டியல்";
 "Dream_Gift" = "கனவு பரிசு";
@@ -67,15 +67,15 @@
 
 //குறி: - டாஷ்போர்டு
 
-"total_Point_bal" = "மொத்த பாயிண்ட்கள் இருப்பு";
+"total_Point_bal" = "பாயிண்ட்களின் கையிருப்பு";
 "passbook_number" = "பாஸ்புக் எண்";
 "welcome" = "வெல்கம்";
 "humsafar" = "ஹம்சஃபர்";
-"View_your_dreamgift" = "உங்கள் கனவுப் பரிசைப் பார்க்கவும்";
+"View_your_dreamgift" = "உங்கள் கனவுப் பரிசைப் பார்க்க";
 "add_your_dreamGift" = "உங்கள் கனவுப் பரிசை தேர்தெடுக்க";
 "product_Catalogoue" = "பொருள் பட்டியல்";
 "click_Here" = "இங்கே கிளிக் செய்யவும்";
-"redemption_catalogue" = "மீட்பு தொகுப்பு";
+"redemption_catalogue" = "பரிசு தொகுப்பு";
 "know_more" = "மேலும் தெரிய";
 
 
@@ -207,7 +207,7 @@
 "Select From Date"= "தேதியிலிருந்து தேர்ந்தெடு";
 "ToDate should be lower than FromDate" = "ToDate fromDate ஐ விட குறைவாக இருக்க வேண்டும்";
 "Notification" = "அறிவிப்பு";
-"Add to cart" = "வணிகத் தொகுப்பில் சேர்";
+"Add to cart" = "Gift ஐ தேர்ந்துடுக்க";
 "Added to cart" = "வணிகத் தொகுப்பில் சேர்க்கப்பட்டது";
 "Add to dreamgift" = "கனவுப் பரிசில் சேர்க்கவும்";
 "Added to dreamgift" = "கனவுப் பரிசில் சேர்க்கப்பட்டது";
@@ -233,19 +233,6 @@
 "Please select OME value" = "தயவுசெய்து OME மதிப்பைத் தேர்ந்தெடுக்கவும்";
 "Please select Model value" = "தயவுசெய்து மாதிரி மதிப்பைத் தேர்ந்தெடுக்கவும்";
 
-
-//////MARK: - Existing
-//"Default_Address" = "Default Address";
-//"Edit_Address" = "Edit Address";
-//"resend_OTP" = "Resend OTP";
-//"submit" = "Submit";
-//"Search by part no/ cross reference" = "Search by part no/ cross reference";
-//"Query type" = "Query type";
-//"submit_your_query" = "Please submit your query";
-//"Select_Your_Topic" = "Select Your Topic";
-//"query_Details" = "Query Details";
-//"Upload_Image" = "Upload Image";
-
 //MARK: - NEW
 "Redeemable points" = "மீட்டெடுக்கக்கூடிய  பாயிண்ட்கள்";
 "Process to checkout" = "வாங்குவதற்கு தொடர்க";
@@ -266,3 +253,6 @@
 "Go to Dashboard" = "டாஷ்போர்டுக்குச் செல்லவும்";
 "Your order placed successfully !" = "உங்கள் ஆர்டர் வெற்றிகரமாக பதிவேற்றப்பட்டது!";
 "Milestone code" = "மைல்கல் குறிப்பு";
+"Please select the points range or category or both" = "புள்ளிகள் வரம்பு அல்லது வகை அல்லது இரண்டையும் தேர்ந்தெடுக்கவும்";
+"Please enter the max points" = "அதிகபட்ச புள்ளிகளை உள்ளிடவும்";
+"Please enter the Min points" = "குறைந்தபட்ச புள்ளிகளை உள்ளிடவும்";

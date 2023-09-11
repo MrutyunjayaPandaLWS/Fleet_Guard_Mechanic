@@ -59,6 +59,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        localization()
         self.picker.delegate = self
         self.queryDetailsView.textColor = .gray
         self.queryDetailsView.text = "enter_Details".localiz()
@@ -68,7 +69,6 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        localization()
     }
     
     func localization(){

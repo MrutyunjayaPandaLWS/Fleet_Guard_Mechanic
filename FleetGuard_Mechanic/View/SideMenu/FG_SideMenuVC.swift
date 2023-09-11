@@ -75,6 +75,7 @@ class FG_SideMenuVC: BaseViewController, popUpDelegate {
 //    UserDefaults.standard.set(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
     let redeemablePointsBalance = UserDefaults.standard.string(forKey: "redeemablePointsBalance") ?? "0"
     let totalEarnedPoints = UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "0"
+    let totalPointBalance = UserDefaults.standard.string(forKey: "totalPointsBal11") ?? "0"
     
     
     override func viewDidLoad() {
@@ -113,7 +114,7 @@ class FG_SideMenuVC: BaseViewController, popUpDelegate {
                     if dashboardDetails.count != 0 {
                         self.userNameLbl.text = result?.lstCustomerFeedBackJsonApi?[0].firstName ?? "-"
                         self.passbookNumber.text = result?.lstCustomerFeedBackJsonApi?[0].passBookNumber ?? "-"
-                        self.totalBalance.text = "\(self.totalEarnedPoints)"
+                        self.totalBalance.text = "\(self.totalPointBalance)"
                     
                         let imageData = (result?.lstCustomerFeedBackJsonApi?[0].customerImage)?.dropFirst(1) ?? ""
                         self.profileImage.kf.setImage(with: URL(string: "\(Promo_ImageData)\(imageData)"), placeholder: UIImage(named: "ic_default_img"));

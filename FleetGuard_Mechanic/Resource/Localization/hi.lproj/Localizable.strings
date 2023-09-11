@@ -235,17 +235,6 @@
 "Please select OME value" = "कृपया OME मान चुनें";
 "Please select Model value" = "कृपया मॉडल मूल्य का चयन करें";
 
-//////MARK: - Existing
-//"Default_Address" = "Default Address";
-//"Edit_Address" = "Edit Address";
-//"resend_OTP" = "Resend OTP";
-//"submit" = "Submit";
-//"Search by part no/ cross reference" = "Search by part no/ cross reference";
-//"Query type" = "Query type";
-//"submit_your_query" = "Please submit your query";
-//"Select_Your_Topic" = "Select Your Topic";
-//"query_Details" = "Query Details";
-//"Upload_Image" = "Upload Image";
 
 //MARK: - NEW
 "Redeemable points" = "रिडीमेबल पॉइंट्स";
@@ -267,3 +256,6 @@
 "Go to Dashboard" = "डैशबोर्ड पर जाएँ";
 "Your order placed successfully !" = "आपकी ऑर्डर सफलतापूर्वक दर्ज कर दी गयी है";
 "Milestone code" = "माइलस्टोन कोड";
+"Please select the points range or category or both" = "कृपया अंक सीमा या श्रेणी या दोनों का चयन करें";
+"Please enter the max points" = "कृपया अधिकतम अंक दर्ज करें";
+"Please enter the Min points" = "कृपया न्यूनतम अंक दर्ज करें";

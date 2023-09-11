@@ -63,7 +63,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
     var redemptionTypeId = 0
     
     var userID = UserDefaults.standard.integer(forKey: "UserID")
-    var customerMobile = UserDefaults.standard.string(forKey: "CustomerMobile") ?? ""
+    var customerMobile = UserDefaults.standard.string(forKey: "Mobile") ?? ""
     var merchanMobile = UserDefaults.standard.string(forKey: "MerchantMobile") ?? ""
     let emailID = UserDefaults.standard.string(forKey: "CustomerEmail") ?? ""
     let firstname = UserDefaults.standard.string(forKey: "FirstName") ?? ""
@@ -81,6 +81,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
     var VM = RedemptionOTPVM()
     var txtOTPView: DPOTPView!
     var enteredValue = ""
+    var bottonStatus = true
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
@@ -162,8 +163,8 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
         print(contractorName, "Contractor Name")
         print(self.cityID, "City ID")
         if self.enteredValue.count == 4{
-//            if self.OTPforVerification == self.enteredValue{
-            if "1234" == self.enteredValue{
+            if self.OTPforVerification == self.enteredValue{
+//            if "1234" == self.enteredValue{
               
                 self.stopLoading()
                 self.timer.invalidate()
@@ -289,11 +290,11 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
     func getOTP(){
         DispatchQueue.main.async {
             let parameterJSON = [
-                "UserName": "",
-                "UserId": -1,
+                "UserName": self.VM.VC?.loyaltyId ?? "" ,
+                "UserId": self.VM.VC?.userID ?? "",
                 "MobileNo": "\(self.customerMobile)",
-                "OTPType": "Enrollment",
-                "MerchantUserName": "\(MerchantUserName)"
+                "MerchantUserName": "\(MerchantUserName)",
+                "Name": "\(self.firstname)"
             ] as [String: Any]
             print(parameterJSON)
             self.OTPAPI(paramters: parameterJSON)
