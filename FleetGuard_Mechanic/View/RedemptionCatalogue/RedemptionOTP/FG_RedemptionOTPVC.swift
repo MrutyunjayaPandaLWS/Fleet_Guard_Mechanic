@@ -163,15 +163,15 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
         print(contractorName, "Contractor Name")
         print(self.cityID, "City ID")
         if self.enteredValue.count == 4{
-            if self.OTPforVerification == self.enteredValue{
+//            if self.OTPforVerification == self.enteredValue{
 //            if "1234" == self.enteredValue{
-              
+                self.VM.serverOTP(mobileNumber: self.customerMobile, otpNumber: self.otpView.text ?? ""){
                 self.stopLoading()
                 self.timer.invalidate()
                 if self.contractorName == ""{
-                    productsParameter = [
+                    self.productsParameter = [
                         "ActionType": 51,
-                        "ActorId": userID,
+                        "ActorId": self.userID,
                         "MemberName": "\(self.customerName)",
                         "ObjCatalogueDetails": [
                               "DomainName": "FLEET_GUARD"
@@ -179,12 +179,12 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
                         "ObjCatalogueList": self.newproductArray as [[String: Any]],
                         "ObjCustShippingAddressDetails":["Address1":"\(self.address1)","CityId":"\(self.cityID)", "CityName":"\(self.cityName)","CountryId":"\(self.countryId)","StateName": "\(self.stateName)","StateId":"\(self.stateID)","Zip":"\(self.pincode)","Email":"\(self.emailId)","FullName":"\(self.customerName)","Mobile": self.mobile],"SourceMode":10
                     ]
-                    print(productsParameter ?? [])
+                    print(self.productsParameter ?? [])
                 }else{
                     self.productsParameter = [
                         "ActionType": 51,
-                        "ActorId": userID,
-                        "MemberName": "\(contractorName)",
+                        "ActorId": self.userID,
+                        "MemberName": "\(self.contractorName)",
                         "ObjCatalogueDetails": [
                                "DomainName": "FLEET_GUARD"
                            ],
@@ -194,8 +194,8 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
                             "CityName": "\(self.cityName)",
                             "CountryId": 103,
                             "Email": "\(self.emailId)",
-                            "FullName": "\(contractorName)",
-                            "Mobile": "\(loyaltyId)",
+                            "FullName": "\(self.contractorName)",
+                            "Mobile": "\(self.loyaltyId)",
                             "StateId": self.stateID,
                             "StateName": "\(self.stateName)",
                             "Zip": "\(self.pincode)"
@@ -205,7 +205,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
                     ] as [String: Any]
                     print(self.productsParameter ?? [], "Dream Gift")
                 }
-                self.VM.redemptionSubmission(parameters: productsParameter!) { response in
+                    self.VM.redemptionSubmission(parameters: self.productsParameter!) { response in
                     print(response?.returnMessage ?? "", "Redemption Submission")
                     print(response?.returnValue ?? "", "ReturnValue")
                     let message = response?.returnMessage ?? ""
@@ -244,19 +244,19 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
                         }
                     }
                 }
-            }else{
-                
-                    DispatchQueue.main.async{
-//                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                        vc!.delegate = self
-//                        vc!.titleInfo = ""
-//                        vc!.descriptionInfo = "InValid OTP"
-//                        vc!.modalPresentationStyle = .overCurrentContext
-//                        vc!.modalTransitionStyle = .crossDissolve
-//                        self.present(vc!, animated: true, completion: nil)
-                        
-                        self.view.makeToast("Invalid_OTP".localiz(), duration: 3.0, position: .bottom)
-                    }
+//            }else{
+//
+//                    DispatchQueue.main.async{
+////                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+////                        vc!.delegate = self
+////                        vc!.titleInfo = ""
+////                        vc!.descriptionInfo = "InValid OTP"
+////                        vc!.modalPresentationStyle = .overCurrentContext
+////                        vc!.modalTransitionStyle = .crossDissolve
+////                        self.present(vc!, animated: true, completion: nil)
+//
+//                        self.view.makeToast("Invalid_OTP".localiz(), duration: 3.0, position: .bottom)
+//                    }
                 
             }
         }else if enteredValue.count == 0 {

@@ -10,6 +10,8 @@ import ImageSlideshow
 import SlideMenuControllerSwift
 import Kingfisher
 import LanguageManager_iOS
+import Lottie
+import Alamofire
 
 
 class FG_DashBoardVC: BaseViewController, LanguageDelegate {
@@ -18,6 +20,8 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     }
     
 
+    @IBOutlet weak var underMaintananceView: LottieAnimationView!
+    @IBOutlet weak var maintananceView: UIView!
     @IBOutlet weak var offersAndPromotionTitleLbl: UILabel!
     @IBOutlet weak var noDatafoundLbl: UILabel!
     @IBOutlet weak var knowMoreLbl: UILabel!
@@ -97,6 +101,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     var VM = FG_DashboardVM()
     var slidsemenu = SlideMenuController()
     var pendingRedemptionBal = 0
+    private var animationView: LottieAnimationView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,7 +149,9 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
                 self.present(vc, animated: true)
             }
         }else{
-            self.tokendata()
+            maintenanceAPI()
+            isUpdateAvailable()
+//            self.tokendata()
             
         }
     }
@@ -605,4 +612,93 @@ extension FG_DashBoardVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     
+}
+
+
+extension FG_DashBoardVC{
+    
+    func playAnimation(){
+        animationView = .init(name: "94350-gears-lottie-animation")
+        animationView!.frame = underMaintananceView.bounds
+          // 3. Set animation content mode
+        animationView!.contentMode = .scaleAspectFit
+          // 4. Set animation loop mode
+        animationView!.loopMode = .loop
+          // 5. Adjust animation speed
+        animationView!.animationSpeed = 1
+        underMaintananceView.addSubview(animationView!)
+          // 6. Play animation
+        animationView!.play()
+
+    }
+//    MARK: - Maintanance Api
+    func maintenanceAPI(){
+        guard let url = URL(string: "http://appupdate.arokiait.com/updates/serviceget?pid=com.loyaltyWorks.Fleet-Guard-Humsufer") else {return}
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let dataResponse = data,
+                  error == nil else {
+                print(error?.localizedDescription ?? "Response Error")
+                return }
+            do{
+                //here dataResponse received from a network request
+                let jsonResponse = try JSONSerialization.jsonObject(with:dataResponse, options: [])
+                print(jsonResponse)
+                let isMaintenanceValue = ((jsonResponse as AnyObject).value(forKeyPath: "Result.is_maintenance") as? String)
+                let forceupdatevalue = ((jsonResponse as AnyObject).value(forKeyPath: "Result.version_number") as? String)
+                print(forceupdatevalue)
+                if isMaintenanceValue == "1"{
+                    print(isMaintenanceValue)
+                    DispatchQueue.main.async {
+                        self.maintananceView.isHidden = false
+                        self.playAnimation()
+                        self.view.isUserInteractionEnabled = false
+                    }
+                }else if isMaintenanceValue == "0"{
+                    DispatchQueue.main.async{
+                        self.maintananceView.isHidden = true
+                        self.view.isUserInteractionEnabled = true
+                        self.tokendata()
+                        self.animationView?.stop()
+                    }
+                }
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
+    }
+    
+    func isUpdateAvailable() {
+        let bundleId = Bundle.main.infoDictionary!["CFBundleIdentifier"] as! String
+        print(bundleId)
+        Alamofire.request("https://itunes.apple.com/in/lookup?bundleId=\(bundleId)").responseJSON { response in
+            if let json = response.result.value as? NSDictionary, let results = json["results"] as? NSArray, let entry = results.firstObject as? NSDictionary, let appStoreVersion = entry["version"] as? String,let appstoreid = entry["trackId"], let trackUrl = entry["trackViewUrl"], let installedVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                let installed = Int(installedVersion.replacingOccurrences(of: ".", with: "")) ?? 0
+                print(installed)
+                let appStore = Int(appStoreVersion.replacingOccurrences(of: ".", with: "")) ?? 0
+                print(appStore)
+                print(appstoreid)
+                if appStore>installed {
+                        let alertController = UIAlertController(title: "New update Available!", message: "Update is available to download. Downloading the latest update you will get the latest features, improvements and bug fixes of Fleet Guard APP", preferredStyle: .alert)
+
+                        // Create the actions
+                        let okAction = UIAlertAction(title: "Update Now", style: UIAlertAction.Style.default) {
+                            UIAlertAction in
+                            UIApplication.shared.openURL(NSURL(string: "\(trackUrl)")! as URL)
+
+                        }
+                        //                     Add the actions
+                        alertController.addAction(okAction)
+                        // Present the controller
+                        self.present(alertController, animated: true, completion: nil)
+
+                }else{
+                    print("no updates")
+
+                }
+            }
+        }
+    }
+    
+
 }

@@ -12,6 +12,7 @@
 		8435141F2A7919C000CEC3AB /* fg-Mechanic-about-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 8435141E2A7919C000CEC3AB /* fg-Mechanic-about-Hindi.html */; };
 		843936B62AAED46800F71136 /* UserList2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843936B42AAED46800F71136 /* UserList2.swift */; };
 		843936B72AAED46800F71136 /* ServerOTPModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843936B52AAED46800F71136 /* ServerOTPModels.swift */; };
+		843936BE2AAF5FE700F71136 /* 94350-gears-lottie-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 843936BD2AAF5FE700F71136 /* 94350-gears-lottie-animation.json */; };
 		8441FCF92A62C95400004721 /* FG_TermsandconditionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8441FC5A2A62C95300004721 /* FG_TermsandconditionsVC.swift */; };
 		8441FCFA2A62C95400004721 /* FG_CounterGapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8441FC5D2A62C95300004721 /* FG_CounterGapVC.swift */; };
 		8441FCFB2A62C95400004721 /* FG_CounterGapTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8441FC5E2A62C95300004721 /* FG_CounterGapTVC.swift */; };
@@ -399,6 +400,7 @@
 		8435141E2A7919C000CEC3AB /* fg-Mechanic-about-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-Mechanic-about-Hindi.html"; sourceTree = "<group>"; };
 		843936B42AAED46800F71136 /* UserList2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList2.swift; sourceTree = "<group>"; };
 		843936B52AAED46800F71136 /* ServerOTPModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerOTPModels.swift; sourceTree = "<group>"; };
+		843936BD2AAF5FE700F71136 /* 94350-gears-lottie-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "94350-gears-lottie-animation.json"; sourceTree = "<group>"; };
 		8441FC5A2A62C95300004721 /* FG_TermsandconditionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_TermsandconditionsVC.swift; sourceTree = "<group>"; };
 		8441FC5D2A62C95300004721 /* FG_CounterGapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_CounterGapVC.swift; sourceTree = "<group>"; };
 		8441FC5E2A62C95300004721 /* FG_CounterGapTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_CounterGapTVC.swift; sourceTree = "<group>"; };
@@ -2511,6 +2513,7 @@
 		8441FF442A62CA0200004721 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				843936BD2AAF5FE700F71136 /* 94350-gears-lottie-animation.json */,
 				847E2D4E2A8CE0EF001913EE /* no_internet_lottie.json */,
 				8441FF452A62CA0200004721 /* loader (1).json */,
 				8441FF462A62CA0200004721 /* lf30_editor_qd1wdceq.json */,
@@ -2883,6 +2886,7 @@
 				8441FF6C2A62CA0300004721 /* Roboto-Black.ttf in Resources */,
 				8441FD032A62C95400004721 /* senderInfoImageTableViewCell.xib in Resources */,
 				8435141F2A7919C000CEC3AB /* fg-Mechanic-about-Hindi.html in Resources */,
+				843936BE2AAF5FE700F71136 /* 94350-gears-lottie-animation.json in Resources */,
 				8441FF882A62CA0300004721 /* loader (1).json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
