@@ -33,9 +33,9 @@ class FG_MyPromotionDetailsVC: BaseViewController {
         super.viewDidLoad()
         headerText.text = "Offers_promotions".localiz()
 //        self.termsandconditionLbl.text = selectedLongDesc
-        self.descriptionLbl.text = self.selectedLongDesc
+        //self.descriptionLbl.text = self.selectedLongDesc
         self.categoryTitle.text  = self.selectedTitle
-        
+        self.descriptionData()
         let imageURL = self.selectedImage
         if imageURL != ""{
             let filteredURLArray = imageURL.dropFirst(3)
@@ -67,4 +67,28 @@ class FG_MyPromotionDetailsVC: BaseViewController {
         descriptionTitleLbl.text = "Description".localiz()
     }
     
+    func convertHTMLToPlainText(htmlString: String) -> String {
+            if let attributedString = NSAttributedString(htmlString: htmlString) {
+                return attributedString.string
+            } else {
+                return ""
+            }
+        }
+    
+    
+    func descriptionData(){
+          let plainText = convertHTMLToPlainText(htmlString: selectedLongDesc)
+          self.descriptionLbl.text = plainText
+      }
+    
+}
+extension NSAttributedString {
+    convenience init?(htmlString: String) {
+        guard let data = htmlString.data(using: .utf8) else { return nil }
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+        ]
+        try? self.init(data: data, options: options, documentAttributes: nil)
+    }
 }

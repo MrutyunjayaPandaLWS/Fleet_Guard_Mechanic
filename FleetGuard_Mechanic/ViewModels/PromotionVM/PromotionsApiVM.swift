@@ -34,6 +34,12 @@ class PromotionsApiVM{
                             }
                         
                     }
+                        
+        
+                        
+                        
+                        
+                        
 
                 }else{
                     DispatchQueue.main.async {

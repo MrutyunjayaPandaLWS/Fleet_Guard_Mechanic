@@ -180,9 +180,12 @@ class FG_DashboardVM: popUpDelegate{
     }
     
     func pointBalenceAPI(parameter: JSON){
-                DispatchQueue.main.async {
-                    self.VC?.startLoading()
-                }
+        
+        if UserDefaults.standard.string(forKey: "Mobile") != "7978779535"{
+            DispatchQueue.main.async {
+                self.VC?.startLoading()
+            }
+        }
         self.requestApis.pointBalenceAPI(parameters: parameter) { (result, error) in
             if error == nil{
                 if result != nil{
@@ -192,6 +195,7 @@ class FG_DashboardVM: popUpDelegate{
                         if result?.objCustomerDashboardList?.count != 0 {
                             self.pointBalence = result?.objCustomerDashboardList ?? []
                             self.totalPointBalence = result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0
+                            self.VC1?.totalBalance.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
                             let totalPendingCount = UserDefaults.standard.string(forKey: "totalPendingCount")
                             
                             

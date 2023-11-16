@@ -97,7 +97,19 @@ class FG_SideMenuVC: BaseViewController, popUpDelegate {
         garagenameTitleLbl.text = "Garage Name".localiz()
         dashboardApi()
     }
-    
+    func pointsAPI(){
+        UserDefaults.standard.set(false, forKey: "AfterLog")
+        UserDefaults.standard.setValue(0, forKey: "totalEarnedPoints")
+        UserDefaults.standard.set(0, forKey: "redeemablePointsBalance")
+        UserDefaults.standard.synchronize()
+        let parameters = [
+              "ActionType": "1",
+              "LoyaltyId": "\(loyaltyId)"
+        ] as [String: Any]
+        print(parameters)
+        self.VM.pointBalenceAPI(parameter: parameters)
+        
+    }
     
     func dashboardApi(){
         let parameter = [
@@ -114,8 +126,8 @@ class FG_SideMenuVC: BaseViewController, popUpDelegate {
                     if dashboardDetails.count != 0 {
                         self.userNameLbl.text = result?.lstCustomerFeedBackJsonApi?[0].firstName ?? "-"
                         self.passbookNumber.text = result?.lstCustomerFeedBackJsonApi?[0].passBookNumber ?? "-"
-                        self.totalBalance.text = "\(self.totalPointBalance)"
-                    
+//                        self.totalBalance.text = "\(self.totalPointBalance)"
+                        self.pointsAPI()
                         let imageData = (result?.lstCustomerFeedBackJsonApi?[0].customerImage)?.dropFirst(1) ?? ""
                         self.profileImage.kf.setImage(with: URL(string: "\(Promo_ImageData)\(imageData)"), placeholder: UIImage(named: "ic_default_img"));
                         self.GarageNameLbl.text = "\(result?.lstCustomerFeedBackJsonApi?[0].ownerName ?? "-")"

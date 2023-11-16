@@ -61,7 +61,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
     var contractorName = ""
     var giftStatusId = 0
     var redemptionTypeId = 0
-    
+    var customerNamesFullName = ""
     var userID = UserDefaults.standard.integer(forKey: "UserID")
     var customerMobile = UserDefaults.standard.string(forKey: "Mobile") ?? ""
     var merchanMobile = UserDefaults.standard.string(forKey: "MerchantMobile") ?? ""
@@ -177,7 +177,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
                               "DomainName": "FLEET_GUARD"
                           ],
                         "ObjCatalogueList": self.newproductArray as [[String: Any]],
-                        "ObjCustShippingAddressDetails":["Address1":"\(self.address1)","CityId":"\(self.cityID)", "CityName":"\(self.cityName)","CountryId":"\(self.countryId)","StateName": "\(self.stateName)","StateId":"\(self.stateID)","Zip":"\(self.pincode)","Email":"\(self.emailId)","FullName":"\(self.customerName)","Mobile": self.mobile],"SourceMode":10
+                        "ObjCustShippingAddressDetails":["Address1":"\(self.address1)","CityId":"\(self.cityID)", "CityName":"\(self.cityName)","CountryId":"\(self.countryId)","StateName": "\(self.stateName)","StateId":"\(self.stateID)","Zip":"\(self.pincode)","Email":"\(self.emailId)","FullName":"\(self.customerNamesFullName)","Mobile": self.mobile],"SourceMode":10
                     ]
                     print(self.productsParameter ?? [])
                 }else{
@@ -194,7 +194,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
                             "CityName": "\(self.cityName)",
                             "CountryId": 103,
                             "Email": "\(self.emailId)",
-                            "FullName": "\(self.contractorName)",
+                            "FullName": "\(self.customerNamesFullName)",
                             "Mobile": "\(self.loyaltyId)",
                             "StateId": self.stateID,
                             "StateName": "\(self.stateName)",
@@ -290,11 +290,12 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate,
     func getOTP(){
         DispatchQueue.main.async {
             let parameterJSON = [
-                "UserName": self.VM.VC?.loyaltyId ?? "" ,
-                "UserId": self.VM.VC?.userID ?? "",
+                "UserName": self.loyaltyId ?? "" ,
+                "UserId": self.userID ?? "",
                 "MobileNo": "\(self.customerMobile)",
                 "MerchantUserName": "\(MerchantUserName)",
-                "Name": "\(self.firstname)"
+                "Name": "\(self.firstname)",
+                "CustomerType": "Mechanic"
             ] as [String: Any]
             print(parameterJSON)
             self.OTPAPI(paramters: parameterJSON)

@@ -22,28 +22,28 @@ class FG_LoginOTPVM: popUpDelegate {
     var otpVerify = ""
     
     func loginOTPApi(parameter: JSON){
-        DispatchQueue.main.async {
-            self.VC?.startLoading()
+        if self.VC?.enterMobileNumber != "7978779535"{
+            DispatchQueue.main.async {
+                self.VC?.startLoading()
+            }
         }
         self.requestAPIs.otp_Post_API(parameters: parameter) { (result, error) in
             if error == nil{
                 if result != nil{
                     DispatchQueue.main.async {
+                        self.VC?.stopLoading()
                     let response = result?.returnMessage ?? ""
                         print(response, "- OTP")
                         //self.VC!.loaderView.isHidden = true
                         self.otpVerify = result?.returnMessage ?? ""
-                        self.VC?.stopLoading()
                     }
                 }else{
                     DispatchQueue.main.async {
-                       // self.VC!.loaderView.isHidden = true
                         self.VC?.stopLoading()
                     }
                 }
             }else{
                 DispatchQueue.main.async {
-                   // self.VC!.loaderView.isHidden = true
                     self.VC?.stopLoading()
                 }
             }
@@ -228,8 +228,6 @@ class FG_LoginOTPVM: popUpDelegate {
     }
 
     func otpTimer(){
-        //self.VC?.submitBTN.isEnabled = true
-       // self.VC?.loaderView.isHidden = true
         self.count = 60
         self.VC?.enteredValue = ""
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)

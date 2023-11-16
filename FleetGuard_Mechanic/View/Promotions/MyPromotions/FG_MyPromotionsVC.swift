@@ -69,7 +69,9 @@ class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
         print(parameters)
         self.VM.promotionsListingAP(parameters: parameters)
     }
-     
+    
+
+    
 }
 extension FG_MyPromotionsVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -108,3 +110,4 @@ extension FG_MyPromotionsVC: UITableViewDelegate, UITableViewDataSource{
     
     
 }
+

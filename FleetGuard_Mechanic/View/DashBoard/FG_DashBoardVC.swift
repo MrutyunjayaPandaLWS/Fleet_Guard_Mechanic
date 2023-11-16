@@ -413,21 +413,20 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     }
     
     @objc func didTap() {
-//        if bannerImagesArray.count > 0 {
-////            bannerView.presentFullScreenController(from: self)
-//            for image in bannerImagesArray {
-//                print(image.actionImageUrl,"imageURL")
-//                if let url = URL(string: "\(image.actionImageUrl ?? "")")
-//                    {
-//                        UIApplication.shared.openURL(url)
-//                    }
-//            }
-//        }
-        
-        if self.bannerImagesArray.count > 0 {
-            
-            bannerImage.presentFullScreenController(from: self)
-        }
+            if bannerImagesArray.count > 0 {
+                print(bannerImage.currentPage)
+                if bannerImagesArray[(bannerImage.currentPage ?? 0)].actionImageUrl == "" || bannerImagesArray[(bannerImage.currentPage ?? 0)].actionImageUrl == nil{
+                            if self.bannerImagesArray.count > 0 {
+                                bannerImage.presentFullScreenController(from: self)
+                            }
+                    }else{
+                        print(bannerImagesArray[(bannerImage.currentPage ?? 0)].actionImageUrl,"imageURL")
+                        if let url = URL(string: "\(bannerImagesArray[(bannerImage.currentPage ?? 0)].actionImageUrl ?? "")")
+                            {
+                                UIApplication.shared.openURL(url)
+                            }
+                    }
+            }
         
     }
     func bannerImagesAPI() {

@@ -175,6 +175,7 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
                   vc!.countryId = self.selectedCountryId
                   vc!.countryName = self.selectedCountry
                   vc!.redeemedPoints = self.totalPoint
+                  vc!.customerNamesFullName = self.selectedname
                   self.navigationController?.pushViewController(vc!, animated: true)
               }
               

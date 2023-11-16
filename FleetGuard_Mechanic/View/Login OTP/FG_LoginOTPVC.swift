@@ -56,7 +56,6 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
         txtDPOTPView.cornerRadiusTextField = 8
         txtDPOTPView.isCursorHidden = true
         self.loaderView.isHidden = true
-//        lottieAnimation(animationView: loaderAnimation)
        
       
         
@@ -140,7 +139,6 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
         
         
     }
-//https://fleetgrdser.loyltwo3ks.com/Mobile/SaveAndGetOTPDetails
     
     func OtpApi(mobilenumber: String){
         let parameter = [
@@ -156,15 +154,6 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
         self.VM.loginOTPApi(parameter: parameter)
     }
     
-    
-//    "Browser": "Android",
-//       "LoggedDeviceName": "Android",
-//       "Password": "1234",
-//       "PushID": "",
-//       "LoggedDeviceID": "abaa017408a54264",
-//       "UserActionType": "GetPasswordDetails",
-//       "UserName": "9993870230",
-//       "UserType": "Customer"
     
     func loginSubmissionApi(mobileNumber: String, deviceID: String, pushID: String){
         
